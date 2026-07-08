@@ -53,13 +53,14 @@ import PestGameFloatingButton from "./components/PestGameFloatingButton";
 import PestGamePage from "./components/pestgame/PestGamePage";
 import DefendHomeGame from "./components/pestgame/DefendHomeGame";
 
+import PestEnquiryForm from "./components/PestEnquiryForm";
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
       <Navbar />
       <PestGameFloatingButton />
-
+      <PestEnquiryForm />
       <main className="pt-[155px] md:pt-[175px] font-poppins">
         <Routes>
           {/* Main pages */}
