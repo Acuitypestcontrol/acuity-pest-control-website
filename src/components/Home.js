@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import SEO from "../components/seo/seo";
 
+import { Link } from "react-router-dom";
+
 import bannerImage from "../images/homebanner (1).jpg";
 import bannerImage1 from "../images/protect-removebg-preview.png";
 
@@ -536,21 +538,39 @@ Please contact me regarding pest control service.`;
                 "🪳",
                 "Cockroach Control",
                 "For kitchens, bathrooms & restaurants",
+                "/cockroach-management-service",
               ],
-              ["🐜", "Termite Control", "Protect wood, walls & furniture"],
-              ["🐭", "Rodent Control", "Rat and mouse control solutions"],
+              [
+                "🐜",
+                "Termite Control",
+                "Protect wood, walls & furniture",
+                "/anti-termite-treatment",
+              ],
+              [
+                "🐭",
+                "Rodent Control",
+                "Rat and mouse control solutions",
+                "/rodent-management-service",
+              ],
               [
                 "🦟",
                 "Mosquito Control",
                 "Indoor and outdoor mosquito treatment",
+                "/mosquito-management-service",
               ],
-              ["🛏️", "Bed Bug Treatment", "For homes, hotels & bedrooms"],
+              [
+                "🛏️",
+                "Bed Bug Treatment",
+                "For homes, hotels & bedrooms",
+                "/bed-bug-treatment",
+              ],
               [
                 "🏢",
                 "Commercial Pest Control",
                 "For offices, hospitals & industries",
+                "/office-pest-control",
               ],
-            ].map(([icon, title, desc]) => (
+            ].map(([icon, title, desc, link]) => (
               <div
                 key={title}
                 className="bg-white rounded-2xl p-5 shadow-md border border-green-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
@@ -565,9 +585,12 @@ Please contact me regarding pest control service.`;
 
                 <p className="text-gray-600 text-sm leading-6 mb-4">{desc}</p>
 
-                <button className="text-green-700 font-semibold hover:text-green-800 transition">
+                <Link
+                  to={link}
+                  className="inline-flex items-center text-green-700 font-semibold hover:text-green-800 transition"
+                >
                   Learn More →
-                </button>
+                </Link>
               </div>
             ))}
           </div>
