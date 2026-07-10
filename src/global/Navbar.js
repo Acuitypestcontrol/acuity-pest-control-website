@@ -5,13 +5,12 @@ import {
   FaTimes,
   FaPhoneAlt,
   FaWhatsapp,
+  FaEnvelope,
   FaChevronDown,
   FaShieldAlt,
   FaBuilding,
   FaSprayCan,
-  FaEnvelope,
   FaLocationArrow,
-  FaGlobe,
 } from "react-icons/fa";
 import logo from "../images/acuitylogo1.png";
 
@@ -88,74 +87,72 @@ const Navbar = () => {
   return (
     <header className="absolute top-0 left-0 w-full z-50">
       {/* TOP BAR */}
+
       <div className="bg-[#063b3f] text-white">
-        {/* Desktop top bar */}
-        <div className="hidden md:flex max-w-7xl mx-auto px-4 py-2 items-center justify-between gap-6 text-sm">
+        {/* Desktop */}
+
+        <div className="hidden md:flex max-w-7xl mx-auto px-4 py-2 items-center justify-between text-sm">
           <a
             href="https://maps.app.goo.gl/N5GeNpCZJMbavHHe7"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:text-blue-200 min-w-0"
+            className="flex items-center gap-2 hover:text-green-300"
           >
-            <FaLocationArrow className="text-white flex-shrink-0" />
-            <span className="truncate">
-              JP Nagar 6th Phase, Yelachenahalli, Bengaluru - 560078
-            </span>
+            <FaLocationArrow />
+
+            <span>JP Nagar 6th Phase, Yelachenahalli, Bengaluru - 560078</span>
           </a>
 
-          <a
-            href="tel:+919941229005"
-            className="flex items-center gap-2 hover:text-blue-200 whitespace-nowrap"
+          <Link
+            to="/iso-certification"
+            className="bg-green-600 hover:bg-green-700 px-3 py-1 rounded-full font-semibold transition"
           >
-            <FaPhoneAlt className="text-white" />
-            +91 99412 29005
-          </a>
+            🏅 ISO 9001:2015 - (305024122052Q)
+          </Link>
 
-          <a
-            href="mailto:info@acuitypestcontrols.com"
-            className="flex items-center gap-2 hover:text-blue-200 whitespace-nowrap"
-          >
-            <FaEnvelope className="text-white" />
-            info@acuitypestcontrols.com
-          </a>
+          <div className="flex items-center gap-5">
+            <a
+              href="tel:+919941229005"
+              className="flex items-center gap-2 hover:text-green-300"
+            >
+              <FaPhoneAlt />
+              +91 99412 29005
+            </a>
+
+            <a
+              href="mailto:info@acuitygroups.in"
+              className="flex items-center gap-2 hover:text-green-300"
+            >
+              <FaEnvelope className="text-green-400" />
+              info@acuitygroups.in
+            </a>
+          </div>
         </div>
 
-        {/* Mobile top bar */}
-        <div className="md:hidden grid grid-cols-3 text-xs">
-          <a
-            href="tel:+919941229005"
-            className="py-2.5 flex flex-col items-center justify-center border-r border-white/20"
-          >
-            <FaPhoneAlt className="text-base mb-1 text-white" />
-            <span>Call</span>
+        {/* Mobile */}
+
+        <div className="flex md:hidden justify-center items-center gap-8 py-2 text-sm font-semibold">
+          <a href="tel:+919941229005" className="flex items-center gap-2">
+            <FaPhoneAlt />
+            Call
           </a>
 
           <a
-            href="https://wa.me/919941229005"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="py-2.5 flex flex-col items-center justify-center border-r border-white/20"
+            href="mailto:info@acuitygroups.in"
+            className="flex items-center gap-2"
           >
-            <FaWhatsapp className="text-base mb-1 text-white" />
-            <span>WhatsApp</span>
-          </a>
-
-          <a
-            href="https://www.acuitypestcontrols.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="py-2.5 flex flex-col items-center justify-center"
-          >
-            <FaGlobe className="text-base mb-1 text-white" />
-            <span>Website</span>
+            <FaEnvelope className="text-green-400" />
+            Email
           </a>
         </div>
       </div>
 
       {/* MAIN NAVBAR */}
+
       <div className="max-w-7xl mx-auto px-4">
-        <div className="mt-3 px-4  flex items-center justify-between bg-white/25 rounded-2xl shadow-md">
+        <div className="mt-3 px-4 flex items-center justify-between bg-white/25 rounded-2xl shadow-md">
           {/* Logo */}
+
           <Link to="/" className="flex items-center flex-shrink-0">
             <img
               src={logo}
@@ -165,9 +162,13 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
+
           <nav className="hidden xl:flex items-center gap-6 font-semibold text-black text-md">
             <Link to="/" className="hover:text-blue-900 transition">
               HOME
+            </Link>
+            <Link to="/aboutus" className="hover:text-blue-900 transition">
+              ABOUT US
             </Link>
 
             <div className="relative group py-6">
@@ -182,8 +183,10 @@ const Navbar = () => {
               <div className="absolute left-1/2 -translate-x-1/2 top-full w-[980px] max-w-[90vw] bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-8 grid grid-cols-3 gap-10">
                 <div>
                   <h3 className="text-lg font-bold text-[#063b3f] mb-4 flex items-center gap-2">
-                    <FaShieldAlt className="text-blue-900" /> HOME SERVICES
+                    <FaShieldAlt className="text-blue-900" />
+                    HOME SERVICES
                   </h3>
+
                   <ul className="space-y-2 max-h-60 overflow-y-auto pr-2">
                     {homeServices.map((item) => (
                       <li key={item.link}>
@@ -200,8 +203,10 @@ const Navbar = () => {
 
                 <div>
                   <h3 className="text-lg font-bold text-[#063b3f] mb-4 flex items-center gap-2">
-                    <FaBuilding className="text-blue-900" /> COMMERCIAL SERVICES
+                    <FaBuilding className="text-blue-900" />
+                    COMMERCIAL SERVICES
                   </h3>
+
                   <ul className="space-y-2 max-h-60 overflow-y-auto pr-2">
                     {commercialServices.map((item) => (
                       <li key={item.link}>
@@ -218,7 +223,8 @@ const Navbar = () => {
 
                 <div>
                   <h3 className="text-lg font-bold text-[#063b3f] mb-4 flex items-center gap-2">
-                    <FaSprayCan className="text-blue-900" /> SANITIZATION
+                    <FaSprayCan className="text-blue-900" />
+                    SANITIZATION
                   </h3>
 
                   <Link
@@ -232,9 +238,11 @@ const Navbar = () => {
                     <h4 className="font-bold text-[#063b3f] mb-1">
                       Need help choosing?
                     </h4>
+
                     <p className="text-sm text-gray-600 mb-4">
                       Our experts are here to guide you.
                     </p>
+
                     <Link
                       to="/contact"
                       className="inline-flex items-center gap-2 bg-blue-900 hover:bg-green-700 text-white px-5 py-3 rounded-full font-bold transition"
@@ -245,10 +253,6 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-
-            <Link to="/aboutus" className="hover:text-blue-900 transition">
-              ABOUT US
-            </Link>
 
             <Link
               to="/pestidentification"
@@ -270,12 +274,14 @@ const Navbar = () => {
           </nav>
 
           {/* Desktop CTA */}
+
           <div className="hidden xl:flex items-center gap-3">
             <a
               href="tel:+919941229005"
               className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-full font-bold flex items-center gap-2 text-sm"
             >
-              <FaPhoneAlt /> Call
+              <FaPhoneAlt />
+              Call
             </a>
 
             <a
@@ -284,11 +290,13 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="bg-blue-900 hover:bg-green-700 text-white px-5 py-3 rounded-full font-bold flex items-center gap-2 text-sm"
             >
-              <FaWhatsapp /> WhatsApp
+              <FaWhatsapp />
+              WhatsApp
             </a>
           </div>
 
           {/* Mobile Toggle */}
+
           <button
             onClick={() => setOpen(!open)}
             className="xl:hidden text-2xl text-black bg-white/10 p-2 rounded-lg"
@@ -300,6 +308,7 @@ const Navbar = () => {
       </div>
 
       {/* MOBILE MENU */}
+
       <div
         className={`xl:hidden mx-4 mt-3 bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${
           open ? "max-h-[85vh] opacity-100" : "max-h-0 opacity-0"
@@ -320,6 +329,7 @@ const Navbar = () => {
               className="flex items-center justify-between w-full py-3 font-bold border-b border-gray-100"
             >
               <span>SERVICES</span>
+
               <FaChevronDown
                 className={`transition-transform duration-300 ${
                   servicesOpen ? "rotate-180" : ""
@@ -338,6 +348,7 @@ const Navbar = () => {
                 </Link>
 
                 <p className="font-semibold text-[#063b3f]">Home Services</p>
+
                 {homeServices.map((item) => (
                   <Link
                     key={item.link}
@@ -352,6 +363,7 @@ const Navbar = () => {
                 <p className="font-semibold text-[#063b3f] mt-4">
                   Commercial Services
                 </p>
+
                 {commercialServices.map((item) => (
                   <Link
                     key={item.link}
@@ -366,6 +378,7 @@ const Navbar = () => {
                 <p className="font-semibold text-[#063b3f] mt-4">
                   Sanitization
                 </p>
+
                 <Link
                   to="/services"
                   onClick={() => setOpen(false)}

@@ -303,7 +303,7 @@ Please contact me regarding pest control service.`;
       />
 
       {/* BANNER */}
-      <section className="relative h-[40vh] md:h-[110vh]">
+      <section className="relative h-[40vh] md:h-[110vh] ">
         <img
           src={bannerImage}
           alt="Professional pest control services in Bangalore by Acuity Pest Control"
