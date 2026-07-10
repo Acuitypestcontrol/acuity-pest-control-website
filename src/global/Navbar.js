@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaBars,
@@ -12,11 +12,29 @@ import {
   FaSprayCan,
   FaLocationArrow,
 } from "react-icons/fa";
+
 import logo from "../images/acuitylogo1.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const homeServices = [
     {
@@ -84,240 +102,288 @@ const Navbar = () => {
     },
   ];
 
+  const closeMobileMenu = () => {
+    setOpen(false);
+    setServicesOpen(false);
+  };
+
   return (
-    <header className="absolute top-0 left-0 w-full z-50">
-      {/* TOP BAR */}
+    <header className="fixed top-0 left-0 z-50 w-full bg-transparent">
+      {/* ================= TOP BAR ================= */}
 
-      <div className="bg-[#063b3f] text-white">
-        {/* Desktop */}
+      <div
+        className={`text-white transition-all duration-300 ${
+          scrolled
+            ? "bg-[#063b3f]/35 backdrop-blur-md shadow-sm"
+            : "bg-[#063b3f]/70 backdrop-blur-sm"
+        }`}
+      >
+        {/* Desktop top bar */}
 
-        <div className="hidden md:flex max-w-7xl mx-auto px-4 py-2 items-center justify-between text-sm">
+        <div className="hidden md:flex max-w-8xl mx-auto px-4 py-2 items-center justify-between gap-4 text-sm">
           <a
             href="https://maps.app.goo.gl/N5GeNpCZJMbavHHe7"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:text-green-300"
+            className="flex min-w-0 items-center gap-2 hover:text-green-300 transition"
           >
-            <FaLocationArrow />
+            <FaLocationArrow className="shrink-0" />
 
-            <span>JP Nagar 6th Phase, Yelachenahalli, Bengaluru - 560078</span>
+            <span className="truncate">
+              JP Nagar 6th Phase, Yelachenahalli, Bengaluru - 560078
+            </span>
           </a>
 
-          <Link
-            to="/iso-certification"
-            className="bg-green-600 hover:bg-green-700 px-3 py-1 rounded-full font-semibold transition"
-          >
-            🏅 ISO 9001:2015 - (305024122052Q)
-          </Link>
+          <div className="flex shrink-0 items-center gap-4">
+            <Link
+              to="/iso-certification"
+              className="bg-green-600 hover:bg-green-700 px-3 py-1 rounded-full font-semibold transition [text-shadow:none]"
+            >
+              🏅 ISO 9001:2015 - (305024122052Q)
+            </Link>
 
-          <div className="flex items-center gap-5">
+            <a
+              href="mailto:info@acuitygroups.in"
+              className="flex items-center gap-2 hover:text-green-300 transition"
+            >
+              <FaEnvelope />
+
+              <span className="hidden lg:inline">info@acuitygroups.in</span>
+            </a>
+          </div>
+
+          <div className="flex shrink-0 items-center gap-5">
             <a
               href="tel:+919941229005"
-              className="flex items-center gap-2 hover:text-green-300"
+              className="flex items-center gap-2 hover:text-green-300 transition"
             >
               <FaPhoneAlt />
               +91 99412 29005
             </a>
 
             <a
-              href="mailto:info@acuitygroups.in"
-              className="flex items-center gap-2 hover:text-green-300"
+              href="https://wa.me/919941229005"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-green-300 transition"
             >
-              <FaEnvelope className="text-green-400" />
-              info@acuitygroups.in
+              <FaWhatsapp className="text-green-400" />
+              WhatsApp
             </a>
           </div>
         </div>
 
-        {/* Mobile */}
+        {/* Mobile top bar */}
 
-        <div className="flex md:hidden justify-center items-center gap-8 py-2 text-sm font-semibold">
-          <a href="tel:+919941229005" className="flex items-center gap-2">
-            <FaPhoneAlt />
-            Call
+        <div className="flex md:hidden justify-between items-center gap-2 px-3 py-2 text-xs sm:text-sm font-semibold">
+          <a
+            href="tel:+919941229005"
+            className="flex min-w-0 items-center gap-2"
+          >
+            <FaPhoneAlt className="shrink-0" />
+            <span>Call</span>
           </a>
 
           <a
             href="mailto:info@acuitygroups.in"
-            className="flex items-center gap-2"
+            className="flex min-w-0 items-center gap-2"
           >
-            <FaEnvelope className="text-green-400" />
-            Email
+            <FaEnvelope className="shrink-0" />
+            <span>Email</span>
+          </a>
+
+          <a
+            href="https://wa.me/919941229005"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-w-0 items-center gap-2"
+          >
+            <FaWhatsapp className="shrink-0 text-green-400" />
+            <span>WhatsApp</span>
           </a>
         </div>
       </div>
 
-      {/* MAIN NAVBAR */}
+      {/* ================= MAIN NAVBAR ================= */}
 
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="mt-3 px-4 flex items-center justify-between bg-white/25 rounded-2xl shadow-md">
-          {/* Logo */}
+      <div
+        className={`w-full border-b transition-all duration-300 ${
+          scrolled
+            ? "bg-white/55 backdrop-blur-md border-white/40 shadow-sm"
+            : "bg-white/30 backdrop-blur-sm border-white/20 shadow-none"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="px-2 sm:px-4 flex items-center justify-between bg-transparent border-0 shadow-none">
+            {/* Logo */}
 
-          <Link to="/" className="flex items-center flex-shrink-0">
-            <img
-              src={logo}
-              alt="Acuity Pest Controls"
-              className="h-20 md:h-28 w-auto object-contain"
-            />
-          </Link>
-
-          {/* Desktop Navigation */}
-
-          <nav className="hidden xl:flex items-center gap-6 font-semibold text-black text-md">
-            <Link to="/" className="hover:text-blue-900 transition">
-              HOME
+            <Link
+              to="/"
+              onClick={closeMobileMenu}
+              className="flex items-center flex-shrink-0"
+            >
+              <img
+                src={logo}
+                alt="Acuity Pest Controls"
+                className={`h-20 md:h-28 w-auto object-contain transition-all duration-300 ${
+                  scrolled ? "scale-95" : "scale-100"
+                }`}
+              />
             </Link>
-            <Link to="/aboutus" className="hover:text-blue-900 transition">
-              ABOUT US
-            </Link>
 
-            <div className="relative group py-6">
-              <Link
-                to="/services"
-                className="flex items-center gap-1 hover:text-blue-900 transition"
-              >
-                SERVICES
-                <FaChevronDown className="text-xs group-hover:rotate-180 transition-transform duration-300" />
+            {/* ================= DESKTOP NAVIGATION ================= */}
+
+            <nav className="hidden xl:flex items-center gap-6 font-semibold text-black text-md">
+              <Link to="/" className="hover:text-blue-900 transition">
+                HOME
               </Link>
 
-              <div className="absolute left-1/2 -translate-x-1/2 top-full w-[980px] max-w-[90vw] bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-8 grid grid-cols-3 gap-10">
-                <div>
-                  <h3 className="text-lg font-bold text-[#063b3f] mb-4 flex items-center gap-2">
-                    <FaShieldAlt className="text-blue-900" />
-                    HOME SERVICES
-                  </h3>
+              <Link to="/aboutus" className="hover:text-blue-900 transition">
+                ABOUT US
+              </Link>
 
-                  <ul className="space-y-2 max-h-60 overflow-y-auto pr-2">
-                    {homeServices.map((item) => (
-                      <li key={item.link}>
-                        <Link
-                          to={item.link}
-                          className="block text-gray-600 hover:text-blue-900 transition text-sm"
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="relative group py-6">
+                <Link
+                  to="/services"
+                  className="flex items-center gap-1 hover:text-blue-900 transition"
+                >
+                  SERVICES
+                  <FaChevronDown className="text-xs group-hover:rotate-180 transition-transform duration-300" />
+                </Link>
 
-                <div>
-                  <h3 className="text-lg font-bold text-[#063b3f] mb-4 flex items-center gap-2">
-                    <FaBuilding className="text-blue-900" />
-                    COMMERCIAL SERVICES
-                  </h3>
+                {/* Services mega menu */}
 
-                  <ul className="space-y-2 max-h-60 overflow-y-auto pr-2">
-                    {commercialServices.map((item) => (
-                      <li key={item.link}>
-                        <Link
-                          to={item.link}
-                          className="block text-gray-600 hover:text-blue-900 transition text-sm"
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <div className="absolute left-1/2 -translate-x-1/2 top-full w-[980px] max-w-[90vw] bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 p-8 grid grid-cols-3 gap-10">
+                  {/* Home services */}
 
-                <div>
-                  <h3 className="text-lg font-bold text-[#063b3f] mb-4 flex items-center gap-2">
-                    <FaSprayCan className="text-blue-900" />
-                    SANITIZATION
-                  </h3>
+                  <div>
+                    <h3 className="text-lg font-bold text-[#063b3f] mb-4 flex items-center gap-2">
+                      <FaShieldAlt className="text-blue-900" />
+                      HOME SERVICES
+                    </h3>
 
-                  <Link
-                    to="/disinfection-services"
-                    className="block text-gray-600 hover:text-blue-900 text-sm"
-                  >
-                    Disinfection Services
-                  </Link>
+                    <ul className="space-y-2 max-h-60 overflow-y-auto pr-2">
+                      {homeServices.map((item) => (
+                        <li key={item.link}>
+                          <Link
+                            to={item.link}
+                            className="block text-gray-600 hover:text-blue-900 transition text-sm"
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                  <div className="mt-6 bg-green-50 rounded-2xl p-5 border border-green-100">
-                    <h4 className="font-bold text-[#063b3f] mb-1">
-                      Need help choosing?
-                    </h4>
+                  {/* Commercial services */}
 
-                    <p className="text-sm text-gray-600 mb-4">
-                      Our experts are here to guide you.
-                    </p>
+                  <div>
+                    <h3 className="text-lg font-bold text-[#063b3f] mb-4 flex items-center gap-2">
+                      <FaBuilding className="text-blue-900" />
+                      COMMERCIAL SERVICES
+                    </h3>
+
+                    <ul className="space-y-2 max-h-60 overflow-y-auto pr-2">
+                      {commercialServices.map((item) => (
+                        <li key={item.link}>
+                          <Link
+                            to={item.link}
+                            className="block text-gray-600 hover:text-blue-900 transition text-sm"
+                          >
+                            {item.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Sanitization */}
+
+                  <div>
+                    <h3 className="text-lg font-bold text-[#063b3f] mb-4 flex items-center gap-2">
+                      <FaSprayCan className="text-blue-900" />
+                      SANITIZATION
+                    </h3>
 
                     <Link
-                      to="/contact"
-                      className="inline-flex items-center gap-2 bg-blue-900 hover:bg-green-700 text-white px-5 py-3 rounded-full font-bold transition"
+                      to="/disinfection-services"
+                      className="block text-gray-600 hover:text-blue-900 text-sm"
                     >
-                      Contact Us
+                      Disinfection Services
                     </Link>
+
+                    <div className="mt-6 bg-green-50 rounded-2xl p-5 border border-green-100">
+                      <h4 className="font-bold text-[#063b3f] mb-1">
+                        Need help choosing?
+                      </h4>
+
+                      <p className="text-sm text-gray-600 mb-4">
+                        Our experts are here to guide you.
+                      </p>
+
+                      <Link
+                        to="/contact"
+                        className="inline-flex items-center gap-2 bg-blue-900 hover:bg-green-700 text-white px-5 py-3 rounded-full font-bold transition"
+                      >
+                        Contact Us
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <Link
-              to="/pestidentification"
-              className="hover:text-blue-900 transition"
+              <Link
+                to="/pestidentification"
+                className="hover:text-blue-900 transition"
+              >
+                PEST IDENTIFICATION
+              </Link>
+
+              <Link
+                to="/blogsmainpage"
+                className="hover:text-blue-900 transition"
+              >
+                BLOG
+              </Link>
+
+              <Link to="/contactus" className="hover:text-blue-900 transition">
+                CONTACT
+              </Link>
+            </nav>
+
+            {/* Mobile toggle */}
+
+            <button
+              type="button"
+              onClick={() => setOpen((current) => !current)}
+              className={`xl:hidden text-2xl p-2 rounded-lg transition-all duration-300 ${
+                scrolled
+                  ? "text-black bg-white/30 border border-white/40"
+                  : "text-black bg-white/20 border border-white/30"
+              }`}
+              aria-label="Toggle navigation"
+              aria-expanded={open}
             >
-              PEST IDENTIFICATION
-            </Link>
-
-            <Link
-              to="/blogsmainpage"
-              className="hover:text-blue-900 transition"
-            >
-              BLOG
-            </Link>
-
-            <Link to="/contactus" className="hover:text-blue-900 transition">
-              CONTACT
-            </Link>
-          </nav>
-
-          {/* Desktop CTA */}
-
-          <div className="hidden xl:flex items-center gap-3">
-            <a
-              href="tel:+919941229005"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-full font-bold flex items-center gap-2 text-sm"
-            >
-              <FaPhoneAlt />
-              Call
-            </a>
-
-            <a
-              href="https://wa.me/919941229005"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-900 hover:bg-green-700 text-white px-5 py-3 rounded-full font-bold flex items-center gap-2 text-sm"
-            >
-              <FaWhatsapp />
-              WhatsApp
-            </a>
+              {open ? <FaTimes /> : <FaBars />}
+            </button>
           </div>
-
-          {/* Mobile Toggle */}
-
-          <button
-            onClick={() => setOpen(!open)}
-            className="xl:hidden text-2xl text-black bg-white/10 p-2 rounded-lg"
-            aria-label="Toggle navigation"
-          >
-            {open ? <FaTimes /> : <FaBars />}
-          </button>
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* ================= MOBILE MENU ================= */}
 
       <div
-        className={`xl:hidden mx-4 mt-3 bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${
-          open ? "max-h-[85vh] opacity-100" : "max-h-0 opacity-0"
+        className={`xl:hidden mx-3 sm:mx-4 mt-2 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${
+          open
+            ? "max-h-[85vh] opacity-100 visible"
+            : "max-h-0 opacity-0 invisible"
         }`}
       >
         <div className="px-5 py-5 space-y-3 overflow-y-auto max-h-[85vh]">
           <Link
             to="/"
-            onClick={() => setOpen(false)}
+            onClick={closeMobileMenu}
             className="block py-3 font-bold border-b border-gray-100"
           >
             HOME
@@ -325,8 +391,10 @@ const Navbar = () => {
 
           <div>
             <button
-              onClick={() => setServicesOpen(!servicesOpen)}
+              type="button"
+              onClick={() => setServicesOpen((current) => !current)}
               className="flex items-center justify-between w-full py-3 font-bold border-b border-gray-100"
+              aria-expanded={servicesOpen}
             >
               <span>SERVICES</span>
 
@@ -337,11 +405,17 @@ const Navbar = () => {
               />
             </button>
 
-            {servicesOpen && (
+            <div
+              className={`overflow-hidden transition-all duration-300 ${
+                servicesOpen
+                  ? "max-h-[1200px] opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
               <div className="pl-3 mt-3 space-y-2 text-sm">
                 <Link
                   to="/services"
-                  onClick={() => setOpen(false)}
+                  onClick={closeMobileMenu}
                   className="block font-bold text-green-700 mb-3"
                 >
                   View All Services
@@ -353,7 +427,7 @@ const Navbar = () => {
                   <Link
                     key={item.link}
                     to={item.link}
-                    onClick={() => setOpen(false)}
+                    onClick={closeMobileMenu}
                     className="block text-gray-600 hover:text-blue-900 py-1"
                   >
                     {item.name}
@@ -368,7 +442,7 @@ const Navbar = () => {
                   <Link
                     key={item.link}
                     to={item.link}
-                    onClick={() => setOpen(false)}
+                    onClick={closeMobileMenu}
                     className="block text-gray-600 hover:text-blue-900 py-1"
                   >
                     {item.name}
@@ -380,43 +454,43 @@ const Navbar = () => {
                 </p>
 
                 <Link
-                  to="/services"
-                  onClick={() => setOpen(false)}
+                  to="/disinfection-services"
+                  onClick={closeMobileMenu}
                   className="block text-gray-600 hover:text-blue-900 py-1"
                 >
                   Disinfection Services
                 </Link>
               </div>
-            )}
+            </div>
           </div>
 
           <Link
-            to="/about"
-            onClick={() => setOpen(false)}
+            to="/aboutus"
+            onClick={closeMobileMenu}
             className="block py-3 font-bold border-b border-gray-100"
           >
             ABOUT US
           </Link>
 
           <Link
-            to="/pest-identification"
-            onClick={() => setOpen(false)}
+            to="/pestidentification"
+            onClick={closeMobileMenu}
             className="block py-3 font-bold border-b border-gray-100"
           >
             PEST IDENTIFICATION
           </Link>
 
           <Link
-            to="/blog"
-            onClick={() => setOpen(false)}
+            to="/blogsmainpage"
+            onClick={closeMobileMenu}
             className="block py-3 font-bold border-b border-gray-100"
           >
             BLOG
           </Link>
 
           <Link
-            to="/contact"
-            onClick={() => setOpen(false)}
+            to="/contactus"
+            onClick={closeMobileMenu}
             className="block py-3 font-bold border-b border-gray-100"
           >
             CONTACT
@@ -434,11 +508,19 @@ const Navbar = () => {
               href="https://wa.me/919941229005"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-white text-center py-3 rounded-full font-bold"
+              className="bg-green-600 text-white text-center py-3 rounded-full font-bold"
             >
               WhatsApp
             </a>
           </div>
+
+          <a
+            href="mailto:info@acuitygroups.in"
+            className="block text-center text-blue-600 font-semibold py-2"
+          >
+            <FaEnvelope className="inline mr-2" />
+            info@acuitygroups.in
+          </a>
         </div>
       </div>
     </header>
