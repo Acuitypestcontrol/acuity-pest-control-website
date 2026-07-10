@@ -44,17 +44,17 @@ const educationalInstitutionSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "@id":
-      "https://acuitypestcontrols.com/educational-institution-pest-control#service",
+      "https://www.acuitypestcontrols.com/educational-institution-pest-control#service",
     name: "Pest Control for Educational Institutions in Bangalore",
     serviceType: "Institutional Pest Control",
-    url: "https://acuitypestcontrols.com/educational-institution-pest-control",
+    url: "https://www.acuitypestcontrols.com/educational-institution-pest-control",
     description:
       "Professional pest control services for schools, colleges, universities, hostels and educational institutions in Bangalore.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -75,7 +75,7 @@ const educationalInstitutionSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/educational-institution-pest-control",
+      url: "https://www.acuitypestcontrols.com/educational-institution-pest-control",
     },
   },
   {
@@ -99,8 +99,8 @@ const EducationalInstitutionPestControl = () => {
         title="Pest Control for Schools in Bangalore | Educational Institution Pest Control"
         description="Get professional pest control for schools, colleges, universities, hostels and educational institutions in Bangalore. Safe pest management by Acuity Pest Control."
         keywords="pest control for schools Bangalore, educational institution pest control, school pest control Bangalore, college pest control Bangalore, university pest management, hostel pest control Bangalore"
-        canonical="https://acuitypestcontrols.com/educational-institution-pest-control"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/educational-institution-pest-control"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={educationalInstitutionSchema}
       />
 

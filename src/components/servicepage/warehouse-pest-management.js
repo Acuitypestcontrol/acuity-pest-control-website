@@ -43,17 +43,18 @@ const warehousePestSchema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://acuitypestcontrols.com/warehouse-pest-management#service",
+    "@id":
+      "https://www.acuitypestcontrols.com/warehouse-pest-management#service",
     name: "Warehouse Pest Management in Bangalore",
     serviceType: "Warehouse Pest Control",
-    url: "https://acuitypestcontrols.com/warehouse-pest-management",
+    url: "https://www.acuitypestcontrols.com/warehouse-pest-management",
     description:
       "Professional warehouse pest management services in Bangalore for warehouses, godowns, storage facilities, logistics hubs and industrial spaces.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -74,7 +75,7 @@ const warehousePestSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/warehouse-pest-management",
+      url: "https://www.acuitypestcontrols.com/warehouse-pest-management",
     },
   },
   {
@@ -98,8 +99,8 @@ const WarehousePestManagement = () => {
         title="Warehouse Pest Management in Bangalore | Acuity Pest Control"
         description="Get professional warehouse pest management in Bangalore for warehouses, godowns, storage facilities, logistics hubs and industrial spaces. Book Acuity Pest Control."
         keywords="warehouse pest control Bangalore, warehouse pest management Bangalore, godown pest control Bangalore, storage facility pest control, rodent control warehouse, stored product insect control"
-        canonical="https://acuitypestcontrols.com/warehouse-pest-management"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/warehouse-pest-management"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={warehousePestSchema}
       />
 

@@ -44,17 +44,17 @@ const cockroachSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "@id":
-      "https://acuitypestcontrols.com/cockroach-management-service#service",
+      "https://www.acuitypestcontrols.com/cockroach-management-service#service",
     name: "Cockroach Management Service in Bangalore",
     serviceType: "Cockroach Control",
-    url: "https://acuitypestcontrols.com/cockroach-management-service",
+    url: "https://www.acuitypestcontrols.com/cockroach-management-service",
     description:
       "Professional cockroach management service in Bangalore for homes, apartments, kitchens, restaurants, offices and commercial properties.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -75,7 +75,7 @@ const cockroachSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/cockroach-management-service",
+      url: "https://www.acuitypestcontrols.com/cockroach-management-service",
     },
   },
   {
@@ -99,8 +99,8 @@ const CockroachManagementService = () => {
         title="Cockroach Control in Bangalore | Acuity Pest Control"
         description="Get professional cockroach control in Bangalore for homes, kitchens, apartments, restaurants, offices and commercial properties. Call Acuity Pest Control."
         keywords="cockroach control Bangalore, cockroach management service Bangalore, kitchen cockroach treatment, cockroach pest control Bangalore, cockroach control near me"
-        canonical="https://acuitypestcontrols.com/cockroach-management-service"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/cockroach-management-service"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={cockroachSchema}
       />
 

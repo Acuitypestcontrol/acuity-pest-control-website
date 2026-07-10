@@ -37,30 +37,30 @@ const householdPestsSchema = [
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id":
-      "https://acuitypestcontrols.com/blogs/top-10-household-pests-in-bangalore#blogposting",
+      "https://www.acuitypestcontrols.com/blogs/top-10-household-pests-in-bangalore#blogposting",
     headline: "Top 10 Household Pests in Bangalore",
     description:
       "Learn how to identify, prevent and control the most common pests found in Bangalore homes including cockroaches, termites, mosquitoes, rats and bed bugs.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-06-26",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id":
-        "https://acuitypestcontrols.com/blogs/top-10-household-pests-in-bangalore",
+        "https://www.acuitypestcontrols.com/blogs/top-10-household-pests-in-bangalore",
     },
   },
   {
@@ -83,19 +83,19 @@ const householdPestsSchema = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://acuitypestcontrols.com/",
+        item: "https://www.acuitypestcontrols.com/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blogs",
-        item: "https://acuitypestcontrols.com/blogs",
+        item: "https://www.acuitypestcontrols.com/blogs",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Top 10 Household Pests in Bangalore",
-        item: "https://acuitypestcontrols.com/blogs/top-10-household-pests-in-bangalore",
+        item: "https://www.acuitypestcontrols.com/blogs/top-10-household-pests-in-bangalore",
       },
     ],
   },
@@ -256,8 +256,8 @@ const Top10HouseholdPestsBangalore = () => {
         title="Top 10 Household Pests in Bangalore | Acuity Pest Control"
         description="Learn how to identify, prevent and control the most common household pests in Bangalore including cockroaches, termites, mosquitoes, rats, bed bugs and ants."
         keywords="household pests Bangalore, common pests Bangalore, cockroach control Bangalore, termite treatment Bangalore, mosquito control Bangalore, rodent control Bangalore, bed bug treatment Bangalore, Acuity Pest Control"
-        canonical="https://acuitypestcontrols.com/blogs/top-10-household-pests-in-bangalore"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/top-10-household-pests-in-bangalore"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={householdPestsSchema}
       />
 

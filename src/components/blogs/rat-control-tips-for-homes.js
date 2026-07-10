@@ -37,29 +37,30 @@ const ratControlBlogSchema = [
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id":
-      "https://acuitypestcontrols.com/blogs/rat-control-tips-for-homes#blogposting",
+      "https://www.acuitypestcontrols.com/blogs/rat-control-tips-for-homes#blogposting",
     headline: "Rat Control Tips for Homes: Complete Guide to Prevent Rats",
     description:
       "Learn how to identify rat infestation, prevent rodent entry and protect your home with rat control tips from Acuity Pest Control Bangalore.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-06-26",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://acuitypestcontrols.com/blogs/rat-control-tips-for-homes",
+      "@id":
+        "https://www.acuitypestcontrols.com/blogs/rat-control-tips-for-homes",
     },
   },
   {
@@ -82,19 +83,19 @@ const ratControlBlogSchema = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://acuitypestcontrols.com/",
+        item: "https://www.acuitypestcontrols.com/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blogs",
-        item: "https://acuitypestcontrols.com/blogs",
+        item: "https://www.acuitypestcontrols.com/blogs",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Rat Control Tips for Homes",
-        item: "https://acuitypestcontrols.com/blogs/rat-control-tips-for-homes",
+        item: "https://www.acuitypestcontrols.com/blogs/rat-control-tips-for-homes",
       },
     ],
   },
@@ -200,8 +201,8 @@ const RatControlTipsForHomes = () => {
         title="Rat Control Tips for Homes | Rodent Control Bangalore"
         description="Learn rat control tips for homes, signs of rat infestation, health risks, entry points and when to book professional rodent control in Bangalore."
         keywords="rat control Bangalore, rodent control Bangalore, rat infestation signs, rat prevention tips, rodent pest control, rat control tips for homes, Acuity Pest Control"
-        canonical="https://acuitypestcontrols.com/blogs/rat-control-tips-for-homes"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/rat-control-tips-for-homes"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={ratControlBlogSchema}
       />
 

@@ -33,30 +33,30 @@ const antPreventionSchema = [
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id":
-      "https://acuitypestcontrols.com/blogs/how-to-prevent-ant-infestation-at-home#blogposting",
+      "https://www.acuitypestcontrols.com/blogs/how-to-prevent-ant-infestation-at-home#blogposting",
     headline: "How to Prevent Ant Infestation at Home",
     description:
       "Learn practical ways to prevent ants from entering your home, common causes of ant infestation and when professional ant control is required.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-06-26",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id":
-        "https://acuitypestcontrols.com/blogs/how-to-prevent-ant-infestation-at-home",
+        "https://www.acuitypestcontrols.com/blogs/how-to-prevent-ant-infestation-at-home",
     },
   },
   {
@@ -79,19 +79,19 @@ const antPreventionSchema = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://acuitypestcontrols.com/",
+        item: "https://www.acuitypestcontrols.com/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blogs",
-        item: "https://acuitypestcontrols.com/blogs",
+        item: "https://www.acuitypestcontrols.com/blogs",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "How to Prevent Ant Infestation at Home",
-        item: "https://acuitypestcontrols.com/blogs/how-to-prevent-ant-infestation-at-home",
+        item: "https://www.acuitypestcontrols.com/blogs/how-to-prevent-ant-infestation-at-home",
       },
     ],
   },
@@ -177,8 +177,8 @@ const HowToPreventAntInfestationAtHome = () => {
         title="How to Prevent Ant Infestation at Home | Acuity Pest Control"
         description="Learn how to prevent ant infestation at home, common causes of ants in kitchen areas and when to book professional ant control in Bangalore."
         keywords="how to prevent ant infestation, ant control Bangalore, ants in home, ant treatment Bangalore, ant pest control, kitchen ants control, Acuity Pest Control"
-        canonical="https://acuitypestcontrols.com/blogs/how-to-prevent-ant-infestation-at-home"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/how-to-prevent-ant-infestation-at-home"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={antPreventionSchema}
       />
 

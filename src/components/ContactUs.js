@@ -13,16 +13,16 @@ import bannerImage from "../images/contact us .jpg";
 const contactSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "@id": "https://acuitypestcontrols.com/contact#contactpage",
+  "@id": "https://www.acuitypestcontrols.com/contact#contactpage",
   name: "Contact Acuity Pest Control",
-  url: "https://acuitypestcontrols.com/contact",
+  url: "https://www.acuitypestcontrols.com/contact",
   description:
     "Contact Acuity Pest Control for professional pest control services in Bangalore for homes, apartments, offices and commercial properties.",
   mainEntity: {
     "@type": "HomeAndConstructionBusiness",
-    "@id": "https://acuitypestcontrols.com/#business",
+    "@id": "https://www.acuitypestcontrols.com/#business",
     name: "Acuity Pest Control",
-    url: "https://acuitypestcontrols.com/",
+    url: "https://www.acuitypestcontrols.com/",
     telephone: "+91 9941229005",
     email: "info@acuitypestcontrols.com",
     priceRange: "$$",
@@ -88,8 +88,8 @@ Please contact me.`;
         title="Contact Acuity Pest Control | Pest Control Service in Bangalore"
         description="Contact Acuity Pest Control for professional pest control services in Bangalore. Call or WhatsApp for cockroach, termite, bed bug, mosquito and rodent control service."
         keywords="contact Acuity Pest Control, pest control contact Bangalore, pest control service Bangalore phone number, pest control near me Bangalore, pest control WhatsApp Bangalore"
-        canonical="https://acuitypestcontrols.com/contact"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/contact"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={contactSchema}
       />
 

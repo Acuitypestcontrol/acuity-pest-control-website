@@ -33,30 +33,30 @@ const cockroachKitchenSchema = [
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id":
-      "https://acuitypestcontrols.com/blogs/why-cockroaches-enter-your-kitchen#blogposting",
+      "https://www.acuitypestcontrols.com/blogs/why-cockroaches-enter-your-kitchen#blogposting",
     headline: "Why Cockroaches Enter Your Kitchen & How to Stop Them",
     description:
       "Learn why cockroaches are attracted to kitchens, common causes of cockroach activity and how professional cockroach control helps protect hygiene.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-01-26",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id":
-        "https://acuitypestcontrols.com/blogs/why-cockroaches-enter-your-kitchen",
+        "https://www.acuitypestcontrols.com/blogs/why-cockroaches-enter-your-kitchen",
     },
   },
   {
@@ -79,19 +79,19 @@ const cockroachKitchenSchema = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://acuitypestcontrols.com/",
+        item: "https://www.acuitypestcontrols.com/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blogs",
-        item: "https://acuitypestcontrols.com/blogs",
+        item: "https://www.acuitypestcontrols.com/blogs",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Why Cockroaches Enter Your Kitchen",
-        item: "https://acuitypestcontrols.com/blogs/why-cockroaches-enter-your-kitchen",
+        item: "https://www.acuitypestcontrols.com/blogs/why-cockroaches-enter-your-kitchen",
       },
     ],
   },
@@ -174,8 +174,8 @@ const WhyCockroachesEnterKitchen = () => {
         title="Why Cockroaches Enter Your Kitchen | Acuity Pest Control"
         description="Learn why cockroaches enter kitchens, what attracts them, how to prevent kitchen cockroaches and when to book cockroach control in Bangalore."
         keywords="cockroaches in kitchen, why cockroaches enter kitchen, cockroach control Bangalore, kitchen pest control, cockroach treatment Bangalore, Acuity Pest Control"
-        canonical="https://acuitypestcontrols.com/blogs/why-cockroaches-enter-your-kitchen"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/why-cockroaches-enter-your-kitchen"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={cockroachKitchenSchema}
       />
 

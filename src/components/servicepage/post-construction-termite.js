@@ -44,17 +44,17 @@ const postConstructionTermiteSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "@id":
-      "https://acuitypestcontrols.com/post-construction-termite-treatment#service",
+      "https://www.acuitypestcontrols.com/post-construction-termite-treatment#service",
     name: "Post Construction Termite Treatment in Bangalore",
     serviceType: "Termite Control",
-    url: "https://acuitypestcontrols.com/post-construction-termite-treatment",
+    url: "https://www.acuitypestcontrols.com/post-construction-termite-treatment",
     description:
       "Professional post construction termite treatment in Bangalore for homes, apartments, villas, offices and commercial properties.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -75,7 +75,7 @@ const postConstructionTermiteSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/post-construction-termite-treatment",
+      url: "https://www.acuitypestcontrols.com/post-construction-termite-treatment",
     },
   },
   {
@@ -99,8 +99,8 @@ const PostConstructionTermiteTreatment = () => {
         title="Post Construction Termite Treatment in Bangalore | Acuity Pest Control"
         description="Get professional post construction termite treatment in Bangalore for homes, apartments, villas and commercial properties. Safe termite control by Acuity Pest Control."
         keywords="post construction termite treatment Bangalore, termite treatment Bangalore, termite control Bangalore, anti termite service Bangalore, post construction anti termite treatment"
-        canonical="https://acuitypestcontrols.com/post-construction-termite-treatment"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/post-construction-termite-treatment"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={postConstructionTermiteSchema}
       />
 

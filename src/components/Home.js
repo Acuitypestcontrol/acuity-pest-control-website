@@ -8,11 +8,11 @@ const homeSchema = [
   {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    "@id": "https://acuitypestcontrols.com/#business",
+    "@id": "https://www.acuitypestcontrols.com/#business",
     name: "Acuity Pest Control",
-    url: "https://acuitypestcontrols.com/",
-    logo: "https://acuitypestcontrols.com/logo.png",
-    image: "https://acuitypestcontrols.com/logo.png",
+    url: "https://www.acuitypestcontrols.com/",
+    logo: "https://www.acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     description:
       "Acuity Pest Control provides professional pest control services in Bangalore for homes, apartments, offices, restaurants, hotels, hospitals, warehouses and industries.",
     telephone: "+91 9941229005",
@@ -89,13 +89,13 @@ const homeSchema = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://acuitypestcontrols.com/#website",
-    url: "https://acuitypestcontrols.com/",
+    "@id": "https://www.acuitypestcontrols.com/#website",
+    url: "https://www.acuitypestcontrols.com/",
     name: "Acuity Pest Control",
     description:
       "Professional pest control services in Bangalore for homes, apartments, offices and commercial properties.",
     publisher: {
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
     },
   },
   {
@@ -297,8 +297,8 @@ Please contact me regarding pest control service.`;
         title="Pest Control Services in Bangalore | Acuity Pest Control"
         description="Acuity Pest Control provides professional pest control services in Bangalore for homes, apartments, offices, restaurants, hotels, hospitals and industries. Get safe cockroach, termite, bed bug, mosquito and rodent control solutions."
         keywords="pest control services in Bangalore, pest control Bangalore, cockroach control Bangalore, termite control Bangalore, bed bug control Bangalore, mosquito control Bangalore, rodent control Bangalore, commercial pest control Bangalore"
-        canonical="https://acuitypestcontrols.com/"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={homeSchema}
       />
 

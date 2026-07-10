@@ -43,17 +43,17 @@ const antControlSchema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://acuitypestcontrols.com/ant-control-treatment#service",
+    "@id": "https://www.acuitypestcontrols.com/ant-control-treatment#service",
     name: "Ant Control Treatment in Bangalore",
     serviceType: "Ant Pest Control",
-    url: "https://acuitypestcontrols.com/ant-control-treatment",
+    url: "https://www.acuitypestcontrols.com/ant-control-treatment",
     description:
       "Professional ant control treatment in Bangalore for homes, apartments, kitchens, restaurants, offices and commercial spaces.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -74,7 +74,7 @@ const antControlSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/ant-control-treatment",
+      url: "https://www.acuitypestcontrols.com/ant-control-treatment",
     },
   },
   {
@@ -98,8 +98,8 @@ const AntControlTreatment = () => {
         title="Ant Control Treatment in Bangalore | Acuity Pest Control"
         description="Get professional ant control treatment in Bangalore for homes, apartments, kitchens, restaurants and offices. Safe and effective ant pest control service."
         keywords="ant control treatment Bangalore, ant control Bangalore, ant pest control Bangalore, ant removal service Bangalore, kitchen ant control, ant control near me"
-        canonical="https://acuitypestcontrols.com/ant-control-treatment"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/ant-control-treatment"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={antControlSchema}
       />
 

@@ -44,17 +44,17 @@ const hotelsHospitalsSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "@id":
-      "https://acuitypestcontrols.com/pest-control-hotels-hospitals#service",
+      "https://www.acuitypestcontrols.com/pest-control-hotels-hospitals#service",
     name: "Pest Control for Hotels and Hospitals in Bangalore",
     serviceType: "Hospitality and Healthcare Pest Control",
-    url: "https://acuitypestcontrols.com/pest-control-hotels-hospitals",
+    url: "https://www.acuitypestcontrols.com/pest-control-hotels-hospitals",
     description:
       "Professional pest control services for hotels, hospitals, resorts, clinics and healthcare facilities in Bangalore.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -75,7 +75,7 @@ const hotelsHospitalsSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/pest-control-hotels-hospitals",
+      url: "https://www.acuitypestcontrols.com/pest-control-hotels-hospitals",
     },
   },
   {
@@ -99,8 +99,8 @@ const PestControlHotelsHospitals = () => {
         title="Pest Control for Hotels and Hospitals in Bangalore | Acuity Pest Control"
         description="Get professional pest control for hotels, hospitals, clinics, resorts and healthcare facilities in Bangalore. Safe commercial pest management by Acuity Pest Control."
         keywords="hotel pest control Bangalore, hospital pest control Bangalore, healthcare pest management, pest control for hotels, pest control for hospitals, commercial pest control Bangalore"
-        canonical="https://acuitypestcontrols.com/pest-control-hotels-hospitals"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/pest-control-hotels-hospitals"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={hotelsHospitalsSchema}
       />
 

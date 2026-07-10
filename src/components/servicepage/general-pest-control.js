@@ -43,17 +43,17 @@ const generalPestSchema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://acuitypestcontrols.com/general-pest-control#service",
+    "@id": "https://www.acuitypestcontrols.com/general-pest-control#service",
     name: "General Pest Control Services in Bangalore",
     serviceType: "General Pest Control",
-    url: "https://acuitypestcontrols.com/general-pest-control",
+    url: "https://www.acuitypestcontrols.com/general-pest-control",
     description:
       "Professional general pest control services in Bangalore for homes, apartments, villas and residential spaces to control cockroaches, ants, spiders, silverfish, rodents and other common pests.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -74,7 +74,7 @@ const generalPestSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/general-pest-control",
+      url: "https://www.acuitypestcontrols.com/general-pest-control",
     },
   },
   {
@@ -98,8 +98,8 @@ const GeneralPestControl = () => {
         title="General Pest Control Services in Bangalore | Acuity Pest Control"
         description="Get professional general pest control services in Bangalore for homes, apartments and villas. Control cockroaches, ants, spiders, silverfish and common pests."
         keywords="general pest control Bangalore, home pest control Bangalore, pest control services Bangalore, residential pest control Bangalore, apartment pest control Bangalore, cockroach control, ant control, rodent control"
-        canonical="https://acuitypestcontrols.com/general-pest-control"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/general-pest-control"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={generalPestSchema}
       />
 

@@ -43,17 +43,18 @@ const rodentSchema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://acuitypestcontrols.com/rodent-management-service#service",
+    "@id":
+      "https://www.acuitypestcontrols.com/rodent-management-service#service",
     name: "Rodent Management Service in Bangalore",
     serviceType: "Rodent Control",
-    url: "https://acuitypestcontrols.com/rodent-management-service",
+    url: "https://www.acuitypestcontrols.com/rodent-management-service",
     description:
       "Professional rodent management service in Bangalore for homes, apartments, offices, warehouses, restaurants, factories and commercial spaces.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -74,7 +75,7 @@ const rodentSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/rodent-management-service",
+      url: "https://www.acuitypestcontrols.com/rodent-management-service",
     },
   },
   {
@@ -98,8 +99,8 @@ const RodentManagementService = () => {
         title="Rodent Control in Bangalore | Rat Control Service"
         description="Get professional rodent control in Bangalore for homes, apartments, offices, warehouses and commercial spaces. Rat and mouse control by Acuity Pest Control."
         keywords="rodent control Bangalore, rat control Bangalore, mouse control Bangalore, rodent management service Bangalore, commercial rodent control, rat removal Bangalore"
-        canonical="https://acuitypestcontrols.com/rodent-management-service"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/rodent-management-service"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={rodentSchema}
       />
 

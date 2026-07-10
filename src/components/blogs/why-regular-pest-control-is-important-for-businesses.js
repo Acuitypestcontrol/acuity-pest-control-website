@@ -28,30 +28,30 @@ const businessPestControlSchema = [
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id":
-      "https://acuitypestcontrols.com/blogs/why-regular-pest-control-is-important-for-businesses#blogposting",
+      "https://www.acuitypestcontrols.com/blogs/why-regular-pest-control-is-important-for-businesses#blogposting",
     headline: "Why Regular Pest Control Is Important for Businesses",
     description:
       "Learn why regular pest control is important for businesses, offices, restaurants, hotels, warehouses, hospitals, schools and commercial properties in Bangalore.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-06-26",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id":
-        "https://acuitypestcontrols.com/blogs/why-regular-pest-control-is-important-for-businesses",
+        "https://www.acuitypestcontrols.com/blogs/why-regular-pest-control-is-important-for-businesses",
     },
   },
   {
@@ -74,19 +74,19 @@ const businessPestControlSchema = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://acuitypestcontrols.com/",
+        item: "https://www.acuitypestcontrols.com/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blogs",
-        item: "https://acuitypestcontrols.com/blogs",
+        item: "https://www.acuitypestcontrols.com/blogs",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Why Regular Pest Control Is Important for Businesses",
-        item: "https://acuitypestcontrols.com/blogs/why-regular-pest-control-important-businesses",
+        item: "https://www.acuitypestcontrols.com/blogs/why-regular-pest-control-important-businesses",
       },
     ],
   },
@@ -128,8 +128,8 @@ const WhyRegularPestControlImportantBusinesses = () => {
         title="Why Regular Pest Control Is Important for Businesses | Acuity Pest Control"
         description="Learn why regular pest control is important for businesses, offices, restaurants, hotels, warehouses, hospitals, schools and commercial properties in Bangalore."
         keywords="regular pest control for businesses, commercial pest control Bangalore, AMC pest control Bangalore, office pest control, restaurant pest control, warehouse pest management, Acuity Pest Control"
-        canonical="https://acuitypestcontrols.com/blogs/why-regular-pest-control-is-important-for-businesses"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/why-regular-pest-control-is-important-for-businesses"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={businessPestControlSchema}
       />
 

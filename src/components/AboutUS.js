@@ -42,16 +42,16 @@ const AboutUS = () => {
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
-      "@id": "https://acuitypestcontrols.com/about#aboutpage",
+      "@id": "https://www.acuitypestcontrols.com/about#aboutpage",
       name: "About Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/about",
+      url: "https://www.acuitypestcontrols.com/about",
       description:
         "Acuity Pest Control is a professional pest control company in Bangalore offering safe pest management services for homes, apartments, offices, restaurants, warehouses and commercial properties.",
       mainEntity: {
         "@type": "HomeAndConstructionBusiness",
-        "@id": "https://acuitypestcontrols.com/#business",
+        "@id": "https://www.acuitypestcontrols.com/#business",
         name: "Acuity Pest Control",
-        url: "https://acuitypestcontrols.com/",
+        url: "https://www.acuitypestcontrols.com/",
         telephone: "+91 9941229005",
         email: "acuitypestcontrol@gmail.com",
         address: {
@@ -151,8 +151,8 @@ const AboutUS = () => {
         title="About Acuity Pest Control | Pest Control Company in Bangalore"
         description="Learn about Acuity Pest Control, a professional pest control company in Bangalore offering safe pest management for homes, apartments, offices and commercial spaces."
         keywords="about Acuity Pest Control, pest control company Bangalore, pest control experts Bangalore, professional pest control Bangalore, pest management company Bangalore"
-        canonical="https://acuitypestcontrols.com/about"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/about"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={aboutSchema}
       />
 

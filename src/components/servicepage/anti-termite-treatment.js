@@ -43,17 +43,17 @@ const antiTermiteSchema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://acuitypestcontrols.com/anti-termite-treatment#service",
+    "@id": "https://www.acuitypestcontrols.com/anti-termite-treatment#service",
     name: "Anti-Termite Treatment in Bangalore",
     serviceType: "Termite Control",
-    url: "https://acuitypestcontrols.com/anti-termite-treatment",
+    url: "https://www.acuitypestcontrols.com/anti-termite-treatment",
     description:
       "Professional anti-termite treatment in Bangalore to protect homes, apartments, villas, furniture and wooden structures from termite damage.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -74,7 +74,7 @@ const antiTermiteSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/anti-termite-treatment",
+      url: "https://www.acuitypestcontrols.com/anti-termite-treatment",
     },
   },
   {
@@ -98,8 +98,8 @@ const AntiTermiteTreatment = () => {
         title="Anti-Termite Treatment in Bangalore | Acuity Pest Control"
         description="Get professional anti-termite treatment in Bangalore to protect your home, furniture and wooden structures from termite damage. Call Acuity Pest Control."
         keywords="anti-termite treatment Bangalore, termite control Bangalore, termite treatment Bangalore, home termite protection, pre construction termite treatment, post construction termite treatment"
-        canonical="https://acuitypestcontrols.com/anti-termite-treatment"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/anti-termite-treatment"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={antiTermiteSchema}
       />
 

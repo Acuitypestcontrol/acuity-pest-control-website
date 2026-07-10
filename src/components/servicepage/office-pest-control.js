@@ -43,17 +43,17 @@ const officePestControlSchema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://acuitypestcontrols.com/office-pest-control#service",
+    "@id": "https://www.acuitypestcontrols.com/office-pest-control#service",
     name: "Office Pest Control in Bangalore",
     serviceType: "Office Pest Control",
-    url: "https://acuitypestcontrols.com/office-pest-control",
+    url: "https://www.acuitypestcontrols.com/office-pest-control",
     description:
       "Professional office pest control services in Bangalore for IT campuses, corporate offices, coworking spaces and commercial workspaces.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -74,7 +74,7 @@ const officePestControlSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/office-pest-control",
+      url: "https://www.acuitypestcontrols.com/office-pest-control",
     },
   },
   {
@@ -98,8 +98,8 @@ const OfficePestControl = () => {
         title="Office Pest Control in Bangalore | Corporate Pest Control Service"
         description="Get professional office pest control in Bangalore for IT companies, corporate offices, coworking spaces and commercial buildings. Safe service by Acuity Pest Control."
         keywords="office pest control Bangalore, corporate pest control Bangalore, IT office pest control, commercial pest control Bangalore, coworking space pest control, office rodent control Bangalore"
-        canonical="https://acuitypestcontrols.com/office-pest-control"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/office-pest-control"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={officePestControlSchema}
       />
 

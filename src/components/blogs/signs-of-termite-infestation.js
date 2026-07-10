@@ -33,30 +33,30 @@ const termiteSignsSchema = [
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id":
-      "https://acuitypestcontrols.com/blogs/signs-of-termite-infestation#blogposting",
+      "https://www.acuitypestcontrols.com/blogs/signs-of-termite-infestation#blogposting",
     headline: "Signs of Termite Infestation in Your Home",
     description:
       "Learn the early signs of termite infestation in your home, including mud tubes, hollow wood, damaged furniture, discarded wings and when to book termite inspection.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-06-26",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id":
-        "https://acuitypestcontrols.com/blogs/signs-of-termite-infestation",
+        "https://www.acuitypestcontrols.com/blogs/signs-of-termite-infestation",
     },
   },
   {
@@ -79,19 +79,19 @@ const termiteSignsSchema = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://acuitypestcontrols.com/",
+        item: "https://www.acuitypestcontrols.com/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blogs",
-        item: "https://acuitypestcontrols.com/blogs",
+        item: "https://www.acuitypestcontrols.com/blogs",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Signs of Termite Infestation in Your Home",
-        item: "https://acuitypestcontrols.com/blogs/signs-of-termite-infestation",
+        item: "https://www.acuitypestcontrols.com/blogs/signs-of-termite-infestation",
       },
     ],
   },
@@ -164,8 +164,8 @@ const SignsOfTermiteInfestation = () => {
         title="Signs of Termite Infestation in Your Home | Acuity Pest Control"
         description="Learn the early signs of termite infestation in your home including mud tubes, hollow wood, damaged furniture, discarded wings and when to book termite inspection in Bangalore."
         keywords="signs of termite infestation, termite infestation Bangalore, termite treatment Bangalore, termite inspection, mud tubes, hollow wood, termite control Bangalore, Acuity Pest Control"
-        canonical="https://acuitypestcontrols.com/blogs/signs-of-termite-infestation"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/signs-of-termite-infestation"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={termiteSignsSchema}
       />
 

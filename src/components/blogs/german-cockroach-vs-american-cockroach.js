@@ -33,30 +33,30 @@ const germanCockroachBlogSchema = [
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id":
-      "https://acuitypestcontrols.com/blogs/german-cockroach-vs-american-cockroach#blogposting",
+      "https://www.acuitypestcontrols.com/blogs/german-cockroach-vs-american-cockroach#blogposting",
     headline: "German Cockroach vs American Cockroach",
     description:
       "Learn the difference between German and American cockroaches, common signs, hiding places and the right cockroach control treatment in Bangalore.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-02-10",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id":
-        "https://acuitypestcontrols.com/blogs/german-cockroach-vs-american-cockroach",
+        "https://www.acuitypestcontrols.com/blogs/german-cockroach-vs-american-cockroach",
     },
   },
   {
@@ -181,8 +181,8 @@ const GermanCockroachVsAmericanCockroach = () => {
         title="German Cockroach vs American Cockroach | Acuity Pest Control"
         description="Learn the key differences between German and American cockroaches, their signs, hiding places and the right cockroach control treatment in Bangalore."
         keywords="German cockroach vs American cockroach, German cockroach Bangalore, American cockroach Bangalore, cockroach control Bangalore, cockroach treatment Bangalore, cockroach pest control"
-        canonical="https://acuitypestcontrols.com/blogs/german-cockroach-vs-american-cockroach"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/german-cockroach-vs-american-cockroach"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={germanCockroachBlogSchema}
       />
 

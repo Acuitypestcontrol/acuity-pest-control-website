@@ -43,17 +43,18 @@ const mosquitoSchema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://acuitypestcontrols.com/mosquito-management-service#service",
+    "@id":
+      "https://www.acuitypestcontrols.com/mosquito-management-service#service",
     name: "Mosquito Management Service in Bangalore",
     serviceType: "Mosquito Control",
-    url: "https://acuitypestcontrols.com/mosquito-management-service",
+    url: "https://www.acuitypestcontrols.com/mosquito-management-service",
     description:
       "Professional mosquito management service in Bangalore for homes, apartments, gated communities, offices and commercial spaces.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -74,7 +75,7 @@ const mosquitoSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/mosquito-management-service",
+      url: "https://www.acuitypestcontrols.com/mosquito-management-service",
     },
   },
   {
@@ -98,8 +99,8 @@ const MosquitoManagementService = () => {
         title="Mosquito Control in Bangalore | Mosquito Management Service"
         description="Get professional mosquito control in Bangalore for homes, apartments, gated communities and commercial spaces. Mosquito fogging and treatment by Acuity Pest Control."
         keywords="mosquito control Bangalore, mosquito management service Bangalore, mosquito fogging Bangalore, mosquito treatment Bangalore, dengue prevention Bangalore, malaria control Bangalore"
-        canonical="https://acuitypestcontrols.com/mosquito-management-service"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/mosquito-management-service"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={mosquitoSchema}
       />
 

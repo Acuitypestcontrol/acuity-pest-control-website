@@ -43,17 +43,17 @@ const bedBugSchema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://acuitypestcontrols.com/bed-bug-treatment#service",
+    "@id": "https://www.acuitypestcontrols.com/bed-bug-treatment#service",
     name: "Bed Bug Treatment in Bangalore",
     serviceType: "Bed Bug Control",
-    url: "https://acuitypestcontrols.com/bed-bug-treatment",
+    url: "https://www.acuitypestcontrols.com/bed-bug-treatment",
     description:
       "Professional bed bug treatment in Bangalore for homes, apartments, hotels, hostels, PGs and commercial spaces.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -74,7 +74,7 @@ const bedBugSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/bed-bug-treatment",
+      url: "https://www.acuitypestcontrols.com/bed-bug-treatment",
     },
   },
   {
@@ -98,8 +98,8 @@ const BedBugTreatment = () => {
         title="Bed Bug Treatment in Bangalore | Acuity Pest Control"
         description="Get professional bed bug treatment in Bangalore for homes, hotels, apartments, hostels, PGs and offices. Safe and effective bed bug control service."
         keywords="bed bug treatment Bangalore, bed bug control Bangalore, bed bug removal Bangalore, bed bug pest control Bangalore, bed bug treatment near me"
-        canonical="https://acuitypestcontrols.com/bed-bug-treatment"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/bed-bug-treatment"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={bedBugSchema}
       />
 

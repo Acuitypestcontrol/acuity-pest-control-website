@@ -296,28 +296,28 @@ const BlogDetail = () => {
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "@id": `https://acuitypestcontrols.com/blogs/${blog.slug}#blogposting`,
+      "@id": `https://www.acuitypestcontrols.com/blogs/${blog.slug}#blogposting`,
       headline: blog.title,
       description: blog.desc,
-      image: "https://acuitypestcontrols.com/logo.png",
+      image: "https://www.acuitypestcontrols.com/logo.png",
       datePublished: blog.isoDate,
       dateModified: blog.isoDate,
       author: {
         "@type": "Organization",
         name: "Acuity Pest Control",
-        url: "https://acuitypestcontrols.com/",
+        url: "https://www.acuitypestcontrols.com/",
       },
       publisher: {
         "@type": "Organization",
         name: "Acuity Pest Control",
         logo: {
           "@type": "ImageObject",
-          url: "https://acuitypestcontrols.com/logo.png",
+          url: "https://www.acuitypestcontrols.com/logo.png",
         },
       },
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": `https://acuitypestcontrols.com/blogs/${blog.slug}`,
+        "@id": `https://www.acuitypestcontrols.com/blogs/${blog.slug}`,
       },
     },
     {
@@ -328,19 +328,19 @@ const BlogDetail = () => {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://acuitypestcontrols.com/",
+          item: "https://www.acuitypestcontrols.com/",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Blogs",
-          item: "https://acuitypestcontrols.com/blogs",
+          item: "https://www.acuitypestcontrols.com/blogs",
         },
         {
           "@type": "ListItem",
           position: 3,
           name: blog.title,
-          item: `https://acuitypestcontrols.com/blogs/${blog.slug}`,
+          item: `https://www.acuitypestcontrols.com/blogs/${blog.slug}`,
         },
       ],
     },
@@ -352,8 +352,8 @@ const BlogDetail = () => {
         title={blog.seoTitle}
         description={blog.seoDescription}
         keywords={blog.keywords}
-        canonical={`https://acuitypestcontrols.com/blogs/${blog.slug}`}
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical={`https://www.acuitypestcontrols.com/blogs/${blog.slug}`}
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={blogSchema}
       />
 

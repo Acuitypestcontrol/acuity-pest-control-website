@@ -30,8 +30,6 @@ import carpenterAntImg1 from "../images/Carpenter Ant22.jpg";
 import carpenterAntImg2 from "../images/Fire Ant.jpg";
 import carpenterAntImg3 from "../images/Black-Crazy-ant.png";
 
-
-
 const PestIdentification = () => {
   const [activeCategory, setActiveCategory] = useState("ALL");
 
@@ -209,7 +207,7 @@ const PestIdentification = () => {
     name: "Pest Identification Guide",
     description:
       "Identify common pests like termites, rodents, cockroaches, bed bugs, flies, and ants with our visual guide. Learn about their habits and how to control them.",
-    url: "https://acuitypestcontrols.com/pest-identification",
+    url: "https://www.acuitypestcontrols.com/pest-identification",
   };
 
   return (
@@ -238,7 +236,7 @@ const PestIdentification = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://acuitypestcontrols.com/pest-identification"
+          content="https://www.acuitypestcontrols.com/pest-identification"
         />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>

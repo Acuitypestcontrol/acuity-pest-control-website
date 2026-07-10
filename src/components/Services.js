@@ -23,17 +23,17 @@ import disinfectionImg from "../images/dec.jpg";
 const servicesPageSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "@id": "https://acuitypestcontrols.com/services#service",
+  "@id": "https://www.acuitypestcontrols.com/services#service",
   name: "Pest Control Services in Bangalore",
   serviceType: "Pest Control",
-  url: "https://acuitypestcontrols.com/services",
+  url: "https://www.acuitypestcontrols.com/services",
   description:
     "Acuity Pest Control provides professional pest control services in Bangalore including cockroach control, termite treatment, bed bug control, rodent control, mosquito control and commercial pest management.",
   provider: {
     "@type": "HomeAndConstructionBusiness",
-    "@id": "https://acuitypestcontrols.com/#business",
+    "@id": "https://www.acuitypestcontrols.com/#business",
     name: "Acuity Pest Control",
-    url: "https://acuitypestcontrols.com/",
+    url: "https://www.acuitypestcontrols.com/",
     telephone: "+91 9941229005",
     email: "acuitypestcontrol@gmail.com",
     address: {
@@ -221,8 +221,8 @@ Please contact me regarding pest control service.`;
         title="Pest Control Services in Bangalore | Acuity Pest Control"
         description="Explore Acuity Pest Control services in Bangalore including cockroach control, termite treatment, bed bug control, mosquito control, rodent control and commercial pest management."
         keywords="pest control services Bangalore, cockroach control Bangalore, termite control Bangalore, bed bug control Bangalore, mosquito control Bangalore, rodent control Bangalore, commercial pest control Bangalore"
-        canonical="https://acuitypestcontrols.com/services"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/services"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={servicesPageSchema}
       />
 

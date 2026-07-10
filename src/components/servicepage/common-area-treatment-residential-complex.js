@@ -44,17 +44,17 @@ const commonAreaSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "@id":
-      "https://acuitypestcontrols.com/common-area-treatment-residential-complex#service",
+      "https://www.acuitypestcontrols.com/common-area-treatment-residential-complex#service",
     name: "Common Area Pest Control for Residential Complexes in Bangalore",
     serviceType: "Common Area Pest Control",
-    url: "https://acuitypestcontrols.com/common-area-treatment-residential-complex",
+    url: "https://www.acuitypestcontrols.com/common-area-treatment-residential-complex",
     description:
       "Professional common area pest control services in Bangalore for apartment complexes, gated communities and residential societies.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -75,7 +75,7 @@ const commonAreaSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/common-area-treatment-residential-complex",
+      url: "https://www.acuitypestcontrols.com/common-area-treatment-residential-complex",
     },
   },
   {
@@ -99,8 +99,8 @@ const CommonAreaTreatmentResidential = () => {
         title="Common Area Pest Control in Bangalore | Residential Complex Pest Control"
         description="Get professional common area pest control in Bangalore for apartments, gated communities and residential societies. Safe pest management for shared spaces."
         keywords="common area pest control Bangalore, apartment pest control Bangalore, gated community pest management, residential complex pest control, society pest control Bangalore"
-        canonical="https://acuitypestcontrols.com/common-area-treatment-residential-complex"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/common-area-treatment-residential-complex"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={commonAreaSchema}
       />
 

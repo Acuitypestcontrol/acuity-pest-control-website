@@ -33,29 +33,29 @@ const pestControlVsDIYSchema = [
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id":
-      "https://acuitypestcontrols.com/blogs/pest-control-vs-diy#blogposting",
+      "https://www.acuitypestcontrols.com/blogs/pest-control-vs-diy#blogposting",
     headline: "Professional Pest Control vs DIY",
     description:
       "Compare professional pest control and DIY pest control methods. Learn which option is safer, more effective and better for pest prevention in Bangalore.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-06-26",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://acuitypestcontrols.com/blogs/pest-control-vs-diy",
+      "@id": "https://www.acuitypestcontrols.com/blogs/pest-control-vs-diy",
     },
   },
   {
@@ -78,19 +78,19 @@ const pestControlVsDIYSchema = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://acuitypestcontrols.com/",
+        item: "https://www.acuitypestcontrols.com/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blogs",
-        item: "https://acuitypestcontrols.com/blogs",
+        item: "https://www.acuitypestcontrols.com/blogs",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Professional Pest Control vs DIY",
-        item: "https://acuitypestcontrols.com/blogs/pest-control-vs-diy",
+        item: "https://www.acuitypestcontrols.com/blogs/pest-control-vs-diy",
       },
     ],
   },
@@ -152,8 +152,8 @@ const PestControlVsDIY = () => {
         title="Professional Pest Control vs DIY | Acuity Pest Control Bangalore"
         description="Professional pest control vs DIY pest control: learn the difference, benefits, risks and when to call experts for pest control in Bangalore."
         keywords="professional pest control vs DIY, DIY pest control Bangalore, pest control Bangalore, cockroach control Bangalore, termite treatment Bangalore, rodent control Bangalore, Acuity Pest Control"
-        canonical="https://acuitypestcontrols.com/blogs/pest-control-vs-diy"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/pest-control-vs-diy"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={pestControlVsDIYSchema}
       />
 

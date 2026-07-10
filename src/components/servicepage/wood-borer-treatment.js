@@ -43,17 +43,17 @@ const woodBorerSchema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://acuitypestcontrols.com/wood-borer-treatment#service",
+    "@id": "https://www.acuitypestcontrols.com/wood-borer-treatment#service",
     name: "Wood Borer Treatment in Bangalore",
     serviceType: "Wood Borer Control",
-    url: "https://acuitypestcontrols.com/wood-borer-treatment",
+    url: "https://www.acuitypestcontrols.com/wood-borer-treatment",
     description:
       "Professional wood borer treatment in Bangalore for wooden furniture, doors, windows, wardrobes, flooring and interiors.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -74,7 +74,7 @@ const woodBorerSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/wood-borer-treatment",
+      url: "https://www.acuitypestcontrols.com/wood-borer-treatment",
     },
   },
   {
@@ -98,8 +98,8 @@ const WoodBorerTreatment = () => {
         title="Wood Borer Treatment in Bangalore | Acuity Pest Control"
         description="Get professional wood borer treatment in Bangalore for wooden furniture, doors, windows, wardrobes and interiors. Book Acuity Pest Control."
         keywords="wood borer treatment Bangalore, wood borer control Bangalore, furniture pest control Bangalore, wood borer injection treatment, wooden furniture protection, wood pest control Bangalore"
-        canonical="https://acuitypestcontrols.com/wood-borer-treatment"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/wood-borer-treatment"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={woodBorerSchema}
       />
 

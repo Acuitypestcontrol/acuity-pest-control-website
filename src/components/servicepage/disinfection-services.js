@@ -43,17 +43,17 @@ const disinfectionSchema = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://acuitypestcontrols.com/disinfection-services#service",
+    "@id": "https://www.acuitypestcontrols.com/disinfection-services#service",
     name: "Disinfection Services in Bangalore",
     serviceType: "Disinfection and Sanitization",
-    url: "https://acuitypestcontrols.com/disinfection-services",
+    url: "https://www.acuitypestcontrols.com/disinfection-services",
     description:
       "Professional disinfection and sanitization services in Bangalore for homes, offices, hospitals, schools, commercial buildings and industrial facilities.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -74,7 +74,7 @@ const disinfectionSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/disinfection-services",
+      url: "https://www.acuitypestcontrols.com/disinfection-services",
     },
   },
   {
@@ -98,8 +98,8 @@ const DisinfectionServices = () => {
         title="Disinfection Services in Bangalore | Sanitization Service"
         description="Get professional disinfection services in Bangalore for homes, offices, hospitals, schools and commercial spaces. Safe sanitization by Acuity Pest Control."
         keywords="disinfection services Bangalore, sanitization services Bangalore, office disinfection Bangalore, home sanitization Bangalore, commercial disinfection Bangalore, fogging disinfection Bangalore"
-        canonical="https://acuitypestcontrols.com/disinfection-services"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/disinfection-services"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={disinfectionSchema}
       />
 

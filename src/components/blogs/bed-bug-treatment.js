@@ -31,29 +31,30 @@ const bedBugBlogSchema = [
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "@id": "https://acuitypestcontrols.com/blogs/bed-bug-treatment#blogposting",
+    "@id":
+      "https://www.acuitypestcontrols.com/blogs/bed-bug-treatment#blogposting",
     headline: "Bed Bug Treatment Guide: Identify, Remove and Prevent Bed Bugs",
     description:
       "Learn how to identify bed bugs, signs of infestation, common hiding places, treatment process and prevention tips from Acuity Pest Control Bangalore.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-06-26",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://acuitypestcontrols.com/blogs/bed-bug-treatment",
+      "@id": "https://www.acuitypestcontrols.com/blogs/bed-bug-treatment",
     },
   },
   {
@@ -169,8 +170,8 @@ const BedBugTreatmentGuide = () => {
         title="Bed Bug Treatment Guide in Bangalore | Acuity Pest Control"
         description="Learn how to identify bed bugs, signs of infestation, hiding places, treatment process and prevention tips from Acuity Pest Control Bangalore."
         keywords="bed bug treatment Bangalore, bed bug control Bangalore, bed bug signs, bed bug removal Bangalore, bed bug treatment guide, Acuity Pest Control"
-        canonical="https://acuitypestcontrols.com/blogs/bed-bug-treatment"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/bed-bug-treatment"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={bedBugBlogSchema}
       />
 

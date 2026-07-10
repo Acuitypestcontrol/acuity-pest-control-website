@@ -37,30 +37,30 @@ const howOftenPestControlSchema = [
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id":
-      "https://acuitypestcontrols.com/blogs/how-often-should-pest-control-be-done#blogposting",
+      "https://www.acuitypestcontrols.com/blogs/how-often-should-pest-control-be-done#blogposting",
     headline: "How Often Should Pest Control Be Done?",
     description:
       "Learn how often pest control should be done for homes, apartments, villas, offices, restaurants, warehouses, hospitals and schools.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-01-26",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id":
-        "https://acuitypestcontrols.com/blogs/how-often-should-pest-control-be-done",
+        "https://www.acuitypestcontrols.com/blogs/how-often-should-pest-control-be-done",
     },
   },
   {
@@ -83,19 +83,19 @@ const howOftenPestControlSchema = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://acuitypestcontrols.com/",
+        item: "https://www.acuitypestcontrols.com/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blogs",
-        item: "https://acuitypestcontrols.com/blogs",
+        item: "https://www.acuitypestcontrols.com/blogs",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "How Often Should Pest Control Be Done?",
-        item: "https://acuitypestcontrols.com/blogs/how-often-should-pest-control-be-done",
+        item: "https://www.acuitypestcontrols.com/blogs/how-often-should-pest-control-be-done",
       },
     ],
   },
@@ -183,8 +183,8 @@ const HowOftenShouldPestControlBeDone = () => {
         title="How Often Should Pest Control Be Done? | Acuity Pest Control"
         description="Learn how often pest control should be done for homes, apartments, offices, restaurants, warehouses and commercial properties in Bangalore."
         keywords="how often should pest control be done, pest control frequency Bangalore, pest control schedule, AMC pest control Bangalore, quarterly pest control, regular pest control Bangalore"
-        canonical="https://acuitypestcontrols.com/blogs/how-often-should-pest-control-be-done"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/how-often-should-pest-control-be-done"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={howOftenPestControlSchema}
       />
 

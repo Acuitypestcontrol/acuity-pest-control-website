@@ -4,7 +4,6 @@ import SEO from "../seo/seo";
 
 import bannerImage from "../../images/TermiteTreatmentCostBangalore (1).jpg";
 
-
 import blogImg2 from "../../images/Signs of Termite Infestation in Your Home.jpg";
 import blogImg3 from "../../images/Professional Pest Control vs DIY.jpg";
 import blogImg4 from "../../images/Monsoon Pest Control Tips for Bangalore Homes.jpg";
@@ -34,30 +33,30 @@ const termiteCostSchema = [
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id":
-      "https://acuitypestcontrols.com/blogs/termite-treatment-cost-bangalore#blogposting",
+      "https://www.acuitypestcontrols.com/blogs/termite-treatment-cost-bangalore#blogposting",
     headline: "Termite Treatment Cost in Bangalore",
     description:
       "Learn what affects termite treatment cost in Bangalore, including property size, infestation level, treatment method and warranty requirement.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-04-06",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id":
-        "https://acuitypestcontrols.com/blogs/termite-treatment-cost-bangalore",
+        "https://www.acuitypestcontrols.com/blogs/termite-treatment-cost-bangalore",
     },
   },
   {
@@ -80,19 +79,19 @@ const termiteCostSchema = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://acuitypestcontrols.com/",
+        item: "https://www.acuitypestcontrols.com/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blogs",
-        item: "https://acuitypestcontrols.com/blogs",
+        item: "https://www.acuitypestcontrols.com/blogs",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Termite Treatment Cost in Bangalore",
-        item: "https://acuitypestcontrols.com/blogs/termite-treatment-cost-bangalore",
+        item: "https://www.acuitypestcontrols.com/blogs/termite-treatment-cost-bangalore",
       },
     ],
   },
@@ -180,8 +179,8 @@ const TermiteTreatmentCostBangalore = () => {
         title="Termite Treatment Cost in Bangalore | Acuity Pest Control"
         description="Learn what affects termite treatment cost in Bangalore and how to choose the right anti-termite treatment for homes, apartments, offices and commercial properties."
         keywords="termite treatment cost Bangalore, anti termite treatment Bangalore, termite control Bangalore, termite inspection Bangalore, pre construction termite treatment, post construction termite treatment, Acuity Pest Control"
-        canonical="https://acuitypestcontrols.com/blogs/termite-treatment-cost-bangalore"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/termite-treatment-cost-bangalore"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={termiteCostSchema}
       />
 

@@ -37,30 +37,30 @@ const mosquitoBlogSchema = [
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id":
-      "https://acuitypestcontrols.com/blogs/mosquito-prevention-during-rainy-season#blogposting",
+      "https://www.acuitypestcontrols.com/blogs/mosquito-prevention-during-rainy-season#blogposting",
     headline: "Mosquito Prevention During Rainy Season",
     description:
       "Learn how to prevent mosquito breeding during rainy season and protect your home with mosquito control tips from Acuity Pest Control Bangalore.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-06-26",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id":
-        "https://acuitypestcontrols.com/blogs/mosquito-prevention-during-rainy-season",
+        "https://www.acuitypestcontrols.com/blogs/mosquito-prevention-during-rainy-season",
     },
   },
   {
@@ -83,19 +83,19 @@ const mosquitoBlogSchema = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://acuitypestcontrols.com/",
+        item: "https://www.acuitypestcontrols.com/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blogs",
-        item: "https://acuitypestcontrols.com/blogs",
+        item: "https://www.acuitypestcontrols.com/blogs",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Mosquito Prevention During Rainy Season",
-        item: "https://acuitypestcontrols.com/blogs/mosquito-prevention-during-rainy-season",
+        item: "https://www.acuitypestcontrols.com/blogs/mosquito-prevention-during-rainy-season",
       },
     ],
   },
@@ -200,8 +200,8 @@ const MosquitoPreventionRainySeason = () => {
         title="Mosquito Prevention During Rainy Season | Acuity Pest Control"
         description="Learn how to prevent mosquito breeding during rainy season and when to book professional mosquito control in Bangalore."
         keywords="mosquito prevention rainy season, mosquito control Bangalore, monsoon mosquito control, mosquito breeding prevention, mosquito pest control Bangalore, rainy season pest control"
-        canonical="https://acuitypestcontrols.com/blogs/mosquito-prevention-during-rainy-season"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/mosquito-prevention-during-rainy-season"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={mosquitoBlogSchema}
       />
 

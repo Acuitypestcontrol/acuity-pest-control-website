@@ -1,16 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-const SEO = ({
-  title,
-  description,
-  keywords,
-  canonical,
-  image,
-  schema,
-}) => {
+const SEO = ({ title, description, keywords, canonical, image, schema }) => {
   const siteName = "Acuity Pest Control";
-  const defaultImage = "https://acuitypestcontrols.com/logo.png";
+  const defaultImage = "https://www.acuitypestcontrols.com/logo.png";
 
   return (
     <Helmet>
@@ -36,9 +29,7 @@ const SEO = ({
       <meta name="twitter:image" content={image || defaultImage} />
 
       {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
       )}
     </Helmet>
   );

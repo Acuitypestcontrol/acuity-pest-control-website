@@ -33,30 +33,30 @@ const newHomeChecklistSchema = [
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id":
-      "https://acuitypestcontrols.com/blogs/pest-control-checklist-for-new-homes#blogposting",
+      "https://www.acuitypestcontrols.com/blogs/pest-control-checklist-for-new-homes#blogposting",
     headline: "Pest Control Checklist for New Homes",
     description:
       "Before moving into a new home, follow this pest control checklist to inspect rooms, kitchens, bathrooms, cracks, furniture areas and termite-prone spaces.",
-    image: "https://acuitypestcontrols.com/logo.png",
+    image: "https://www.acuitypestcontrols.com/logo.png",
     datePublished: "2026-02-02",
     dateModified: "2026-06-26",
     author: {
       "@type": "Organization",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
     },
     publisher: {
       "@type": "Organization",
       name: "Acuity Pest Control",
       logo: {
         "@type": "ImageObject",
-        url: "https://acuitypestcontrols.com/logo.png",
+        url: "https://www.acuitypestcontrols.com/logo.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id":
-        "https://acuitypestcontrols.com/blogs/pest-control-checklist-for-new-homes",
+        "https://www.acuitypestcontrols.com/blogs/pest-control-checklist-for-new-homes",
     },
   },
   {
@@ -79,19 +79,19 @@ const newHomeChecklistSchema = [
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://acuitypestcontrols.com/",
+        item: "https://www.acuitypestcontrols.com/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blogs",
-        item: "https://acuitypestcontrols.com/blogs",
+        item: "https://www.acuitypestcontrols.com/blogs",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Pest Control Checklist for New Homes",
-        item: "https://acuitypestcontrols.com/blogs/pest-control-checklist-for-new-homes",
+        item: "https://www.acuitypestcontrols.com/blogs/pest-control-checklist-for-new-homes",
       },
     ],
   },
@@ -187,8 +187,8 @@ const PestControlChecklistNewHomes = () => {
         title="Pest Control Checklist for New Homes | Acuity Pest Control"
         description="Before moving into a new home, follow this pest control checklist for rooms, kitchens, bathrooms, cracks, termite-prone areas and furniture spaces."
         keywords="new home pest control Bangalore, pest control checklist for new homes, moving home pest control, anti termite treatment for new home, pest inspection Bangalore, Acuity Pest Control"
-        canonical="https://acuitypestcontrols.com/blogs/pest-control-checklist-for-new-homes"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs/pest-control-checklist-for-new-homes"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={newHomeChecklistSchema}
       />
 

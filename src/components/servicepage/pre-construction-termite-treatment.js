@@ -44,17 +44,17 @@ const preConstructionTermiteSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "@id":
-      "https://acuitypestcontrols.com/pre-construction-termite-treatment#service",
+      "https://www.acuitypestcontrols.com/pre-construction-termite-treatment#service",
     name: "Pre Construction Termite Treatment in Bangalore",
     serviceType: "Termite Control",
-    url: "https://acuitypestcontrols.com/pre-construction-termite-treatment",
+    url: "https://www.acuitypestcontrols.com/pre-construction-termite-treatment",
     description:
       "Professional pre construction termite treatment in Bangalore for residential, commercial and industrial construction projects.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
-      "@id": "https://acuitypestcontrols.com/#business",
+      "@id": "https://www.acuitypestcontrols.com/#business",
       name: "Acuity Pest Control",
-      url: "https://acuitypestcontrols.com/",
+      url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
       email: "info@acuitypestcontrols.com",
       address: {
@@ -75,7 +75,7 @@ const preConstructionTermiteSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://acuitypestcontrols.com/pre-construction-termite-treatment",
+      url: "https://www.acuitypestcontrols.com/pre-construction-termite-treatment",
     },
   },
   {
@@ -99,8 +99,8 @@ const PreConstructionTermiteTreatment = () => {
         title="Pre Construction Termite Treatment in Bangalore | Acuity Pest Control"
         description="Get professional pre construction termite treatment in Bangalore for homes, apartments, commercial buildings and industrial projects. Book Acuity Pest Control."
         keywords="pre construction termite treatment Bangalore, pre construction anti termite treatment, termite protection Bangalore, foundation termite treatment, building termite prevention, anti termite service Bangalore"
-        canonical="https://acuitypestcontrols.com/pre-construction-termite-treatment"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/pre-construction-termite-treatment"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={preConstructionTermiteSchema}
       />
 

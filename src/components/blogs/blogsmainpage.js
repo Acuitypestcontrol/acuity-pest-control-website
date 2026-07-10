@@ -213,25 +213,25 @@ const PestBlogs = () => {
     {
       "@context": "https://schema.org",
       "@type": "Blog",
-      "@id": "https://acuitypestcontrols.com/blogs#blog",
+      "@id": "https://www.acuitypestcontrols.com/blogs#blog",
       name: "Acuity Pest Control Blogs",
-      url: "https://acuitypestcontrols.com/blogs",
+      url: "https://www.acuitypestcontrols.com/blogs",
       description:
         "Expert pest control blogs, prevention tips and treatment guides from Acuity Pest Control Bangalore.",
       publisher: {
         "@type": "Organization",
         name: "Acuity Pest Control",
-        url: "https://acuitypestcontrols.com/",
+        url: "https://www.acuitypestcontrols.com/",
         logo: {
           "@type": "ImageObject",
-          url: "https://acuitypestcontrols.com/logo.png",
+          url: "https://www.acuitypestcontrols.com/logo.png",
         },
       },
       blogPost: blogs.map((blog) => ({
         "@type": "BlogPosting",
         headline: blog.title,
         description: blog.desc,
-        url: `https://acuitypestcontrols.com${blog.slug}`,
+        url: `https://www.acuitypestcontrols.com${blog.slug}`,
         datePublished: blog.isoDate,
         dateModified: blog.isoDate,
         author: {
@@ -243,12 +243,12 @@ const PestBlogs = () => {
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "@id": "https://acuitypestcontrols.com/blogs#itemlist",
+      "@id": "https://www.acuitypestcontrols.com/blogs#itemlist",
       name: "Pest Control Blog Articles",
       itemListElement: blogs.map((blog, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        url: `https://acuitypestcontrols.com${blog.slug}`,
+        url: `https://www.acuitypestcontrols.com${blog.slug}`,
         name: blog.title,
       })),
     },
@@ -260,8 +260,8 @@ const PestBlogs = () => {
         title="Pest Control Blogs in Bangalore | Expert Pest Control Tips"
         description="Read expert pest control blogs from Acuity Pest Control Bangalore. Learn about termites, cockroaches, rodents, mosquitoes, bed bugs, ants and pest prevention tips."
         keywords="pest control blogs Bangalore, pest control tips Bangalore, cockroach control tips, termite treatment guide, rodent control guide, bed bug treatment blog, mosquito control tips, Acuity Pest Control"
-        canonical="https://acuitypestcontrols.com/blogs"
-        image="https://acuitypestcontrols.com/logo.png"
+        canonical="https://www.acuitypestcontrols.com/blogs"
+        image="https://www.acuitypestcontrols.com/logo.png"
         schema={blogSchema}
       />
 
