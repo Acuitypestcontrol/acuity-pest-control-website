@@ -61,7 +61,7 @@ function App() {
       <Navbar />
       <PestGameFloatingButton />
       <PestEnquiryForm />
-      <main className="pt-[155px] md:pt-[175px] font-poppins">
+      <main className="pt-[89px] md:pt-[175px] font-poppins">
         <Routes>
           {/* Main pages */}
           <Route path="/" element={<Home />} />
