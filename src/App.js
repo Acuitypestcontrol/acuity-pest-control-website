@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import "@fontsource/poppins";
 import "@fontsource/poppins/500.css";
@@ -78,13 +73,19 @@ function App() {
           <Route path="/Services" element={<ServicesPage />} />
 
           <Route path="/contact" element={<Contact />} />
-          <Route path="/contactus" element={<Contact />} />
+          <Route
+            path="/contactus"
+            element={<Navigate to="/contact" replace />}
+          />
 
           <Route path="/pestidentification" element={<PestIdentification />} />
 
           {/* Blog listing */}
           <Route path="/blogs" element={<Blog />} />
-          <Route path="/blogsmainpage" element={<Blog />} />
+          <Route
+            path="/blogsmainpage"
+            element={<Navigate to="/blogs" replace />}
+          />
 
           {/* Blog pages */}
           <Route path="/blogs/:slug" element={<Getridofcockroch />} />

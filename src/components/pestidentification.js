@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 
+import SEO from "./seo/seo";
 // Import images (keep your existing imports)
 import termiteImg from "../images/Subterranean Termitebox.jpg";
 import drywoodTermiteImg from "../images/Drywood Termite.jpg";
@@ -242,6 +243,14 @@ const PestIdentification = () => {
       </Helmet>
 
       <div className="w-full min-h-screen bg-white">
+        <SEO
+          title="Pest Identification Guide | Acuity Pest Control Bangalore"
+          description="Identify common pests including termites, cockroaches, rodents, flies, bed bugs and ants with Acuity Pest Control Bangalore."
+          keywords="pest identification Bangalore, identify cockroaches, termite identification, rodent identification, bed bug identification, ant identification"
+          canonical="https://www.acuitypestcontrols.com/pestidentification"
+          image="https://www.acuitypestcontrols.com/logo.png"
+        />
+        
         {/* ===== HERO SECTION ===== */}
         <section className="relative bg-gradient-to-br from-[#008fc5] to-[#006f9f] py-16 md:py-24 px-4 text-white overflow-hidden">
           <div className="max-w-4xl mx-auto text-center relative z-10 md:pt-36 pt-24">
