@@ -6,7 +6,6 @@ import blogImg from "../../images/Australian Cockroach.jpg";
 import blogImg1 from "../../images/americancockroch.jpg";
 import blogImg2 from "../../images/Signs of Termite Infestation in Your Home.jpg";
 import blogImg3 from "../../images/Professional Pest Control vs DIY.jpg";
-
 import blogImg5 from "../../images/Bed Bug.png";
 import blogImg6 from "../../images/Black Rat Roof Rat.png";
 import blogImg7 from "../../images/mosquito.jpg";

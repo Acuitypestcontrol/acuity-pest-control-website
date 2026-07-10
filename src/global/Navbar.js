@@ -136,7 +136,7 @@ const Navbar = () => {
 
           <div className="flex shrink-0 items-center gap-4">
             <Link
-              to="/iso-certification"
+              to=""
               className="bg-green-600 hover:bg-green-700 px-3 py-1 rounded-full font-semibold transition"
             >
               🏅 ISO 9001:2015 - (305024122052Q)
