@@ -148,9 +148,7 @@ const Navbar = () => {
             >
               <FaEnvelope />
 
-              <span className="hidden lg:inline">
-                info@acuitygroups.in
-              </span>
+              <span className="hidden lg:inline">info@acuitygroups.in</span>
             </a>
           </div>
 
@@ -236,11 +234,12 @@ const Navbar = () => {
             {/* ================= DESKTOP NAVIGATION ================= */}
 
             <nav className="hidden xl:flex items-center gap-6 font-semibold text-black text-md">
-              <Link
-                to="/"
-                className="hover:text-blue-900 transition"
-              >
+              <Link to="/" className="hover:text-blue-900 transition">
                 HOME
+              </Link>
+
+              <Link to="/aboutus" className="hover:text-blue-900 transition">
+                ABOUT US
               </Link>
 
               <div className="relative group py-6">
@@ -249,7 +248,6 @@ const Navbar = () => {
                   className="flex items-center gap-1 hover:text-blue-900 transition"
                 >
                   SERVICES
-
                   <FaChevronDown className="text-xs group-hover:rotate-180 transition-transform duration-300" />
                 </Link>
 
@@ -336,13 +334,6 @@ const Navbar = () => {
               </div>
 
               <Link
-                to="/aboutus"
-                className="hover:text-blue-900 transition"
-              >
-                ABOUT US
-              </Link>
-
-              <Link
                 to="/pestidentification"
                 className="hover:text-blue-900 transition"
               >
@@ -356,10 +347,7 @@ const Navbar = () => {
                 BLOG
               </Link>
 
-              <Link
-                to="/contactus"
-                className="hover:text-blue-900 transition"
-              >
+              <Link to="/contactus" className="hover:text-blue-900 transition">
                 CONTACT
               </Link>
             </nav>
@@ -401,12 +389,18 @@ const Navbar = () => {
             HOME
           </Link>
 
+          <Link
+            to="/aboutus"
+            onClick={closeMobileMenu}
+            className="block border-b border-gray-100 py-3 font-bold"
+          >
+            ABOUT US
+          </Link>
+
           <div>
             <button
               type="button"
-              onClick={() =>
-                setServicesOpen((current) => !current)
-              }
+              onClick={() => setServicesOpen((current) => !current)}
               className="flex w-full items-center justify-between border-b border-gray-100 py-3 font-bold"
               aria-expanded={servicesOpen}
             >
@@ -435,9 +429,7 @@ const Navbar = () => {
                   View All Services
                 </Link>
 
-                <p className="font-semibold text-[#063b3f]">
-                  Home Services
-                </p>
+                <p className="font-semibold text-[#063b3f]">Home Services</p>
 
                 {homeServices.map((item) => (
                   <Link
@@ -479,14 +471,6 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-
-          <Link
-            to="/aboutus"
-            onClick={closeMobileMenu}
-            className="block border-b border-gray-100 py-3 font-bold"
-          >
-            ABOUT US
-          </Link>
 
           <Link
             to="/pestidentification"
