@@ -16,7 +16,6 @@ import Contact from "./components/ContactUs";
 import PestIdentification from "./components/pestidentification";
 
 import Blog from "./components/blogs/blogsmainpage";
-import BlogDetail from "./components/blogs/get-rid-of-cockroaches";
 import SignsOfTermiteInfestation from "./components/blogs/signs-of-termite-infestation";
 import PestControlVsDIY from "./components/blogs/pest-control-vs-diy";
 import BedBugTreatmentGuide from "./components/blogs/bed-bug-treatment";
@@ -30,6 +29,7 @@ import HowToPreventAntInfestationAtHome from "./components/blogs/how-to-prevent-
 import WhyRegularPestControlImportantBusinesses from "./components/blogs/why-regular-pest-control-is-important-for-businesses";
 import PestControlChecklistNewHomes from "./components/blogs/pest-control-checklist-for-new-homes";
 import WhyCockroachesEnterKitchen from "./components/blogs/why-cockroaches-enter-your-kitchen";
+import Getridofcockroch from "./components/blogs/get-rid-of-cockroaches";
 
 // Service pages
 import GeneralPestControl from "./components/servicepage/general-pest-control";
@@ -82,10 +82,7 @@ function App() {
           <Route path="/blogsmainpage" element={<Blog />} />
 
           {/* Blog pages */}
-          <Route
-            path="/blogs/get-rid-of-cockroaches"
-            element={<BlogDetail />}
-          />
+          <Route path="/blogs/:slug" element={<Getridofcockroch />} />
 
           <Route
             path="/blogs/signs-of-termite-infestation"

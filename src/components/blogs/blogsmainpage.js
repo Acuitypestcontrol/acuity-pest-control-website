@@ -6,7 +6,7 @@ import blogImg from "../../images/Australian Cockroach.jpg";
 import blogImg1 from "../../images/americancockroch.jpg";
 import blogImg2 from "../../images/Signs of Termite Infestation in Your Home.jpg";
 import blogImg3 from "../../images/Professional Pest Control vs DIY.jpg";
-import blogImg4 from "../../images/Monsoon Pest Control Tips for Bangalore Homes.jpg";
+
 import blogImg5 from "../../images/Bed Bug.png";
 import blogImg6 from "../../images/Black Rat Roof Rat.png";
 import blogImg7 from "../../images/mosquito.jpg";
@@ -37,7 +37,7 @@ const PestBlogs = () => {
   const blogs = [
     {
       title: "Ultimate Pest Control Guide for Bangalore Homes (2026)",
-      slug: "/blogs/pest-control-bangalore-guide",
+      slug: "/blogs/how-often-should-pest-control-be-done",
       category: "General Tips",
       date: "June 26, 2026",
       isoDate: "2026-06-26",
@@ -47,7 +47,7 @@ const PestBlogs = () => {
       featured: true,
     },
     {
-      title: "How to Get Rid of Cockroaches Permanently",
+      title: "How to Get Rid of Cockroaches",
       slug: "/blogs/get-rid-of-cockroaches",
       category: "Cockroaches",
       date: "June 26, 2026",
@@ -76,16 +76,7 @@ const PestBlogs = () => {
       desc: "Compare professional pest control and DIY pest treatment to understand which option is safer and more effective.",
       image: blogImg3,
     },
-    {
-      title: "Monsoon Pest Control Tips for Bangalore Homes",
-      slug: "/blogs/monsoon-pest-control",
-      category: "General Tips",
-      date: "June 26, 2026",
-      isoDate: "2026-06-26",
-      readTime: "6 min read",
-      desc: "Rainy season increases pest activity. Learn how to protect your home from cockroaches, mosquitoes and termites.",
-      image: blogImg4,
-    },
+
     {
       title: "Bed Bug Treatment Guide",
       slug: "/blogs/bed-bug-treatment",
