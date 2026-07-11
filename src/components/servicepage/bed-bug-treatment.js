@@ -55,7 +55,7 @@ const bedBugSchema = [
       name: "Acuity Pest Control",
       url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
-      email: "info@acuitypestcontrols.com",
+      email: "info@acuitypestcontrols.in",
       address: {
         "@type": "PostalAddress",
         streetAddress:

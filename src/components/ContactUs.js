@@ -24,7 +24,7 @@ const contactSchema = {
     name: "Acuity Pest Control",
     url: "https://www.acuitypestcontrols.com/",
     telephone: "+91 9941229005",
-    email: "info@acuitypestcontrols.com",
+    email: "info@acuitypestcontrols.in",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
@@ -123,8 +123,8 @@ Please contact me.`;
             {
               icon: <FaEnvelope />,
               title: "Email",
-              text: "info@acuitypestcontrols.com",
-              link: "mailto:info@acuitypestcontrols.com",
+              text: "info@acuitypestcontrols.in",
+              link: "mailto:info@acuitypestcontrols.in",
             },
             {
               icon: <FaClock />,
@@ -263,11 +263,11 @@ Please contact me.`;
                 </a>
 
                 <a
-                  href="mailto:info@acuitypestcontrols.com"
+                  href="mailto:info@acuitypestcontrols.in"
                   className="flex items-center gap-3 text-gray-200 hover:text-green-300"
                 >
                   <FaEnvelope className="text-green-400" />
-                  info@acuitypestcontrols.com
+                  info@acuitypestcontrols.in
                 </a>
               </div>
             </div>

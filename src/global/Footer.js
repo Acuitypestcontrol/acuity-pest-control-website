@@ -138,11 +138,11 @@ const Footer = () => {
             </a>
 
             <a
-              href="mailto:info@acuitypestcontrols.com"
+              href="mailto:info@acuitypestcontrols.in"
               className="flex items-center gap-3 hover:text-green-400"
             >
               <FaEnvelope className="text-green-400" />
-              info@acuitypestcontrols.com
+              info@acuitypestcontrols.in
             </a>
           </div>
         </div>
