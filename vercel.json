@@ -1,9 +1,12 @@
-
-
 {
   "redirects": [
     {
       "source": "/wood-borer-services",
+      "destination": "/wood-borer-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/wood-borer-services/",
       "destination": "/wood-borer-treatment",
       "permanent": true
     },
@@ -13,7 +16,17 @@
       "permanent": true
     },
     {
+      "source": "/corporate-company/",
+      "destination": "/office-pest-control",
+      "permanent": true
+    },
+    {
       "source": "/2020/06/15/corona-disinfection-sanitization-service-in-bangalore",
+      "destination": "/disinfection-services",
+      "permanent": true
+    },
+    {
+      "source": "/2020/06/15/corona-disinfection-sanitization-service-in-bangalore/",
       "destination": "/disinfection-services",
       "permanent": true
     },
@@ -23,12 +36,27 @@
       "permanent": true
     },
     {
+      "source": "/solution-to-bed-bug-problems/",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
       "source": "/anti-termite-pipe-treatment",
       "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
+      "source": "/anti-termite-pipe-treatment/",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
       "source": "/how-to-control-ants",
+      "destination": "/blogs/how-to-prevent-ant-infestation-at-home",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-control-ants/",
       "destination": "/blogs/how-to-prevent-ant-infestation-at-home",
       "permanent": true
     }
