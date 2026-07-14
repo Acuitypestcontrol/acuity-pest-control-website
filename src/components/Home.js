@@ -145,7 +145,7 @@ const homeSchema = [
     description:
       "Acuity Pest Controls provides professional pest control services in Bangalore for homes, apartments, offices, restaurants, hotels, hospitals, warehouses and industries.",
     telephone: "+919941229005",
-    email: "info@acuitypestcontrols.com",
+    email: "info@acuitypestcontrols.in",
     priceRange: "₹₹",
     address: {
       "@type": "PostalAddress",

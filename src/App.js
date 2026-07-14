@@ -1,5 +1,11 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Link,
+} from "react-router-dom";
 
 import "@fontsource/poppins";
 import "@fontsource/poppins/500.css";
@@ -15,7 +21,13 @@ import ServicesPage from "./components/Services";
 import Contact from "./components/ContactUs";
 import PestIdentification from "./components/pestidentification";
 
+// Blog listing
 import Blog from "./components/blogs/blogsmainpage";
+
+// Dynamic blog detail page
+import BlogDetail from "./components/blogs/get-rid-of-cockroaches";
+
+// Individual blog pages
 import SignsOfTermiteInfestation from "./components/blogs/signs-of-termite-infestation";
 import PestControlVsDIY from "./components/blogs/pest-control-vs-diy";
 import BedBugTreatmentGuide from "./components/blogs/bed-bug-treatment";
@@ -29,7 +41,6 @@ import HowToPreventAntInfestationAtHome from "./components/blogs/how-to-prevent-
 import WhyRegularPestControlImportantBusinesses from "./components/blogs/why-regular-pest-control-is-important-for-businesses";
 import PestControlChecklistNewHomes from "./components/blogs/pest-control-checklist-for-new-homes";
 import WhyCockroachesEnterKitchen from "./components/blogs/why-cockroaches-enter-your-kitchen";
-import Getridofcockroch from "./components/blogs/get-rid-of-cockroaches";
 
 // Service pages
 import GeneralPestControl from "./components/servicepage/general-pest-control";
@@ -49,46 +60,109 @@ import CommonAreaTreatmentResidential from "./components/servicepage/common-area
 import DisinfectionServices from "./components/servicepage/disinfection-services";
 import WarehousePestManagement from "./components/servicepage/warehouse-pest-management";
 
+// Game pages
 import PestGameFloatingButton from "./components/PestGameFloatingButton";
 import PestGamePage from "./components/pestgame/PestGamePage";
 import DefendHomeGame from "./components/pestgame/DefendHomeGame";
 
 import PestEnquiryForm from "./components/PestEnquiryForm";
+
+const NotFound = () => {
+  return (
+    <section className="flex min-h-[70vh] items-center justify-center bg-gray-50 px-4 text-center">
+      <div>
+        <p className="text-sm font-bold uppercase tracking-[4px] text-green-700">
+          Page Not Found
+        </p>
+
+        <h1 className="mt-3 text-6xl font-black text-[#063b3f] md:text-8xl">
+          404
+        </h1>
+
+        <p className="mx-auto mt-4 max-w-lg text-gray-600">
+          The page you are looking for does not exist or may have been moved.
+        </p>
+
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <Link
+            to="/"
+            className="rounded-full bg-green-600 px-7 py-3 font-bold text-white transition hover:bg-green-700"
+          >
+            Return Home
+          </Link>
+
+          <Link
+            to="/services"
+            className="rounded-full border-2 border-green-600 px-7 py-3 font-bold text-green-700 transition hover:bg-green-50"
+          >
+            View Services
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+
       <Navbar />
+
       <PestGameFloatingButton />
+
       <PestEnquiryForm />
-      <main className="pt-[89px] md:pt-[175px] font-poppins">
+
+      <main className="pt-[89px] font-poppins md:pt-[175px]">
         <Routes>
-          {/* Main pages */}
+          {/* MAIN CANONICAL PAGES */}
+
           <Route path="/" element={<Home />} />
 
           <Route path="/about" element={<AboutUS />} />
-          <Route path="/aboutus" element={<Navigate to="/about" replace />} />
 
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/Services" element={<ServicesPage />} />
 
           <Route path="/contact" element={<Contact />} />
+
+          <Route
+            path="/pest-identification"
+            element={<PestIdentification />}
+          />
+
+          {/* OLD MAIN PAGE REDIRECTS */}
+
+          <Route
+            path="/aboutus"
+            element={<Navigate to="/about" replace />}
+          />
+
+          <Route
+            path="/Services"
+            element={<Navigate to="/services" replace />}
+          />
+
           <Route
             path="/contactus"
             element={<Navigate to="/contact" replace />}
           />
 
-          <Route path="/pestidentification" element={<PestIdentification />} />
+          <Route
+            path="/pestidentification"
+            element={<Navigate to="/pest-identification" replace />}
+          />
 
-          {/* Blog listing */}
+          {/* BLOG LISTING */}
+
           <Route path="/blogs" element={<Blog />} />
+
           <Route
             path="/blogsmainpage"
             element={<Navigate to="/blogs" replace />}
           />
 
-          {/* Blog pages */}
-          <Route path="/blogs/:slug" element={<Getridofcockroch />} />
+          {/* INDIVIDUAL BLOG PAGES */}
 
           <Route
             path="/blogs/signs-of-termite-infestation"
@@ -155,7 +229,15 @@ function App() {
             element={<WhyCockroachesEnterKitchen />}
           />
 
-          {/* Service pages */}
+          {/* 
+            This dynamic route handles blog slugs stored inside
+            the get-rid-of-cockroaches blog detail component.
+          */}
+
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
+
+          {/* SERVICE PAGES */}
+
           <Route
             path="/general-pest-control"
             element={<GeneralPestControl />}
@@ -167,12 +249,12 @@ function App() {
           />
 
           <Route
-            path="/post-construction-termite-treatment"
-            element={<PostConstructionTermiteTreatment />}
+            path="/pre-construction-termite-treatment"
+            element={<PreConstructionTermiteTreatment />}
           />
 
           <Route
-            path="/post-construction-termite"
+            path="/post-construction-termite-treatment"
             element={<PostConstructionTermiteTreatment />}
           />
 
@@ -204,16 +286,14 @@ function App() {
           />
 
           <Route
-            path="/pre-construction-termite-treatment"
-            element={<PreConstructionTermiteTreatment />}
-          />
-
-          <Route
             path="/pest-control-hotels-hospitals"
             element={<PestControlHotelsHospitals />}
           />
 
-          <Route path="/office-pest-control" element={<OfficePestControl />} />
+          <Route
+            path="/office-pest-control"
+            element={<OfficePestControl />}
+          />
 
           <Route
             path="/educational-institution-pest-control"
@@ -222,11 +302,6 @@ function App() {
 
           <Route
             path="/common-area-treatment-residential-complex"
-            element={<CommonAreaTreatmentResidential />}
-          />
-
-          <Route
-            path="/common-area-treatment"
             element={<CommonAreaTreatmentResidential />}
           />
 
@@ -240,12 +315,52 @@ function App() {
             element={<WarehousePestManagement />}
           />
 
-          {/* Game pages */}
-          <Route path="/PestGamePage" element={<PestGamePage />} />
+          {/* OLD SERVICE URL REDIRECTS */}
+
+          <Route
+            path="/post-construction-termite"
+            element={
+              <Navigate
+                to="/post-construction-termite-treatment"
+                replace
+              />
+            }
+          />
+
+          <Route
+            path="/common-area-treatment"
+            element={
+              <Navigate
+                to="/common-area-treatment-residential-complex"
+                replace
+              />
+            }
+          />
+
+          {/* GAME PAGES */}
+
           <Route path="/pest-game" element={<PestGamePage />} />
 
-          <Route path="/DefendHomeGame" element={<DefendHomeGame />} />
-          <Route path="/defend-home-game" element={<DefendHomeGame />} />
+          <Route
+            path="/defend-home-game"
+            element={<DefendHomeGame />}
+          />
+
+          {/* OLD GAME URL REDIRECTS */}
+
+          <Route
+            path="/PestGamePage"
+            element={<Navigate to="/pest-game" replace />}
+          />
+
+          <Route
+            path="/DefendHomeGame"
+            element={<Navigate to="/defend-home-game" replace />}
+          />
+
+          {/* 404 PAGE */}
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaPhoneAlt,
   FaWhatsapp,
@@ -7,18 +8,22 @@ import {
   FaFacebookF,
   FaInstagram,
 } from "react-icons/fa";
+
 import logo from "../images/acuitylogo1.png";
 
 const Footer = () => {
   return (
     <footer className="bg-[#063b3f] text-white">
-      <div className="md:max-w-7xl md:mx-auto px-6 py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+        {/* COMPANY DETAILS */}
         <div>
-          <img
-            src={logo}
-            alt="Acuity Pest Controls"
-            className="h-40 w-auto mb-5"
-          />
+          <Link to="/" aria-label="Acuity Pest Controls Home">
+            <img
+              src={logo}
+              alt="Acuity Pest Controls"
+              className="h-40 w-auto mb-5"
+            />
+          </Link>
 
           <p className="text-gray-300 leading-7">
             Acuity Pest Controls provides professional pest control services in
@@ -27,80 +32,124 @@ const Footer = () => {
 
           <div className="flex gap-3 mt-6">
             <a
-              href="/https://www.facebook.com/acuity.pest.9/"
-              className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-green-600"
+              href="https://www.facebook.com/acuity.pest.9/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acuity Pest Controls Facebook"
+              className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-green-600 transition"
             >
               <FaFacebookF />
             </a>
+
             <a
-              href="/https://www.instagram.com/acuity_pest_control"
-              className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-green-600"
+              href="https://www.instagram.com/acuity_pest_control/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Acuity Pest Controls Instagram"
+              className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-green-600 transition"
             >
               <FaInstagram />
             </a>
           </div>
         </div>
 
+        {/* QUICK LINKS */}
         <div>
           <h3 className="text-xl font-black mb-5">Quick Links</h3>
+
           <div className="space-y-3 text-gray-300">
-            <a href="/" className="block hover:text-green-400">
+            <Link to="/" className="block hover:text-green-400 transition">
               Home
-            </a>
-            <a href="/aboutus" className="block hover:text-green-400">
+            </Link>
+
+            <Link to="/about" className="block hover:text-green-400 transition">
               About Us
-            </a>
-            <a href="/services" className="block hover:text-green-400">
+            </Link>
+
+            <Link
+              to="/services"
+              className="block hover:text-green-400 transition"
+            >
               Services
-            </a>
-            <a
-              href="/pestidentification"
-              className="block hover:text-green-400"
+            </Link>
+
+            <Link
+              to="/pest-identification"
+              className="block hover:text-green-400 transition"
             >
               Pest Identification
-            </a>
-            <a href="/blogsmainpage" className="block hover:text-green-400">
-              Blog
-            </a>
-            <a href="/contactus" className="block hover:text-green-400">
+            </Link>
+
+            <Link to="/blogs" className="block hover:text-green-400 transition">
+              Blogs
+            </Link>
+
+            <Link
+              to="/contact"
+              className="block hover:text-green-400 transition"
+            >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
 
+        {/* SERVICES */}
         <div>
           <h3 className="text-xl font-black mb-5">Our Services</h3>
+
           <div className="space-y-3 text-gray-300">
-            <a
-              href="/cockroach-management-service"
-              className="block hover:text-green-400"
+            <Link
+              to="/cockroach-management-service"
+              className="block hover:text-green-400 transition"
             >
               Cockroach Control
-            </a>
-            <a
-              href="/anti-termite-treatment"
-              className="block hover:text-green-400"
+            </Link>
+
+            <Link
+              to="/anti-termite-treatment"
+              className="block hover:text-green-400 transition"
             >
               Termite Control
-            </a>
-            <a href="/bed-bug-treatment" className="block hover:text-green-400">
+            </Link>
+
+            <Link
+              to="/bed-bug-treatment"
+              className="block hover:text-green-400 transition"
+            >
               Bed Bug Treatment
-            </a>
-            <a
-              href="/rodent-management-service"
-              className="block hover:text-green-400"
+            </Link>
+
+            <Link
+              to="/rodent-management-service"
+              className="block hover:text-green-400 transition"
             >
               Rodent Control
-            </a>
-            <a
-              href="/mosquito-management-service"
-              className="block hover:text-green-400"
+            </Link>
+
+            <Link
+              to="/mosquito-management-service"
+              className="block hover:text-green-400 transition"
             >
               Mosquito Control
-            </a>
+            </Link>
+
+            <Link
+              to="/wood-borer-treatment"
+              className="block hover:text-green-400 transition"
+            >
+              Wood Borer Treatment
+            </Link>
+
+            <Link
+              to="/disinfection-services"
+              className="block hover:text-green-400 transition"
+            >
+              Disinfection Services
+            </Link>
           </div>
         </div>
 
+        {/* CONTACT DETAILS */}
         <div>
           <h3 className="text-xl font-black mb-5">Contact Us</h3>
 
@@ -109,9 +158,10 @@ const Footer = () => {
               href="https://maps.app.goo.gl/N5GeNpCZJMbavHHe7"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex gap-3 hover:text-green-400"
+              className="flex gap-3 hover:text-green-400 transition"
             >
-              <FaMapMarkerAlt className="mt-1 text-green-400" />
+              <FaMapMarkerAlt className="mt-1 text-green-400 shrink-0" />
+
               <span>
                 1st Floor, KVO-08, No-28/2, near Sun Jupiter School, JP Nagar
                 6th Phase, Yelachenahalli, Kumaraswamy Layout, Bengaluru,
@@ -121,37 +171,42 @@ const Footer = () => {
 
             <a
               href="tel:+919941229005"
-              className="flex items-center gap-3 hover:text-green-400"
+              className="flex items-center gap-3 hover:text-green-400 transition"
             >
-              <FaPhoneAlt className="text-green-400" />
-              +91 99412 29005
+              <FaPhoneAlt className="text-green-400 shrink-0" />
+              <span>+91 99412 29005</span>
             </a>
 
             <a
-              href="https://wa.me/919941229005"
+              href="https://wa.me/919941229005?text=Hi%20Acuity%20Pest%20Controls,%20I%20need%20pest%20control%20service."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 hover:text-green-400"
+              className="flex items-center gap-3 hover:text-green-400 transition"
             >
-              <FaWhatsapp className="text-green-400" />
-              WhatsApp Us
+              <FaWhatsapp className="text-green-400 shrink-0" />
+              <span>WhatsApp Us</span>
             </a>
 
             <a
               href="mailto:info@acuitypestcontrols.in"
-              className="flex items-center gap-3 hover:text-green-400"
+              className="flex items-center gap-3 hover:text-green-400 transition"
             >
-              <FaEnvelope className="text-green-400" />
-              info@acuitypestcontrols.in
+              <FaEnvelope className="text-green-400 shrink-0" />
+              <span className="break-all">info@acuitypestcontrols.in</span>
             </a>
           </div>
         </div>
       </div>
 
+      {/* COPYRIGHT */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between gap-3 text-gray-400 text-sm">
-          <p>© 2026 Acuity Pest Controls. All Rights Reserved.</p>
-          <p>Designed for Professional Pest Control Services</p>
+          <p>
+            © {new Date().getFullYear()} Acuity Pest Controls. All Rights
+            Reserved.
+          </p>
+
+          <p>Professional Pest Control Services in Bangalore</p>
         </div>
       </div>
     </footer>
