@@ -247,7 +247,7 @@ const PestIdentification = () => {
           title="Pest Identification Guide | Acuity Pest Control Bangalore"
           description="Identify common pests including termites, cockroaches, rodents, flies, bed bugs and ants with Acuity Pest Control Bangalore."
           keywords="pest identification Bangalore, identify cockroaches, termite identification, rodent identification, bed bug identification, ant identification"
-          canonical="https://www.acuitypestcontrols.com/pestidentification"
+          canonical="https://www.acuitypestcontrols.com/pest-identification"
           image="https://www.acuitypestcontrols.com/logo.png"
         />
         

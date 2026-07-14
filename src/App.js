@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-  Link,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
 
 import "@fontsource/poppins";
 import "@fontsource/poppins/500.css";
@@ -126,17 +120,11 @@ function App() {
 
           <Route path="/contact" element={<Contact />} />
 
-          <Route
-            path="/pest-identification"
-            element={<PestIdentification />}
-          />
+          <Route path="/pest-identification" element={<PestIdentification />} />
 
           {/* OLD MAIN PAGE REDIRECTS */}
 
-          <Route
-            path="/aboutus"
-            element={<Navigate to="/about" replace />}
-          />
+          <Route path="/aboutus" element={<Navigate to="/about" replace />} />
 
           <Route
             path="/Services"
@@ -147,6 +135,8 @@ function App() {
             path="/contactus"
             element={<Navigate to="/contact" replace />}
           />
+
+          <Route path="/pest-identification" element={<PestIdentification />} />
 
           <Route
             path="/pestidentification"
@@ -290,10 +280,7 @@ function App() {
             element={<PestControlHotelsHospitals />}
           />
 
-          <Route
-            path="/office-pest-control"
-            element={<OfficePestControl />}
-          />
+          <Route path="/office-pest-control" element={<OfficePestControl />} />
 
           <Route
             path="/educational-institution-pest-control"
@@ -320,10 +307,7 @@ function App() {
           <Route
             path="/post-construction-termite"
             element={
-              <Navigate
-                to="/post-construction-termite-treatment"
-                replace
-              />
+              <Navigate to="/post-construction-termite-treatment" replace />
             }
           />
 
@@ -341,10 +325,7 @@ function App() {
 
           <Route path="/pest-game" element={<PestGamePage />} />
 
-          <Route
-            path="/defend-home-game"
-            element={<DefendHomeGame />}
-          />
+          <Route path="/defend-home-game" element={<DefendHomeGame />} />
 
           {/* OLD GAME URL REDIRECTS */}
 
