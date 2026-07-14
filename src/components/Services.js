@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import SEO from "../components/seo/seo";
 
 import bannerImage from "../images/servicebanner.jpg";
@@ -122,71 +123,97 @@ const Services = () => {
       image: cockroachImg,
       title: "Cockroach Control",
       desc: "Safe cockroach treatment for homes, kitchens, restaurants and offices.",
+      path: "/cockroach-management-service",
     },
     {
       image: termiteImg,
       title: "Termite Control",
       desc: "Advanced termite treatment to protect wooden furniture and property.",
+      path: "/anti-termite-treatment",
     },
     {
       image: rodentImg,
       title: "Rodent Control",
       desc: "Safe rat and mouse control solutions for homes and businesses.",
+      path: "/rodent-management-service",
     },
     {
       image: mosquitoImg,
       title: "Mosquito Control",
       desc: "Mosquito management services to reduce breeding and protect your family.",
+      path: "/mosquito-management-service",
     },
     {
       image: bedbugImg,
       title: "Bed Bug Treatment",
       desc: "Complete bed bug management for homes, hotels and apartments.",
+      path: "/bed-bug-treatment",
     },
     {
       image: woodborerImg,
       title: "Wood Borer Treatment",
       desc: "Professional wood borer treatment for furniture and wooden interiors.",
+      path: "/wood-borer-treatment",
     },
     {
       image: antImg,
       title: "Ant Control",
       desc: "Effective ant pest control for homes, kitchens and restaurants.",
+      path: "/ant-control-treatment",
     },
     {
       image: lizardImg,
       title: "Lizard Control",
       desc: "Hygienic lizard control for residential and commercial properties.",
+      path: "/general-pest-control",
     },
     {
       image: hotelImg,
       title: "Hotels & Hospitals",
       desc: "Specialized pest control for hotels and healthcare facilities.",
+      path: "/pest-control-hotels-hospitals",
     },
     {
       image: warehouseImg,
       title: "Warehouse Pest Management",
       desc: "Protect your inventory with our warehouse pest solutions.",
+      path: "/warehouse-pest-management",
     },
     {
       image: officeImg,
       title: "Office & IT Campus",
       desc: "Keep your office pest-free with our professional services.",
+      path: "/office-pest-control",
     },
     {
       image: schoolImg,
       title: "Schools & Colleges",
       desc: "Safe pest control for educational institutions.",
+      path: "/educational-institution-pest-control",
     },
     {
       image: apartmentImg,
       title: "Residential Complex",
       desc: "Common area pest treatment for apartments and complexes.",
+      path: "/common-area-treatment-residential-complex",
     },
     {
       image: disinfectionImg,
       title: "Disinfection Services",
       desc: "Professional disinfection for homes, offices and businesses.",
+      path: "/disinfection-services",
+    },
+    {
+      image: termiteImg,
+      title: "Pre-Construction Termite Treatment",
+      desc: "Preventive anti-termite treatment for new buildings before construction.",
+      path: "/pre-construction-termite-treatment",
+    },
+    {
+      image: termiteImg,
+      title: "Post-Construction Termite Treatment",
+      desc: "Professional termite treatment for completed homes and commercial properties.",
+      path: "/post-construction-termite-treatment",
     },
   ];
 
@@ -279,6 +306,12 @@ Please contact me regarding pest control service.`;
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   {service.desc}
                 </p>
+                <Link
+                  to={service.path}
+                  className="inline-block border border-green-600 text-green-700 px-6 py-2.5 rounded-full font-bold transition-all text-sm hover:bg-green-50 mr-2 mb-2"
+                >
+                  Learn More
+                </Link>
 
                 <a
                   href={`https://wa.me/919941229005?text=${encodeURIComponent(
