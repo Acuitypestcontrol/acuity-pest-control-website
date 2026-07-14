@@ -111,8 +111,7 @@ const faqItems = [
       "We provide cockroach control, termite treatment, bed bug treatment, rodent control, mosquito control, ant control, lizard treatment, wood borer treatment and commercial pest control services.",
   },
   {
-    question:
-      "What safety guidance do you provide for families and pets?",
+    question: "What safety guidance do you provide for families and pets?",
     answer:
       "We use professional treatment methods selected for the pest problem and property type. Our technicians provide the required safety instructions before and after treatment.",
   },
@@ -211,9 +210,7 @@ const Home = () => {
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      setActiveTestimonial(
-        (previous) => (previous + 1) % testimonials.length,
-      );
+      setActiveTestimonial((previous) => (previous + 1) % testimonials.length);
     }, 5000);
 
     return () => window.clearInterval(timer);
@@ -531,7 +528,6 @@ Please contact me regarding pest control service.`;
           </div>
         </div>
       </section>
-
       {/* SERVICES */}
 
       <section id="services" className="py-10 sm:py-16">
@@ -572,6 +568,24 @@ Please contact me regarding pest control service.`;
                 </Link>
               </article>
             ))}
+          </div>
+
+          {/* INTERNAL SEO LINKS */}
+
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/services"
+              className="rounded-full bg-green-600 px-7 py-3 text-center font-bold text-white shadow-md transition hover:bg-green-700"
+            >
+              View All Pest Control Services
+            </Link>
+
+            <Link
+              to="/blogs"
+              className="rounded-full border-2 border-green-600 px-7 py-3 text-center font-bold text-green-700 transition hover:bg-green-50"
+            >
+              Read Pest Control Blogs
+            </Link>
           </div>
         </div>
       </section>
@@ -664,8 +678,7 @@ Please contact me regarding pest control service.`;
               {
                 icon: "📞",
                 title: "Book Service",
-                description:
-                  "Call or WhatsApp to schedule your inspection.",
+                description: "Call or WhatsApp to schedule your inspection.",
               },
               {
                 icon: "🔍",
