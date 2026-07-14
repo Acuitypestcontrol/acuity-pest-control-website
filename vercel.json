@@ -31,6 +31,16 @@
       "permanent": true
     },
     {
+      "source": "/corona-disinfection-sanitization-service-in-bangalore",
+      "destination": "/disinfection-services",
+      "permanent": true
+    },
+    {
+      "source": "/corona-disinfection-sanitization-service-in-bangalore/",
+      "destination": "/disinfection-services",
+      "permanent": true
+    },
+    {
       "source": "/solution-to-bed-bug-problems",
       "destination": "/bed-bug-treatment",
       "permanent": true
@@ -61,6 +71,86 @@
       "permanent": true
     },
     {
+      "source": "/a-comprehensive-guide-to-mosquitoes-types-hazards-identification-and-prevention",
+      "destination": "/blogs/mosquito-prevention-during-rainy-season",
+      "permanent": true
+    },
+    {
+      "source": "/a-comprehensive-guide-to-mosquitoes-types-hazards-identification-and-prevention/",
+      "destination": "/blogs/mosquito-prevention-during-rainy-season",
+      "permanent": true
+    },
+    {
+      "source": "/author/acuitydigitalmarketinggmail-com",
+      "destination": "/blogs",
+      "permanent": true
+    },
+    {
+      "source": "/author/acuitydigitalmarketinggmail-com/",
+      "destination": "/blogs",
+      "permanent": true
+    },
+    {
+      "source": "/category/residential-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/category/residential-pest-control/",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/category/termites",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/category/termites/",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized",
+      "destination": "/blogs",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized/",
+      "destination": "/blogs",
+      "permanent": true
+    },
+    {
+      "source": "/dont-let-pests-turn-your-bangalore-dream-home-into-a-nightmare-the-importance-of-residential-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/dont-let-pests-turn-your-bangalore-dream-home-into-a-nightmare-the-importance-of-residential-pest-control/",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/everything-you-need-to-know-about-termites-a-complete-guide-to-termite-control-services",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/everything-you-need-to-know-about-termites-a-complete-guide-to-termite-control-services/",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/get-in-touch",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/get-in-touch/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
       "source": "/sitemap_index.xml",
       "destination": "/sitemap.xml",
       "permanent": true
@@ -78,3 +168,4 @@
     }
   ]
 }
+
