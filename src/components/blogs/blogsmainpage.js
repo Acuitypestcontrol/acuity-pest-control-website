@@ -36,7 +36,7 @@ const PestBlogs = () => {
   const blogs = [
     {
       title: "Ultimate Pest Control Guide for Bangalore Homes (2026)",
-      slug: "/blogs/how-often-should-pest-control-be-done",
+      slug: "/blogs/pest-control-bangalore-guide",
       category: "General Tips",
       date: "June 26, 2026",
       isoDate: "2026-06-26",
@@ -157,8 +157,18 @@ const PestBlogs = () => {
       image: blogImg14,
     },
     {
+      title: "Monsoon Pest Control Tips for Bangalore Homes",
+      slug: "/blogs/monsoon-pest-control",
+      category: "General Tips",
+      date: "June 20, 2026",
+      isoDate: "2026-06-20",
+      readTime: "6 min read",
+      desc: "Learn how to prevent cockroaches, mosquitoes, ants, termites and rodents during Bangalore's rainy season.",
+      image: blogImg7,
+    },
+    {
       title: "How Often Should Pest Control Be Done?",
-      slug: "/blogs/how-often-should-pest-control-be-done",
+      slug: "/blogs/pest-control-bangalore-guide",
       category: "General Tips",
       date: "Jan 26, 2026",
       isoDate: "2026-01-26",
