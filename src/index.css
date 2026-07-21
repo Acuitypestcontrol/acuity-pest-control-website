@@ -207,3 +207,37 @@
 .animate-pulse-slow {
   animation: pulse-slow 4s ease-in-out infinite;
 }
+/* HOME BANNER MOBILE FIX */
+
+.home-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.home-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 767px) {
+  .home-banner {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .home-banner img {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+  }
+}

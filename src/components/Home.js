@@ -297,18 +297,18 @@ Please contact me regarding pest control service.`;
         schema={homeSchema}
       />
 
-      {/* BANNER */}
 
-      <section className="relative h-[40vh] md:h-[110vh]">
+
+      {/* HOME BANNER */}
+
+      <section className="home-banner">
         <img
           src={bannerImage}
           alt="Professional pest control services in Bangalore by Acuity Pest Controls"
-          className="absolute inset-0 h-full w-full object-cover"
           fetchPriority="high"
           decoding="async"
+          
         />
-
-        <div className="absolute inset-0 bg-black/20" />
       </section>
 
       {/* HERO AND INSPECTION FORM */}
