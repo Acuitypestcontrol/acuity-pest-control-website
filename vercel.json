@@ -253,6 +253,161 @@
       "source": "/wp-sitemap.xml",
       "destination": "/sitemap.xml",
       "permanent": true
+    },
+    {
+      "source": "/cockroach-control-services",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/pets-control-services-in-bangalore",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-services-in-bangalore-ensuring-a-safer-cleaner-space-with-acuity-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/why-bangalore-home-pest-solutions-are-essential-for-healthy-living",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-termite-treatment-experts-why-acuity-pest-control-is-your-best-bet",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-cockroach-solutions-your-homes-defense-against-unwanted-guests",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/effective-bed-bug-control-in-bangalore-homes-with-acuity-pest-control",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/do-pest-control-companies-effectively-address-rat-infestationsdo-pest-control-companies-really-work-for-rat-infestation-problems",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/effective-rodent-prevention-in-bangalore-safeguard-your-home-and-health",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/the-hidden-health-hazards-of-cockroach-infestations-in-bangalore",
+      "destination": "/blogs/why-cockroaches-enter-your-kitchen",
+      "permanent": true
+    },
+    {
+      "source": "/breathe-easy-and-live-pest-free-with-professional-pest-control-services-in-bangalore",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-for-cockroach-a-complete-guide-to-protecting-your-home",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/effective-commercial-pest-control-services-for-a-pest-free-business",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-for-hotels-why-acuity-pest-controls-is-your-best-choice",
+      "destination": "/pest-control-hotels-hospitals",
+      "permanent": true
+    },
+    {
+      "source": "/expert-pest-control-services-in-bangalore-protecting-your-home-with-acuity-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/battling-mosquito-menace-in-bangalore-why-acuity-pest-controls-is-your-best-defense",
+      "destination": "/mosquito-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/rodent-pest-control",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/wood-borer-treatment-in-bangalore",
+      "destination": "/wood-borer-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-pest-control-bangalore-why-your-business-needs-it",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/termite-control-services",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-pest-control",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/bed-bugs-treat",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/pest/wood-borer-treatment",
+      "destination": "/wood-borer-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/wood-borer-",
+      "destination": "/wood-borer-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-pest-control-in-bangalore",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/how-do-i-permanently-control-termites-in-my-home-permanent-termite-solutions-in-bangalore",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-control",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/pest/bed-bugs",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/rodent-control",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/residential-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest/house-rat-control",
+      "destination": "/rodent-management-service",
+      "permanent": true
     }
   ],
   "rewrites": [
