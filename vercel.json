@@ -163,6 +163,87 @@
       "destination": "/pest-control-for-hotels-hospitals",
       "permanent": true
     },
+
+    {
+      "source": "/the-growing-need-for-rodent-control-in-bangalore-protecting-your-home-and-health",
+      "destination": "/blogs/rat-control-tips-for-homes",
+      "permanent": true
+    },
+    {
+      "source": "/why-pest-control-is-essential-for-hospitals-safeguarding-health-with-acuity-pest-control",
+      "destination": "/pest-control-hotels-hospitals",
+      "permanent": true
+    },
+    {
+      "source": "/how-pre-construction-termite-treatments-work-prevention-before-building-begins",
+      "destination": "/pre-construction-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/which-type-of-pest-control-is-best-a-guide-to-finding-the-best-pest-control-in-bangalore",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/termite-treatment-bangalore",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/residential-pest-control-in-bangalore-a-comprehensive-guide",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/industrieswarehouselogistics-pest-control",
+      "destination": "/warehouse-pest-management",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-services-for-schools-and-collages",
+      "destination": "/educational-institution-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/residential-pest-control-services",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/the-hidden-dangers-how-termite-related-health-issues-impact-your-well-being",
+      "destination": "/blogs/signs-of-termite-infestation",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-preventing-common-household-pests-in-bangalore",
+      "destination": "/blogs/top-10-household-pests-in-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/mosquito-control-services",
+      "destination": "/mosquito-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-for-food-industries",
+      "destination": "/warehouse-pest-management",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-control-services-bangalore",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/the-best-pest-control-services-in-bangalore-for-cockroaches",
+      "destination": "/blogs/why-cockroaches-enter-your-kitchen",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blogs",
+      "permanent": true
+    },
     {
       "source": "/sitemap_index.xml",
       "destination": "/sitemap.xml",
