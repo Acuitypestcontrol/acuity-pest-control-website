@@ -408,6 +408,21 @@
       "source": "/pest/house-rat-control",
       "destination": "/rodent-management-service",
       "permanent": true
+    },
+    {
+      "source": "/pest-control-services-bangalore",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/top-termite-myths-you-should-stop-believing-right-now",
+      "destination": "/blogs/signs-of-termite-infestation",
+      "permanent": true
+    },
+    {
+      "source": "/why-pest-management-in-schools-and-colleges-is-essential-for-a-safe-learning-environment",
+      "destination": "/educational-institution-pest-control",
+      "permanent": true
     }
   ],
   "rewrites": [
