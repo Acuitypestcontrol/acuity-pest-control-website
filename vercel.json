@@ -147,6 +147,22 @@
       "destination": "/anti-termite-treatment",
       "permanent": true
     },
+
+    {
+      "source": "/pest-control-for-hospitals-and-labs",
+      "destination": "/pest-control-for-hotels-hospitals",
+      "permanent": true
+    },
+    {
+      "source": "/top-rat-control-services-in-bangalore-for-a-pest-free-home",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-for-hospitals-and-labs",
+      "destination": "/pest-control-for-hotels-hospitals",
+      "permanent": true
+    },
     {
       "source": "/sitemap_index.xml",
       "destination": "/sitemap.xml",
