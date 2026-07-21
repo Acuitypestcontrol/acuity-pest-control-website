@@ -147,6 +147,27 @@ const homeSchema = [
     telephone: "+919941229005",
     email: "info@acuitypestcontrols.in",
     priceRange: "₹₹",
+
+    hasMap:
+      "https://www.google.com/maps?q=1st+Floor,+KVO-08,+No-28%2F2,+Near+Sun+Jupiter+School,+JP+Nagar+6th+Phase,+Yelachenahalli,+Kumaraswamy+Layout,+Bengaluru,+Karnataka+560078&output=embed",
+
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "08:00",
+        closes: "20:00",
+      },
+    ],
+
     address: {
       "@type": "PostalAddress",
       streetAddress:
@@ -156,10 +177,12 @@ const homeSchema = [
       postalCode: "560078",
       addressCountry: "IN",
     },
+
     areaServed: locations.map((location) => ({
       "@type": "Place",
       name: `${location}, Bengaluru`,
     })),
+
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+919941229005",
@@ -167,6 +190,7 @@ const homeSchema = [
       areaServed: "IN-KA",
       availableLanguage: ["English", "Kannada", "Hindi"],
     },
+
     makesOffer: serviceCards.map((service) => ({
       "@type": "Offer",
       itemOffered: {
@@ -175,6 +199,7 @@ const homeSchema = [
       },
     })),
   },
+
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -187,6 +212,7 @@ const homeSchema = [
       "@id": "https://www.acuitypestcontrols.com/#business",
     },
   },
+
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -264,7 +290,7 @@ Please contact me regarding pest control service.`;
     <div className="w-full overflow-x-hidden bg-white">
       <SEO
         title="Pest Control Services in Bangalore | Acuity Pest Controls"
-        description="Professional pest control services in Bangalore for cockroaches, termites, bed bugs, rodents and mosquitoes. Treatments for homes and businesses. Contact Acuity Pest Controls."
+        description="Looking for professional pest control services in Bangalore? Acuity Pest Controls offers termite treatment, cockroach control, bed bug treatment, rodent control, mosquito control and commercial pest management. Book an inspection today."
         keywords="pest control services in Bangalore, pest control Bangalore, cockroach control Bangalore, termite control Bangalore, bed bug control Bangalore, mosquito control Bangalore, rodent control Bangalore, commercial pest control Bangalore"
         canonical="https://www.acuitypestcontrols.com/"
         image="https://www.acuitypestcontrols.com/logo.png"
@@ -528,6 +554,7 @@ Please contact me regarding pest control service.`;
           </div>
         </div>
       </section>
+
       {/* SERVICES */}
 
       <section id="services" className="py-10 sm:py-16">
@@ -569,8 +596,6 @@ Please contact me regarding pest control service.`;
               </article>
             ))}
           </div>
-
-          {/* INTERNAL SEO LINKS */}
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
@@ -904,6 +929,51 @@ Please contact me regarding pest control service.`;
             Contact Acuity Pest Controls to confirm technician availability in
             your locality.
           </p>
+        </div>
+      </section>
+
+      {/* GOOGLE MAP */}
+
+      <section className="bg-[#f6fffb] py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mb-8 text-center">
+            <p className="text-xs font-bold uppercase tracking-[3px] text-green-700 sm:text-sm">
+              Our Location
+            </p>
+
+            <h2 className="mt-3 text-3xl font-black text-[#063b3f] md:text-5xl">
+              Pest Control Company in Bangalore
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-gray-600 sm:text-base">
+              Visit or contact Acuity Pest Controls for professional residential
+              and commercial pest control services in Bangalore.
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-3xl border border-green-100 bg-white shadow-xl">
+            <iframe
+              src="https://www.google.com/maps?q=1st+Floor,+KVO-08,+No-28%2F2,+Near+Sun+Jupiter+School,+JP+Nagar+6th+Phase,+Yelachenahalli,+Kumaraswamy+Layout,+Bengaluru,+Karnataka+560078&output=embed"
+              title="Acuity Pest Controls location in Bangalore"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+
+          <div className="mt-6 text-center">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=1st+Floor%2C+KVO-08%2C+No-28%2F2%2C+Near+Sun+Jupiter+School%2C+JP+Nagar+6th+Phase%2C+Yelachenahalli%2C+Kumaraswamy+Layout%2C+Bengaluru%2C+Karnataka+560078"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-full bg-green-600 px-7 py-3 font-bold text-white shadow-md transition hover:bg-green-700"
+            >
+              Open Location in Google Maps
+            </a>
+          </div>
         </div>
       </section>
     </div>
