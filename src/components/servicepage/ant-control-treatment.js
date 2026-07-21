@@ -111,6 +111,41 @@ const AntControlTreatment = () => {
           className="w-full h-[40vh] md:h-[110vh] "
         />
       </section>
+      {/* BREADCRUMB */}
+      <nav
+        aria-label="Breadcrumb"
+        className="bg-gray-50 border-b border-gray-200 px-6 py-4"
+      >
+        <div className="max-w-7xl mx-auto">
+          <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-600">
+            <li>
+              <Link
+                to="/"
+                className="font-medium text-green-700 hover:text-green-900"
+              >
+                Home
+              </Link>
+            </li>
+
+            <li className="text-gray-400">/</li>
+
+            <li>
+              <Link
+                to="/services"
+                className="font-medium text-green-700 hover:text-green-900"
+              >
+                Services
+              </Link>
+            </li>
+
+            <li className="text-gray-400">/</li>
+
+            <li className="font-semibold text-gray-800" aria-current="page">
+              Ant Control Treatment
+            </li>
+          </ol>
+        </div>
+      </nav>
 
       {/* INTRODUCTION */}
       <section className="py-10 md:py-20 px-6 bg-white">
@@ -547,21 +582,21 @@ const AntControlTreatment = () => {
             </Link>
 
             <Link
-              to="/termite-treatment"
+              to="/anti-termite-treatment"
               className="bg-green-100 hover:bg-green-200 text-green-800 px-6 py-3 rounded-full font-semibold transition"
             >
               Termite Control
             </Link>
 
             <Link
-              to="/rodent-control"
+              to="/rodent-management-service"
               className="bg-green-100 hover:bg-green-200 text-green-800 px-6 py-3 rounded-full font-semibold transition"
             >
               Rodent Control
             </Link>
 
             <Link
-              to="/mosquito-control"
+              to="/mosquito-management-service"
               className="bg-green-100 hover:bg-green-200 text-green-800 px-6 py-3 rounded-full font-semibold transition"
             >
               Mosquito Control
