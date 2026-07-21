@@ -96,8 +96,8 @@ const BedBugTreatment = () => {
     <div className="w-full bg-white text-gray-800">
       <SEO
         title="Bed Bug Treatment in Bangalore | Acuity Pest Control"
-        description="Get professional bed bug treatment in Bangalore for homes, hotels, apartments, hostels, PGs and offices. Safe and effective bed bug control service."
-        keywords="bed bug treatment Bangalore, bed bug control Bangalore, bed bug removal Bangalore, bed bug pest control Bangalore, bed bug treatment near me"
+        description="Professional bed bug treatment in Bangalore for homes, hotels, apartments and PGs. Safe and effective bed bug control by Acuity Pest Control."
+        keywords="bed bug treatment bangalore, bed bug control bangalore, bed bug removal bangalore, bed bug exterminator bangalore, hotel bed bug treatment, home bed bug treatment, pest control bed bugs"
         canonical="https://www.acuitypestcontrols.com/bed-bug-treatment"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={bedBugSchema}
@@ -107,8 +107,11 @@ const BedBugTreatment = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Bed bug treatment in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Bed Bug Treatment in Bangalore by Acuity Pest Control"
+          className="w-full h-auto"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 

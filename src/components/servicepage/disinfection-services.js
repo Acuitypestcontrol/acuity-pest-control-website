@@ -95,9 +95,9 @@ const DisinfectionServices = () => {
   return (
     <div className="w-full bg-white text-gray-800">
       <SEO
-        title="Disinfection Services in Bangalore | Sanitization Service"
-        description="Get professional disinfection services in Bangalore for homes, offices, hospitals, schools and commercial spaces. Safe sanitization by Acuity Pest Control."
-        keywords="disinfection services Bangalore, sanitization services Bangalore, office disinfection Bangalore, home sanitization Bangalore, commercial disinfection Bangalore, fogging disinfection Bangalore"
+        title="Disinfection Services in Bangalore | Acuity Pest Control"
+        description="Professional disinfection services in Bangalore for homes, offices, hospitals, schools and commercial spaces. Safe sanitization by Acuity Pest Control."
+        keywords="disinfection services bangalore, sanitization services bangalore, office sanitization bangalore, commercial disinfection bangalore, home disinfection bangalore, fogging sanitization bangalore, disinfection company bangalore"
         canonical="https://www.acuitypestcontrols.com/disinfection-services"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={disinfectionSchema}
@@ -107,8 +107,11 @@ const DisinfectionServices = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Disinfection services in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Disinfection Services in Bangalore by Acuity Pest Control"
+          className="w-full h-auto"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 

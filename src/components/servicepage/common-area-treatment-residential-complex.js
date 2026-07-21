@@ -96,9 +96,9 @@ const CommonAreaTreatmentResidential = () => {
   return (
     <div className="w-full bg-white text-gray-800">
       <SEO
-        title="Common Area Pest Control in Bangalore | Residential Complex Pest Control"
-        description="Get professional common area pest control in Bangalore for apartments, gated communities and residential societies. Safe pest management for shared spaces."
-        keywords="common area pest control Bangalore, apartment pest control Bangalore, gated community pest management, residential complex pest control, society pest control Bangalore"
+        title="Common Area Pest Control Bangalore | Acuity Pest Control"
+        description="Professional common area pest control in Bangalore for apartments, gated communities and residential societies. Customized AMC plans by Acuity Pest Control."
+        keywords="common area pest control bangalore, apartment pest control bangalore, gated community pest control, residential society pest control, apartment AMC pest control, residential complex pest management"
         canonical="https://www.acuitypestcontrols.com/common-area-treatment-residential-complex"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={commonAreaSchema}
@@ -108,8 +108,11 @@ const CommonAreaTreatmentResidential = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Common area pest control for residential complexes in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Common Area Pest Control for Residential Complexes in Bangalore"
+          className="w-full h-auto"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 
@@ -561,7 +564,7 @@ const CommonAreaTreatmentResidential = () => {
             </Link>
 
             <Link
-              to="/mosquito-control-service"
+              to="/mosquito-management-service"
               className="bg-green-100 hover:bg-green-200 text-green-800 px-6 py-3 rounded-full font-semibold transition"
             >
               Mosquito Control

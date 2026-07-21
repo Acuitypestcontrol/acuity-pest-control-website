@@ -97,8 +97,8 @@ const CockroachManagementService = () => {
     <div className="w-full bg-white text-gray-800">
       <SEO
         title="Cockroach Control in Bangalore | Acuity Pest Control"
-        description="Get professional cockroach control in Bangalore for homes, kitchens, apartments, restaurants, offices and commercial properties. Call Acuity Pest Control."
-        keywords="cockroach control Bangalore, cockroach management service Bangalore, kitchen cockroach treatment, cockroach pest control Bangalore, cockroach control near me"
+        description="Professional cockroach control in Bangalore for homes, apartments, restaurants and offices. Safe and effective treatment by Acuity Pest Control."
+        keywords="cockroach control bangalore, cockroach pest control bangalore, cockroach treatment bangalore, kitchen cockroach control, german cockroach treatment, cockroach removal bangalore, commercial cockroach control"
         canonical="https://www.acuitypestcontrols.com/cockroach-management-service"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={cockroachSchema}
@@ -108,8 +108,11 @@ const CockroachManagementService = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Cockroach control service in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Cockroach Control Service in Bangalore by Acuity Pest Control"
+          className="w-full h-auto"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 

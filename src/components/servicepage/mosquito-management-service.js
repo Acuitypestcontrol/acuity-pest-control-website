@@ -96,9 +96,9 @@ const MosquitoManagementService = () => {
   return (
     <div className="w-full bg-white text-gray-800">
       <SEO
-        title="Mosquito Control in Bangalore | Mosquito Management Service"
-        description="Get professional mosquito control in Bangalore for homes, apartments, gated communities and commercial spaces. Mosquito fogging and treatment by Acuity Pest Control."
-        keywords="mosquito control Bangalore, mosquito management service Bangalore, mosquito fogging Bangalore, mosquito treatment Bangalore, dengue prevention Bangalore, malaria control Bangalore"
+        title="Mosquito Control in Bangalore | Acuity Pest Control"
+        description="Professional mosquito control in Bangalore for homes, apartments and commercial spaces. Safe mosquito treatment and fogging by Acuity Pest Control."
+        keywords="mosquito control bangalore, mosquito treatment bangalore, mosquito fogging bangalore, mosquito pest control bangalore, dengue mosquito control, malaria mosquito treatment, mosquito removal bangalore"
         canonical="https://www.acuitypestcontrols.com/mosquito-management-service"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={mosquitoSchema}
@@ -108,8 +108,11 @@ const MosquitoManagementService = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Mosquito control service in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Mosquito Control Service in Bangalore by Acuity Pest Control"
+          className="w-full h-auto"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 

@@ -95,9 +95,9 @@ const GeneralPestControl = () => {
   return (
     <div className="w-full bg-white text-gray-800">
       <SEO
-        title="General Pest Control Services in Bangalore | Acuity Pest Control"
-        description="Get professional general pest control services in Bangalore for homes, apartments and villas. Control cockroaches, ants, spiders, silverfish and common pests."
-        keywords="general pest control Bangalore, home pest control Bangalore, pest control services Bangalore, residential pest control Bangalore, apartment pest control Bangalore, cockroach control, ant control, rodent control"
+        title="General Pest Control in Bangalore | Acuity Pest Control"
+        description="Professional general pest control in Bangalore for homes and offices. Safe treatment for cockroaches, ants, rodents, spiders, and more."
+        keywords="general pest control bangalore, pest control bangalore, home pest control bangalore, residential pest control bangalore, apartment pest control bangalore, office pest control bangalore, commercial pest control bangalore, cockroach control bangalore, ant control bangalore, rodent control bangalore"
         canonical="https://www.acuitypestcontrols.com/general-pest-control"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={generalPestSchema}
@@ -107,8 +107,11 @@ const GeneralPestControl = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="General pest control services in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="General Pest Control Services in Bangalore by Acuity Pest Control"
+          className="w-full h-auto"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 

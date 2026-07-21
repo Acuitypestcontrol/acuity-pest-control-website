@@ -96,8 +96,8 @@ const WoodBorerTreatment = () => {
     <div className="w-full bg-white text-gray-800">
       <SEO
         title="Wood Borer Treatment in Bangalore | Acuity Pest Control"
-        description="Get professional wood borer treatment in Bangalore for wooden furniture, doors, windows, wardrobes and interiors. Book Acuity Pest Control."
-        keywords="wood borer treatment Bangalore, wood borer control Bangalore, furniture pest control Bangalore, wood borer injection treatment, wooden furniture protection, wood pest control Bangalore"
+        description="Professional wood borer treatment in Bangalore for furniture, doors, windows, wardrobes and wooden interiors. Safe treatment by Acuity Pest Control."
+        keywords="wood borer treatment bangalore, wood borer control bangalore, wood pest control bangalore, furniture wood borer treatment, wooden furniture pest control, wood borer removal bangalore, wood beetle treatment"
         canonical="https://www.acuitypestcontrols.com/wood-borer-treatment"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={woodBorerSchema}
@@ -107,8 +107,11 @@ const WoodBorerTreatment = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Wood borer treatment in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Wood Borer Treatment in Bangalore by Acuity Pest Control"
+          className="w-full h-auto"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 

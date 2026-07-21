@@ -96,9 +96,9 @@ const RodentManagementService = () => {
   return (
     <div className="w-full bg-white text-gray-800">
       <SEO
-        title="Rodent Control in Bangalore | Rat Control Service"
-        description="Get professional rodent control in Bangalore for homes, apartments, offices, warehouses and commercial spaces. Rat and mouse control by Acuity Pest Control."
-        keywords="rodent control Bangalore, rat control Bangalore, mouse control Bangalore, rodent management service Bangalore, commercial rodent control, rat removal Bangalore"
+        title="Rodent Control in Bangalore | Acuity Pest Control"
+        description="Professional rodent control in Bangalore for homes, offices, warehouses and commercial spaces. Safe rat and mouse control by Acuity Pest Control."
+        keywords="rodent control bangalore, rat control bangalore, mouse control bangalore, rodent removal bangalore, warehouse rodent control, commercial rodent control, rat exterminator bangalore"
         canonical="https://www.acuitypestcontrols.com/rodent-management-service"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={rodentSchema}
@@ -108,8 +108,11 @@ const RodentManagementService = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Rodent control service in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Rodent Control Service in Bangalore by Acuity Pest Control"
+          className="w-full h-auto"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 

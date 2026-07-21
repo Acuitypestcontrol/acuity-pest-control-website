@@ -97,8 +97,8 @@ const PreConstructionTermiteTreatment = () => {
     <div className="w-full bg-white text-gray-800">
       <SEO
         title="Pre Construction Termite Treatment in Bangalore | Acuity Pest Control"
-        description="Get professional pre construction termite treatment in Bangalore for homes, apartments, commercial buildings and industrial projects. Book Acuity Pest Control."
-        keywords="pre construction termite treatment Bangalore, pre construction anti termite treatment, termite protection Bangalore, foundation termite treatment, building termite prevention, anti termite service Bangalore"
+        description="Professional pre construction termite treatment in Bangalore for residential, commercial and industrial projects. Protect your property with Acuity Pest Control."
+        keywords="pre construction termite treatment bangalore, pre construction anti termite treatment bangalore, foundation termite treatment, soil termite treatment bangalore, building termite protection, anti termite treatment for construction"
         canonical="https://www.acuitypestcontrols.com/pre-construction-termite-treatment"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={preConstructionTermiteSchema}
@@ -108,8 +108,11 @@ const PreConstructionTermiteTreatment = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Pre construction termite treatment in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Pre Construction Termite Treatment in Bangalore by Acuity Pest Control"
+          className="w-full h-auto"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 

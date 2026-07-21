@@ -97,8 +97,8 @@ const WarehousePestManagement = () => {
     <div className="w-full bg-white text-gray-800">
       <SEO
         title="Warehouse Pest Management in Bangalore | Acuity Pest Control"
-        description="Get professional warehouse pest management in Bangalore for warehouses, godowns, storage facilities, logistics hubs and industrial spaces. Book Acuity Pest Control."
-        keywords="warehouse pest control Bangalore, warehouse pest management Bangalore, godown pest control Bangalore, storage facility pest control, rodent control warehouse, stored product insect control"
+        description="Professional warehouse pest management in Bangalore for warehouses, godowns, storage facilities, logistics hubs and industrial spaces. Acuity Pest Control."
+        keywords="warehouse pest management bangalore, warehouse pest control bangalore, godown pest control bangalore, storage facility pest control, warehouse rodent control, stored product insect control bangalore, logistics warehouse pest control"
         canonical="https://www.acuitypestcontrols.com/warehouse-pest-management"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={warehousePestSchema}
@@ -108,8 +108,11 @@ const WarehousePestManagement = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Warehouse pest management in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Warehouse Pest Management in Bangalore by Acuity Pest Control"
+          className="w-full h-auto"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 

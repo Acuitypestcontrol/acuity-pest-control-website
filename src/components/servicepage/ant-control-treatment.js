@@ -96,8 +96,8 @@ const AntControlTreatment = () => {
     <div className="w-full bg-white text-gray-800">
       <SEO
         title="Ant Control Treatment in Bangalore | Acuity Pest Control"
-        description="Get professional ant control treatment in Bangalore for homes, apartments, kitchens, restaurants and offices. Safe and effective ant pest control service."
-        keywords="ant control treatment Bangalore, ant control Bangalore, ant pest control Bangalore, ant removal service Bangalore, kitchen ant control, ant control near me"
+        description="Professional ant control treatment in Bangalore for homes, apartments, restaurants and offices. Safe ant pest control by Acuity Pest Control."
+        keywords="ant control bangalore, ant treatment bangalore, ant pest control bangalore, carpenter ant control, fire ant treatment, kitchen ant control, ant removal bangalore"
         canonical="https://www.acuitypestcontrols.com/ant-control-treatment"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={antControlSchema}
@@ -107,8 +107,11 @@ const AntControlTreatment = () => {
       <section className="w-full relative">
         <img
           src={bannerImage}
-          alt="Ant control treatment in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Ant Control Treatment in Bangalore by Acuity Pest Control"
+          className="w-full h-auto"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
       {/* BREADCRUMB */}

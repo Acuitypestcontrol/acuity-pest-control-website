@@ -15,6 +15,7 @@ import ServicesPage from "./components/Services";
 import Contact from "./components/ContactUs";
 import PestIdentification from "./components/pestidentification";
 
+
 // Blog listing
 import Blog from "./components/blogs/blogsmainpage";
 
@@ -151,7 +152,7 @@ function App() {
             path="/blogsmainpage"
             element={<Navigate to="/blogs" replace />}
           />
-
+         
           {/* INDIVIDUAL BLOG PAGES */}
 
           <Route
