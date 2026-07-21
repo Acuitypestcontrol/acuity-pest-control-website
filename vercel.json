@@ -8,7 +8,17 @@
       "permanent": true
     },
     {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
       "source": "/contactus",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/get-in-touch",
       "destination": "/contact",
       "permanent": true
     },
@@ -58,6 +68,16 @@
       "permanent": true
     },
     {
+      "source": "/commercial-pest-control",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/ants-pest-control",
+      "destination": "/ant-control-treatment",
+      "permanent": true
+    },
+    {
       "source": "/2020/06/15/corona-disinfection-sanitization-service-in-bangalore",
       "destination": "/disinfection-services",
       "permanent": true
@@ -73,7 +93,17 @@
       "permanent": true
     },
     {
+      "source": "/banishing-bed-bugs-in-bengaluru-how-advanced-bed-bug-heat-treatment-safeguards-your-home",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
       "source": "/anti-termite-pipe-treatment",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-get-rid-of-termites-a-comprehensive-guide-to-termite-control",
       "destination": "/anti-termite-treatment",
       "permanent": true
     },
@@ -115,11 +145,6 @@
     {
       "source": "/everything-you-need-to-know-about-termites-a-complete-guide-to-termite-control-services",
       "destination": "/anti-termite-treatment",
-      "permanent": true
-    },
-    {
-      "source": "/get-in-touch",
-      "destination": "/contact",
       "permanent": true
     },
     {
