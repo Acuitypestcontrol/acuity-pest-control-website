@@ -97,9 +97,8 @@ const PestControlHotelsHospitals = () => {
     <div className="w-full bg-white text-gray-800">
       <SEO
         title="Pest Control for Hotels and Hospitals in Bangalore | Acuity Pest Control"
-        description="Get professional pest control for hotels, hospitals, clinics, resorts and healthcare facilities in Bangalore. Safe commercial pest management by Acuity Pest Control."
-        keywords="hotel pest control Bangalore, hospital pest control Bangalore, healthcare pest management, pest control for hotels, pest control for hospitals, commercial pest control Bangalore"
-        canonical="https://www.acuitypestcontrols.com/pest-control-hotels-hospitals"
+        description="Professional pest control for hotels and hospitals in Bangalore. Control cockroaches, rodents, flies, mosquitoes and other pests with Acuity Pest Control."
+        canonical="https://www.acuitypestcontrols.com/hotel-hospital-pest-control"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={hotelsHospitalsSchema}
       />

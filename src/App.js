@@ -15,7 +15,6 @@ import ServicesPage from "./components/Services";
 import Contact from "./components/ContactUs";
 import PestIdentification from "./components/pestidentification";
 
-
 // Blog listing
 import Blog from "./components/blogs/blogsmainpage";
 
@@ -54,7 +53,7 @@ import EducationalInstitutionPestControl from "./components/servicepage/educatio
 import CommonAreaTreatmentResidential from "./components/servicepage/common-area-treatment-residential-complex";
 import DisinfectionServices from "./components/servicepage/disinfection-services";
 import WarehousePestManagement from "./components/servicepage/warehouse-pest-management";
-
+import HotelHospitalPestControl from "./components/servicepage/pest-control-hotels-hospitals";
 // Game pages
 import PestGameFloatingButton from "./components/PestGameFloatingButton";
 import PestGamePage from "./components/pestgame/PestGamePage";
@@ -152,7 +151,7 @@ function App() {
             path="/blogsmainpage"
             element={<Navigate to="/blogs" replace />}
           />
-         
+
           {/* INDIVIDUAL BLOG PAGES */}
 
           <Route
@@ -173,6 +172,11 @@ function App() {
           <Route
             path="/blogs/rat-control-tips-for-homes"
             element={<RatControlTipsForHomes />}
+          />
+
+          <Route
+            path="/hotel-hospital-pest-control"
+            element={<HotelHospitalPestControl />}
           />
 
           <Route
