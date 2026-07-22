@@ -96,9 +96,9 @@ const EducationalInstitutionPestControl = () => {
   return (
     <div className="w-full bg-white text-gray-800">
       <SEO
-        title="Pest Control for Schools in Bangalore | Educational Institution Pest Control"
+        title="School Pest Control in Bangalore | Acuity Pest Control"
         description="Get professional pest control for schools, colleges, universities, hostels and educational institutions in Bangalore. Safe pest management by Acuity Pest Control."
-        keywords="pest control for schools Bangalore, educational institution pest control, school pest control Bangalore, college pest control Bangalore, university pest management, hostel pest control Bangalore"
+        keywords="school pest control Bangalore, pest control for schools Bangalore, college pest control Bangalore, university pest control Bangalore, educational institution pest control, hostel pest control Bangalore, school pest control AMC"
         canonical="https://www.acuitypestcontrols.com/educational-institution-pest-control"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={educationalInstitutionSchema}
@@ -108,8 +108,11 @@ const EducationalInstitutionPestControl = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Pest control for educational institutions in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Professional pest control for schools, colleges and educational institutions in Bangalore"
+          className="h-[40vh] w-full object-cover md:h-[65vh]"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 

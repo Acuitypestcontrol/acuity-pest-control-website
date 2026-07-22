@@ -96,9 +96,9 @@ const CommonAreaTreatmentResidential = () => {
   return (
     <div className="w-full bg-white text-gray-800">
       <SEO
-        title="Common Area Pest Control Bangalore | Acuity Pest Control"
+        title="Common Area Pest Control in Bangalore | Acuity Pest Control"
         description="Professional common area pest control in Bangalore for apartments, gated communities and residential societies. Customized AMC plans by Acuity Pest Control."
-        keywords="common area pest control bangalore, apartment pest control bangalore, gated community pest control, residential society pest control, apartment AMC pest control, residential complex pest management"
+        keywords="common area pest control Bangalore, apartment common area pest control, residential complex pest control Bangalore, gated community pest control, apartment AMC pest control, residential society pest management, apartment pest management Bangalore"
         canonical="https://www.acuitypestcontrols.com/common-area-treatment-residential-complex"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={commonAreaSchema}
@@ -108,8 +108,8 @@ const CommonAreaTreatmentResidential = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Common Area Pest Control for Residential Complexes in Bangalore"
-          className="w-full h-auto"
+          alt="Common area pest control for apartments and residential complexes in Bangalore"
+          className="h-[40vh] w-full object-cover md:h-[65vh]"
           loading="eager"
           fetchPriority="high"
           decoding="async"

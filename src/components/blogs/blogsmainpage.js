@@ -222,33 +222,21 @@ const PestBlogs = () => {
   const blogSchema = [
     {
       "@context": "https://schema.org",
-      "@type": "Blog",
-      "@id": "https://www.acuitypestcontrols.com/blogs#blog",
-      name: "Acuity Pest Control Blogs",
-      url: "https://www.acuitypestcontrols.com/blogs",
-      description:
-        "Expert pest control blogs, prevention tips and treatment guides from Acuity Pest Control Bangalore.",
-      publisher: {
-        "@type": "Organization",
-        name: "Acuity Pest Control",
-        url: "https://www.acuitypestcontrols.com/",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.acuitypestcontrols.com/logo.png",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.acuitypestcontrols.com/",
         },
-      },
-      blogPost: blogs.map((blog) => ({
-        "@type": "BlogPosting",
-        headline: blog.title,
-        description: blog.desc,
-        url: `https://www.acuitypestcontrols.com${blog.slug}`,
-        datePublished: blog.isoDate,
-        dateModified: blog.isoDate,
-        author: {
-          "@type": "Organization",
-          name: "Acuity Pest Control",
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blogs",
+          item: "https://www.acuitypestcontrols.com/blogs",
         },
-      })),
+      ],
     },
     {
       "@context": "https://schema.org",
@@ -295,6 +283,19 @@ const PestBlogs = () => {
             methods and protection guides for homes, apartments, offices and
             commercial properties in Bangalore.
           </p>
+          <div className="mt-8 flex justify-center gap-4 md:gap-6 flex-wrap">
+            <span className="bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full text-sm font-semibold">
+              📚 {blogs.length} Expert Articles
+            </span>
+
+            <span className="bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full text-sm font-semibold">
+              🏠 Bangalore Focused
+            </span>
+
+            <span className="bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full text-sm font-semibold">
+              🛡️ Professional Advice
+            </span>
+          </div>
         </div>
       </section>
 
@@ -357,8 +358,11 @@ const PestBlogs = () => {
               <div className="h-80 md:h-auto overflow-hidden relative">
                 <img
                   src={featuredBlog.image}
-                  alt={`${featuredBlog.title} - Acuity Pest Control Blog`}
-                  className="w-full h-full  transition-transform duration-700 hover:scale-105"
+                  alt={`${featuredBlog.title} | Acuity Pest Controls`}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
 
                 <div className="absolute top-4 left-4 bg-[#008fc5] text-white text-xs font-bold uppercase px-3 py-1 rounded-full shadow-lg">
@@ -482,9 +486,10 @@ const PestBlogs = () => {
                   <div className="h-56 overflow-hidden relative">
                     <img
                       src={blog.image}
-                      alt={`${blog.title} - Acuity Pest Control Blog`}
+                      alt={`${blog.title} | Acuity Pest Controls Bangalore`}
                       loading="lazy"
-                      className="w-full h-full  transition-transform duration-700 group-hover:scale-110"
+                      decoding="async"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
 
                     <div className="absolute top-3 left-3 bg-[#008fc5]/90 text-white text-xs font-bold uppercase px-3 py-1 rounded-full backdrop-blur-sm">

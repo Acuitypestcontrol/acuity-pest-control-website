@@ -95,9 +95,9 @@ const OfficePestControl = () => {
   return (
     <div className="w-full bg-white text-gray-800">
       <SEO
-        title="Office Pest Control in Bangalore | Corporate Pest Control Service"
+        title="Office Pest Control in Bangalore | Acuity Pest Control"
         description="Get professional office pest control in Bangalore for IT companies, corporate offices, coworking spaces and commercial buildings. Safe service by Acuity Pest Control."
-        keywords="office pest control Bangalore, corporate pest control Bangalore, IT office pest control, commercial pest control Bangalore, coworking space pest control, office rodent control Bangalore"
+        keywords="office pest control Bangalore, corporate pest control Bangalore, IT campus pest control, commercial office pest control, coworking space pest control, office rodent control, office cockroach control, office pest control AMC"
         canonical="https://www.acuitypestcontrols.com/office-pest-control"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={officePestControlSchema}
@@ -107,8 +107,11 @@ const OfficePestControl = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Office pest control services in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Professional office pest control services in Bangalore for corporate offices and IT campuses"
+          className="h-[40vh] w-full object-cover md:h-[65vh]"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 

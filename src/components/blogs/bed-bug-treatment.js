@@ -31,46 +31,37 @@ const bedBugBlogSchema = [
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "@id":
-      "https://www.acuitypestcontrols.com/blogs/bed-bug-treatment#blogposting",
-    headline: "Bed Bug Treatment Guide: Identify, Remove and Prevent Bed Bugs",
-    description:
-      "Learn how to identify bed bugs, signs of infestation, common hiding places, treatment process and prevention tips from Acuity Pest Control Bangalore.",
-    image: "https://www.acuitypestcontrols.com/logo.png",
-    datePublished: "2026-06-26",
-    dateModified: "2026-06-26",
-    author: {
-      "@type": "Organization",
-      name: "Acuity Pest Control",
-      url: "https://www.acuitypestcontrols.com/",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Acuity Pest Control",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.acuitypestcontrols.com/logo.png",
-      },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": "https://www.acuitypestcontrols.com/blogs/bed-bug-treatment",
-    },
+    // existing BlogPosting schema
   },
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.a,
-      },
-    })),
+    // existing FAQ schema
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    // existing breadcrumb schema
+  },
+
+  // ADD THIS HERE
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.acuitypestcontrols.com/blogs/bed-bug-treatment#webpage",
+    url: "https://www.acuitypestcontrols.com/blogs/bed-bug-treatment",
+    name: "Bed Bug Treatment Guide in Bangalore",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [
+        "h1",
+        "#what-are-bed-bugs p",
+        "#signs-of-infestation h2",
+        "#treatment-process h2",
+      ],
+    },
   },
 ];
-
 const BedBugTreatmentGuide = () => {
   const signs = [
     "Red bite marks on skin",
@@ -118,28 +109,28 @@ const BedBugTreatmentGuide = () => {
 
   const relatedPosts = [
     {
-      title: "Complete Guide to Termite Control",
-      slug: "termite-control-guide",
+      title: "Signs of Termite Infestation in Your Home",
+      slug: "/blogs/signs-of-termite-infestation",
       excerpt:
-        "Learn how to identify termite infestations and protect your home from costly damage.",
+        "Learn the early signs of termite activity, including mud tubes, hollow wood and damaged furniture.",
     },
     {
-      title: "Cockroach Infestation: Signs & Solutions",
-      slug: "cockroach-control-guide",
+      title: "How to Get Rid of Cockroaches",
+      slug: "/blogs/get-rid-of-cockroaches",
       excerpt:
-        "Discover the common signs of cockroach infestation and how to control them effectively.",
+        "Understand why cockroaches enter homes and how professional treatment helps control an infestation.",
     },
     {
-      title: "Mosquito Control Tips for Your Home",
-      slug: "mosquito-control-tips",
+      title: "Mosquito Prevention During Rainy Season",
+      slug: "/blogs/mosquito-prevention-during-rainy-season",
       excerpt:
-        "Prevent mosquito problems with practical tips for your home and garden.",
+        "Protect your family from mosquitoes during Bangalore's rainy season with practical prevention tips.",
     },
     {
-      title: "Commercial Pest Control for Offices",
-      slug: "commercial-pest-control",
+      title: "Why Regular Pest Control Is Important for Businesses",
+      slug: "/blogs/why-regular-pest-control-is-important-for-businesses",
       excerpt:
-        "Maintain a healthy workspace with professional commercial pest control solutions.",
+        "Learn why offices, hotels, restaurants and commercial properties need scheduled pest management.",
     },
   ];
 
@@ -169,9 +160,20 @@ const BedBugTreatmentGuide = () => {
       <SEO
         title="Bed Bug Treatment Guide in Bangalore | Acuity Pest Control"
         description="Learn how to identify bed bugs, signs of infestation, hiding places, treatment process and prevention tips from Acuity Pest Control Bangalore."
-        keywords="bed bug treatment Bangalore, bed bug control Bangalore, bed bug signs, bed bug removal Bangalore, bed bug treatment guide, Acuity Pest Control"
+        keywords="bed bug treatment Bangalore,
+bed bug control Bangalore,
+professional bed bug treatment,
+bed bug removal services,
+bed bug exterminator Bangalore,
+bed bug infestation,
+bed bug inspection,
+mattress bed bugs,
+hotel bed bug treatment,
+PG bed bug treatment,
+home bed bug control,
+Acuity Pest Control Bangalore"
         canonical="https://www.acuitypestcontrols.com/blogs/bed-bug-treatment"
-        image="https://www.acuitypestcontrols.com/logo.png"
+        image="https://www.acuitypestcontrols.com/images/bed-bug-control-bangalore.jpg"
         schema={bedBugBlogSchema}
       />
 
@@ -179,9 +181,13 @@ const BedBugTreatmentGuide = () => {
       <section className="relative h-[55vh] md:h-[110vh] flex items-center">
         <img
           src={bannerImage}
-          alt="Bed bug treatment guide in Bangalore by Acuity Pest Control"
-          className="absolute inset-0 w-full h-full "
+          alt="Bed bug treatment and identification guide in Bangalore"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
         />
+
         <div className="absolute inset-0 bg-black/20"></div>
       </section>
 
@@ -189,8 +195,33 @@ const BedBugTreatmentGuide = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="flex flex-col lg:flex-row gap-12">
           {/* MAIN CONTENT */}
-          <div className="lg:w-2/3">
-            <div className="mb-10">
+          <main className="lg:w-2/3">
+            {/* Breadcrumb */}
+            <nav
+              aria-label="Breadcrumb"
+              className="mb-8 text-sm text-gray-600 flex flex-wrap items-center gap-2"
+            >
+              <Link to="/" className="hover:text-green-700 hover:underline">
+                Home
+              </Link>
+
+              <span>/</span>
+
+              <Link
+                to="/blogs"
+                className="hover:text-green-700 hover:underline"
+              >
+                Blogs
+              </Link>
+
+              <span>/</span>
+
+              <span className="text-[#063b3f] font-semibold">
+                Bed Bug Treatment Guide
+              </span>
+            </nav>
+
+            <header className="mb-10">
               <span className="text-green-700 font-bold tracking-[3px] uppercase text-sm">
                 Bed Bug Control Bangalore
               </span>
@@ -205,7 +236,7 @@ const BedBugTreatmentGuide = () => {
                 bugs, where they hide, why they spread and how professional bed
                 bug treatment helps.
               </p>
-            </div>
+            </header>
 
             {/* Table of Contents */}
             <div className="bg-[#f8fcfb] border border-green-100 rounded-2xl p-6 mb-10">
@@ -213,7 +244,7 @@ const BedBugTreatmentGuide = () => {
                 📑 Table of Contents
               </p>
 
-              <ul className="grid sm:grid-cols-2 gap-1 text-sm">
+              <ul className="grid sm:grid-cols-2 gap-2 text-sm">
                 {tocItems.map((item) => (
                   <li key={item.id}>
                     <a
@@ -228,7 +259,7 @@ const BedBugTreatmentGuide = () => {
             </div>
 
             {/* Intro */}
-            <section id="what-are-bed-bugs" className="scroll-mt-20 mb-14">
+            <section id="what-are-bed-bugs" className="scroll-mt-28 mb-14">
               <span className="text-green-700 font-bold tracking-[3px] uppercase text-sm">
                 Bed Bug Control Bangalore
               </span>
@@ -259,7 +290,7 @@ const BedBugTreatmentGuide = () => {
             </section>
 
             {/* Signs */}
-            <section id="signs-of-infestation" className="scroll-mt-20 mb-14">
+            <section id="signs-of-infestation" className="scroll-mt-28 mb-14">
               <span className="text-green-700 font-bold tracking-[3px] uppercase text-sm">
                 Infestation Signs
               </span>
@@ -280,8 +311,33 @@ const BedBugTreatmentGuide = () => {
               </div>
             </section>
 
+            {/* Internal Links Box */}
+            <div className="mb-14 bg-blue-50 border border-blue-100 rounded-2xl p-6">
+              <h3 className="text-xl font-black text-[#063b3f] mb-3">
+                Not Sure Which Pest You Have?
+              </h3>
+
+              <p className="text-gray-700 leading-7">
+                Compare bed bugs with other common household pests using our{" "}
+                <Link
+                  to="/pest-identification"
+                  className="text-green-700 font-semibold hover:underline"
+                >
+                  pest identification guide
+                </Link>
+                . For confirmed infestations, explore our{" "}
+                <Link
+                  to="/bed-bug-treatment"
+                  className="text-green-700 font-semibold hover:underline"
+                >
+                  professional bed bug treatment service in Bangalore
+                </Link>
+                .
+              </p>
+            </div>
+
             {/* Hiding Places */}
-            <section id="hiding-places" className="scroll-mt-20 mb-14">
+            <section id="hiding-places" className="scroll-mt-28 mb-14">
               <span className="text-green-700 font-bold tracking-[3px] uppercase text-sm">
                 Where They Hide
               </span>
@@ -309,7 +365,7 @@ const BedBugTreatmentGuide = () => {
             </section>
 
             {/* Danger */}
-            <section id="why-serious" className="scroll-mt-20 mb-14">
+            <section id="why-serious" className="scroll-mt-28 mb-14">
               <h2 className="text-3xl md:text-4xl font-black text-[#063b3f] mb-6">
                 Why Bed Bugs Are a Serious Problem
               </h2>
@@ -342,7 +398,7 @@ const BedBugTreatmentGuide = () => {
             </section>
 
             {/* Treatment Process */}
-            <section id="treatment-process" className="scroll-mt-20 mb-14">
+            <section id="treatment-process" className="scroll-mt-28 mb-14">
               <span className="text-green-700 font-bold tracking-[3px] uppercase text-sm">
                 Professional Treatment
               </span>
@@ -370,7 +426,7 @@ const BedBugTreatmentGuide = () => {
             </section>
 
             {/* Why Acuity */}
-            <section id="why-acuity" className="scroll-mt-20 mb-14">
+            <section id="why-acuity" className="scroll-mt-28 mb-14">
               <span className="text-green-700 font-bold tracking-[3px] uppercase text-sm">
                 Why Acuity
               </span>
@@ -380,9 +436,23 @@ const BedBugTreatmentGuide = () => {
               </h2>
 
               <p className="text-gray-700 leading-8 mb-6">
-                We provide safe and effective bed bug treatment for homes,
-                apartments, PGs, hotels, hostels and commercial spaces across
-                Bangalore.
+                We provide professional{" "}
+                <Link
+                  to="/bed-bug-treatment"
+                  className="text-green-700 font-semibold hover:underline"
+                >
+                  bed bug treatment in Bangalore
+                </Link>{" "}
+                for homes, apartments, PGs, hotels, hostels and commercial
+                spaces. Customers dealing with multiple pest problems can also
+                explore our{" "}
+                <Link
+                  to="/general-pest-control"
+                  className="text-green-700 font-semibold hover:underline"
+                >
+                  general pest control service
+                </Link>
+                .
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -405,7 +475,7 @@ const BedBugTreatmentGuide = () => {
             </section>
 
             {/* FAQ */}
-            <section id="faq" className="scroll-mt-20 mb-14">
+            <section id="faq" className="scroll-mt-28 mb-14">
               <span className="text-green-700 font-bold tracking-[3px] uppercase text-sm">
                 FAQ
               </span>
@@ -431,7 +501,7 @@ const BedBugTreatmentGuide = () => {
             </section>
 
             {/* Service Areas */}
-            <section id="service-areas" className="scroll-mt-20 mb-6">
+            <section id="service-areas" className="scroll-mt-28 mb-6">
               <span className="text-green-700 font-bold tracking-[3px] uppercase text-sm">
                 Service Areas
               </span>
@@ -450,11 +520,34 @@ const BedBugTreatmentGuide = () => {
                   </span>
                 ))}
               </div>
+
+              <div className="mt-6 flex flex-wrap gap-4">
+                <Link
+                  to="/bed-bug-treatment"
+                  className="text-green-700 font-bold hover:underline"
+                >
+                  View Bed Bug Treatment Service →
+                </Link>
+
+                <Link
+                  to="/contact"
+                  className="text-green-700 font-bold hover:underline"
+                >
+                  Book a Pest Inspection →
+                </Link>
+
+                <Link
+                  to="/blogs"
+                  className="text-green-700 font-bold hover:underline"
+                >
+                  Read More Pest Control Blogs →
+                </Link>
+              </div>
             </section>
 
             {/* Author Bio */}
             <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <div className="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center text-4xl font-black flex-shrink-0">
+              <div className="w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center text-2xl font-black flex-shrink-0">
                 AP
               </div>
 
@@ -469,12 +562,19 @@ const BedBugTreatmentGuide = () => {
                   termite, cockroach, mosquito and rodent control services.
                 </p>
 
-                <div className="flex gap-3 mt-2">
+                <div className="flex flex-wrap gap-4 mt-3">
                   <Link
                     to="/about"
                     className="text-green-700 font-semibold text-sm hover:underline"
                   >
                     About Us
+                  </Link>
+
+                  <Link
+                    to="/services"
+                    className="text-green-700 font-semibold text-sm hover:underline"
+                  >
+                    Our Services
                   </Link>
 
                   <Link
@@ -489,144 +589,158 @@ const BedBugTreatmentGuide = () => {
 
             {/* Related Posts */}
             <div className="mt-16 pt-8 border-t border-gray-200">
-              <h3 className="text-4xl font-black text-[#063b3f] mb-6">
+              <h2 className="text-3xl md:text-4xl font-black text-[#063b3f] mb-6">
                 📖 You Might Also Like
-              </h3>
+              </h2>
 
               <div className="grid sm:grid-cols-2 gap-5">
                 {relatedPosts.map((post) => (
                   <Link
                     key={post.slug}
-                    to={`/blogs/${post.slug}`}
-                    className="block bg-[#f8fcfb] border border-green-100 rounded-2xl p-5 hover:shadow-md transition"
+                    to={post.slug}
+                    className="block bg-[#f8fcfb] border border-green-100 rounded-2xl p-5 hover:shadow-md hover:-translate-y-1 transition"
                   >
-                    <h4 className="font-black text-[#063b3f] text-lg mb-1">
+                    <h3 className="font-black text-[#063b3f] text-lg mb-2">
                       {post.title}
-                    </h4>
+                    </h3>
 
                     <p className="text-gray-600 text-sm leading-6">
                       {post.excerpt}
                     </p>
 
-                    <span className="text-green-700 font-semibold text-sm mt-2 inline-block">
+                    <span className="text-green-700 font-semibold text-sm mt-3 inline-block">
                       Read More →
                     </span>
                   </Link>
                 ))}
               </div>
             </div>
-          </div>
+          </main>
 
           {/* SIDEBAR */}
           <aside className="lg:w-1/3">
-            {/* CTA Card */}
-            <div className="bg-[#063b3f] text-white rounded-3xl p-7 mb-8">
-              <h3 className="text-4xl font-black mb-3">Need Help?</h3>
+            <div className="lg:sticky lg:top-28">
+              {/* CTA Card */}
+              <div className="bg-[#063b3f] text-white rounded-3xl p-7 mb-8">
+                <h2 className="text-3xl font-black mb-3">Need Help?</h2>
 
-              <p className="text-gray-200 text-sm leading-6 mb-5">
-                Get bed bug inspection and treatment support anywhere in
-                Bangalore.
-              </p>
+                <p className="text-gray-200 text-sm leading-6 mb-5">
+                  Get bed bug inspection and treatment support anywhere in
+                  Bangalore.
+                </p>
 
-              <a
-                href="tel:+919941229005"
-                className="block w-full bg-green-600 hover:bg-green-700 text-center py-3.5 rounded-xl font-bold text-base mb-3 transition"
-              >
-                📞 Call Now
-              </a>
+                <a
+                  href="tel:+919941229005"
+                  className="block w-full bg-green-600 hover:bg-green-700 text-center py-3.5 rounded-xl font-bold text-base mb-3 transition"
+                >
+                  📞 Call Now
+                </a>
 
-              <a
-                href="https://wa.me/919941229005?text=Hi%20Acuity%20Pest%20Control,%20I%20need%20bed%20bug%20treatment."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full bg-white text-[#063b3f] text-center py-3.5 rounded-xl font-bold text-base mb-3 transition"
-              >
-                💬 WhatsApp Us
-              </a>
+                <a
+                  href="https://wa.me/919941229005?text=Hi%20Acuity%20Pest%20Control,%20I%20need%20bed%20bug%20treatment."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-white text-[#063b3f] text-center py-3.5 rounded-xl font-bold text-base mb-3 transition hover:bg-gray-100"
+                >
+                  💬 WhatsApp Us
+                </a>
 
-              <Link
-                to="/contact"
-                className="block w-full border border-white text-center py-3.5 rounded-xl font-bold text-base transition hover:bg-white/10"
-              >
-                Contact Us
-              </Link>
-            </div>
-
-            {/* Popular Posts */}
-            <div className="bg-[#f8fcfb] border border-green-100 rounded-3xl p-6 mb-8">
-              <h4 className="font-black text-[#063b3f] text-lg mb-4">
-                🔥 Popular Posts
-              </h4>
-
-              <ul className="space-y-3">
-                {relatedPosts.map((post) => (
-                  <li key={post.slug}>
-                    <Link
-                      to={`/blogs/${post.slug}`}
-                      className="text-[#063b3f] font-semibold hover:text-green-700 transition text-sm"
-                    >
-                      {post.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Categories */}
-            <div className="bg-[#f8fcfb] border border-green-100 rounded-3xl p-6 mb-8">
-              <h4 className="font-black text-[#063b3f] text-lg mb-4">
-                📂 Categories
-              </h4>
-
-              <div className="flex flex-wrap gap-2">
-                {categories.map((cat) => (
-                  <Link
-                    key={cat}
-                    to={`/blogs/category/${cat
-                      .toLowerCase()
-                      .replace(/\s/g, "-")}`}
-                    className="bg-white border border-green-200 px-4 py-2 rounded-full text-sm font-semibold text-[#063b3f] hover:bg-green-50 transition"
-                  >
-                    {cat}
-                  </Link>
-                ))}
+                <Link
+                  to="/contact"
+                  className="block w-full border border-white text-center py-3.5 rounded-xl font-bold text-base transition hover:bg-white/10"
+                >
+                  Contact Us
+                </Link>
               </div>
-            </div>
 
-            {/* Service Links */}
-            <div className="bg-[#f8fcfb] border border-green-100 rounded-3xl p-6">
-              <h4 className="font-black text-[#063b3f] text-lg mb-4">
-                🛠 Related Services
-              </h4>
+              {/* Popular Posts */}
+              <div className="bg-[#f8fcfb] border border-green-100 rounded-3xl p-6 mb-8">
+                <h2 className="font-black text-[#063b3f] text-lg mb-4">
+                  🔥 Popular Posts
+                </h2>
 
-              <div className="space-y-3">
-                <Link
-                  to="/bed-bug-treatment"
-                  className="block text-[#063b3f] font-semibold hover:text-green-700 transition text-sm"
-                >
-                  Bed Bug Treatment
-                </Link>
+                <ul className="space-y-3">
+                  {relatedPosts.map((post) => (
+                    <li key={post.slug}>
+                      <Link
+                        to={post.slug}
+                        className="text-[#063b3f] font-semibold hover:text-green-700 transition text-sm"
+                      >
+                        {post.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-                <Link
-                  to="/cockroach-management-service"
-                  className="block text-[#063b3f] font-semibold hover:text-green-700 transition text-sm"
-                >
-                  Cockroach Control
-                </Link>
+              {/* Categories */}
+              <div className="bg-[#f8fcfb] border border-green-100 rounded-3xl p-6 mb-8">
+                <h2 className="font-black text-[#063b3f] text-lg mb-4">
+                  📂 Categories
+                </h2>
 
-                <Link
-                  to="/anti-termite-treatment"
-                  className="block text-[#063b3f] font-semibold hover:text-green-700 transition text-sm"
-                >
-                  Termite Control
-                </Link>
+                <div className="flex flex-wrap gap-2">
+                  {categories.map((category) => (
+                    <Link
+                      key={category}
+                      to="/blogs"
+                      className="bg-white border border-green-200 px-4 py-2 rounded-full text-sm font-semibold text-[#063b3f] hover:bg-green-50 transition"
+                    >
+                      {category}
+                    </Link>
+                  ))}
+                </div>
+              </div>
 
-                <Link
-                  to="/general-pest-control"
-                  className="block text-[#063b3f] font-semibold hover:text-green-700 transition text-sm"
-                >
-                  General Pest Control
-                </Link>
+              {/* Service Links */}
+              <div className="bg-[#f8fcfb] border border-green-100 rounded-3xl p-6">
+                <h2 className="font-black text-[#063b3f] text-lg mb-4">
+                  🛠 Related Services
+                </h2>
+
+                <div className="space-y-3">
+                  <Link
+                    to="/bed-bug-treatment"
+                    className="block text-[#063b3f] font-semibold hover:text-green-700 transition text-sm"
+                  >
+                    Bed Bug Treatment
+                  </Link>
+
+                  <Link
+                    to="/cockroach-management-service"
+                    className="block text-[#063b3f] font-semibold hover:text-green-700 transition text-sm"
+                  >
+                    Cockroach Control
+                  </Link>
+
+                  <Link
+                    to="/anti-termite-treatment"
+                    className="block text-[#063b3f] font-semibold hover:text-green-700 transition text-sm"
+                  >
+                    Termite Control
+                  </Link>
+
+                  <Link
+                    to="/rodent-control"
+                    className="block text-[#063b3f] font-semibold hover:text-green-700 transition text-sm"
+                  >
+                    Rodent Control
+                  </Link>
+
+                  <Link
+                    to="/mosquito-management"
+                    className="block text-[#063b3f] font-semibold hover:text-green-700 transition text-sm"
+                  >
+                    Mosquito Control
+                  </Link>
+
+                  <Link
+                    to="/general-pest-control"
+                    className="block text-[#063b3f] font-semibold hover:text-green-700 transition text-sm"
+                  >
+                    General Pest Control
+                  </Link>
+                </div>
               </div>
             </div>
           </aside>
@@ -640,8 +754,10 @@ const BedBugTreatmentGuide = () => {
             Need Professional Bed Bug Treatment?
           </h2>
 
-          <p className="text-gray-200 mb-8 max-w-2xl mx-auto">
-            Get bed bug inspection and treatment support anywhere in Bangalore.
+          <p className="text-gray-200 mb-8 max-w-2xl mx-auto leading-7">
+            Get professional bed bug inspection and treatment support for homes,
+            apartments, hotels, hostels and commercial properties anywhere in
+            Bangalore.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

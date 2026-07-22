@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SEO from "../seo/seo";
-
 import bannerImage from "../../images/hotelb.jpg";
 
 const faqs = [
@@ -44,10 +43,10 @@ const hotelsHospitalsSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "@id":
-      "https://www.acuitypestcontrols.com/pest-control-hotels-hospitals#service",
+      "https://www.acuitypestcontrols.com/hotel-hospital-pest-control#service",
     name: "Pest Control for Hotels and Hospitals in Bangalore",
     serviceType: "Hospitality and Healthcare Pest Control",
-    url: "https://www.acuitypestcontrols.com/pest-control-hotels-hospitals",
+    url: "https://www.acuitypestcontrols.com/hotel-hospital-pest-control",
     description:
       "Professional pest control services for hotels, hospitals, resorts, clinics and healthcare facilities in Bangalore.",
     provider: {
@@ -75,7 +74,7 @@ const hotelsHospitalsSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://www.acuitypestcontrols.com/pest-control-hotels-hospitals",
+      url: "https://www.acuitypestcontrols.com/hotel-hospital-pest-control",
     },
   },
   {
@@ -96,8 +95,9 @@ const PestControlHotelsHospitals = () => {
   return (
     <div className="w-full bg-white text-gray-800">
       <SEO
-        title="Pest Control for Hotels and Hospitals in Bangalore | Acuity Pest Control"
+        title="Hotel & Hospital Pest Control Bangalore | Acuity"
         description="Professional pest control for hotels and hospitals in Bangalore. Control cockroaches, rodents, flies, mosquitoes and other pests with Acuity Pest Control."
+        keywords="hotel pest control Bangalore, hospital pest control Bangalore, healthcare pest control Bangalore, resort pest control Bangalore, clinic pest control Bangalore, commercial pest control AMC"
         canonical="https://www.acuitypestcontrols.com/hotel-hospital-pest-control"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={hotelsHospitalsSchema}
@@ -107,8 +107,11 @@ const PestControlHotelsHospitals = () => {
       <section className="relative w-full">
         <img
           src={bannerImage}
-          alt="Pest control for hotels and hospitals in Bangalore by Acuity Pest Control"
-          className="w-full h-[40vh] md:h-[110vh] "
+          alt="Professional pest control for hotels and hospitals in Bangalore"
+          className="h-[40vh] w-full object-cover md:h-[65vh]"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </section>
 

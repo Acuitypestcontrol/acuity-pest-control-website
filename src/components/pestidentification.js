@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet-async";
+
+import { Link } from "react-router-dom";
 
 import SEO from "./seo/seo";
 // Import images (keep your existing imports)
@@ -204,53 +205,61 @@ const PestIdentification = () => {
   // JSON-LD structured data for the page
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": "CollectionPage",
+    "@id": "https://www.acuitypestcontrols.com/pest-identification",
     name: "Pest Identification Guide",
-    description:
-      "Identify common pests like termites, rodents, cockroaches, bed bugs, flies, and ants with our visual guide. Learn about their habits and how to control them.",
     url: "https://www.acuitypestcontrols.com/pest-identification",
+    description:
+      "Identify termites, cockroaches, rodents, bed bugs, ants and flies commonly found in Bangalore.",
+    inLanguage: "en-IN",
+    about: [
+      "Cockroaches",
+      "Termites",
+      "Rodents",
+      "Mosquitoes",
+      "Bed Bugs",
+      "Ants",
+      "Flies",
+    ],
   };
-
   return (
     <>
-      <Helmet>
-        <title>
-          Pest Identification Guide – Identify Common Pests | Acuity Pest
-          Control
-        </title>
-        <meta
-          name="description"
-          content="Identify common pests like termites, rodents, cockroaches, bed bugs, flies, and ants with our visual guide. Learn about their habits and how to control them."
-        />
-        <meta
-          name="keywords"
-          content="pest identification, termites, rodents, cockroaches, bed bugs, ants, flies, pest control, Bangalore, subterranean termite, drywood termite, Norway rat, house mouse, American cockroach, German cockroach, bed bug treatment, carpenter ant, fire ant"
-        />
-        <meta
-          property="og:title"
-          content="Pest Identification Guide – Identify Common Pests"
-        />
-        <meta
-          property="og:description"
-          content="Visual guide to identify common pests in Bangalore. Learn about their habits and get expert help."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://www.acuitypestcontrols.com/pest-identification"
-        />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
+      <title>
+        Pest Identification Guide – Identify Common Pests | Acuity Pest Control
+      </title>
+      <meta
+        name="description"
+        content="Identify common pests like termites, rodents, cockroaches, bed bugs, flies, and ants with our visual guide. Learn about their habits and how to control them."
+      />
+      <meta
+        name="keywords"
+        content="pest identification, termites, rodents, cockroaches, bed bugs, ants, flies, pest control, Bangalore, subterranean termite, drywood termite, Norway rat, house mouse, American cockroach, German cockroach, bed bug treatment, carpenter ant, fire ant"
+      />
+      <meta
+        property="og:title"
+        content="Pest Identification Guide – Identify Common Pests"
+      />
+      <meta
+        property="og:description"
+        content="Visual guide to identify common pests in Bangalore. Learn about their habits and get expert help."
+      />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:url"
+        content="https://www.acuitypestcontrols.com/pest-identification"
+      />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
 
       <div className="w-full min-h-screen bg-white">
         <SEO
-          title="Pest Identification Guide | Acuity Pest Control Bangalore"
-          description="Identify common pests including termites, cockroaches, rodents, flies, bed bugs and ants with Acuity Pest Control Bangalore."
-          keywords="pest identification Bangalore, identify cockroaches, termite identification, rodent identification, bed bug identification, ant identification"
+          title="Pest Identification Guide | Acuity Pest Controls Bangalore"
+          description="Identify termites, cockroaches, rodents, bed bugs, ants and flies with Acuity Pest Controls Bangalore."
+          keywords="pest identification Bangalore, termites Bangalore, cockroach identification, rodent identification, ant identification, bed bug identification"
           canonical="https://www.acuitypestcontrols.com/pest-identification"
           image="https://www.acuitypestcontrols.com/logo.png"
+          schema={jsonLd}
         />
-        
+
         {/* ===== HERO SECTION ===== */}
         <section className="relative bg-gradient-to-br from-[#008fc5] to-[#006f9f] py-16 md:py-24 px-4 text-white overflow-hidden">
           <div className="max-w-4xl mx-auto text-center relative z-10 md:pt-36 pt-24">
@@ -258,15 +267,17 @@ const PestIdentification = () => {
               Pest Identification
             </h1>
             <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
-              Identify common pests quickly with our visual guide. Learn about
-              their habits, habitats, and how to control them.
+              Identify termites, cockroaches, rodents, ants, bed bugs and flies
+              commonly found in homes and commercial properties across
+              Bangalore. Learn how to recognize each pest and when professional
+              treatment is recommended.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
                 🏠 19+ Years Experience
               </span>
               <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
-                🔍 5000+ Pests Identified
+                🔍 5000+ Professional Pest Identification Guide in Bangalore
               </span>
               <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium">
                 📞 24/7 Support
@@ -358,9 +369,10 @@ const PestIdentification = () => {
                   <div className="relative h-48 bg-gray-100 overflow-hidden">
                     <img
                       src={pest.image}
-                      alt={pest.name}
-                      className="w-full h-full  transition-transform duration-500 group-hover:scale-105"
+                      alt={`${pest.name} identification guide in Bangalore`}
                       loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
@@ -372,20 +384,30 @@ const PestIdentification = () => {
                       {pest.desc ||
                         "Common pest found in homes and businesses."}
                     </p>
-                    <div className="mt-4 flex items-center justify-between">
-                      <span className="text-xs font-semibold text-[#008fc5] bg-blue-50 px-3 py-1 rounded-full">
+                    <div className="mt-4">
+                      <span className="inline-block text-xs font-semibold text-[#008fc5] bg-blue-50 px-3 py-1 rounded-full">
                         {pest.category}
                       </span>
-                      <a
-                        href={`https://wa.me/919941229005?text=Hi%20Acuity%20Pest%20Controls,%20I%20need%20help%20with%20${encodeURIComponent(
-                          pest.name,
-                        )}.`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-medium text-green-600 hover:text-green-700 transition"
-                      >
-                        Get Help →
-                      </a>
+
+                      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+                        <Link
+                          to="/contact"
+                          className="text-sm font-semibold text-blue-600 hover:text-blue-700 transition"
+                        >
+                          Book Inspection
+                        </Link>
+
+                        <a
+                          href={`https://wa.me/919941229005?text=Hi%20Acuity%20Pest%20Controls,%20I%20need%20help%20with%20${encodeURIComponent(
+                            pest.name,
+                          )}.`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-semibold text-green-600 hover:text-green-700 transition"
+                        >
+                          Get Help →
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
