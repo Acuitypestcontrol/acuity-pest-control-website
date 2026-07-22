@@ -150,17 +150,12 @@
 
     {
       "source": "/pest-control-for-hospitals-and-labs",
-      "destination": "/pest-control-for-hotels-hospitals",
+      "destination": "/hotel-hospital-pest-control",
       "permanent": true
     },
     {
       "source": "/top-rat-control-services-in-bangalore-for-a-pest-free-home",
       "destination": "/rodent-management-service",
-      "permanent": true
-    },
-    {
-      "source": "/pest-control-for-hospitals-and-labs",
-      "destination": "/pest-control-for-hotels-hospitals",
       "permanent": true
     },
 
@@ -171,7 +166,7 @@
     },
     {
       "source": "/why-pest-control-is-essential-for-hospitals-safeguarding-health-with-acuity-pest-control",
-      "destination": "/pest-control-hotels-hospitals",
+      "destination": "/hotel-hospital-pest-control",
       "permanent": true
     },
     {
@@ -422,6 +417,36 @@
     {
       "source": "/why-pest-management-in-schools-and-colleges-is-essential-for-a-safe-learning-environment",
       "destination": "/educational-institution-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-in-mg-road",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-in-old-madras-road",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-in-munnekolala",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-in-hoodi",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-in-sarjapur-road",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-in-varthur",
+      "destination": "/general-pest-control",
       "permanent": true
     }
   ],
