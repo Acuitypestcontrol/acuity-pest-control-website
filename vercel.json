@@ -448,6 +448,77 @@
       "source": "/pest-control-in-varthur",
       "destination": "/general-pest-control",
       "permanent": true
+    },
+
+    {
+      "source": "/team",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/team/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/faq/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/lizard-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/lizard-pest-control/",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-control-services",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-control-services/",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/bed-bugs-treatment",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/bed-bugs-treatment/",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/the-best-pest-control-services-in-bangalore-for-cockroaches",
+      "destination": "/blogs/get-rid-of-cockroaches",
+      "permanent": true
+    },
+    {
+      "source": "/the-best-pest-control-services-in-bangalore-for-cockroaches/",
+      "destination": "/blogs/get-rid-of-cockroaches",
+      "permanent": true
+    },
+    {
+      "source": "/the-hidden-dangers-how-termite-related-health-issues-impact-your-well-being",
+      "destination": "/blogs/signs-of-termite-infestation",
+      "permanent": true
+    },
+    {
+      "source": "/the-hidden-dangers-how-termite-related-health-issues-impact-your-well-being/",
+      "destination": "/blogs/signs-of-termite-infestation",
+      "permanent": true
     }
   ],
   "rewrites": [
