@@ -147,7 +147,6 @@
       "destination": "/anti-termite-treatment",
       "permanent": true
     },
-
     {
       "source": "/pest-control-for-hospitals-and-labs",
       "destination": "/hotel-hospital-pest-control",
@@ -158,7 +157,6 @@
       "destination": "/rodent-management-service",
       "permanent": true
     },
-
     {
       "source": "/the-growing-need-for-rodent-control-in-bangalore-protecting-your-home-and-health",
       "destination": "/blogs/rat-control-tips-for-homes",
@@ -231,7 +229,7 @@
     },
     {
       "source": "/the-best-pest-control-services-in-bangalore-for-cockroaches",
-      "destination": "/blogs/why-cockroaches-enter-your-kitchen",
+      "destination": "/blogs/get-rid-of-cockroaches",
       "permanent": true
     },
     {
@@ -247,11 +245,6 @@
     {
       "source": "/wp-sitemap.xml",
       "destination": "/sitemap.xml",
-      "permanent": true
-    },
-    {
-      "source": "/cockroach-control-services",
-      "destination": "/cockroach-management-service",
       "permanent": true
     },
     {
@@ -316,7 +309,7 @@
     },
     {
       "source": "/pest-control-for-hotels-why-acuity-pest-controls-is-your-best-choice",
-      "destination": "/pest-control-hotels-hospitals",
+      "destination": "/hotel-hospital-pest-control",
       "permanent": true
     },
     {
@@ -449,7 +442,6 @@
       "destination": "/general-pest-control",
       "permanent": true
     },
-
     {
       "source": "/team",
       "destination": "/about",
@@ -501,23 +493,58 @@
       "permanent": true
     },
     {
-      "source": "/the-best-pest-control-services-in-bangalore-for-cockroaches",
-      "destination": "/blogs/get-rid-of-cockroaches",
-      "permanent": true
-    },
-    {
-      "source": "/the-best-pest-control-services-in-bangalore-for-cockroaches/",
-      "destination": "/blogs/get-rid-of-cockroaches",
-      "permanent": true
-    },
-    {
-      "source": "/the-hidden-dangers-how-termite-related-health-issues-impact-your-well-being",
-      "destination": "/blogs/signs-of-termite-infestation",
-      "permanent": true
-    },
-    {
       "source": "/the-hidden-dangers-how-termite-related-health-issues-impact-your-well-being/",
       "destination": "/blogs/signs-of-termite-infestation",
+      "permanent": true
+    },
+    {
+      "source": "/which-type-of-pest-control-is-best-a-guide-to-finding-the-best-pest-control-in-bangalore/",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-preventing-common-household-pests-in-bangalore/",
+      "destination": "/blogs/top-10-household-pests-in-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/rodent-control/page-5297765",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/residential-pe",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-services/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/pets-control-services-in-bangalore/",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-mosquito-control-how-acuity-pest-controls-protects-your-home-and-family/feed",
+      "destination": "/blogs/mosquito-prevention-during-rainy-season",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-mosquito-control-how-acuity-pest-controls-protects-your-home-and-family/feed/",
+      "destination": "/blogs/mosquito-prevention-during-rainy-season",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "/",
       "permanent": true
     }
   ],
