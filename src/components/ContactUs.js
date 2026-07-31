@@ -232,11 +232,11 @@ Please contact me regarding pest control service in Bangalore.`;
       />
 
       {/* HERO BANNER */}
-      <section className="relative h-[45vh] overflow-hidden md:h-[65vh]">
+      <section className="relative h-[45vh] overflow-hidden  md:h-[85vh]">
         <img
           src={bannerImage}
           alt="Contact Acuity Pest Controls for professional pest control services in Bangalore"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full  "
           loading="eager"
           fetchPriority="high"
           decoding="async"

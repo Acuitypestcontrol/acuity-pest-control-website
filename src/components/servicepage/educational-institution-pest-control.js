@@ -109,7 +109,7 @@ const EducationalInstitutionPestControl = () => {
         <img
           src={bannerImage}
           alt="Professional pest control for schools, colleges and educational institutions in Bangalore"
-          className="h-[40vh] w-full object-cover md:h-[65vh]"
+          className="h-[40vh] w-full    md:h-[85vh]"
           loading="eager"
           fetchPriority="high"
           decoding="async"

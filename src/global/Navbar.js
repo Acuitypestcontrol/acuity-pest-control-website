@@ -1,28 +1,107 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "motion/react";
+
 import {
+  FaArrowRight,
   FaBars,
-  FaTimes,
-  FaPhoneAlt,
-  FaWhatsapp,
-  FaEnvelope,
-  FaChevronDown,
-  FaShieldAlt,
   FaBuilding,
-  FaSprayCan,
+  FaChevronDown,
+  FaEnvelope,
   FaLocationArrow,
+  FaPhoneAlt,
+  FaShieldAlt,
+  FaSprayCan,
+  FaTimes,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 import logo from "../images/acuitylogo1.png";
 
+/* =========================================================
+   ANIMATION SETTINGS
+========================================================= */
+
+const menuAnimation = {
+  hidden: {
+    opacity: 0,
+    y: -15,
+    scale: 0.98,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+
+    transition: {
+      duration: 0.28,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+
+  exit: {
+    opacity: 0,
+    y: -10,
+    scale: 0.98,
+
+    transition: {
+      duration: 0.18,
+    },
+  },
+};
+
+const mobileMenuAnimation = {
+  hidden: {
+    opacity: 0,
+    y: -20,
+    scale: 0.97,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+
+    transition: {
+      duration: 0.32,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+
+  exit: {
+    opacity: 0,
+    y: -15,
+    scale: 0.97,
+
+    transition: {
+      duration: 0.22,
+    },
+  },
+};
+
+/* =========================================================
+   NAVBAR COMPONENT
+========================================================= */
+
 const Navbar = () => {
+  const location = useLocation();
+
   const [open, setOpen] = useState(false);
+
   const [servicesOpen, setServicesOpen] = useState(false);
+
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
+
   const [scrolled, setScrolled] = useState(false);
+
+  /* =======================================================
+     PAGE SCROLL DETECTION
+  ======================================================= */
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      setScrolled(window.scrollY > 45);
     };
 
     handleScroll();
@@ -35,6 +114,36 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  /* =======================================================
+     CLOSE NAVIGATION AFTER ROUTE CHANGE
+  ======================================================= */
+
+  useEffect(() => {
+    setOpen(false);
+    setServicesOpen(false);
+    setDesktopServicesOpen(false);
+  }, [location.pathname]);
+
+  /* =======================================================
+     PREVENT PAGE SCROLL WHEN MOBILE MENU IS OPEN
+  ======================================================= */
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  /* =======================================================
+     HOME SERVICES
+  ======================================================= */
 
   const homeServices = [
     {
@@ -75,6 +184,10 @@ const Navbar = () => {
     },
   ];
 
+  /* =======================================================
+     COMMERCIAL SERVICES
+  ======================================================= */
+
   const commercialServices = [
     {
       name: "Pre Construction Termite Treatment",
@@ -102,428 +215,913 @@ const Navbar = () => {
     },
   ];
 
+  /* =======================================================
+     MAIN NAVIGATION LINKS
+  ======================================================= */
+
+  const navigationLinks = [
+    {
+      name: "HOME",
+      link: "/",
+    },
+    {
+      name: "ABOUT US",
+      link: "/aboutus",
+    },
+    {
+      name: "PEST IDENTIFICATION",
+      link: "/pestidentification",
+    },
+    {
+      name: "BLOG",
+      link: "/blogsmainpage",
+    },
+    {
+      name: "CONTACT",
+      link: "/contactus",
+    },
+  ];
+
   const closeMobileMenu = () => {
     setOpen(false);
     setServicesOpen(false);
   };
 
+  const isActiveLink = (path) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+
+    return location.pathname.startsWith(path);
+  };
+
+  const servicesActive =
+    location.pathname === "/services" ||
+    homeServices.some((item) => location.pathname.startsWith(item.link)) ||
+    commercialServices.some((item) =>
+      location.pathname.startsWith(item.link),
+    ) ||
+    location.pathname.startsWith("/disinfection-services");
+
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-transparent">
-      {/* ================= TOP BAR ================= */}
+    <>
+      <header className="fixed left-0 top-0 z-[1000] w-full">
+        {/* =================================================
+            NAVBAR CSS ANIMATIONS
+        ================================================== */}
 
-      <div
-        className={`text-white transition-all duration-300 ${
-          scrolled
-            ? "bg-[#063b3f]/35 backdrop-blur-md shadow-sm"
-            : "bg-[#063b3f]/70 backdrop-blur-sm"
-        }`}
-      >
-        {/* Desktop top bar */}
+        <style>
+          {`
+            @keyframes navbarGlow {
+              0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+              }
 
-        <div className="hidden md:flex max-w-7xl mx-auto px-4 py-2 items-center justify-between gap-4 text-sm">
-          <a
-            href="https://maps.app.goo.gl/N5GeNpCZJMbavHHe7"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex min-w-0 items-center gap-2 hover:text-green-300 transition"
-          >
-            <FaLocationArrow className="shrink-0" />
+              50% {
+                opacity: 0.6;
+                transform: scale(1.15);
+              }
+            }
 
-            <span className="truncate">
-              JP Nagar 6th Phase, Yelachenahalli, Bengaluru - 560078
-            </span>
-          </a>
+            @keyframes navbarShine {
+              0% {
+                left: -100%;
+              }
 
-          <div className="flex shrink-0 items-center gap-4">
+              100% {
+                left: 160%;
+              }
+            }
+
+            @keyframes whatsappPulse {
+              0%, 100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.32);
+              }
+
+              50% {
+                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+              }
+            }
+
+            .navbar-glow {
+              animation: navbarGlow 5s ease-in-out infinite;
+            }
+
+            .navbar-shine {
+              position: relative;
+              overflow: hidden;
+            }
+
+            .navbar-shine::after {
+              position: absolute;
+              top: -80%;
+              left: -100%;
+              width: 18%;
+              height: 260%;
+              content: "";
+              background: rgba(255, 255, 255, 0.3);
+              transform: rotate(22deg);
+              animation: navbarShine 4.5s ease-in-out infinite;
+            }
+
+            .navbar-whatsapp-pulse {
+              animation: whatsappPulse 2.4s ease-in-out infinite;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+              .navbar-glow,
+              .navbar-shine::after,
+              .navbar-whatsapp-pulse {
+                animation: none;
+              }
+            }
+          `}
+        </style>
+
+        {/* =================================================
+            DESKTOP TOP INFORMATION BAR
+        ================================================== */}
+
+        <motion.div
+          animate={{
+            height: scrolled ? 0 : "auto",
+            opacity: scrolled ? 0 : 1,
+          }}
+          transition={{
+            duration: 0.35,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="hidden overflow-hidden bg-[#063b3f]/90 text-white backdrop-blur-xl md:block"
+        >
+          <div className="mx-auto flex max-w-[1450px] items-center justify-between gap-5 px-5 py-2 text-xs lg:px-8 lg:text-sm">
+            {/* LOCATION */}
+
+            <a
+              href="https://maps.app.goo.gl/N5GeNpCZJMbavHHe7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex min-w-0 items-center gap-2 transition hover:text-green-300"
+            >
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 transition group-hover:bg-green-500 group-hover:text-white">
+                <FaLocationArrow size={12} />
+              </span>
+
+              <span className="truncate font-semibold">
+                JP Nagar 6th Phase, Yelachenahalli, Bengaluru – 560078
+              </span>
+            </a>
+
+            {/* ISO BADGE */}
+
             <Link
               to=""
-              className="bg-green-600 hover:bg-green-700 px-3 py-1 rounded-full font-semibold transition"
+              className="navbar-shine hidden shrink-0 items-center gap-2 rounded-full border border-green-400/30 bg-green-600 px-4 py-1.5 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-green-500 lg:flex"
             >
-              🏅 ISO 9001:2015 - (305024122052Q)
+              <span>🏅</span>
+              ISO 9001:2015 – (305024122052Q)
             </Link>
+
+            {/* EMAIL */}
 
             <a
               href="mailto:info@acuitygroups.in"
-              className="flex items-center gap-2 hover:text-green-300 transition"
+              className="group hidden shrink-0 items-center gap-2 transition hover:text-green-300 xl:flex"
             >
-              <FaEnvelope />
-
-              <span className="hidden lg:inline">info@acuitygroups.in</span>
-            </a>
-          </div>
-
-          <div className="flex shrink-0 items-center gap-5">
-            <a
-              href="tel:+919941229005"
-              className="flex items-center gap-2 hover:text-green-300 transition"
-            >
-              <FaPhoneAlt />
-              +91 99412 29005
+              <FaEnvelope className="transition group-hover:scale-110" />
+              info@acuitygroups.in
             </a>
 
-            <a
-              href="https://wa.me/919941229005"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-green-300 transition"
-            >
-              <FaWhatsapp className="text-green-400" />
-              WhatsApp
-            </a>
-          </div>
-        </div>
+            {/* PHONE AND WHATSAPP */}
 
-        {/* Compact mobile top bar */}
-
-        <div className="grid grid-cols-3 md:hidden px-2 py-1.5 text-[11px] sm:text-xs font-semibold">
-          <a
-            href="tel:+919941229005"
-            className="flex items-center justify-center gap-1.5"
-          >
-            <FaPhoneAlt className="shrink-0" />
-            Call
-          </a>
-
-          <a
-            href="mailto:info@acuitygroups.in"
-            className="flex items-center justify-center gap-1.5"
-          >
-            <FaEnvelope className="shrink-0" />
-            Email
-          </a>
-
-          <a
-            href="https://wa.me/919941229005"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-1.5"
-          >
-            <FaWhatsapp className="shrink-0 text-green-400" />
-            WhatsApp
-          </a>
-        </div>
-      </div>
-
-      {/* ================= MAIN NAVBAR ================= */}
-
-      <div
-        className={`w-full border-b transition-all duration-300 ${
-          scrolled
-            ? "bg-white/55 backdrop-blur-md border-white/40 shadow-sm"
-            : "bg-white/30 backdrop-blur-sm border-white/20 shadow-none"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-3 sm:px-4">
-          <div className="flex min-h-[62px] md:min-h-0 items-center justify-between bg-transparent px-2 sm:px-4 py-1 md:py-0">
-            {/* Logo */}
-
-            <Link
-              to="/"
-              onClick={closeMobileMenu}
-              className="flex shrink-0 items-center"
-            >
-              <img
-                src={logo}
-                alt="Acuity Pest Controls"
-                className={`h-12 sm:h-14 md:h-28 w-auto object-contain transition-all duration-300 ${
-                  scrolled ? "scale-95" : "scale-100"
-                }`}
-              />
-            </Link>
-
-            {/* ================= DESKTOP NAVIGATION ================= */}
-
-            <nav className="hidden xl:flex items-center gap-6 font-semibold text-black text-md">
-              <Link to="/" className="hover:text-blue-900 transition">
-                HOME
-              </Link>
-
-              <Link to="/aboutus" className="hover:text-blue-900 transition">
-                ABOUT US
-              </Link>
-
-              <div className="relative group py-6">
-                <Link
-                  to="/services"
-                  className="flex items-center gap-1 hover:text-blue-900 transition"
-                >
-                  SERVICES
-                  <FaChevronDown className="text-xs group-hover:rotate-180 transition-transform duration-300" />
-                </Link>
-
-                {/* Services mega menu */}
-
-                <div className="absolute left-1/2 top-full grid w-[980px] max-w-[90vw] -translate-x-1/2 translate-y-2 grid-cols-3 gap-10 rounded-2xl border border-gray-100 bg-white p-8 opacity-0 invisible shadow-2xl transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                  {/* Home services */}
-
-                  <div>
-                    <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-[#063b3f]">
-                      <FaShieldAlt className="text-blue-900" />
-                      HOME SERVICES
-                    </h3>
-
-                    <ul className="max-h-60 space-y-2 overflow-y-auto pr-2">
-                      {homeServices.map((item) => (
-                        <li key={item.link}>
-                          <Link
-                            to={item.link}
-                            className="block text-sm text-gray-600 transition hover:text-blue-900"
-                          >
-                            {item.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Commercial services */}
-
-                  <div>
-                    <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-[#063b3f]">
-                      <FaBuilding className="text-blue-900" />
-                      COMMERCIAL SERVICES
-                    </h3>
-
-                    <ul className="max-h-60 space-y-2 overflow-y-auto pr-2">
-                      {commercialServices.map((item) => (
-                        <li key={item.link}>
-                          <Link
-                            to={item.link}
-                            className="block text-sm text-gray-600 transition hover:text-blue-900"
-                          >
-                            {item.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Sanitization */}
-
-                  <div>
-                    <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-[#063b3f]">
-                      <FaSprayCan className="text-blue-900" />
-                      SANITIZATION
-                    </h3>
-
-                    <Link
-                      to="/disinfection-services"
-                      className="block text-sm text-gray-600 hover:text-blue-900"
-                    >
-                      Disinfection Services
-                    </Link>
-
-                    <div className="mt-6 rounded-2xl border border-green-100 bg-green-50 p-5">
-                      <h4 className="mb-1 font-bold text-[#063b3f]">
-                        Need help choosing?
-                      </h4>
-
-                      <p className="mb-4 text-sm text-gray-600">
-                        Our experts are here to guide you.
-                      </p>
-
-                      <Link
-                        to="/contact"
-                        className="inline-flex items-center gap-2 rounded-full bg-blue-900 px-5 py-3 font-bold text-white transition hover:bg-green-700"
-                      >
-                        Contact Us
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <Link
-                to="/pestidentification"
-                className="hover:text-blue-900 transition"
+            <div className="flex shrink-0 items-center gap-3">
+              <a
+                href="tel:+919941229005"
+                className="group flex items-center gap-2 rounded-full px-3 py-1.5 transition hover:bg-white/10 hover:text-green-300"
               >
-                PEST IDENTIFICATION
-              </Link>
+                <FaPhoneAlt className="transition group-hover:rotate-12" />
 
-              <Link
-                to="/blogsmainpage"
-                className="hover:text-blue-900 transition"
+                <span className="font-bold">+91 99412 29005</span>
+              </a>
+
+              <a
+                href="https://wa.me/919941229005"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="navbar-whatsapp-pulse flex items-center gap-2 rounded-full bg-green-600 px-4 py-1.5 font-bold text-white transition hover:-translate-y-0.5 hover:bg-green-500"
               >
-                BLOG
-              </Link>
-
-              <Link to="/contactus" className="hover:text-blue-900 transition">
-                CONTACT
-              </Link>
-            </nav>
-
-            {/* Compact mobile toggle */}
-
-            <button
-              type="button"
-              onClick={() => setOpen((current) => !current)}
-              className={`xl:hidden flex h-10 w-10 items-center justify-center rounded-lg text-xl transition-all duration-300 ${
-                scrolled
-                  ? "bg-white/30 text-black border border-white/40"
-                  : "bg-white/20 text-black border border-white/30"
-              }`}
-              aria-label="Toggle navigation"
-              aria-expanded={open}
-            >
-              {open ? <FaTimes /> : <FaBars />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* ================= MOBILE MENU ================= */}
-
-      <div
-        className={`xl:hidden mx-3 sm:mx-4 mt-1 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${
-          open
-            ? "max-h-[82vh] opacity-100 visible"
-            : "max-h-0 opacity-0 invisible"
-        }`}
-      >
-        <div className="max-h-[82vh] space-y-3 overflow-y-auto px-5 py-4">
-          <Link
-            to="/"
-            onClick={closeMobileMenu}
-            className="block border-b border-gray-100 py-3 font-bold"
-          >
-            HOME
-          </Link>
-
-          <Link
-            to="/aboutus"
-            onClick={closeMobileMenu}
-            className="block border-b border-gray-100 py-3 font-bold"
-          >
-            ABOUT US
-          </Link>
-
-          <div>
-            <button
-              type="button"
-              onClick={() => setServicesOpen((current) => !current)}
-              className="flex w-full items-center justify-between border-b border-gray-100 py-3 font-bold"
-              aria-expanded={servicesOpen}
-            >
-              <span>SERVICES</span>
-
-              <FaChevronDown
-                className={`transition-transform duration-300 ${
-                  servicesOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-
-            <div
-              className={`overflow-hidden transition-all duration-300 ${
-                servicesOpen
-                  ? "max-h-[1200px] opacity-100"
-                  : "max-h-0 opacity-0"
-              }`}
-            >
-              <div className="mt-3 space-y-2 pl-3 text-sm">
-                <Link
-                  to="/services"
-                  onClick={closeMobileMenu}
-                  className="mb-3 block font-bold text-green-700"
-                >
-                  View All Services
-                </Link>
-
-                <p className="font-semibold text-[#063b3f]">Home Services</p>
-
-                {homeServices.map((item) => (
-                  <Link
-                    key={item.link}
-                    to={item.link}
-                    onClick={closeMobileMenu}
-                    className="block py-1 text-gray-600 hover:text-blue-900"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-
-                <p className="mt-4 font-semibold text-[#063b3f]">
-                  Commercial Services
-                </p>
-
-                {commercialServices.map((item) => (
-                  <Link
-                    key={item.link}
-                    to={item.link}
-                    onClick={closeMobileMenu}
-                    className="block py-1 text-gray-600 hover:text-blue-900"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-
-                <p className="mt-4 font-semibold text-[#063b3f]">
-                  Sanitization
-                </p>
-
-                <Link
-                  to="/disinfection-services"
-                  onClick={closeMobileMenu}
-                  className="block py-1 text-gray-600 hover:text-blue-900"
-                >
-                  Disinfection Services
-                </Link>
-              </div>
+                <FaWhatsapp size={17} />
+                WhatsApp
+              </a>
             </div>
           </div>
+        </motion.div>
 
-          <Link
-            to="/pestidentification"
-            onClick={closeMobileMenu}
-            className="block border-b border-gray-100 py-3 font-bold"
-          >
-            PEST IDENTIFICATION
-          </Link>
+        {/* =================================================
+            MOBILE TOP BAR
+        ================================================== */}
 
-          <Link
-            to="/blogsmainpage"
-            onClick={closeMobileMenu}
-            className="block border-b border-gray-100 py-3 font-bold"
-          >
-            BLOG
-          </Link>
-
-          <Link
-            to="/contactus"
-            onClick={closeMobileMenu}
-            className="block border-b border-gray-100 py-3 font-bold"
-          >
-            CONTACT
-          </Link>
-
-          <div className="grid grid-cols-2 gap-3 pt-3">
+        <motion.div
+          animate={{
+            height: scrolled ? 0 : "auto",
+            opacity: scrolled ? 0 : 1,
+          }}
+          transition={{
+            duration: 0.3,
+          }}
+          className="overflow-hidden bg-[#063b3f]/90 text-white backdrop-blur-xl md:hidden"
+        >
+          <div className="grid grid-cols-3 divide-x divide-white/10 px-2 py-2 text-[11px] font-bold">
             <a
               href="tel:+919941229005"
-              className="rounded-full bg-orange-500 py-3 text-center font-bold text-white"
+              className="flex items-center justify-center gap-1.5"
             >
+              <FaPhoneAlt />
               Call
             </a>
 
             <a
+              href="mailto:info@acuitygroups.in"
+              className="flex items-center justify-center gap-1.5"
+            >
+              <FaEnvelope />
+              Email
+            </a>
+
+            <a
               href="https://wa.me/919941229005"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-green-600 py-3 text-center font-bold text-white"
+              className="flex items-center justify-center gap-1.5 text-green-300"
             >
+              <FaWhatsapp size={14} />
               WhatsApp
             </a>
           </div>
+        </motion.div>
 
-          <a
-            href="mailto:info@acuitygroups.in"
-            className="block py-2 text-center font-semibold text-blue-600"
-          >
-            <FaEnvelope className="mr-2 inline" />
-            info@acuitygroups.in
-          </a>
-        </div>
-      </div>
-    </header>
+        {/* =================================================
+            MAIN NAVIGATION
+        ================================================== */}
+
+        <motion.div
+          animate={{
+            paddingTop: scrolled ? 0 : 4,
+            paddingBottom: scrolled ? 0 : 4,
+          }}
+          transition={{
+            duration: 0.35,
+          }}
+          className={`relative w-full transition-all duration-500 ${
+            scrolled
+              ? "border-b border-white/30  shadow-[0_12px_40px_rgba(6,59,63,0.12)] backdrop-blur-3xl bg-transparent "
+              : "border-b border-transparent bg-transparent shadow-none backdrop-blur-none"
+          }`}
+        >
+          {/* DECORATIVE BACKGROUND */}
+
+          <div
+            className={`navbar-glow pointer-events-none absolute -left-20 top-0 h-32 w-64 rounded-full bg-green-300/30 blur-[80px] transition-opacity duration-500 ${
+              scrolled ? "opacity-50" : "opacity-20"
+            }`}
+          />
+
+          <div className="relative mx-auto max-w-[1450px] px-3 sm:px-5 lg:px-8">
+            <div
+              className={`flex items-center justify-between transition-all duration-500 ${
+                scrolled ? "min-h-[72px]" : "min-h-[84px] md:min-h-[105px]"
+              }`}
+            >
+              {/* =============================================
+                  LOGO
+              ============================================== */}
+
+              <motion.div
+                animate={{
+                  scale: scrolled ? 0.9 : 1,
+                }}
+                transition={{
+                  duration: 0.35,
+                }}
+                className="shrink-0"
+              >
+                <Link
+                  to="/"
+                  onClick={closeMobileMenu}
+                  aria-label="Go to Acuity Pest Controls home page"
+                  className="group flex items-center"
+                >
+                  <img
+                    src={logo}
+                    alt="Acuity Pest Controls"
+                    className={`w-auto object-contain transition-all duration-500 ${
+                      scrolled
+                        ? "h-14 md:h-[90px]"
+                        : "h-14 sm:h-16 md:h-[120px]"
+                    }`}
+                  />
+                </Link>
+              </motion.div>
+
+              {/* =============================================
+                  DESKTOP NAVIGATION
+              ============================================== */}
+
+              <nav className="hidden items-center gap-1 xl:flex">
+                {/* HOME */}
+
+                <DesktopNavLink
+                  to="/"
+                  label="HOME"
+                  active={isActiveLink("/")}
+                />
+
+                {/* ABOUT */}
+
+                <DesktopNavLink
+                  to="/aboutus"
+                  label="ABOUT US"
+                  active={isActiveLink("/aboutus")}
+                />
+
+                {/* SERVICES */}
+
+                <div
+                  className="relative"
+                  onMouseEnter={() => setDesktopServicesOpen(true)}
+                  onMouseLeave={() => setDesktopServicesOpen(false)}
+                >
+                  <Link
+                    to="/services"
+                    onFocus={() => setDesktopServicesOpen(true)}
+                    className={`group relative flex items-center gap-1.5 rounded-full px-4 py-3 text-sm font-black tracking-wide transition duration-300 ${
+                      servicesActive
+                        ? "text-green-700"
+                        : "text-[#102e30] hover:text-green-700"
+                    }`}
+                  >
+                    SERVICES
+                    <FaChevronDown
+                      className={`text-[10px] transition-transform duration-300 ${
+                        desktopServicesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                    <span
+                      className={`absolute bottom-1 left-1/2 h-[3px] -translate-x-1/2 rounded-full bg-green-600 transition-all duration-300 ${
+                        servicesActive || desktopServicesOpen
+                          ? "w-8"
+                          : "w-0 group-hover:w-8"
+                      }`}
+                    />
+                  </Link>
+
+                  <AnimatePresence>
+                    {desktopServicesOpen && (
+                      <motion.div
+                        variants={menuAnimation}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        className="absolute right-[-320px] top-full z-[1200] pt-4"
+                      >
+                        <div className="relative grid w-[980px] max-w-[92vw] grid-cols-[1fr_1fr_0.8fr] gap-7 overflow-hidden rounded-[28px] border border-white/60 bg-white/95 p-7 shadow-[0_30px_90px_rgba(6,59,63,0.22)] backdrop-blur-2xl">
+                          {/* DECORATIVE SHAPES */}
+
+                          <div className="pointer-events-none absolute -right-24 -top-24 h-60 w-60 rounded-full bg-green-200/50 blur-[80px]" />
+
+                          <div className="pointer-events-none absolute -bottom-24 left-1/3 h-48 w-48 rounded-full bg-emerald-100/60 blur-[70px]" />
+
+                          {/* HOME SERVICES */}
+
+                          <div className="relative">
+                            <div className="mb-5 flex items-center gap-3">
+                              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-green-100 text-green-700">
+                                <FaShieldAlt size={19} />
+                              </span>
+
+                              <div>
+                                <h3 className="font-black text-[#063b3f]">
+                                  Home Services
+                                </h3>
+
+                                <p className="text-xs text-gray-500">
+                                  Residential pest protection
+                                </p>
+                              </div>
+                            </div>
+
+                            <ul className="space-y-1.5">
+                              {homeServices.map((item) => (
+                                <li key={item.link}>
+                                  <MegaMenuLink item={item} />
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {/* COMMERCIAL SERVICES */}
+
+                          <div className="relative">
+                            <div className="mb-5 flex items-center gap-3">
+                              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-green-100 text-green-700">
+                                <FaBuilding size={19} />
+                              </span>
+
+                              <div>
+                                <h3 className="font-black text-[#063b3f]">
+                                  Commercial Services
+                                </h3>
+
+                                <p className="text-xs text-gray-500">
+                                  Business and industrial solutions
+                                </p>
+                              </div>
+                            </div>
+
+                            <ul className="space-y-1.5">
+                              {commercialServices.map((item) => (
+                                <li key={item.link}>
+                                  <MegaMenuLink item={item} />
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {/* SANITIZATION AND CTA */}
+
+                          <div className="relative">
+                            <div className="mb-5 flex items-center gap-3">
+                              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-green-100 text-green-700">
+                                <FaSprayCan size={19} />
+                              </span>
+
+                              <div>
+                                <h3 className="font-black text-[#063b3f]">
+                                  Sanitization
+                                </h3>
+
+                                <p className="text-xs text-gray-500">
+                                  Hygiene and disinfection
+                                </p>
+                              </div>
+                            </div>
+
+                            <MegaMenuLink
+                              item={{
+                                name: "Disinfection Services",
+                                link: "/disinfection-services",
+                              }}
+                            />
+
+                            <div className="mt-5 overflow-hidden rounded-[22px] bg-gradient-to-br from-[#063b3f] to-green-700 p-5 text-white shadow-xl">
+                              <span className="inline-flex rounded-full bg-green-400 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-[#063b3f]">
+                                Need Assistance?
+                              </span>
+
+                              <h4 className="mt-3 text-lg font-black">
+                                Not sure which treatment you need?
+                              </h4>
+
+                              <p className="mt-2 text-xs leading-5 text-green-100">
+                                Tell our pest-control experts about your
+                                problem.
+                              </p>
+
+                              <Link
+                                to="/contact"
+                                className="navbar-shine mt-4 inline-flex items-center gap-2 rounded-full bg-green-400 px-5 py-3 text-xs font-black text-[#063b3f] transition hover:-translate-y-1 hover:bg-green-300"
+                              >
+                                Contact Our Team
+                                <FaArrowRight size={11} />
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* PEST IDENTIFICATION */}
+
+                <DesktopNavLink
+                  to="/pestidentification"
+                  label="PEST IDENTIFICATION"
+                  active={isActiveLink("/pestidentification")}
+                />
+
+                {/* BLOG */}
+
+                <DesktopNavLink
+                  to="/blogsmainpage"
+                  label="BLOG"
+                  active={
+                    isActiveLink("/blogsmainpage") ||
+                    location.pathname.startsWith("/blogs")
+                  }
+                />
+
+                {/* CONTACT */}
+
+                <DesktopNavLink
+                  to="/contactus"
+                  label="CONTACT"
+                  active={isActiveLink("/contactus")}
+                />
+              </nav>
+
+              {/* =============================================
+                  DESKTOP CALL BUTTON
+              ============================================== */}
+
+              {/* =============================================
+                  MOBILE MENU BUTTON
+              ============================================== */}
+
+              <motion.button
+                type="button"
+                onClick={() => {
+                  setOpen((current) => !current);
+                }}
+                whileTap={{
+                  scale: 0.9,
+                }}
+                aria-label={
+                  open ? "Close navigation menu" : "Open navigation menu"
+                }
+                aria-expanded={open}
+                className={`relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border text-lg shadow-lg transition duration-300 xl:hidden ${
+                  open
+                    ? "border-green-600 bg-green-600 text-white"
+                    : scrolled
+                      ? "border-green-100 bg-white/90 text-[#063b3f]"
+                      : "border-white/50 bg-white/70 text-[#063b3f] backdrop-blur-xl"
+                }`}
+              >
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={open ? "close" : "menu"}
+                    initial={{
+                      opacity: 0,
+                      rotate: -90,
+                      scale: 0.7,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      rotate: 0,
+                      scale: 1,
+                    }}
+                    exit={{
+                      opacity: 0,
+                      rotate: 90,
+                      scale: 0.7,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                    }}
+                  >
+                    {open ? <FaTimes /> : <FaBars />}
+                  </motion.span>
+                </AnimatePresence>
+              </motion.button>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* =================================================
+            MOBILE NAVIGATION MENU
+        ================================================== */}
+
+        <AnimatePresence>
+          {open && (
+            <>
+              {/* MOBILE OVERLAY */}
+
+              <motion.button
+                type="button"
+                aria-label="Close mobile navigation overlay"
+                onClick={closeMobileMenu}
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{
+                  opacity: 0,
+                }}
+                className="fixed inset-0 top-[70px] z-[900] bg-[#031f21]/45 backdrop-blur-sm xl:hidden"
+              />
+
+              {/* MOBILE MENU PANEL */}
+
+              <motion.div
+                variants={mobileMenuAnimation}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="absolute left-3 right-3 top-full z-[1100] mt-2 max-h-[calc(100vh-100px)] overflow-y-auto rounded-[26px] border border-white/60 bg-white/95 p-4 shadow-[0_30px_90px_rgba(6,59,63,0.3)] backdrop-blur-2xl sm:left-auto sm:right-5 sm:w-[430px] xl:hidden"
+              >
+                {/* MOBILE MENU HEADER */}
+
+                <div className="mb-3 flex items-center justify-between rounded-2xl bg-green-50 p-3">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={logo}
+                      alt="Acuity Pest Controls"
+                      className="h-11 w-auto object-contain"
+                    />
+
+                    <div>
+                      <p className="text-xs font-black text-[#063b3f]">
+                        Acuity Pest Controls
+                      </p>
+
+                      <p className="mt-0.5 text-[10px] text-gray-500">
+                        Professional pest solutions
+                      </p>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={closeMobileMenu}
+                    aria-label="Close mobile menu"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#063b3f] shadow-sm"
+                  >
+                    <FaTimes />
+                  </button>
+                </div>
+
+                {/* MOBILE NAVIGATION LINKS */}
+
+                <div className="space-y-1">
+                  <MobileNavLink
+                    to="/"
+                    label="HOME"
+                    active={isActiveLink("/")}
+                    onClick={closeMobileMenu}
+                  />
+
+                  <MobileNavLink
+                    to="/aboutus"
+                    label="ABOUT US"
+                    active={isActiveLink("/aboutus")}
+                    onClick={closeMobileMenu}
+                  />
+
+                  {/* MOBILE SERVICES */}
+
+                  <div className="overflow-hidden rounded-2xl">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setServicesOpen((current) => !current);
+                      }}
+                      aria-expanded={servicesOpen}
+                      className={`flex w-full items-center justify-between rounded-2xl px-4 py-3.5 text-sm font-black transition ${
+                        servicesOpen || servicesActive
+                          ? "bg-green-50 text-green-700"
+                          : "text-[#183638] hover:bg-gray-50"
+                      }`}
+                    >
+                      <span className="flex items-center gap-3">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-green-100 text-green-700">
+                          <FaSprayCan size={13} />
+                        </span>
+                        SERVICES
+                      </span>
+
+                      <FaChevronDown
+                        size={12}
+                        className={`transition-transform duration-300 ${
+                          servicesOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {servicesOpen && (
+                        <motion.div
+                          initial={{
+                            height: 0,
+                            opacity: 0,
+                          }}
+                          animate={{
+                            height: "auto",
+                            opacity: 1,
+                          }}
+                          exit={{
+                            height: 0,
+                            opacity: 0,
+                          }}
+                          transition={{
+                            duration: 0.3,
+                          }}
+                          className="overflow-hidden"
+                        >
+                          <div className="ml-4 mt-2 border-l-2 border-green-100 pb-3 pl-4">
+                            <Link
+                              to="/services"
+                              onClick={closeMobileMenu}
+                              className="mb-3 flex items-center justify-between rounded-xl bg-[#063b3f] px-4 py-3 text-xs font-black text-white"
+                            >
+                              View All Services
+                              <FaArrowRight size={11} />
+                            </Link>
+
+                            <p className="mb-2 mt-4 text-[10px] font-black uppercase tracking-[1.5px] text-green-700">
+                              Home Services
+                            </p>
+
+                            <div className="space-y-1">
+                              {homeServices.map((item) => (
+                                <Link
+                                  key={item.link}
+                                  to={item.link}
+                                  onClick={closeMobileMenu}
+                                  className="block rounded-xl px-3 py-2.5 text-xs font-semibold text-gray-600 transition hover:bg-green-50 hover:text-green-700"
+                                >
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+
+                            <p className="mb-2 mt-5 text-[10px] font-black uppercase tracking-[1.5px] text-green-700">
+                              Commercial Services
+                            </p>
+
+                            <div className="space-y-1">
+                              {commercialServices.map((item) => (
+                                <Link
+                                  key={item.link}
+                                  to={item.link}
+                                  onClick={closeMobileMenu}
+                                  className="block rounded-xl px-3 py-2.5 text-xs font-semibold text-gray-600 transition hover:bg-green-50 hover:text-green-700"
+                                >
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+
+                            <p className="mb-2 mt-5 text-[10px] font-black uppercase tracking-[1.5px] text-green-700">
+                              Sanitization
+                            </p>
+
+                            <Link
+                              to="/disinfection-services"
+                              onClick={closeMobileMenu}
+                              className="block rounded-xl px-3 py-2.5 text-xs font-semibold text-gray-600 transition hover:bg-green-50 hover:text-green-700"
+                            >
+                              Disinfection Services
+                            </Link>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+                  <MobileNavLink
+                    to="/pestidentification"
+                    label="PEST IDENTIFICATION"
+                    active={isActiveLink("/pestidentification")}
+                    onClick={closeMobileMenu}
+                  />
+
+                  <MobileNavLink
+                    to="/blogsmainpage"
+                    label="BLOG"
+                    active={
+                      isActiveLink("/blogsmainpage") ||
+                      location.pathname.startsWith("/blogs")
+                    }
+                    onClick={closeMobileMenu}
+                  />
+
+                  <MobileNavLink
+                    to="/contactus"
+                    label="CONTACT"
+                    active={isActiveLink("/contactus")}
+                    onClick={closeMobileMenu}
+                  />
+                </div>
+
+                {/* MOBILE CALL AND WHATSAPP */}
+
+                <div className="mt-4 grid grid-cols-2 gap-3">
+                  <a
+                    href="tel:+919941229005"
+                    className="flex items-center justify-center gap-2 rounded-2xl bg-[#063b3f] py-3.5 text-sm font-black text-white shadow-lg transition active:scale-95"
+                  >
+                    <FaPhoneAlt size={14} />
+                    Call Now
+                  </a>
+
+                  <a
+                    href="https://wa.me/919941229005"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="navbar-whatsapp-pulse flex items-center justify-center gap-2 rounded-2xl bg-green-600 py-3.5 text-sm font-black text-white shadow-lg transition active:scale-95"
+                  >
+                    <FaWhatsapp size={17} />
+                    WhatsApp
+                  </a>
+                </div>
+
+                <a
+                  href="mailto:info@acuitygroups.in"
+                  className="mt-3 flex items-center justify-center gap-2 rounded-2xl border border-green-100 bg-green-50 py-3 text-xs font-bold text-green-700"
+                >
+                  <FaEnvelope />
+                  info@acuitygroups.in
+                </a>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+      </header>
+    </>
+  );
+};
+
+/* =========================================================
+   DESKTOP NAVIGATION LINK
+========================================================= */
+
+const DesktopNavLink = ({ to, label, active }) => {
+  return (
+    <Link
+      to={to}
+      className={`group relative rounded-full px-4 py-3 text-sm font-black tracking-wide transition duration-300 ${
+        active ? "text-green-700" : "text-[#102e30] hover:text-green-700"
+      }`}
+    >
+      {label}
+
+      <span
+        className={`absolute bottom-1 left-1/2 h-[3px] -translate-x-1/2 rounded-full bg-green-600 transition-all duration-300 ${
+          active ? "w-8" : "w-0 group-hover:w-8"
+        }`}
+      />
+
+      {active && (
+        <motion.span
+          layoutId="activeDesktopNav"
+          className="absolute inset-x-2 inset-y-1 -z-10 rounded-full bg-green-50"
+          transition={{
+            type: "spring",
+            stiffness: 350,
+            damping: 30,
+          }}
+        />
+      )}
+    </Link>
+  );
+};
+
+/* =========================================================
+   MEGA MENU LINK
+========================================================= */
+
+const MegaMenuLink = ({ item }) => {
+  return (
+    <Link
+      to={item.link}
+      className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold text-gray-600 transition duration-200 hover:translate-x-1 hover:bg-green-50 hover:text-green-700"
+    >
+      <span>{item.name}</span>
+
+      <FaArrowRight
+        size={10}
+        className="shrink-0 -translate-x-2 opacity-0 transition duration-200 group-hover:translate-x-0 group-hover:opacity-100"
+      />
+    </Link>
+  );
+};
+
+/* =========================================================
+   MOBILE NAVIGATION LINK
+========================================================= */
+
+const MobileNavLink = ({ to, label, active, onClick }) => {
+  return (
+    <Link
+      to={to}
+      onClick={onClick}
+      className={`flex items-center justify-between rounded-2xl px-4 py-3.5 text-sm font-black transition ${
+        active
+          ? "bg-green-50 text-green-700"
+          : "text-[#183638] hover:bg-gray-50"
+      }`}
+    >
+      <span>{label}</span>
+
+      <span
+        className={`h-2 w-2 rounded-full transition ${
+          active ? "bg-green-600" : "bg-transparent"
+        }`}
+      />
+    </Link>
   );
 };
 

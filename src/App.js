@@ -188,12 +188,10 @@ function App() {
             path="/blogs/top-10-household-pests-in-bangalore"
             element={<Top10HouseholdPestsBangalore />}
           />
-
           <Route
             path="/blogs/how-often-should-pest-control-be-done"
             element={<HowOftenShouldPestControlBeDone />}
           />
-
           <Route
             path="/blogs/german-cockroach-vs-american-cockroach"
             element={<GermanCockroachVsAmericanCockroach />}

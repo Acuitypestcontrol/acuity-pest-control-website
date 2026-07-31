@@ -284,7 +284,7 @@ const GermanCockroachVsAmericanCockroach = () => {
           loading="eager"
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full  "
         />
 
         <div className="absolute inset-0 bg-black/20" />
@@ -726,7 +726,7 @@ const GermanCockroachVsAmericanCockroach = () => {
                         alt={`${post.title} - Acuity Pest Control Blog`}
                         loading="lazy"
                         decoding="async"
-                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        className="w-full h-full   group-hover:scale-105 transition duration-500"
                       />
                     </div>
 
@@ -883,8 +883,8 @@ const GermanCockroachVsAmericanCockroach = () => {
 
           <p className="text-gray-200 mb-8 max-w-2xl mx-auto leading-7">
             Acuity Pest Control provides professional German and American
-            cockroach treatment for homes, apartments, restaurants, kitchens
-            and offices across Bangalore.
+            cockroach treatment for homes, apartments, restaurants, kitchens and
+            offices across Bangalore.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

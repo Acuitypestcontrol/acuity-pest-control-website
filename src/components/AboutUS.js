@@ -1,9 +1,109 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "motion/react";
+import {
+  FaArrowRight,
+  FaCheck,
+  FaPhoneAlt,
+  FaShieldAlt,
+  FaWhatsapp,
+} from "react-icons/fa";
+
 import SEO from "../components/seo/seo";
 
 import bannerImage from "../images/aboutusbanner.jpg";
 import bannerImage1 from "../images/pestman.png";
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 45,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+
+    transition: {
+      duration: 0.75,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const fadeLeft = {
+  hidden: {
+    opacity: 0,
+    x: -55,
+  },
+
+  visible: {
+    opacity: 1,
+    x: 0,
+
+    transition: {
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const fadeRight = {
+  hidden: {
+    opacity: 0,
+    x: 55,
+  },
+
+  visible: {
+    opacity: 1,
+    x: 0,
+
+    transition: {
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const scaleIn = {
+  hidden: {
+    opacity: 0,
+    scale: 0.9,
+  },
+
+  visible: {
+    opacity: 1,
+    scale: 1,
+
+    transition: {
+      duration: 0.65,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const staggerContainer = {
+  hidden: {},
+
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const viewportSettings = {
+  once: false,
+  amount: 0.15,
+};
+
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
 
 const AboutUS = () => {
   const vision = [
@@ -201,203 +301,480 @@ const AboutUS = () => {
         schema={aboutSchema}
       />
 
-      {/* HERO BANNER */}
-      <section className="relative h-[45vh] overflow-hidden md:h-[115vh]">
-        <img
+      <style>
+        {`
+          @keyframes aboutGlow {
+            0%, 100% {
+              opacity: 0.28;
+              transform: scale(1);
+            }
+
+            50% {
+              opacity: 0.55;
+              transform: scale(1.18);
+            }
+          }
+
+          @keyframes aboutFloat {
+            0%, 100% {
+              transform: translateY(0);
+            }
+
+            50% {
+              transform: translateY(-12px);
+            }
+          }
+
+          @keyframes aboutShine {
+            0% {
+              left: -120%;
+            }
+
+            100% {
+              left: 160%;
+            }
+          }
+
+          .about-glow {
+            animation: aboutGlow 6s ease-in-out infinite;
+          }
+
+          .about-float {
+            animation: aboutFloat 5s ease-in-out infinite;
+          }
+
+          .about-shine {
+            position: relative;
+            overflow: hidden;
+          }
+
+          .about-shine::after {
+            position: absolute;
+            top: -80%;
+            left: -120%;
+            width: 22%;
+            height: 260%;
+            content: "";
+            background: rgba(255, 255, 255, 0.25);
+            transform: rotate(22deg);
+            animation: aboutShine 4.5s ease-in-out infinite;
+          }
+
+          .about-grid-pattern {
+            background-image:
+              linear-gradient(
+                rgba(6, 59, 63, 0.04) 1px,
+                transparent 1px
+              ),
+              linear-gradient(
+                90deg,
+                rgba(6, 59, 63, 0.04) 1px,
+                transparent 1px
+              );
+
+            background-size: 38px 38px;
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .about-glow,
+            .about-float,
+            .about-shine::after {
+              animation: none;
+            }
+          }
+        `}
+      </style>
+
+      {/* =====================================================
+          HERO BANNER
+      ====================================================== */}
+
+      <section className="relative h-[48vh] min-h-[390px] overflow-hidden sm:h-[58vh] md:h-[75vh] lg:h-[95vh]">
+        <motion.img
           src={bannerImage}
           alt="Acuity Pest Controls professional pest control company in Bangalore"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full"
           loading="eager"
           fetchPriority="high"
           decoding="async"
+          initial={{
+            scale: 1.08,
+          }}
+          animate={{
+            scale: 1,
+          }}
+          transition={{
+            duration: 1.5,
+            ease: [0.22, 1, 0.36, 1],
+          }}
         />
 
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#031f21]/55 via-black/15 to-transparent" />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-[#031f21]/35 via-transparent to-black/15" />
+
+        <div className="about-glow pointer-events-none absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-green-400/25 blur-[110px]" />
+
+        <div className="about-glow pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-emerald-300/20 blur-[100px]" />
+
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#f8fcfb] to-transparent" />
       </section>
 
-      {/* ABOUT INTRO */}
-      <section className="bg-[#f8fcfb] py-16 md:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
-          <div>
-            <span className="mb-5 inline-block rounded-full bg-green-600 px-5 py-2 font-bold text-white">
+      {/* =====================================================
+          ABOUT INTRO
+      ====================================================== */}
+
+      <section className="about-grid-pattern relative overflow-hidden bg-[#f8fcfb] py-16 md:py-24 lg:py-28">
+        <div className="about-glow pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-green-300/20 blur-[120px]" />
+
+        <div className="about-glow pointer-events-none absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-emerald-200/30 blur-[120px]" />
+
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+          >
+            <span className="about-shine mb-5 inline-flex items-center gap-2 rounded-full bg-green-600 px-5 py-2.5 text-sm font-bold text-white shadow-lg">
+              <FaShieldAlt />
               Professional Pest Management
             </span>
 
-            <h1 className="mb-6 text-3xl font-black text-[#063b3f] md:text-5xl">
+            <h1 className="mb-6 text-3xl font-black leading-tight text-[#063b3f] sm:text-4xl md:text-5xl lg:text-6xl">
               About Acuity Pest Controls
             </h1>
 
-            <p className="mb-5 leading-8 text-gray-700">
-              Acuity Pest Controls is a professional pest control company in
-              Bangalore providing effective pest management solutions for
-              residential, commercial and industrial properties.
-            </p>
+            <div className="space-y-5">
+              <p className="leading-8 text-gray-700">
+                Acuity Pest Controls is a professional pest control company in
+                Bangalore providing effective pest management solutions for
+                residential, commercial and industrial properties.
+              </p>
 
-            <p className="mb-5 leading-8 text-gray-700">
-              We provide services for cockroaches, termites, bed bugs, rodents,
-              mosquitoes, ants, wood borers and other common pests affecting
-              homes and businesses.
-            </p>
+              <p className="leading-8 text-gray-700">
+                We provide services for cockroaches, termites, bed bugs,
+                rodents, mosquitoes, ants, wood borers and other common pests
+                affecting homes and businesses.
+              </p>
 
-            <p className="mb-8 leading-8 text-gray-700">
-              Our team focuses on identifying the source of pest activity,
-              selecting a suitable treatment and helping customers reduce the
-              risk of future infestations.
-            </p>
+              <p className="leading-8 text-gray-700">
+                Our team focuses on identifying the source of pest activity,
+                selecting a suitable treatment and helping customers reduce the
+                risk of future infestations.
+              </p>
+            </div>
 
-            <div className="flex flex-wrap gap-4">
-              <a
+            <div className="mt-8 flex flex-wrap gap-4">
+              <motion.a
                 href="https://wa.me/919941229005?text=Hi%20Acuity%20Pest%20Controls,%20I%20need%20pest%20control%20service."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-2xl bg-green-600 px-8 py-4 font-bold text-white transition hover:bg-green-700"
+                whileHover={{
+                  y: -4,
+                  scale: 1.02,
+                }}
+                whileTap={{
+                  scale: 0.96,
+                }}
+                className="about-shine inline-flex items-center gap-3 rounded-full bg-green-600 px-8 py-4 font-bold text-white shadow-xl transition hover:bg-green-700"
               >
+                <FaWhatsapp size={19} />
                 WhatsApp Us
-              </a>
+              </motion.a>
 
-              <Link
-                to="/services"
-                className="inline-block rounded-2xl border border-green-600 px-8 py-4 font-bold text-green-700 transition hover:bg-green-50"
+              <motion.div
+                whileHover={{
+                  y: -4,
+                }}
+                whileTap={{
+                  scale: 0.96,
+                }}
               >
-                View Services
-              </Link>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-3 rounded-full border-2 border-green-600 bg-white px-8 py-4 font-bold text-green-700 shadow-sm transition hover:bg-green-50"
+                >
+                  View Services
+                  <FaArrowRight size={13} />
+                </Link>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="overflow-hidden rounded-[35px]">
-            <img
-              src={bannerImage1}
-              alt="Professional pest control technician from Acuity Pest Controls"
-              className="h-full w-full object-contain"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </div>
-      </section>
+          <motion.div
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            className="relative"
+          >
+            <div className="pointer-events-none absolute -inset-5 rounded-[45px] bg-gradient-to-br from-green-300/20 to-emerald-100/20 blur-2xl" />
 
-      {/* COMPANY STATISTICS */}
-      <section className="bg-white py-12">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 sm:px-6 lg:grid-cols-4">
-          {[
-            ["19+", "Years of Experience"],
-            ["15K+", "Treatments Completed"],
-            ["5000+", "Customers Served"],
-            ["24/7", "Customer Support"],
-          ].map(([number, label]) => (
-            <div
-              key={label}
-              className="rounded-3xl border border-green-100 bg-[#f6fffb] p-5 text-center shadow-sm"
-            >
-              <h2 className="text-2xl font-black text-[#063b3f] sm:text-3xl">
-                {number}
-              </h2>
-              <p className="mt-2 text-sm font-semibold text-gray-600 sm:text-base">
-                {label}
+            <div className="relative overflow-hidden rounded-[38px] border border-white/80 bg-white/65 p-4 shadow-[0_30px_90px_rgba(6,59,63,0.17)] backdrop-blur-xl sm:p-6">
+              <div className="absolute left-5 top-5 z-10 rounded-full border border-green-200 bg-white/90 px-4 py-2 text-xs font-black text-green-700 shadow-lg backdrop-blur-xl">
+                Professional Team
+              </div>
+
+              <img
+                src={bannerImage1}
+                alt="Professional pest control technician from Acuity Pest Controls"
+                className="about-float h-full w-full object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div className="absolute -bottom-5 left-4 rounded-2xl border border-green-100 bg-white px-5 py-4 shadow-xl sm:left-8">
+              <p className="text-xs font-bold uppercase tracking-[1.5px] text-green-700">
+                Serving Bangalore
+              </p>
+
+              <p className="mt-1 text-sm font-black text-[#063b3f]">
+                Residential & Commercial
               </p>
             </div>
-          ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* VISION AND MISSION */}
-      <section className="bg-white py-16">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 md:grid-cols-2">
-          <div className="rounded-[30px] border border-green-100 bg-[#f6fffb] p-8">
-            <h2 className="mb-4 text-3xl font-black text-[#063b3f]">
-              Our Vision
-            </h2>
+      {/* =====================================================
+          COMPANY STATISTICS
+      ====================================================== */}
 
-            <p className="mb-6 leading-7 text-gray-600">
-              To be a trusted pest management company in Bangalore by providing
-              dependable services, responsible treatment methods and long-term
-              pest prevention support.
-            </p>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {vision.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl bg-white p-4 font-bold text-[#063b3f] shadow-sm"
-                >
-                  ✅ {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-[30px] bg-[#063b3f] p-8 text-white">
-            <h2 className="mb-4 text-3xl font-black">Our Mission</h2>
-
-            <p className="mb-6 leading-7 text-gray-200">
-              To help customers protect their properties through professional
-              inspection, suitable treatment, transparent service and practical
-              pest-prevention guidance.
-            </p>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {mission.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl bg-white/10 p-4 font-bold"
-                >
-                  ✅ {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US */}
-      <section className="bg-[#eef8f4] py-16 md:py-24">
+      <section className="relative bg-white py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
-            <span className="font-bold uppercase tracking-[3px] text-green-700">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            className="grid grid-cols-2 gap-4 lg:grid-cols-4"
+          >
+            {[
+              ["19+", "Years of Experience"],
+              ["15K+", "Treatments Completed"],
+              ["5000+", "Customers Served"],
+              ["24/7", "Customer Support"],
+            ].map(([number, label]) => (
+              <motion.div
+                key={label}
+                variants={scaleIn}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                }}
+                className="group relative overflow-hidden rounded-[26px] border border-green-100 bg-gradient-to-br from-[#f6fffb] to-white p-5 text-center shadow-[0_15px_45px_rgba(6,59,63,0.08)] transition sm:p-7"
+              >
+                <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-green-200/30 blur-2xl transition group-hover:bg-green-300/40" />
+
+                <h2 className="relative text-3xl font-black text-[#063b3f] sm:text-4xl lg:text-5xl">
+                  {number}
+                </h2>
+
+                <p className="relative mt-2 text-xs font-semibold text-gray-600 sm:text-sm lg:text-base">
+                  {label}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          VISION AND MISSION
+      ====================================================== */}
+
+      <section className="relative overflow-hidden bg-white py-16 md:py-24">
+        <div className="pointer-events-none absolute left-0 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-green-100/50 blur-[110px]" />
+
+        <div className="relative mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 md:grid-cols-2">
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            whileHover={{
+              y: -7,
+            }}
+            className="relative overflow-hidden rounded-[34px] border border-green-100 bg-gradient-to-br from-[#f6fffb] to-white p-7 shadow-[0_25px_70px_rgba(6,59,63,0.09)] sm:p-9"
+          >
+            <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-green-200/40 blur-[60px]" />
+
+            <div className="relative">
+              <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-green-600 text-white shadow-xl">
+                <FaShieldAlt size={22} />
+              </span>
+
+              <h2 className="mb-4 text-3xl font-black text-[#063b3f]">
+                Our Vision
+              </h2>
+
+              <p className="mb-7 leading-7 text-gray-600">
+                To be a trusted pest management company in Bangalore by
+                providing dependable services, responsible treatment methods and
+                long-term pest prevention support.
+              </p>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {vision.map((item) => (
+                  <motion.div
+                    key={item}
+                    whileHover={{
+                      x: 5,
+                    }}
+                    className="flex items-center gap-3 rounded-2xl border border-green-100 bg-white p-4 font-bold text-[#063b3f] shadow-sm"
+                  >
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-700">
+                      <FaCheck size={11} />
+                    </span>
+
+                    {item}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            whileHover={{
+              y: -7,
+            }}
+            className="relative overflow-hidden rounded-[34px] bg-gradient-to-br from-[#063b3f] to-[#075c55] p-7 text-white shadow-[0_30px_80px_rgba(6,59,63,0.25)] sm:p-9"
+          >
+            <div className="about-glow pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-green-400/25 blur-[80px]" />
+
+            <div className="relative">
+              <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-green-400 text-[#063b3f] shadow-xl">
+                <FaArrowRight size={20} />
+              </span>
+
+              <h2 className="mb-4 text-3xl font-black">Our Mission</h2>
+
+              <p className="mb-7 leading-7 text-gray-200">
+                To help customers protect their properties through professional
+                inspection, suitable treatment, transparent service and
+                practical pest-prevention guidance.
+              </p>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {mission.map((item) => (
+                  <motion.div
+                    key={item}
+                    whileHover={{
+                      x: 5,
+                    }}
+                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/10 p-4 font-bold backdrop-blur-xl"
+                  >
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green-400 text-[#063b3f]">
+                      <FaCheck size={11} />
+                    </span>
+
+                    {item}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          WHY CHOOSE US
+      ====================================================== */}
+
+      <section className="about-grid-pattern relative overflow-hidden bg-[#eef8f4] py-16 md:py-24">
+        <div className="about-glow pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-green-300/30 blur-[120px]" />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            className="mx-auto mb-12 max-w-3xl text-center"
+          >
+            <span className="inline-flex rounded-full border border-green-200 bg-white px-5 py-2 text-sm font-bold uppercase tracking-[3px] text-green-700 shadow-sm">
               Why Choose Us
             </span>
 
-            <h2 className="mt-4 text-3xl font-black text-[#063b3f] md:text-5xl">
+            <h2 className="mt-5 text-3xl font-black leading-tight text-[#063b3f] md:text-5xl">
               Trusted Pest Control Experts in Bangalore
             </h2>
 
-            <p className="mt-4 leading-7 text-gray-600">
+            <p className="mt-5 leading-7 text-gray-600">
               We combine professional inspection, suitable treatments and
               customer-focused service to manage pest problems in homes and
               commercial properties.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            className="grid gap-6 md:grid-cols-2"
+          >
             {strengths.map((item) => (
-              <div
+              <motion.div
                 key={item.number}
-                className="rounded-3xl border border-green-100 bg-white p-6 shadow-sm"
+                variants={fadeUp}
+                whileHover={{
+                  y: -9,
+                }}
+                className="group relative overflow-hidden rounded-[30px] border border-green-100 bg-white p-6 shadow-[0_20px_60px_rgba(6,59,63,0.08)] transition sm:p-8"
               >
-                <span className="text-sm font-black text-green-600">
-                  {item.number}
-                </span>
+                <div className="pointer-events-none absolute -right-14 -top-14 h-44 w-44 rounded-full bg-green-100/70 blur-[55px] transition group-hover:bg-green-200/70" />
 
-                <h3 className="mb-3 mt-2 text-2xl font-black text-[#063b3f]">
-                  {item.title}
-                </h3>
+                <div className="relative flex gap-5">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#063b3f] text-lg font-black text-white shadow-xl">
+                    {item.number}
+                  </span>
 
-                <p className="leading-7 text-gray-600">{item.description}</p>
-              </div>
+                  <div>
+                    <h3 className="mb-3 text-xl font-black text-[#063b3f] sm:text-2xl">
+                      {item.title}
+                    </h3>
+
+                    <p className="leading-7 text-gray-600">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* RESIDENTIAL AND COMMERCIAL SERVICES */}
-      <section className="bg-[#063b3f] py-16 text-white md:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2">
-          <div>
-            <span className="font-bold uppercase tracking-[3px] text-green-300">
+      {/* =====================================================
+          RESIDENTIAL AND COMMERCIAL SERVICES
+      ====================================================== */}
+
+      <section className="relative overflow-hidden bg-[#063b3f] py-16 text-white md:py-24">
+        <div className="about-grid-pattern pointer-events-none absolute inset-0 opacity-20" />
+
+        <div className="about-glow pointer-events-none absolute -left-36 top-0 h-[430px] w-[430px] rounded-full bg-green-400/20 blur-[120px]" />
+
+        <div className="about-glow pointer-events-none absolute -right-36 bottom-0 h-[430px] w-[430px] rounded-full bg-emerald-300/15 blur-[120px]" />
+
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+          >
+            <span className="inline-flex rounded-full border border-green-300/20 bg-green-400/10 px-5 py-2 text-sm font-bold uppercase tracking-[3px] text-green-300">
               Complete Pest Management
             </span>
 
-            <h2 className="mb-6 mt-4 text-3xl font-black md:text-5xl">
+            <h2 className="mb-6 mt-5 text-3xl font-black leading-tight md:text-5xl">
               Pest Control for Homes and Businesses
             </h2>
 
@@ -407,9 +784,15 @@ const AboutUS = () => {
               schools, colleges and other commercial properties across
               Bangalore.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            className="grid gap-4 sm:grid-cols-2"
+          >
             {[
               "Residential Pest Control",
               "Commercial Pest Control",
@@ -420,113 +803,368 @@ const AboutUS = () => {
               "Mosquito Management",
               "Annual Maintenance Services",
             ].map((service) => (
-              <div
+              <motion.div
                 key={service}
-                className="rounded-2xl border border-white/10 bg-white/10 p-5 font-bold"
+                variants={scaleIn}
+                whileHover={{
+                  y: -6,
+                  backgroundColor: "rgba(255,255,255,0.16)",
+                }}
+                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/10 p-5 font-bold shadow-lg backdrop-blur-xl"
               >
-                ✅ {service}
-              </div>
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-400 text-[#063b3f]">
+                  <FaCheck size={12} />
+                </span>
+
+                {service}
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-[#f6fffb] py-16">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6">
-          <div className="mb-12 text-center">
-            <span className="font-bold uppercase tracking-[3px] text-green-700">
+      {/* =====================================================
+          FAQ
+      ====================================================== */}
+
+      <section className="about-grid-pattern relative bg-[#f6fffb] py-16 md:py-24">
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            className="mb-12 text-center"
+          >
+            <span className="inline-flex rounded-full border border-green-200 bg-white px-5 py-2 text-sm font-bold uppercase tracking-[3px] text-green-700 shadow-sm">
               Have Questions?
             </span>
 
-            <h2 className="mt-4 text-3xl font-black text-[#063b3f] md:text-5xl">
+            <h2 className="mt-5 text-3xl font-black leading-tight text-[#063b3f] md:text-5xl">
               Frequently Asked Questions
             </h2>
 
-            <p className="mt-4 text-gray-600">
+            <p className="mt-5 text-gray-600">
               Find answers about our pest control treatments, safety, service
               areas and commercial pest management.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="space-y-5">
-            {faqs.map((item) => (
-              <div
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            className="space-y-5"
+          >
+            {faqs.map((item, index) => (
+              <motion.div
                 key={item.q}
-                className="rounded-2xl border border-green-100 bg-white p-5 shadow-sm sm:p-6"
+                variants={fadeUp}
+                whileHover={{
+                  y: -4,
+                }}
+                className="group rounded-[24px] border border-green-100 bg-white p-5 shadow-[0_15px_45px_rgba(6,59,63,0.07)] transition sm:p-7"
               >
-                <h3 className="mb-3 text-lg font-black text-[#063b3f] sm:text-xl">
-                  {item.q}
-                </h3>
+                <div className="flex items-start gap-4">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-green-100 text-sm font-black text-green-700 transition group-hover:bg-green-600 group-hover:text-white">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
 
-                <p className="leading-7 text-gray-600">{item.a}</p>
-              </div>
+                  <div>
+                    <h3 className="mb-3 text-lg font-black text-[#063b3f] sm:text-xl">
+                      {item.q}
+                    </h3>
+
+                    <p className="leading-7 text-gray-600">{item.a}</p>
+                  </div>
+                </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* SERVICE AREAS */}
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="mb-10 text-center">
-            <span className="font-bold uppercase tracking-[3px] text-green-700">
+      {/* =====================================================
+          SERVICE AREAS
+      ====================================================== */}
+
+      <section className="relative overflow-hidden bg-white py-16 md:py-24">
+        <div className="about-glow pointer-events-none absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-green-100/70 blur-[120px]" />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            className="mb-10 text-center"
+          >
+            <span className="inline-flex rounded-full border border-green-200 bg-[#f6fffb] px-5 py-2 text-sm font-bold uppercase tracking-[3px] text-green-700">
               Service Areas
             </span>
 
-            <h2 className="mt-4 text-3xl font-black text-[#063b3f] md:text-5xl">
+            <h2 className="mt-5 text-3xl font-black leading-tight text-[#063b3f] md:text-5xl">
               Pest Control Service Areas in Bangalore
             </h2>
 
-            <p className="mx-auto mt-4 max-w-3xl leading-7 text-gray-600">
+            <p className="mx-auto mt-5 max-w-3xl leading-7 text-gray-600">
               Acuity Pest Controls serves residential and commercial customers
               across major localities in Bangalore.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-3">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            className="flex flex-wrap justify-center gap-3"
+          >
             {locations.map((area) => (
-              <span
+              <motion.span
                 key={area}
-                className="rounded-full border border-green-100 bg-[#f6fffb] px-4 py-2 text-sm font-semibold text-[#063b3f]"
+                variants={scaleIn}
+                whileHover={{
+                  y: -4,
+                  scale: 1.03,
+                }}
+                className="rounded-full border border-green-100 bg-[#f6fffb] px-4 py-2.5 text-sm font-semibold text-[#063b3f] shadow-sm transition hover:border-green-300 hover:bg-green-50"
               >
                 Pest Control in {area}
-              </span>
+              </motion.span>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[#063b3f] py-16 text-white">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6">
-          <h2 className="mb-5 text-3xl font-black md:text-5xl">
+      {/* =====================================================
+    SEO INTERNAL LINKS
+===================================================== */}
+
+      <section className="bg-[#f8fcfb] py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="rounded-[30px] border border-green-100 bg-white p-8 shadow-sm">
+            <h2 className="text-3xl font-black text-[#063b3f]">
+              Professional Pest Control Company in Bangalore
+            </h2>
+
+            <p className="mt-5 leading-8 text-gray-700">
+              Acuity Pest Controls is one of the trusted companies providing{" "}
+              <Link
+                to="/services"
+                className="font-bold text-green-700 hover:underline"
+              >
+                pest control services in Bangalore
+              </Link>{" "}
+              for residential, commercial and industrial properties. Our
+              experienced technicians provide safe and effective solutions for
+              all major pest infestations across Bengaluru.
+            </p>
+
+            <p className="mt-5 leading-8 text-gray-700">
+              We specialize in{" "}
+              <Link
+                to="/cockroach-management-service"
+                className="font-bold text-green-700 hover:underline"
+              >
+                cockroach control
+              </Link>
+              ,{" "}
+              <Link
+                to="/anti-termite-treatment"
+                className="font-bold text-green-700 hover:underline"
+              >
+                termite treatment
+              </Link>
+              ,{" "}
+              <Link
+                to="/bed-bug-treatment"
+                className="font-bold text-green-700 hover:underline"
+              >
+                bed bug treatment
+              </Link>
+              ,{" "}
+              <Link
+                to="/rodent-management-service"
+                className="font-bold text-green-700 hover:underline"
+              >
+                rodent control
+              </Link>
+              ,{" "}
+              <Link
+                to="/mosquito-management-service"
+                className="font-bold text-green-700 hover:underline"
+              >
+                mosquito control
+              </Link>
+              ,{" "}
+              <Link
+                to="/general-pest-control"
+                className="font-bold text-green-700 hover:underline"
+              >
+                general pest control
+              </Link>{" "}
+              and commercial pest management throughout Bangalore.
+            </p>
+
+            <h3 className="mt-8 text-2xl font-black text-[#063b3f]">
+              Explore Our Services
+            </h3>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                to="/services"
+                className="rounded-full border border-green-200 bg-green-50 px-4 py-2 font-semibold text-green-700 hover:bg-green-600 hover:text-white"
+              >
+                All Services
+              </Link>
+
+              <Link
+                to="/general-pest-control"
+                className="rounded-full border border-green-200 bg-green-50 px-4 py-2 font-semibold text-green-700 hover:bg-green-600 hover:text-white"
+              >
+                General Pest Control
+              </Link>
+
+              <Link
+                to="/cockroach-management-service"
+                className="rounded-full border border-green-200 bg-green-50 px-4 py-2 font-semibold text-green-700 hover:bg-green-600 hover:text-white"
+              >
+                Cockroach Control
+              </Link>
+
+              <Link
+                to="/anti-termite-treatment"
+                className="rounded-full border border-green-200 bg-green-50 px-4 py-2 font-semibold text-green-700 hover:bg-green-600 hover:text-white"
+              >
+                Termite Treatment
+              </Link>
+
+              <Link
+                to="/bed-bug-treatment"
+                className="rounded-full border border-green-200 bg-green-50 px-4 py-2 font-semibold text-green-700 hover:bg-green-600 hover:text-white"
+              >
+                Bed Bug Treatment
+              </Link>
+
+              <Link
+                to="/rodent-management-service"
+                className="rounded-full border border-green-200 bg-green-50 px-4 py-2 font-semibold text-green-700 hover:bg-green-600 hover:text-white"
+              >
+                Rodent Control
+              </Link>
+
+              <Link
+                to="/office-pest-control"
+                className="rounded-full border border-green-200 bg-green-50 px-4 py-2 font-semibold text-green-700 hover:bg-green-600 hover:text-white"
+              >
+                Office Pest Control
+              </Link>
+
+              <Link
+                to="/hotel-hospital-pest-control"
+                className="rounded-full border border-green-200 bg-green-50 px-4 py-2 font-semibold text-green-700 hover:bg-green-600 hover:text-white"
+              >
+                Hotel & Hospital
+              </Link>
+
+              <Link
+                to="/warehouse-pest-management"
+                className="rounded-full border border-green-200 bg-green-50 px-4 py-2 font-semibold text-green-700 hover:bg-green-600 hover:text-white"
+              >
+                Warehouse Pest Management
+              </Link>
+
+              <Link
+                to="/blogs"
+                className="rounded-full border border-green-200 bg-green-50 px-4 py-2 font-semibold text-green-700 hover:bg-green-600 hover:text-white"
+              >
+                Pest Control Blogs
+              </Link>
+
+              <Link
+                to="/pest-identification"
+                className="rounded-full border border-green-200 bg-green-50 px-4 py-2 font-semibold text-green-700 hover:bg-green-600 hover:text-white"
+              >
+                Pest Identification
+              </Link>
+
+              <Link
+                to="/contact"
+                className="rounded-full border border-green-200 bg-green-50 px-4 py-2 font-semibold text-green-700 hover:bg-green-600 hover:text-white"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* =====================================================
+          CTA
+      ====================================================== */}
+
+      <section className="relative overflow-hidden bg-[#063b3f] py-16 text-white md:py-24">
+        <div className="about-grid-pattern pointer-events-none absolute inset-0 opacity-20" />
+
+        <div className="about-glow pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-green-400/20 blur-[120px]" />
+
+        <div className="about-glow pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-emerald-300/20 blur-[120px]" />
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportSettings}
+          className="relative mx-auto max-w-7xl px-4 text-center sm:px-6"
+        >
+          <span className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-green-400 text-[#063b3f] shadow-xl">
+            <FaShieldAlt size={25} />
+          </span>
+
+          <h2 className="mb-5 text-3xl font-black leading-tight md:text-5xl">
             Book Pest Control Service in Bangalore
           </h2>
 
-          <p className="mx-auto mb-8 max-w-3xl text-gray-200">
+          <p className="mx-auto mb-8 max-w-3xl leading-7 text-gray-200">
             Contact Acuity Pest Controls for professional residential and
             commercial pest management services across Bangalore.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <a
+            <motion.a
               href="tel:+919941229005"
-              className="inline-block rounded-2xl bg-green-600 px-8 py-4 font-bold transition hover:bg-green-700"
+              whileHover={{
+                y: -5,
+                scale: 1.02,
+              }}
+              whileTap={{
+                scale: 0.96,
+              }}
+              className="about-shine inline-flex items-center gap-3 rounded-full bg-green-500 px-8 py-4 font-bold text-white shadow-xl transition hover:bg-green-400"
             >
+              <FaPhoneAlt />
               Call Now: +91 99412 29005
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
               href="https://wa.me/919941229005?text=Hi%20Acuity%20Pest%20Controls,%20I%20need%20pest%20control%20service%20in%20Bangalore."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded-2xl border border-white px-8 py-4 font-bold transition hover:bg-white hover:text-[#063b3f]"
+              whileHover={{
+                y: -5,
+                scale: 1.02,
+              }}
+              whileTap={{
+                scale: 0.96,
+              }}
+              className="inline-flex items-center gap-3 rounded-full border border-white bg-white/5 px-8 py-4 font-bold text-white shadow-xl backdrop-blur-xl transition hover:bg-white hover:text-[#063b3f]"
             >
+              <FaWhatsapp size={19} />
               Get a Free Quote
-            </a>
+            </motion.a>
           </div>
-        </div>
+        </motion.div>
       </section>
     </div>
   );
