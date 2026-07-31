@@ -215,33 +215,6 @@ const Navbar = () => {
     },
   ];
 
-  /* =======================================================
-     MAIN NAVIGATION LINKS
-  ======================================================= */
-
-  const navigationLinks = [
-    {
-      name: "HOME",
-      link: "/",
-    },
-    {
-      name: "ABOUT US",
-      link: "/aboutus",
-    },
-    {
-      name: "PEST IDENTIFICATION",
-      link: "/pestidentification",
-    },
-    {
-      name: "BLOG",
-      link: "/blogsmainpage",
-    },
-    {
-      name: "CONTACT",
-      link: "/contactus",
-    },
-  ];
-
   const closeMobileMenu = () => {
     setOpen(false);
     setServicesOpen(false);
@@ -474,7 +447,7 @@ const Navbar = () => {
           }}
           className={`relative w-full transition-all duration-500 ${
             scrolled
-              ? "border-b border-white/30  shadow-[0_12px_40px_rgba(6,59,63,0.12)] backdrop-blur-3xl bg-transparent "
+              ? "border-b border-white/30 shadow-[0_12px_40px_rgba(6,59,63,0.12)] backdrop-blur-3xl bg-transparent"
               : "border-b border-transparent bg-transparent shadow-none backdrop-blur-none"
           }`}
         >
@@ -528,23 +501,17 @@ const Navbar = () => {
               ============================================== */}
 
               <nav className="hidden items-center gap-1 xl:flex">
-                {/* HOME */}
-
                 <DesktopNavLink
                   to="/"
                   label="HOME"
                   active={isActiveLink("/")}
                 />
 
-                {/* ABOUT */}
-
                 <DesktopNavLink
                   to="/aboutus"
                   label="ABOUT US"
                   active={isActiveLink("/aboutus")}
                 />
-
-                {/* SERVICES */}
 
                 <div
                   className="relative"
@@ -561,11 +528,13 @@ const Navbar = () => {
                     }`}
                   >
                     SERVICES
+
                     <FaChevronDown
                       className={`text-[10px] transition-transform duration-300 ${
                         desktopServicesOpen ? "rotate-180" : ""
                       }`}
                     />
+
                     <span
                       className={`absolute bottom-1 left-1/2 h-[3px] -translate-x-1/2 rounded-full bg-green-600 transition-all duration-300 ${
                         servicesActive || desktopServicesOpen
@@ -585,13 +554,9 @@ const Navbar = () => {
                         className="absolute right-[-320px] top-full z-[1200] pt-4"
                       >
                         <div className="relative grid w-[980px] max-w-[92vw] grid-cols-[1fr_1fr_0.8fr] gap-7 overflow-hidden rounded-[28px] border border-white/60 bg-white/95 p-7 shadow-[0_30px_90px_rgba(6,59,63,0.22)] backdrop-blur-2xl">
-                          {/* DECORATIVE SHAPES */}
-
                           <div className="pointer-events-none absolute -right-24 -top-24 h-60 w-60 rounded-full bg-green-200/50 blur-[80px]" />
 
                           <div className="pointer-events-none absolute -bottom-24 left-1/3 h-48 w-48 rounded-full bg-emerald-100/60 blur-[70px]" />
-
-                          {/* HOME SERVICES */}
 
                           <div className="relative">
                             <div className="mb-5 flex items-center gap-3">
@@ -619,8 +584,6 @@ const Navbar = () => {
                             </ul>
                           </div>
 
-                          {/* COMMERCIAL SERVICES */}
-
                           <div className="relative">
                             <div className="mb-5 flex items-center gap-3">
                               <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-green-100 text-green-700">
@@ -646,8 +609,6 @@ const Navbar = () => {
                               ))}
                             </ul>
                           </div>
-
-                          {/* SANITIZATION AND CTA */}
 
                           <div className="relative">
                             <div className="mb-5 flex items-center gap-3">
@@ -683,8 +644,7 @@ const Navbar = () => {
                               </h4>
 
                               <p className="mt-2 text-xs leading-5 text-green-100">
-                                Tell our pest-control experts about your
-                                problem.
+                                Tell our pest-control experts about your problem.
                               </p>
 
                               <Link
@@ -702,15 +662,11 @@ const Navbar = () => {
                   </AnimatePresence>
                 </div>
 
-                {/* PEST IDENTIFICATION */}
-
                 <DesktopNavLink
                   to="/pestidentification"
                   label="PEST IDENTIFICATION"
                   active={isActiveLink("/pestidentification")}
                 />
-
-                {/* BLOG */}
 
                 <DesktopNavLink
                   to="/blogsmainpage"
@@ -721,22 +677,12 @@ const Navbar = () => {
                   }
                 />
 
-                {/* CONTACT */}
-
                 <DesktopNavLink
                   to="/contactus"
                   label="CONTACT"
                   active={isActiveLink("/contactus")}
                 />
               </nav>
-
-              {/* =============================================
-                  DESKTOP CALL BUTTON
-              ============================================== */}
-
-              {/* =============================================
-                  MOBILE MENU BUTTON
-              ============================================== */}
 
               <motion.button
                 type="button"
@@ -795,8 +741,6 @@ const Navbar = () => {
         <AnimatePresence>
           {open && (
             <>
-              {/* MOBILE OVERLAY */}
-
               <motion.button
                 type="button"
                 aria-label="Close mobile navigation overlay"
@@ -813,8 +757,6 @@ const Navbar = () => {
                 className="fixed inset-0 top-[70px] z-[900] bg-[#031f21]/45 backdrop-blur-sm xl:hidden"
               />
 
-              {/* MOBILE MENU PANEL */}
-
               <motion.div
                 variants={mobileMenuAnimation}
                 initial="hidden"
@@ -822,8 +764,6 @@ const Navbar = () => {
                 exit="exit"
                 className="absolute left-3 right-3 top-full z-[1100] mt-2 max-h-[calc(100vh-100px)] overflow-y-auto rounded-[26px] border border-white/60 bg-white/95 p-4 shadow-[0_30px_90px_rgba(6,59,63,0.3)] backdrop-blur-2xl sm:left-auto sm:right-5 sm:w-[430px] xl:hidden"
               >
-                {/* MOBILE MENU HEADER */}
-
                 <div className="mb-3 flex items-center justify-between rounded-2xl bg-green-50 p-3">
                   <div className="flex items-center gap-3">
                     <img
@@ -853,8 +793,6 @@ const Navbar = () => {
                   </button>
                 </div>
 
-                {/* MOBILE NAVIGATION LINKS */}
-
                 <div className="space-y-1">
                   <MobileNavLink
                     to="/"
@@ -869,8 +807,6 @@ const Navbar = () => {
                     active={isActiveLink("/aboutus")}
                     onClick={closeMobileMenu}
                   />
-
-                  {/* MOBILE SERVICES */}
 
                   <div className="overflow-hidden rounded-2xl">
                     <button
@@ -1005,8 +941,6 @@ const Navbar = () => {
                     onClick={closeMobileMenu}
                   />
                 </div>
-
-                {/* MOBILE CALL AND WHATSAPP */}
 
                 <div className="mt-4 grid grid-cols-2 gap-3">
                   <a
