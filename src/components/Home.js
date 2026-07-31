@@ -38,7 +38,6 @@ import SEO from "../components/seo/seo";
 
 import bannerImage from "../images/tshirt.png";
 
-
 /* =========================================================
    BANGALORE SERVICE LOCATIONS
 ========================================================= */
@@ -1577,58 +1576,71 @@ const AcuityChatBot = () => {
     event.preventDefault();
 
     const cleanName = leadDetails.name.trim();
-
     const cleanPhone = leadDetails.phone.replace(/\D/g, "");
-
     const cleanLocation = leadDetails.location.trim();
-
     const cleanService = leadDetails.service.trim();
 
     if (!cleanName) {
       window.alert("Please enter your name.");
-
       return;
     }
 
     if (cleanPhone.length !== 10) {
       window.alert("Please enter a valid 10-digit phone number.");
-
       return;
     }
 
     if (!cleanLocation) {
       window.alert("Please enter your location.");
-
       return;
     }
 
     if (!cleanService) {
       window.alert("Please select the required service.");
-
       return;
     }
 
-    // Log the enquiry data (replace with your own backend endpoint or email)
-    console.log("New chatbot enquiry:", {
-      name: cleanName,
-      phone: cleanPhone,
-      location: cleanLocation,
-      service: cleanService,
-      messages: messages.slice(-6).map((m) => `${m.sender}: ${m.text}`),
-    });
+    const recentChat = messages
+      .slice(-6)
+      .map(
+        (message) =>
+          `${message.sender === "user" ? "Customer" : "Assistant"}: ${
+            message.text
+          }`,
+      )
+      .join("\n");
 
-    // Show a success message
+    const whatsappMessage = `*New AI Chatbot Enquiry*
+
+*Name:* ${cleanName}
+*Phone:* ${cleanPhone}
+*Location:* ${cleanLocation}
+*Required Service:* ${cleanService}
+
+*Recent Chat:*
+${recentChat}
+
+Enquiry received from Acuity Pest Controls website.`;
+
+    const whatsappNumber = "919941229005";
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      whatsappMessage,
+    )}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
     setMessages((previous) => [
       ...previous,
       {
         id: Date.now(),
         sender: "bot",
-        text: "Thank you! Your enquiry has been received. Our team will contact you shortly.",
+        text: "Your enquiry is ready in WhatsApp. Please press Send to deliver it to our team.",
       },
     ]);
 
-    // Reset lead form
     setShowLeadForm(false);
+
     setLeadDetails({
       name: "",
       phone: "",
@@ -2094,47 +2106,48 @@ const Home = () => {
   };
 
   // Modified: this form now logs enquiry instead of sending WhatsApp
-  const handleEnquirySubmit = (event) => {
-    event.preventDefault();
+const handleEnquirySubmit = (event) => {
+  event.preventDefault();
 
-    const cleanName = name.trim();
+  const cleanName = name.trim();
+  const cleanPhone = phone.replace(/\D/g, "");
 
-    const cleanPhone = phone.replace(/\D/g, "");
+  if (!cleanName) {
+    window.alert("Please enter your full name.");
+    return;
+  }
 
-    if (!cleanName) {
-      window.alert("Please enter your full name.");
+  if (cleanPhone.length !== 10) {
+    window.alert("Please enter a valid 10-digit phone number.");
+    return;
+  }
 
-      return;
-    }
+  const selectedServiceText =
+    selectedServices.length > 0
+      ? selectedServices.join(", ")
+      : "General Pest Control Enquiry";
 
-    if (cleanPhone.length !== 10) {
-      window.alert("Please enter a valid 10-digit phone number.");
+  const whatsappMessage = `*New Website Enquiry*
 
-      return;
-    }
+*Name:* ${cleanName}
+*Phone:* ${cleanPhone}
+*Required Service:* ${selectedServiceText}
 
-    const selectedServiceText =
-      selectedServices.length > 0
-        ? selectedServices.join(", ")
-        : "Not selected";
+Enquiry received from Acuity Pest Controls website.`;
 
-    // Log the enquiry (replace with your own backend or email)
-    console.log("New enquiry from home page:", {
-      name: cleanName,
-      phone: cleanPhone,
-      services: selectedServiceText,
-    });
+  const whatsappNumber = "919941229005";
 
-    // Show success message
-    window.alert(
-      "Thank you! Your enquiry has been received. Our team will contact you shortly.",
-    );
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    whatsappMessage,
+  )}`;
 
-    // Reset form
-    setName("");
-    setPhone("");
-    setSelectedServices([]);
-  };
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+  setName("");
+  setPhone("");
+  setSelectedServices([]);
+  setServiceOpen(false);
+};
 
   const previousTestimonial = () => {
     setActiveTestimonial((previous) =>
