@@ -1,5 +1,12 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Link,
+  useLocation,
+} from "react-router-dom";
 
 import "@fontsource/poppins";
 import "@fontsource/poppins/500.css";
@@ -54,12 +61,14 @@ import CommonAreaTreatmentResidential from "./components/servicepage/common-area
 import DisinfectionServices from "./components/servicepage/disinfection-services";
 import WarehousePestManagement from "./components/servicepage/warehouse-pest-management";
 import HotelHospitalPestControl from "./components/servicepage/pest-control-hotels-hospitals";
+
 // Game pages
 import PestGameFloatingButton from "./components/PestGameFloatingButton";
 import PestGamePage from "./components/pestgame/PestGamePage";
 import DefendHomeGame from "./components/pestgame/DefendHomeGame";
 
 import PestEnquiryForm from "./components/PestEnquiryForm";
+import PestControlLandingPage from "./components/PestControlLandingPage";
 
 const NotFound = () => {
   return (
@@ -97,14 +106,20 @@ const NotFound = () => {
   );
 };
 
-function App() {
+const AppContent = () => {
+  const location = useLocation();
+
+  // Hide only the gaming floating button on the landing page.
+  const hideGameButton =
+    location.pathname === "/pest-control-bangalore";
+
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
 
       <Navbar />
 
-      <PestGameFloatingButton />
+      {!hideGameButton && <PestGameFloatingButton />}
 
       <PestEnquiryForm />
 
@@ -120,11 +135,17 @@ function App() {
 
           <Route path="/contact" element={<Contact />} />
 
-          <Route path="/pest-identification" element={<PestIdentification />} />
+          <Route
+            path="/pest-identification"
+            element={<PestIdentification />}
+          />
 
           {/* OLD MAIN PAGE REDIRECTS */}
 
-          <Route path="/aboutus" element={<Navigate to="/about" replace />} />
+          <Route
+            path="/aboutus"
+            element={<Navigate to="/about" replace />}
+          />
 
           <Route
             path="/Services"
@@ -136,11 +157,11 @@ function App() {
             element={<Navigate to="/contact" replace />}
           />
 
-          <Route path="/pest-identification" element={<PestIdentification />} />
-
           <Route
             path="/pestidentification"
-            element={<Navigate to="/pest-identification" replace />}
+            element={
+              <Navigate to="/pest-identification" replace />
+            }
           />
 
           {/* BLOG LISTING */}
@@ -188,10 +209,12 @@ function App() {
             path="/blogs/top-10-household-pests-in-bangalore"
             element={<Top10HouseholdPestsBangalore />}
           />
+
           <Route
             path="/blogs/how-often-should-pest-control-be-done"
             element={<HowOftenShouldPestControlBeDone />}
           />
+
           <Route
             path="/blogs/german-cockroach-vs-american-cockroach"
             element={<GermanCockroachVsAmericanCockroach />}
@@ -221,11 +244,6 @@ function App() {
             path="/blogs/why-cockroaches-enter-your-kitchen"
             element={<WhyCockroachesEnterKitchen />}
           />
-
-          {/* 
-            This dynamic route handles blog slugs stored inside
-            the get-rid-of-cockroaches blog detail component.
-          */}
 
           <Route path="/blogs/:slug" element={<BlogDetail />} />
 
@@ -283,7 +301,10 @@ function App() {
             element={<PestControlHotelsHospitals />}
           />
 
-          <Route path="/office-pest-control" element={<OfficePestControl />} />
+          <Route
+            path="/office-pest-control"
+            element={<OfficePestControl />}
+          />
 
           <Route
             path="/educational-institution-pest-control"
@@ -305,12 +326,22 @@ function App() {
             element={<WarehousePestManagement />}
           />
 
+          {/* LANDING PAGE */}
+
+          <Route
+            path="/pest-control-bangalore"
+            element={<PestControlLandingPage />}
+          />
+
           {/* OLD SERVICE URL REDIRECTS */}
 
           <Route
             path="/post-construction-termite"
             element={
-              <Navigate to="/post-construction-termite-treatment" replace />
+              <Navigate
+                to="/post-construction-termite-treatment"
+                replace
+              />
             }
           />
 
@@ -326,9 +357,15 @@ function App() {
 
           {/* GAME PAGES */}
 
-          <Route path="/pest-game" element={<PestGamePage />} />
+          <Route
+            path="/pest-game"
+            element={<PestGamePage />}
+          />
 
-          <Route path="/defend-home-game" element={<DefendHomeGame />} />
+          <Route
+            path="/defend-home-game"
+            element={<DefendHomeGame />}
+          />
 
           {/* OLD GAME URL REDIRECTS */}
 
@@ -339,7 +376,9 @@ function App() {
 
           <Route
             path="/DefendHomeGame"
-            element={<Navigate to="/defend-home-game" replace />}
+            element={
+              <Navigate to="/defend-home-game" replace />
+            }
           />
 
           {/* 404 PAGE */}
@@ -349,6 +388,14 @@ function App() {
       </main>
 
       <Footer />
+    </>
+  );
+};
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }

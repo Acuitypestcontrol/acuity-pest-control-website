@@ -455,7 +455,7 @@ const Navbar = () => {
 
           <div
             className={`navbar-glow pointer-events-none absolute -left-20 top-0 h-32 w-64 rounded-full bg-green-300/30 blur-[80px] transition-opacity duration-500 ${
-              scrolled ? "opacity-50" : "opacity-20"
+              scrolled ? "opacity-30":"opacity-20"
             }`}
           />
 
@@ -528,13 +528,11 @@ const Navbar = () => {
                     }`}
                   >
                     SERVICES
-
                     <FaChevronDown
                       className={`text-[10px] transition-transform duration-300 ${
                         desktopServicesOpen ? "rotate-180" : ""
                       }`}
                     />
-
                     <span
                       className={`absolute bottom-1 left-1/2 h-[3px] -translate-x-1/2 rounded-full bg-green-600 transition-all duration-300 ${
                         servicesActive || desktopServicesOpen
@@ -644,7 +642,8 @@ const Navbar = () => {
                               </h4>
 
                               <p className="mt-2 text-xs leading-5 text-green-100">
-                                Tell our pest-control experts about your problem.
+                                Tell our pest-control experts about your
+                                problem.
                               </p>
 
                               <Link
