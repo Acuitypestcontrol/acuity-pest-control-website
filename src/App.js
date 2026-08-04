@@ -111,6 +111,7 @@ const AppContent = () => {
 
   // Hide only the gaming floating button on the landing page.
   const hideGameButton =
+    location.pathname === "/" ||
     location.pathname === "/pest-control-bangalore";
 
   return (
@@ -127,7 +128,9 @@ const AppContent = () => {
         <Routes>
           {/* MAIN CANONICAL PAGES */}
 
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<PestControlLandingPage />} />
+
+          <Route path="/home" element={<Home />} />
 
           <Route path="/about" element={<AboutUS />} />
 
@@ -135,17 +138,11 @@ const AppContent = () => {
 
           <Route path="/contact" element={<Contact />} />
 
-          <Route
-            path="/pest-identification"
-            element={<PestIdentification />}
-          />
+          <Route path="/pest-identification" element={<PestIdentification />} />
 
           {/* OLD MAIN PAGE REDIRECTS */}
 
-          <Route
-            path="/aboutus"
-            element={<Navigate to="/about" replace />}
-          />
+          <Route path="/aboutus" element={<Navigate to="/about" replace />} />
 
           <Route
             path="/Services"
@@ -159,9 +156,7 @@ const AppContent = () => {
 
           <Route
             path="/pestidentification"
-            element={
-              <Navigate to="/pest-identification" replace />
-            }
+            element={<Navigate to="/pest-identification" replace />}
           />
 
           {/* BLOG LISTING */}
@@ -301,10 +296,7 @@ const AppContent = () => {
             element={<PestControlHotelsHospitals />}
           />
 
-          <Route
-            path="/office-pest-control"
-            element={<OfficePestControl />}
-          />
+          <Route path="/office-pest-control" element={<OfficePestControl />} />
 
           <Route
             path="/educational-institution-pest-control"
@@ -338,10 +330,7 @@ const AppContent = () => {
           <Route
             path="/post-construction-termite"
             element={
-              <Navigate
-                to="/post-construction-termite-treatment"
-                replace
-              />
+              <Navigate to="/post-construction-termite-treatment" replace />
             }
           />
 
@@ -357,15 +346,9 @@ const AppContent = () => {
 
           {/* GAME PAGES */}
 
-          <Route
-            path="/pest-game"
-            element={<PestGamePage />}
-          />
+          <Route path="/pest-game" element={<PestGamePage />} />
 
-          <Route
-            path="/defend-home-game"
-            element={<DefendHomeGame />}
-          />
+          <Route path="/defend-home-game" element={<DefendHomeGame />} />
 
           {/* OLD GAME URL REDIRECTS */}
 
@@ -376,9 +359,7 @@ const AppContent = () => {
 
           <Route
             path="/DefendHomeGame"
-            element={
-              <Navigate to="/defend-home-game" replace />
-            }
+            element={<Navigate to="/defend-home-game" replace />}
           />
 
           {/* 404 PAGE */}
