@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   BrowserRouter,
   Routes,
@@ -8,6 +9,8 @@ import {
   useLocation,
 } from "react-router-dom";
 
+import { Helmet } from "react-helmet-async";
+
 import "@fontsource/poppins";
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/700.css";
@@ -16,103 +19,198 @@ import Navbar from "./global/Navbar";
 import Footer from "./global/Footer";
 import ScrollToTop from "./global/ScrollToTop";
 
-import Home from "./components/Home";
+/* =========================================================
+   MAIN PAGES
+========================================================= */
+
 import AboutUS from "./components/AboutUS";
 import ServicesPage from "./components/Services";
 import Contact from "./components/ContactUs";
 import PestIdentification from "./components/pestidentification";
+import PestControlLandingPage from "./components/PestControlLandingPage";
 
-// Blog listing
+/* =========================================================
+   BLOG LISTING
+========================================================= */
+
 import Blog from "./components/blogs/blogsmainpage";
 
-// Dynamic blog detail page
+/* =========================================================
+   DYNAMIC BLOG DETAIL COMPONENT
+========================================================= */
+
 import BlogDetail from "./components/blogs/get-rid-of-cockroaches";
 
-// Individual blog pages
+/* =========================================================
+   INDIVIDUAL BLOG PAGES
+========================================================= */
+
 import SignsOfTermiteInfestation from "./components/blogs/signs-of-termite-infestation";
+
 import PestControlVsDIY from "./components/blogs/pest-control-vs-diy";
+
 import BedBugTreatmentGuide from "./components/blogs/bed-bug-treatment";
+
 import RatControlTipsForHomes from "./components/blogs/rat-control-tips-for-homes";
+
 import MosquitoPreventionRainySeason from "./components/blogs/mosquito-prevention-during-rainy-season";
+
 import Top10HouseholdPestsBangalore from "./components/blogs/top-10-household-pests-in-bangalore";
+
 import HowOftenShouldPestControlBeDone from "./components/blogs/how-often-should-pest-control-be-done";
+
 import GermanCockroachVsAmericanCockroach from "./components/blogs/german-cockroach-vs-american-cockroach";
+
 import TermiteTreatmentCostBangalore from "./components/blogs/termite-treatment-cost-bangalore";
+
 import HowToPreventAntInfestationAtHome from "./components/blogs/how-to-prevent-ant-infestation-at-home";
+
 import WhyRegularPestControlImportantBusinesses from "./components/blogs/why-regular-pest-control-is-important-for-businesses";
+
 import PestControlChecklistNewHomes from "./components/blogs/pest-control-checklist-for-new-homes";
+
 import WhyCockroachesEnterKitchen from "./components/blogs/why-cockroaches-enter-your-kitchen";
 
-// Service pages
-import GeneralPestControl from "./components/servicepage/general-pest-control";
-import AntiTermiteTreatment from "./components/servicepage/anti-termite-treatment";
-import PostConstructionTermiteTreatment from "./components/servicepage/post-construction-termite";
-import BedBug from "./components/servicepage/bed-bug-treatment";
-import AntControlTreatment from "./components/servicepage/ant-control-treatment";
-import MosquitoManagementService from "./components/servicepage/mosquito-management-service";
-import CockroachManagementService from "./components/servicepage/cockroach-management-service";
-import RodentManagementService from "./components/servicepage/rodent-management-service";
-import WoodBorerTreatment from "./components/servicepage/wood-borer-treatment";
-import PreConstructionTermiteTreatment from "./components/servicepage/pre-construction-termite-treatment";
-import PestControlHotelsHospitals from "./components/servicepage/pest-control-hotels-hospitals";
-import OfficePestControl from "./components/servicepage/office-pest-control";
-import EducationalInstitutionPestControl from "./components/servicepage/educational-institution-pest-control";
-import CommonAreaTreatmentResidential from "./components/servicepage/common-area-treatment-residential-complex";
-import DisinfectionServices from "./components/servicepage/disinfection-services";
-import WarehousePestManagement from "./components/servicepage/warehouse-pest-management";
-import HotelHospitalPestControl from "./components/servicepage/pest-control-hotels-hospitals";
+/* =========================================================
+   RESIDENTIAL SERVICE PAGES
+========================================================= */
 
-// Game pages
+import GeneralPestControl from "./components/servicepage/general-pest-control";
+
+import AntiTermiteTreatment from "./components/servicepage/anti-termite-treatment";
+
+import PostConstructionTermiteTreatment from "./components/servicepage/post-construction-termite";
+
+import BedBug from "./components/servicepage/bed-bug-treatment";
+
+import AntControlTreatment from "./components/servicepage/ant-control-treatment";
+
+import MosquitoManagementService from "./components/servicepage/mosquito-management-service";
+
+import CockroachManagementService from "./components/servicepage/cockroach-management-service";
+
+import RodentManagementService from "./components/servicepage/rodent-management-service";
+
+import WoodBorerTreatment from "./components/servicepage/wood-borer-treatment";
+
+import PreConstructionTermiteTreatment from "./components/servicepage/pre-construction-termite-treatment";
+
+/* =========================================================
+   COMMERCIAL SERVICE PAGES
+========================================================= */
+
+import PestControlHotelsHospitals from "./components/servicepage/pest-control-hotels-hospitals";
+
+import OfficePestControl from "./components/servicepage/office-pest-control";
+
+import EducationalInstitutionPestControl from "./components/servicepage/educational-institution-pest-control";
+
+import CommonAreaTreatmentResidential from "./components/servicepage/common-area-treatment-residential-complex";
+
+import DisinfectionServices from "./components/servicepage/disinfection-services";
+
+import WarehousePestManagement from "./components/servicepage/warehouse-pest-management";
+
+/* =========================================================
+   GAME COMPONENTS
+========================================================= */
+
 import PestGameFloatingButton from "./components/PestGameFloatingButton";
+
 import PestGamePage from "./components/pestgame/PestGamePage";
+
 import DefendHomeGame from "./components/pestgame/DefendHomeGame";
 
+/* =========================================================
+   GLOBAL ENQUIRY FORM
+========================================================= */
+
 import PestEnquiryForm from "./components/PestEnquiryForm";
-import PestControlLandingPage from "./components/PestControlLandingPage";
+
+/* =========================================================
+   404 PAGE
+========================================================= */
 
 const NotFound = () => {
   return (
-    <section className="flex min-h-[70vh] items-center justify-center bg-gray-50 px-4 text-center">
-      <div>
-        <p className="text-sm font-bold uppercase tracking-[4px] text-green-700">
-          Page Not Found
-        </p>
+    <>
+      <Helmet>
+        <title>Page Not Found | Acuity Pest Controls</title>
 
-        <h1 className="mt-3 text-6xl font-black text-[#063b3f] md:text-8xl">
-          404
-        </h1>
+        <meta
+          name="description"
+          content="The requested page could not be found on the Acuity Pest Controls website."
+        />
 
-        <p className="mx-auto mt-4 max-w-lg text-gray-600">
-          The page you are looking for does not exist or may have been moved.
-        </p>
+        <meta name="robots" content="noindex, nofollow" />
 
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Link
-            to="/"
-            className="rounded-full bg-green-600 px-7 py-3 font-bold text-white transition hover:bg-green-700"
-          >
-            Return Home
-          </Link>
+        <meta name="googlebot" content="noindex, nofollow" />
 
-          <Link
-            to="/services"
-            className="rounded-full border-2 border-green-600 px-7 py-3 font-bold text-green-700 transition hover:bg-green-50"
-          >
-            View Services
-          </Link>
+        <link
+          rel="canonical"
+          href="https://www.acuitypestcontrols.com/404"
+        />
+      </Helmet>
+
+      <section className="flex min-h-[70vh] items-center justify-center bg-gradient-to-br from-[#f4fbf8] to-white px-4 py-20 text-center">
+        <div className="mx-auto max-w-2xl rounded-[32px] border border-green-100 bg-white p-8 shadow-[0_25px_80px_rgba(6,59,63,0.12)] sm:p-12">
+          <p className="text-sm font-black uppercase tracking-[4px] text-green-700">
+            Page Not Found
+          </p>
+
+          <h1 className="mt-3 text-7xl font-black text-[#063b3f] md:text-9xl">
+            404
+          </h1>
+
+          <h2 className="mt-4 text-2xl font-black text-[#063b3f] sm:text-3xl">
+            This page does not exist
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-lg leading-7 text-gray-600">
+            The page you are looking for may have been removed, renamed or
+            moved to another location.
+          </p>
+
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <Link
+              to="/"
+              className="rounded-full bg-green-600 px-7 py-3.5 font-bold text-white shadow-lg transition hover:-translate-y-1 hover:bg-green-700"
+            >
+              Return Home
+            </Link>
+
+            <Link
+              to="/services"
+              className="rounded-full border-2 border-green-600 px-7 py-3.5 font-bold text-green-700 transition hover:-translate-y-1 hover:bg-green-50"
+            >
+              View Pest Control Services
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
+
+/* =========================================================
+   APPLICATION CONTENT
+========================================================= */
 
 const AppContent = () => {
   const location = useLocation();
 
-  // Hide only the gaming floating button on the landing page.
+  /*
+   * Hide the game floating button on:
+   * 1. Main homepage
+   * 2. Pest-control landing page
+   * 3. Game pages
+   */
+
   const hideGameButton =
     location.pathname === "/" ||
-    location.pathname === "/pest-control-bangalore";
+    location.pathname === "/pest-control-bangalore" ||
+    location.pathname === "/pest-game" ||
+    location.pathname === "/defend-home-game";
 
   return (
     <>
@@ -126,23 +224,58 @@ const AppContent = () => {
 
       <main className="pt-[89px] font-poppins md:pt-[175px]">
         <Routes>
-          {/* MAIN CANONICAL PAGES */}
+          {/* =================================================
+              MAIN CANONICAL PAGES
+          ================================================== */}
 
-          <Route path="/" element={<PestControlLandingPage />} />
+          <Route
+            path="/"
+            element={<PestControlLandingPage />}
+          />
 
-          <Route path="/home" element={<Home />} />
+          <Route
+            path="/about"
+            element={<AboutUS />}
+          />
 
-          <Route path="/about" element={<AboutUS />} />
+          <Route
+            path="/services"
+            element={<ServicesPage />}
+          />
 
-          <Route path="/services" element={<ServicesPage />} />
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
 
-          <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/pest-identification"
+            element={<PestIdentification />}
+          />
 
-          <Route path="/pest-identification" element={<PestIdentification />} />
+          {/* =================================================
+              OLD MAIN PAGE REDIRECTS
+          ================================================== */}
 
-          {/* OLD MAIN PAGE REDIRECTS */}
+          <Route
+            path="/home"
+            element={<Navigate to="/" replace />}
+          />
 
-          <Route path="/aboutus" element={<Navigate to="/about" replace />} />
+          <Route
+            path="/home/"
+            element={<Navigate to="/" replace />}
+          />
+
+          <Route
+            path="/aboutus"
+            element={<Navigate to="/about" replace />}
+          />
+
+          <Route
+            path="/about-us"
+            element={<Navigate to="/about" replace />}
+          />
 
           <Route
             path="/Services"
@@ -155,20 +288,42 @@ const AppContent = () => {
           />
 
           <Route
-            path="/pestidentification"
-            element={<Navigate to="/pest-identification" replace />}
+            path="/Contact"
+            element={<Navigate to="/contact" replace />}
           />
 
-          {/* BLOG LISTING */}
+          <Route
+            path="/pestidentification"
+            element={
+              <Navigate
+                to="/pest-identification"
+                replace
+              />
+            }
+          />
 
-          <Route path="/blogs" element={<Blog />} />
+          {/* =================================================
+              BLOG LISTING
+          ================================================== */}
+
+          <Route
+            path="/blogs"
+            element={<Blog />}
+          />
+
+          <Route
+            path="/blog"
+            element={<Navigate to="/blogs" replace />}
+          />
 
           <Route
             path="/blogsmainpage"
             element={<Navigate to="/blogs" replace />}
           />
 
-          {/* INDIVIDUAL BLOG PAGES */}
+          {/* =================================================
+              INDIVIDUAL BLOG PAGES
+          ================================================== */}
 
           <Route
             path="/blogs/signs-of-termite-infestation"
@@ -188,11 +343,6 @@ const AppContent = () => {
           <Route
             path="/blogs/rat-control-tips-for-homes"
             element={<RatControlTipsForHomes />}
-          />
-
-          <Route
-            path="/hotel-hospital-pest-control"
-            element={<HotelHospitalPestControl />}
           />
 
           <Route
@@ -227,7 +377,9 @@ const AppContent = () => {
 
           <Route
             path="/blogs/why-regular-pest-control-is-important-for-businesses"
-            element={<WhyRegularPestControlImportantBusinesses />}
+            element={
+              <WhyRegularPestControlImportantBusinesses />
+            }
           />
 
           <Route
@@ -240,9 +392,23 @@ const AppContent = () => {
             element={<WhyCockroachesEnterKitchen />}
           />
 
-          <Route path="/blogs/:slug" element={<BlogDetail />} />
+          {/*
+           * This route currently handles blog pages that use
+           * the shared BlogDetail component, including:
+           *
+           * /blogs/get-rid-of-cockroaches
+           * /blogs/pest-control-bangalore-guide
+           * /blogs/monsoon-pest-control
+           */}
 
-          {/* SERVICE PAGES */}
+          <Route
+            path="/blogs/:slug"
+            element={<BlogDetail />}
+          />
+
+          {/* =================================================
+              RESIDENTIAL SERVICE PAGES
+          ================================================== */}
 
           <Route
             path="/general-pest-control"
@@ -264,7 +430,10 @@ const AppContent = () => {
             element={<PostConstructionTermiteTreatment />}
           />
 
-          <Route path="/bed-bug-treatment" element={<BedBug />} />
+          <Route
+            path="/bed-bug-treatment"
+            element={<BedBug />}
+          />
 
           <Route
             path="/ant-control-treatment"
@@ -291,12 +460,34 @@ const AppContent = () => {
             element={<WoodBorerTreatment />}
           />
 
+          {/* =================================================
+              COMMERCIAL SERVICE PAGES
+          ================================================== */}
+
           <Route
             path="/pest-control-hotels-hospitals"
             element={<PestControlHotelsHospitals />}
           />
 
-          <Route path="/office-pest-control" element={<OfficePestControl />} />
+          {/*
+           * Old duplicate route.
+           * Redirect it to the final canonical URL.
+           */}
+
+          <Route
+            path="/hotel-hospital-pest-control"
+            element={
+              <Navigate
+                to="/pest-control-hotels-hospitals"
+                replace
+              />
+            }
+          />
+
+          <Route
+            path="/office-pest-control"
+            element={<OfficePestControl />}
+          />
 
           <Route
             path="/educational-institution-pest-control"
@@ -318,19 +509,26 @@ const AppContent = () => {
             element={<WarehousePestManagement />}
           />
 
-          {/* LANDING PAGE */}
+          {/* =================================================
+              LANDING PAGE
+          ================================================== */}
 
           <Route
             path="/pest-control-bangalore"
             element={<PestControlLandingPage />}
           />
 
-          {/* OLD SERVICE URL REDIRECTS */}
+          {/* =================================================
+              OLD SERVICE URL REDIRECTS
+          ================================================== */}
 
           <Route
             path="/post-construction-termite"
             element={
-              <Navigate to="/post-construction-termite-treatment" replace />
+              <Navigate
+                to="/post-construction-termite-treatment"
+                replace
+              />
             }
           />
 
@@ -344,27 +542,102 @@ const AppContent = () => {
             }
           />
 
-          {/* GAME PAGES */}
+          <Route
+            path="/cockroach-control"
+            element={
+              <Navigate
+                to="/cockroach-management-service"
+                replace
+              />
+            }
+          />
 
-          <Route path="/pest-game" element={<PestGamePage />} />
+          <Route
+            path="/cockroach-pest-control"
+            element={
+              <Navigate
+                to="/cockroach-management-service"
+                replace
+              />
+            }
+          />
 
-          <Route path="/defend-home-game" element={<DefendHomeGame />} />
+          <Route
+            path="/rodent-control"
+            element={
+              <Navigate
+                to="/rodent-management-service"
+                replace
+              />
+            }
+          />
 
-          {/* OLD GAME URL REDIRECTS */}
+          <Route
+            path="/termite-control-services"
+            element={
+              <Navigate
+                to="/anti-termite-treatment"
+                replace
+              />
+            }
+          />
+
+          <Route
+            path="/residential-pest-control"
+            element={
+              <Navigate
+                to="/general-pest-control"
+                replace
+              />
+            }
+          />
+
+          {/* =================================================
+              GAME PAGES
+          ================================================== */}
+
+          <Route
+            path="/pest-game"
+            element={<PestGamePage />}
+          />
+
+          <Route
+            path="/defend-home-game"
+            element={<DefendHomeGame />}
+          />
+
+          {/* =================================================
+              OLD GAME URL REDIRECTS
+          ================================================== */}
 
           <Route
             path="/PestGamePage"
-            element={<Navigate to="/pest-game" replace />}
+            element={
+              <Navigate
+                to="/pest-game"
+                replace
+              />
+            }
           />
 
           <Route
             path="/DefendHomeGame"
-            element={<Navigate to="/defend-home-game" replace />}
+            element={
+              <Navigate
+                to="/defend-home-game"
+                replace
+              />
+            }
           />
 
-          {/* 404 PAGE */}
+          {/* =================================================
+              FINAL 404 ROUTE
+          ================================================== */}
 
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="*"
+            element={<NotFound />}
+          />
         </Routes>
       </main>
 
@@ -372,6 +645,10 @@ const AppContent = () => {
     </>
   );
 };
+
+/* =========================================================
+   MAIN APP
+========================================================= */
 
 function App() {
   return (
