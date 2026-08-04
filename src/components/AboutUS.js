@@ -160,7 +160,7 @@ const AboutUS = () => {
         url: "https://www.acuitypestcontrols.com/",
         image: "https://www.acuitypestcontrols.com/logo.png",
         telephone: "+91 9941229005",
-        email: "info@acuitypestcontrols.in",
+        email: "info@acuitygroups.in",
         address: {
           "@type": "PostalAddress",
           streetAddress:

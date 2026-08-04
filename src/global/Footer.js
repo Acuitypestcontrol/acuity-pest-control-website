@@ -181,8 +181,7 @@ const viewportSettings = {
 ========================================================= */
 
 const Footer = () => {
-  const [showScrollButton, setShowScrollButton] =
-    useState(false);
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -325,7 +324,6 @@ const Footer = () => {
                 <div>
                   <span className="inline-flex items-center gap-2 rounded-full border border-green-300/25 bg-green-400/10 px-4 py-2 text-xs font-black uppercase tracking-[2px] text-green-300">
                     <FaShieldAlt />
-
                     Professional Pest Protection
                   </span>
 
@@ -334,10 +332,9 @@ const Footer = () => {
                   </h2>
 
                   <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-300 sm:text-base">
-                    Speak with our team for cockroach control,
-                    termite treatment, bed bug treatment, rodent
-                    control, mosquito management and commercial pest
-                    control services.
+                    Speak with our team for cockroach control, termite
+                    treatment, bed bug treatment, rodent control, mosquito
+                    management and commercial pest control services.
                   </p>
                 </div>
 
@@ -354,7 +351,6 @@ const Footer = () => {
                     className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 font-black text-[#063b3f] shadow-xl transition hover:bg-green-50"
                   >
                     <FaPhoneAlt />
-
                     Call Now
                   </motion.a>
 
@@ -372,7 +368,6 @@ const Footer = () => {
                     className="footer-shine footer-whatsapp-pulse inline-flex items-center justify-center gap-3 rounded-full bg-green-500 px-7 py-4 font-black text-white shadow-xl transition hover:bg-green-400"
                   >
                     <FaWhatsapp size={19} />
-
                     WhatsApp Us
                   </motion.a>
                 </div>
@@ -408,19 +403,16 @@ const Footer = () => {
               </Link>
 
               <p className="mt-5 max-w-md text-sm leading-7 text-gray-300 sm:text-base">
-                Acuity Pest Controls provides professional pest
-                control services in Bangalore for homes, apartments,
-                offices, restaurants, hotels, hospitals, warehouses
-                and industries.
+                Acuity Pest Controls provides professional pest control services
+                in Bangalore for homes, apartments, offices, restaurants,
+                hotels, hospitals, warehouses and industries.
               </p>
 
               <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-green-300/20 bg-green-400/10 px-4 py-3">
                 <span className="text-2xl">🏅</span>
 
                 <div>
-                  <p className="text-sm font-black text-white">
-                    ISO 9001:2015
-                  </p>
+                  <p className="text-sm font-black text-white">ISO 9001:2015</p>
 
                   <p className="mt-0.5 text-[11px] text-green-200">
                     Certificate: 305024122052Q
@@ -503,8 +495,10 @@ const Footer = () => {
             <ContactCard
               icon={FaEnvelope}
               label="Email Address"
-              value="info@acuitypestcontrols.in"
-              href="mailto:info@acuitypestcontrols.in"
+              value="info@acuitygroups.in
+"
+              href="mailto:info@acuitygroups.in
+"
             />
 
             <ContactCard
@@ -539,9 +533,9 @@ const Footer = () => {
                   </h3>
 
                   <p className="mt-3 text-sm leading-7 text-gray-300">
-                    1st Floor, KVO-08, No-28/2, near Sun Jupiter
-                    School, JP Nagar 6th Phase, Yelachenahalli,
-                    Kumaraswamy Layout, Bengaluru, Karnataka 560078.
+                    1st Floor, KVO-08, No-28/2, near Sun Jupiter School, JP
+                    Nagar 6th Phase, Yelachenahalli, Kumaraswamy Layout,
+                    Bengaluru, Karnataka 560078.
                   </p>
 
                   <a
@@ -551,7 +545,6 @@ const Footer = () => {
                     className="mt-5 inline-flex items-center gap-2 rounded-full border border-green-400/30 bg-green-400/10 px-5 py-3 text-sm font-black text-green-300 transition hover:bg-green-500 hover:text-white"
                   >
                     Open Google Maps
-
                     <FaArrowRight size={12} />
                   </a>
                 </div>
@@ -604,24 +597,18 @@ const Footer = () => {
         <div className="relative z-10 border-t border-white/10 bg-black/10">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 text-center text-xs text-gray-400 sm:px-6 md:flex-row md:text-left lg:px-8">
             <p>
-              © {new Date().getFullYear()} Acuity Pest Controls.
-              All Rights Reserved.
+              © {new Date().getFullYear()} Acuity Pest Controls. All Rights
+              Reserved.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link
-                to="/services"
-                className="transition hover:text-green-300"
-              >
+              <Link to="/services" className="transition hover:text-green-300">
                 Pest Control Services
               </Link>
 
               <span className="hidden h-1 w-1 rounded-full bg-gray-600 sm:block" />
 
-              <Link
-                to="/contactus"
-                className="transition hover:text-green-300"
-              >
+              <Link to="/contactus" className="transition hover:text-green-300">
                 Contact
               </Link>
 
@@ -679,11 +666,7 @@ const Footer = () => {
    FOOTER LINK COLUMN
 ========================================================= */
 
-const FooterLinkColumn = ({
-  title,
-  icon: Icon,
-  links,
-}) => {
+const FooterLinkColumn = ({ title, icon: Icon, links }) => {
   return (
     <motion.div
       variants={revealUp}
@@ -696,9 +679,7 @@ const FooterLinkColumn = ({
           <Icon size={16} />
         </span>
 
-        <h3 className="text-lg font-black text-white">
-          {title}
-        </h3>
+        <h3 className="text-lg font-black text-white">{title}</h3>
       </div>
 
       <div className="space-y-1.5">
@@ -722,13 +703,7 @@ const FooterLinkColumn = ({
    CONTACT CARD
 ========================================================= */
 
-const ContactCard = ({
-  icon: Icon,
-  label,
-  value,
-  href,
-  external = false,
-}) => {
+const ContactCard = ({ icon: Icon, label, value, href, external = false }) => {
   const content = (
     <motion.div
       variants={revealUp}
@@ -776,11 +751,7 @@ const ContactCard = ({
    SOCIAL ICON
 ========================================================= */
 
-const SocialLink = ({
-  href,
-  label,
-  icon: Icon,
-}) => {
+const SocialLink = ({ href, label, icon: Icon }) => {
   return (
     <motion.a
       href={href}

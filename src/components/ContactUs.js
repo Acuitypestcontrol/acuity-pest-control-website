@@ -27,7 +27,7 @@ const contactSchema = [
       url: "https://www.acuitypestcontrols.com/",
       image: "https://www.acuitypestcontrols.com/logo.png",
       telephone: "+91 9941229005",
-      email: "info@acuitypestcontrols.in",
+      email: "info@acuitygroups.in",
       priceRange: "₹₹",
       address: {
         "@type": "PostalAddress",
@@ -205,8 +205,8 @@ Please contact me regarding pest control service in Bangalore.`;
     {
       icon: <FaEnvelope aria-hidden="true" />,
       title: "Email",
-      text: "info@acuitypestcontrols.in",
-      link: "mailto:info@acuitypestcontrols.in",
+      text: "info@acuitygroups.in",
+      link: "mailto:info@acuitygroups.in",
       external: false,
       ariaLabel: "Email Acuity Pest Controls",
     },
@@ -451,14 +451,16 @@ Please contact me regarding pest control service in Bangalore.`;
                 </a>
 
                 <a
-                  href="mailto:info@acuitypestcontrols.in"
+                  href="mailto:info@acuitygroups.in
+"
                   className="flex items-center gap-3 break-all text-gray-200 transition hover:text-green-300"
                 >
                   <FaEnvelope
                     className="shrink-0 text-green-400"
                     aria-hidden="true"
                   />
-                  <span>info@acuitypestcontrols.in</span>
+                  <span>info@acuitygroups.in
+</span>
                 </a>
 
                 <div className="flex items-center gap-3 text-gray-200">

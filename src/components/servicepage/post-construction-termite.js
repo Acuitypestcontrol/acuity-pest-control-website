@@ -56,7 +56,7 @@ const postConstructionTermiteSchema = [
       name: "Acuity Pest Control",
       url: "https://www.acuitypestcontrols.com/",
       telephone: "+91 9941229005",
-      email: "info@acuitypestcontrols.in",
+      email: "info@acuitygroups.in",
       address: {
         "@type": "PostalAddress",
         streetAddress:
