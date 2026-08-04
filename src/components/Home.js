@@ -479,7 +479,7 @@ const homeSchema = [
 
     telephone: "+919941229005",
 
-    email: "info@acuitygroups.in",
+    email: "info@acuitypestcontrols.in",
 
     priceRange: "₹₹",
 
@@ -1546,6 +1546,12 @@ const AcuityChatBot = () => {
   const [isTyping, setIsTyping] = useState(false);
 
   const [showLeadForm, setShowLeadForm] = useState(false);
+  const [isLeadSubmitting, setIsLeadSubmitting] = useState(false);
+
+  const [leadSubmitStatus, setLeadSubmitStatus] = useState({
+    type: "",
+    message: "",
+  });
 
   const [leadDetails, setLeadDetails] = useState({
     name: "",
@@ -1645,45 +1651,101 @@ const AcuityChatBot = () => {
   };
 
   // MODIFIED: Instead of opening WhatsApp, we show a success message and log the enquiry.
-  const sendLeadToInternal = (event) => {
+  const sendLeadToInternal = async (event) => {
     event.preventDefault();
 
     const cleanName = leadDetails.name.trim();
-    const cleanPhone = leadDetails.phone.replace(/\D/g, "");
+    const cleanPhone = leadDetails.phone.replace(/\D/g, "").slice(-10);
     const cleanLocation = leadDetails.location.trim();
     const cleanService = leadDetails.service.trim();
 
+    setLeadSubmitStatus({
+      type: "",
+      message: "",
+    });
+
     if (!cleanName) {
-      window.alert("Please enter your name.");
+      setLeadSubmitStatus({
+        type: "error",
+        message: "Please enter your name.",
+      });
       return;
     }
 
-    if (cleanPhone.length !== 10) {
-      window.alert("Please enter a valid 10-digit phone number.");
+    if (!/^[6-9]\d{9}$/.test(cleanPhone)) {
+      setLeadSubmitStatus({
+        type: "error",
+        message: "Please enter a valid 10-digit mobile number.",
+      });
       return;
     }
 
     if (!cleanLocation) {
-      window.alert("Please enter your location.");
+      setLeadSubmitStatus({
+        type: "error",
+        message: "Please enter your location.",
+      });
       return;
     }
 
     if (!cleanService) {
-      window.alert("Please select the required service.");
+      setLeadSubmitStatus({
+        type: "error",
+        message: "Please select the required service.",
+      });
       return;
     }
 
-    const recentChat = messages
-      .slice(-6)
-      .map(
-        (message) =>
-          `${message.sender === "user" ? "Customer" : "Assistant"}: ${
-            message.text
-          }`,
-      )
-      .join("\n");
+    setIsLeadSubmitting(true);
 
-    const whatsappMessage = `*New AI Chatbot Enquiry*
+    try {
+      const recentChat = messages
+        .slice(-6)
+        .map(
+          (message) =>
+            `${message.sender === "user" ? "Customer" : "Assistant"}: ${
+              message.text
+            }`,
+        )
+        .join("\n");
+
+      const submittedNow = new Date();
+
+      const response = await fetch("https://formspree.io/f/mzeppdwo", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: cleanName,
+          phone: cleanPhone,
+          location: cleanLocation,
+          service: cleanService,
+          recent_chat: recentChat || "No recent chat",
+          lead_source: "Acuity AI Chatbot",
+          website: "https://www.acuitypestcontrols.com/",
+          submitted_at: submittedNow.toLocaleString("en-IN"),
+          _subject: `New AI Chatbot Lead - ${cleanService} - ${cleanPhone}`,
+        }),
+      });
+
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        let errorMessage =
+          "Your enquiry could not be submitted. Please try again.";
+
+        if (responseData?.errors?.length) {
+          errorMessage = responseData.errors
+            .map((error) => error.message)
+            .join(", ");
+        }
+
+        throw new Error(errorMessage);
+      }
+
+      const whatsappMessage = `*New AI Chatbot Enquiry*
 
 *Name:* ${cleanName}
 *Phone:* ${cleanPhone}
@@ -1691,35 +1753,43 @@ const AcuityChatBot = () => {
 *Required Service:* ${cleanService}
 
 *Recent Chat:*
-${recentChat}
+${recentChat || "No recent chat"}
 
 Enquiry received from Acuity Pest Controls website.`;
 
-    const whatsappNumber = "919941229005";
+      const whatsappUrl = `https://wa.me/919941229005?text=${encodeURIComponent(
+        whatsappMessage,
+      )}`;
 
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      whatsappMessage,
-    )}`;
+      setMessages((previous) => [
+        ...previous,
+        {
+          id: Date.now(),
+          sender: "bot",
+          text: "Thank you! Your enquiry has been saved and sent to our team. WhatsApp is opening now.",
+        },
+      ]);
 
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      setShowLeadForm(false);
 
-    setMessages((previous) => [
-      ...previous,
-      {
-        id: Date.now(),
-        sender: "bot",
-        text: "Your enquiry is ready in WhatsApp. Please press Send to deliver it to our team.",
-      },
-    ]);
+      setLeadDetails({
+        name: "",
+        phone: "",
+        location: "",
+        service: "",
+      });
 
-    setShowLeadForm(false);
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    } catch (error) {
+      console.error("Chatbot Formspree error:", error);
 
-    setLeadDetails({
-      name: "",
-      phone: "",
-      location: "",
-      service: "",
-    });
+      setLeadSubmitStatus({
+        type: "error",
+        message: error.message || "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsLeadSubmitting(false);
+    }
   };
 
   const resetChat = () => {
@@ -2049,11 +2119,31 @@ Enquiry received from Acuity Pest Controls website.`;
                         </div>
                         <button
                           type="submit"
-                          className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-green-600 to-green-700 px-4 py-3 text-xs font-black text-white shadow-lg shadow-green-600/20 transition hover:-translate-y-0.5 hover:from-green-700 hover:to-green-800"
+                          disabled={isLeadSubmitting}
+                          className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-green-600 to-green-700 px-4 py-3 text-xs font-black text-white shadow-lg shadow-green-600/20 transition hover:-translate-y-0.5 hover:from-green-700 hover:to-green-800 disabled:cursor-not-allowed disabled:opacity-60"
                         >
-                          <MessageCircle size={16} />
-                          Submit Enquiry
+                          {isLeadSubmitting ? (
+                            <>
+                              <LoaderCircle
+                                size={16}
+                                className="animate-spin"
+                              />
+                              Sending...
+                            </>
+                          ) : (
+                            <>
+                              <MessageCircle size={16} />
+                              Submit Enquiry
+                            </>
+                          )}
                         </button>
+
+                        {leadSubmitStatus.type === "error" &&
+                          leadSubmitStatus.message && (
+                            <div className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-center text-[11px] font-semibold text-red-700">
+                              {leadSubmitStatus.message}
+                            </div>
+                          )}
                       </div>
                     </motion.form>
                   )}
@@ -2147,6 +2237,12 @@ const Home = () => {
   const [serviceOpen, setServiceOpen] = useState(false);
 
   const [selectedServices, setSelectedServices] = useState([]);
+  const [isEnquirySubmitting, setIsEnquirySubmitting] = useState(false);
+
+  const [enquiryStatus, setEnquiryStatus] = useState({
+    type: "",
+    message: "",
+  });
 
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
@@ -2179,19 +2275,30 @@ const Home = () => {
   };
 
   // Modified: this form now logs enquiry instead of sending WhatsApp
-  const handleEnquirySubmit = (event) => {
+  const handleEnquirySubmit = async (event) => {
     event.preventDefault();
 
     const cleanName = name.trim();
-    const cleanPhone = phone.replace(/\D/g, "");
+    const cleanPhone = phone.replace(/\D/g, "").slice(-10);
+
+    setEnquiryStatus({
+      type: "",
+      message: "",
+    });
 
     if (!cleanName) {
-      window.alert("Please enter your full name.");
+      setEnquiryStatus({
+        type: "error",
+        message: "Please enter your full name.",
+      });
       return;
     }
 
-    if (cleanPhone.length !== 10) {
-      window.alert("Please enter a valid 10-digit phone number.");
+    if (!/^[6-9]\d{9}$/.test(cleanPhone)) {
+      setEnquiryStatus({
+        type: "error",
+        message: "Please enter a valid 10-digit mobile number.",
+      });
       return;
     }
 
@@ -2200,7 +2307,44 @@ const Home = () => {
         ? selectedServices.join(", ")
         : "General Pest Control Enquiry";
 
-    const whatsappMessage = `*New Website Enquiry*
+    setIsEnquirySubmitting(true);
+
+    try {
+      const submittedNow = new Date();
+
+      const response = await fetch("https://formspree.io/f/mzeppdwo", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: cleanName,
+          phone: cleanPhone,
+          services_requested: selectedServiceText,
+          lead_source: "Homepage Inspection Form",
+          website: "https://www.acuitypestcontrols.com/",
+          submitted_at: submittedNow.toLocaleString("en-IN"),
+          _subject: `New Homepage Lead - ${cleanPhone}`,
+        }),
+      });
+
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        let errorMessage =
+          "Your enquiry could not be submitted. Please try again.";
+
+        if (responseData?.errors?.length) {
+          errorMessage = responseData.errors
+            .map((error) => error.message)
+            .join(", ");
+        }
+
+        throw new Error(errorMessage);
+      }
+
+      const whatsappMessage = `*New Website Enquiry*
 
 *Name:* ${cleanName}
 *Phone:* ${cleanPhone}
@@ -2208,20 +2352,32 @@ const Home = () => {
 
 Enquiry received from Acuity Pest Controls website.`;
 
-    const whatsappNumber = "919941229005";
+      const whatsappUrl = `https://wa.me/919941229005?text=${encodeURIComponent(
+        whatsappMessage,
+      )}`;
 
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      whatsappMessage,
-    )}`;
+      setEnquiryStatus({
+        type: "success",
+        message: "Your enquiry has been sent successfully.",
+      });
 
-    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      setName("");
+      setPhone("");
+      setSelectedServices([]);
+      setServiceOpen(false);
 
-    setName("");
-    setPhone("");
-    setSelectedServices([]);
-    setServiceOpen(false);
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    } catch (error) {
+      console.error("Homepage Formspree error:", error);
+
+      setEnquiryStatus({
+        type: "error",
+        message: error.message || "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsEnquirySubmitting(false);
+    }
   };
-
   const previousTestimonial = () => {
     setActiveTestimonial((previous) =>
       previous === 0 ? testimonials.length - 1 : previous - 1,
@@ -2824,22 +2980,51 @@ Enquiry received from Acuity Pest Controls website.`;
                   )}
 
                   {/* SUBMIT BUTTON - now submits internally */}
-
                   <motion.button
                     type="submit"
-                    whileHover={{
-                      y: -3,
-                      scale: 1.01,
-                    }}
-                    whileTap={{
-                      scale: 0.97,
-                    }}
-                    className="acuity-shine flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-green-600 to-green-700 px-5 py-4 text-sm font-black text-white shadow-xl shadow-green-700/20 transition hover:from-green-700 hover:to-green-800"
+                    disabled={isEnquirySubmitting}
+                    whileHover={
+                      isEnquirySubmitting
+                        ? {}
+                        : {
+                            y: -3,
+                            scale: 1.01,
+                          }
+                    }
+                    whileTap={
+                      isEnquirySubmitting
+                        ? {}
+                        : {
+                            scale: 0.97,
+                          }
+                    }
+                    className="acuity-shine flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-green-600 to-green-700 px-5 py-4 text-sm font-black text-white shadow-xl shadow-green-700/20 transition hover:from-green-700 hover:to-green-800 disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    <Send size={19} />
-                    Submit Enquiry
-                    <ArrowRight size={17} />
+                    {isEnquirySubmitting ? (
+                      <>
+                        <LoaderCircle size={19} className="animate-spin" />
+                        Sending Enquiry...
+                      </>
+                    ) : (
+                      <>
+                        <Send size={19} />
+                        Submit Enquiry
+                        <ArrowRight size={17} />
+                      </>
+                    )}
                   </motion.button>
+
+                  {enquiryStatus.message && (
+                    <div
+                      className={`rounded-xl border px-4 py-3 text-center text-xs font-semibold ${
+                        enquiryStatus.type === "success"
+                          ? "border-green-200 bg-green-50 text-green-700"
+                          : "border-red-200 bg-red-50 text-red-700"
+                      }`}
+                    >
+                      {enquiryStatus.message}
+                    </div>
+                  )}
 
                   <div className="grid grid-cols-3 gap-1.5 pt-1 text-center text-[9px] font-bold text-gray-500 sm:gap-2 sm:text-[10px]">
                     <span className="rounded-xl bg-gray-50 px-2 py-2">
