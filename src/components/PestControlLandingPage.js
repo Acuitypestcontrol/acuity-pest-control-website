@@ -11,6 +11,12 @@ const PestControlLandingPage = () => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({
+    type: "",
+    message: "",
+  });
+
   const phoneNumber = "919941229005";
   const displayPhone = "+91 99412 29005";
 
@@ -576,8 +582,13 @@ Additional Details: ${formData.message || "Not provided"}
 Please contact me with the service details and quotation.`;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    setSubmitStatus({
+      type: "",
+      message: "",
+    });
 
     if (
       !formData.name.trim() ||
@@ -585,24 +596,114 @@ Please contact me with the service details and quotation.`;
       !formData.location.trim() ||
       !formData.service
     ) {
-      window.alert(
-        "Please fill in your name, phone number, location and service.",
-      );
+      setSubmitStatus({
+        type: "error",
+        message:
+          "Please fill in your name, phone number, location and service.",
+      });
       return;
     }
 
     const cleanPhone = formData.phone.replace(/\D/g, "").slice(-10);
 
     if (!/^\d{10}$/.test(cleanPhone)) {
-      window.alert("Please enter a valid 10-digit phone number.");
+      setSubmitStatus({
+        type: "error",
+        message: "Please enter a valid 10-digit phone number.",
+      });
       return;
     }
+
+    setIsSubmitting(true);
 
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       createWhatsAppMessage(),
     )}`;
 
-    window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    // Opening the tab before the async request prevents browsers
+    // from blocking WhatsApp as an unwanted popup.
+    const whatsappWindow = window.open("", "_blank");
+
+    try {
+      const response = await fetch("https://formspree.io/f/mzeppdwo", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          phone: cleanPhone,
+          location: formData.location.trim(),
+          service: formData.service,
+          propertyType: formData.propertyType || "Not selected",
+          message: formData.message.trim() || "Not provided",
+          enquiryNumber: caseFileNumber,
+          leadSource: "Acuity Pest Control Website",
+          landingPage: "Homepage",
+          website: pageUrl,
+          submittedAt: new Date().toLocaleString("en-IN", {
+            timeZone: "Asia/Kolkata",
+          }),
+          _subject: `New Website Lead - ${formData.service}`,
+        }),
+      });
+
+      if (!response.ok) {
+        let errorMessage = "Unable to submit your enquiry. Please try again.";
+
+        try {
+          const errorData = await response.json();
+
+          if (Array.isArray(errorData?.errors) && errorData.errors.length > 0) {
+            errorMessage = errorData.errors
+              .map((error) => error.message)
+              .filter(Boolean)
+              .join(" ");
+          }
+        } catch {
+          // Keep the default error message when Formspree returns no JSON.
+        }
+
+        throw new Error(errorMessage);
+      }
+
+      setSubmitStatus({
+        type: "success",
+        message:
+          "Thank you! Your enquiry has been sent to the Acuity team. WhatsApp is opening now.",
+      });
+
+      setFormData({
+        name: "",
+        phone: "",
+        location: "",
+        service: "",
+        propertyType: "",
+        message: "",
+      });
+
+      if (whatsappWindow) {
+        whatsappWindow.opener = null;
+        whatsappWindow.location.href = whatsappURL;
+      } else {
+        window.location.href = whatsappURL;
+      }
+    } catch (error) {
+      if (whatsappWindow) {
+        whatsappWindow.close();
+      }
+
+      setSubmitStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again or call us directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToForm = () => {
@@ -716,7 +817,6 @@ Please contact me with the service details and quotation.`;
       `}</style>
 
       <main className="font-body min-h-screen bg-[#F6F2E7] text-[#1C2321]">
-      
         {/* Hero */}
         <section className="relative overflow-hidden bg-[#12181A]">
           <div className="hazard-stripes hazard-stripes-anim h-2 w-full opacity-90" />
@@ -849,7 +949,8 @@ Please contact me with the service details and quotation.`;
 
                 <p className="mb-5 text-sm leading-6 text-[#5B6462]">
                   Share your location, pest problem and property type. Your
-                  enquiry will open directly in WhatsApp.
+                  enquiry will be sent to our team and WhatsApp will open for
+                  quick confirmation.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -869,6 +970,7 @@ Please contact me with the service details and quotation.`;
                         onChange={handleChange}
                         placeholder="Your name"
                         autoComplete="name"
+                        required
                         className="w-full rounded-xl border border-[#12181A]/20 bg-white px-4 py-3 outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
                       />
                     </div>
@@ -889,6 +991,7 @@ Please contact me with the service details and quotation.`;
                         placeholder="10-digit number"
                         autoComplete="tel"
                         maxLength={15}
+                        required
                         className="w-full rounded-xl border border-[#12181A]/20 bg-white px-4 py-3 outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
                       />
                     </div>
@@ -908,6 +1011,7 @@ Please contact me with the service details and quotation.`;
                       value={formData.location}
                       onChange={handleChange}
                       placeholder="Example: JP Nagar, Whitefield or 560078"
+                      required
                       className="w-full rounded-xl border border-[#12181A]/20 bg-white px-4 py-3 outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
                     />
                   </div>
@@ -925,6 +1029,7 @@ Please contact me with the service details and quotation.`;
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
+                        required
                         className="w-full rounded-xl border border-[#12181A]/20 bg-white px-4 py-3 outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
                       >
                         <option value="">Choose service</option>
@@ -1026,13 +1131,31 @@ Please contact me with the service details and quotation.`;
 
                   <button
                     type="submit"
-                    className="w-full rounded-xl bg-[#0E3B39] px-6 py-4 text-base font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0a2b29]"
+                    disabled={isSubmitting}
+                    className="w-full rounded-xl bg-[#0E3B39] px-6 py-4 text-base font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0a2b29] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
                   >
-                    Send Enquiry on WhatsApp
+                    {isSubmitting
+                      ? "Sending Enquiry..."
+                      : "Send Enquiry to Our Team"}
                   </button>
 
+                  {submitStatus.message && (
+                    <div
+                      role="status"
+                      aria-live="polite"
+                      className={`rounded-xl border px-4 py-3 text-sm font-semibold ${
+                        submitStatus.type === "success"
+                          ? "border-green-200 bg-green-50 text-green-800"
+                          : "border-red-200 bg-red-50 text-red-800"
+                      }`}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  )}
+
                   <p className="text-center text-xs text-[#5B6462]">
-                    Your information is used only to respond to your enquiry.
+                    Your information is sent securely through Formspree and used
+                    only to respond to your enquiry.
                   </p>
                 </form>
               </div>
