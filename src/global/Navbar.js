@@ -156,7 +156,7 @@ const Navbar = () => {
     },
     {
       name: "Post Construction Termite Treatment",
-      link: "/post-construction-termite",
+      link: "/post-construction-termite-treatment",
     },
     {
       name: "Bed Bug Treatment",
@@ -455,7 +455,7 @@ const Navbar = () => {
 
           <div
             className={`navbar-glow pointer-events-none absolute -left-20 top-0 h-32 w-64 rounded-full bg-green-300/30 blur-[80px] transition-opacity duration-500 ${
-              scrolled ? "opacity-30":"opacity-20"
+              scrolled ? "opacity-30" : "opacity-20"
             }`}
           />
 
@@ -481,7 +481,7 @@ const Navbar = () => {
                 <Link
                   to="/"
                   onClick={closeMobileMenu}
-                  aria-label="Go to Acuity Pest Controls home page"
+                  aria-label="Go to Acuity Pest Controls landing page"
                   className="group flex items-center"
                 >
                   <img
@@ -502,11 +502,10 @@ const Navbar = () => {
 
               <nav className="hidden items-center gap-1 xl:flex">
                 <DesktopNavLink
-                  to="/"
+                  to="/home"
                   label="HOME"
-                  active={isActiveLink("/")}
+                  active={isActiveLink("/home")}
                 />
-
                 <DesktopNavLink
                   to="/aboutus"
                   label="ABOUT US"
@@ -794,9 +793,9 @@ const Navbar = () => {
 
                 <div className="space-y-1">
                   <MobileNavLink
-                    to="/"
+                    to="/home"
                     label="HOME"
-                    active={isActiveLink("/")}
+                    active={isActiveLink("/home")}
                     onClick={closeMobileMenu}
                   />
 
