@@ -149,6 +149,12 @@ const Contact = () => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [submitStatus, setSubmitStatus] = useState({
+    type: "",
+    message: "",
+  });
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -158,33 +164,78 @@ const Contact = () => {
     }));
   };
 
-  const sendWhatsApp = (event) => {
+  const sendWhatsApp = async (event) => {
     event.preventDefault();
 
-    const cleanPhone = form.phone.replace(/\D/g, "");
+    const cleanPhone = form.phone.replace(/\D/g, "").slice(-10);
 
-    if (cleanPhone.length < 10) {
-      window.alert("Please enter a valid phone number.");
+    if (!/^[6-9]\d{9}$/.test(cleanPhone)) {
+      alert("Please enter a valid 10 digit mobile number.");
       return;
     }
 
-    const message = `*New Pest Control Enquiry*
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mzeppdwo", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          phone: cleanPhone,
+          email: form.email || "Not provided",
+          service: form.service,
+          message: form.message || "No message",
+          lead_source: "Contact Page",
+          website: "https://www.acuitypestcontrols.com",
+          submitted_at: new Date().toLocaleString("en-IN"),
+          _subject: `New Contact Page Lead - ${cleanPhone}`,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to submit enquiry.");
+      }
+
+      const message = `*New Pest Control Enquiry*
 
 👤 Name: ${form.name}
-📞 Phone: ${form.phone}
+📞 Phone: ${cleanPhone}
 📧 Email: ${form.email || "Not provided"}
-🐜 Service Required: ${form.service}
+🐜 Service: ${form.service}
 📝 Message: ${form.message || "Not provided"}
 
-Please contact me regarding pest control service in Bangalore.`;
+Website Contact Page Lead`;
 
-    window.open(
-      `https://wa.me/919941229005?text=${encodeURIComponent(message)}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
+      window.open(
+        `https://wa.me/919941229005?text=${encodeURIComponent(message)}`,
+        "_blank",
+      );
+
+      setSubmitStatus({
+        type: "success",
+        message: "Your enquiry has been submitted successfully.",
+      });
+
+      setForm({
+        name: "",
+        phone: "",
+        email: "",
+        service: "",
+        message: "",
+      });
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Unable to submit enquiry. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-
   const contactCards = [
     {
       icon: <FaPhoneAlt aria-hidden="true" />,
@@ -399,10 +450,22 @@ Please contact me regarding pest control service in Bangalore.`;
 
               <button
                 type="submit"
-                className="w-full rounded-2xl bg-green-600 py-4 font-black text-white shadow-lg shadow-green-600/30 transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                disabled={isSubmitting}
+                className="w-full rounded-2xl bg-green-600 py-4 font-black text-white shadow-lg shadow-green-600/30 transition hover:bg-green-700 disabled:opacity-60"
               >
-                Send Enquiry on WhatsApp
+                {isSubmitting ? "Submitting..." : "Submit Enquiry"}
               </button>
+              {submitStatus.message && (
+                <div
+                  className={`mt-4 rounded-xl p-3 text-center font-semibold ${
+                    submitStatus.type === "success"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-red-100 text-red-700"
+                  }`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
             </form>
 
             <div className="mt-5 flex flex-wrap gap-3 text-sm text-gray-500">
@@ -459,8 +522,7 @@ Please contact me regarding pest control service in Bangalore.`;
                     className="shrink-0 text-green-400"
                     aria-hidden="true"
                   />
-                  <span>info@acuitygroups.in
-</span>
+                  <span>info@acuitygroups.in</span>
                 </a>
 
                 <div className="flex items-center gap-3 text-gray-200">
