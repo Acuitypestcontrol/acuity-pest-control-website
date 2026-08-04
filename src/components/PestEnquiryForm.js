@@ -9,13 +9,23 @@ const PestEnquiryForm = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [submitStatus, setSubmitStatus] = useState({
+    type: "",
+    message: "",
+  });
+
   const [selectedServices, setSelectedServices] = useState([]);
   const [openCategory, setOpenCategory] = useState("");
   const [errors, setErrors] = useState({});
 
   const [locationSearch, setLocationSearch] = useState("");
+
   const [showLocationSuggestions, setShowLocationSuggestions] =
     useState(false);
+
   const [activeLocationIndex, setActiveLocationIndex] = useState(-1);
 
   const [formData, setFormData] = useState({
@@ -84,6 +94,7 @@ const PestEnquiryForm = () => {
     { area: "BTM Layout 2nd Stage", pincode: "560076" },
 
     { area: "Bannerghatta Road", pincode: "560076" },
+
     { area: "Kengeri", pincode: "560060" },
     { area: "Kengeri Satellite Town", pincode: "560060" },
 
@@ -226,12 +237,12 @@ const PestEnquiryForm = () => {
     { area: "Hesaraghatta Road", pincode: "560073" },
 
     { area: "Devanahalli", pincode: "562110" },
+
     {
       area: "Kempegowda International Airport",
       pincode: "560300",
     },
   ];
-
   const serviceGroups = [
     {
       id: "residential",
@@ -329,9 +340,9 @@ const PestEnquiryForm = () => {
   const allServices = useMemo(
     () =>
       serviceGroups.flatMap((group) =>
-        group.services.map((service) => service.id)
+        group.services.map((service) => service.id),
       ),
-    []
+    [],
   );
 
   const selectedServiceDetails = useMemo(
@@ -343,9 +354,9 @@ const PestEnquiryForm = () => {
             id: service.id,
             label: service.label,
             category: group.title,
-          }))
+          })),
       ),
-    [selectedServices]
+    [selectedServices],
   );
 
   const filteredLocations = useMemo(() => {
@@ -359,7 +370,7 @@ const PestEnquiryForm = () => {
       .filter(
         (location) =>
           location.area.toLowerCase().includes(searchValue) ||
-          location.pincode.includes(searchValue)
+          location.pincode.includes(searchValue),
       )
       .slice(0, 10);
   }, [locationSearch]);
@@ -381,6 +392,8 @@ const PestEnquiryForm = () => {
   }, [showPopup]);
 
   const closePopup = useCallback(() => {
+    if (isSubmitting) return;
+
     setIsClosing(true);
     setShowLocationSuggestions(false);
     setOpenCategory("");
@@ -389,7 +402,7 @@ const PestEnquiryForm = () => {
       setShowPopup(false);
       setIsClosing(false);
     }, 220);
-  }, []);
+  }, [isSubmitting]);
 
   useEffect(() => {
     if (!showPopup) return undefined;
@@ -437,6 +450,13 @@ const PestEnquiryForm = () => {
         [name]: "",
       }));
     }
+
+    if (submitStatus.message) {
+      setSubmitStatus({
+        type: "",
+        message: "",
+      });
+    }
   };
 
   const handleLocationChange = (event) => {
@@ -458,6 +478,13 @@ const PestEnquiryForm = () => {
         location: "",
       }));
     }
+
+    if (submitStatus.message) {
+      setSubmitStatus({
+        type: "",
+        message: "",
+      });
+    }
   };
 
   const selectLocation = (location) => {
@@ -477,6 +504,11 @@ const PestEnquiryForm = () => {
       ...previousErrors,
       location: "",
     }));
+
+    setSubmitStatus({
+      type: "",
+      message: "",
+    });
   };
 
   const handleManualLocation = () => {
@@ -522,7 +554,7 @@ const PestEnquiryForm = () => {
       setActiveLocationIndex((previousIndex) =>
         previousIndex < filteredLocations.length - 1
           ? previousIndex + 1
-          : 0
+          : 0,
       );
     }
 
@@ -534,7 +566,7 @@ const PestEnquiryForm = () => {
       setActiveLocationIndex((previousIndex) =>
         previousIndex > 0
           ? previousIndex - 1
-          : filteredLocations.length - 1
+          : filteredLocations.length - 1,
       );
     }
 
@@ -561,7 +593,7 @@ const PestEnquiryForm = () => {
     setSelectedServices((previousServices) => {
       if (previousServices.includes(serviceId)) {
         return previousServices.filter(
-          (selectedId) => selectedId !== serviceId
+          (selectedId) => selectedId !== serviceId,
         );
       }
 
@@ -573,6 +605,13 @@ const PestEnquiryForm = () => {
         ...previousErrors,
         service: "",
       }));
+    }
+
+    if (submitStatus.message) {
+      setSubmitStatus({
+        type: "",
+        message: "",
+      });
     }
   };
 
@@ -593,6 +632,7 @@ const PestEnquiryForm = () => {
 
   const validateForm = () => {
     const newErrors = {};
+
     const cleanedPhone = formData.phone
       .replace(/\D/g, "")
       .slice(-10);
@@ -603,8 +643,16 @@ const PestEnquiryForm = () => {
 
     if (!formData.phone.trim()) {
       newErrors.phone = "Please enter your phone number";
-    } else if (!/^\d{10}$/.test(cleanedPhone)) {
-      newErrors.phone = "Enter a valid 10-digit number";
+    } else if (!/^[6-9]\d{9}$/.test(cleanedPhone)) {
+      newErrors.phone =
+        "Enter a valid 10-digit Indian mobile number";
+    }
+
+    if (
+      formData.email.trim() &&
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())
+    ) {
+      newErrors.email = "Enter a valid email address";
     }
 
     if (!formData.location.trim()) {
@@ -620,15 +668,11 @@ const PestEnquiryForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    if (!validateForm()) return;
-
-    const groupedServices = serviceGroups
+  const buildGroupedServices = () =>
+    serviceGroups
       .map((group) => {
         const groupSelections = group.services.filter((service) =>
-          selectedServices.includes(service.id)
+          selectedServices.includes(service.id),
         );
 
         if (groupSelections.length === 0) return "";
@@ -637,17 +681,82 @@ const PestEnquiryForm = () => {
           .map((service) => `• ${service.label}`)
           .join("\n");
 
-        return `*${group.title}:*\n${serviceLines}`;
+        return `${group.title}:\n${serviceLines}`;
       })
       .filter(Boolean)
       .join("\n\n");
 
-    const whatsappMessage = `*New Pest Control Lead*
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-*Name:* ${formData.name}
-*Phone:* ${formData.phone}
-*Email:* ${formData.email || "Not provided"}
-*Location:* ${formData.location}
+    setSubmitStatus({
+      type: "",
+      message: "",
+    });
+
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+
+    const cleanedPhone = formData.phone
+      .replace(/\D/g, "")
+      .slice(-10);
+
+    try {
+      const groupedServices = buildGroupedServices();
+      const submittedNow = new Date();
+
+      const leadData = {
+        name: formData.name.trim(),
+        phone: cleanedPhone,
+        email: formData.email.trim() || "Not provided",
+        location: formData.location.trim(),
+        pincode: formData.pincode || "Not provided",
+        services_requested: groupedServices,
+        selected_service_count: selectedServices.length,
+        additional_message:
+          formData.message.trim() || "No additional message",
+        lead_source: "Acuity Pest Control Popup Form",
+        website: "https://www.acuitypestcontrols.com/",
+        submitted_date: submittedNow.toLocaleDateString("en-IN"),
+        submitted_time: submittedNow.toLocaleTimeString("en-IN"),
+        submitted_at: submittedNow.toLocaleString("en-IN"),
+        _subject: `New Popup Lead - ${cleanedPhone}`,
+      };
+
+      const response = await fetch(
+        "https://formspree.io/f/mzeppdwo",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(leadData),
+        },
+      );
+
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        let errorMessage =
+          "Your enquiry could not be submitted. Please try again.";
+
+        if (responseData?.errors?.length) {
+          errorMessage = responseData.errors
+            .map((error) => error.message)
+            .join(", ");
+        }
+
+        throw new Error(errorMessage);
+      }
+
+      const whatsappMessage = `*New Pest Control Enquiry*
+
+*Name:* ${formData.name.trim()}
+*Phone:* ${cleanedPhone}
+*Email:* ${formData.email.trim() || "Not provided"}
+*Location:* ${formData.location.trim()}
 *PIN Code:* ${formData.pincode || "Not provided"}
 
 *Services Requested:*
@@ -655,21 +764,39 @@ const PestEnquiryForm = () => {
 ${groupedServices}
 
 *Additional Message:*
-${formData.message || "No additional message provided"}
+${formData.message.trim() || "No additional message provided"}
 
 Website Lead From Acuity Pest Control`;
 
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      whatsappMessage
-    )}`;
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+        whatsappMessage,
+      )}`;
 
-    window.open(
-      whatsappUrl,
-      "_blank",
-      "noopener,noreferrer"
-    );
+      setSubmitted(true);
 
-    setSubmitted(true);
+      setSubmitStatus({
+        type: "success",
+        message:
+          "Your enquiry has been saved and sent to our team.",
+      });
+
+      window.open(
+        whatsappUrl,
+        "_blank",
+        "noopener,noreferrer",
+      );
+    } catch (error) {
+      console.error("Popup Formspree submission error:", error);
+
+      setSubmitStatus({
+        type: "error",
+        message:
+          error.message ||
+          "Something went wrong. Please try again or call us directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!showPopup) return null;
@@ -796,11 +923,10 @@ Website Lead From Acuity Pest Control`;
           }
         }
       `}</style>
-
-      <div
+            <div
         className="acuity-overlay fixed inset-0 z-[9999] flex items-center justify-center bg-[#12181A]/80 p-3 backdrop-blur-sm sm:p-4"
         onMouseDown={(event) => {
-          if (event.target === event.currentTarget) {
+          if (event.target === event.currentTarget && !isSubmitting) {
             setShowLocationSuggestions(false);
             closePopup();
           }
@@ -820,8 +946,9 @@ Website Lead From Acuity Pest Control`;
           <button
             type="button"
             onClick={closePopup}
+            disabled={isSubmitting}
             aria-label="Close enquiry form"
-            className="absolute right-3 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-[#12181A]/5 text-xl font-bold text-[#12181A]/60 transition hover:bg-[#B8442F] hover:text-white sm:right-4"
+            className="absolute right-3 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-[#12181A]/5 text-xl font-bold text-[#12181A]/60 transition hover:bg-[#B8442F] hover:text-white disabled:cursor-not-allowed disabled:opacity-50 sm:right-4"
           >
             ×
           </button>
@@ -837,9 +964,15 @@ Website Lead From Acuity Pest Control`;
               </h2>
 
               <p className="mt-3 max-w-sm text-sm leading-6 text-[#5B6462]">
-                Your enquiry has opened in WhatsApp. Send the message and our
-                pest control team will contact you shortly.
+                Your enquiry has been saved and sent to our team. WhatsApp has
+                also opened so you can message us directly.
               </p>
+
+              {submitStatus.message && (
+                <div className="mt-4 w-full rounded-lg border border-green-300 bg-green-50 px-4 py-3 text-sm font-semibold text-green-800">
+                  {submitStatus.message}
+                </div>
+              )}
 
               <a
                 href={`tel:+${phoneNumber}`}
@@ -875,8 +1008,8 @@ Website Lead From Acuity Pest Control`;
                   className="mt-2 text-sm leading-6 text-[#5B6462]"
                 >
                   Select your Bangalore location and choose residential or
-                  commercial pest control services. Your enquiry will open
-                  directly in WhatsApp.
+                  commercial pest control services. Your enquiry will be saved,
+                  sent to our team and then opened in WhatsApp.
                 </p>
               </div>
 
@@ -902,7 +1035,8 @@ Website Lead From Acuity Pest Control`;
                       onChange={handleChange}
                       placeholder="Your name"
                       autoComplete="name"
-                      className={`w-full rounded-lg border bg-white px-4 py-3 text-sm outline-none transition focus:ring-4 ${
+                      disabled={isSubmitting}
+                      className={`w-full rounded-lg border bg-white px-4 py-3 text-sm outline-none transition focus:ring-4 disabled:cursor-not-allowed disabled:opacity-60 ${
                         errors.name
                           ? "border-[#B8442F] focus:ring-[#B8442F]/10"
                           : "border-[#12181A]/15 focus:border-[#0E3B39] focus:ring-[#0E3B39]/10"
@@ -934,7 +1068,8 @@ Website Lead From Acuity Pest Control`;
                       placeholder="10-digit number"
                       autoComplete="tel"
                       maxLength={15}
-                      className={`w-full rounded-lg border bg-white px-4 py-3 text-sm outline-none transition focus:ring-4 ${
+                      disabled={isSubmitting}
+                      className={`w-full rounded-lg border bg-white px-4 py-3 text-sm outline-none transition focus:ring-4 disabled:cursor-not-allowed disabled:opacity-60 ${
                         errors.phone
                           ? "border-[#B8442F] focus:ring-[#B8442F]/10"
                           : "border-[#12181A]/15 focus:border-[#0E3B39] focus:ring-[#0E3B39]/10"
@@ -968,8 +1103,19 @@ Website Lead From Acuity Pest Control`;
                     onChange={handleChange}
                     placeholder="you@example.com"
                     autoComplete="email"
-                    className="w-full rounded-lg border border-[#12181A]/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
+                    disabled={isSubmitting}
+                    className={`w-full rounded-lg border bg-white px-4 py-3 text-sm outline-none transition focus:ring-4 disabled:cursor-not-allowed disabled:opacity-60 ${
+                      errors.email
+                        ? "border-[#B8442F] focus:ring-[#B8442F]/10"
+                        : "border-[#12181A]/15 focus:border-[#0E3B39] focus:ring-[#0E3B39]/10"
+                    }`}
                   />
+
+                  {errors.email && (
+                    <p className="mt-1 text-xs font-medium text-[#B8442F]">
+                      {errors.email}
+                    </p>
+                  )}
                 </div>
 
                 <div className="relative">
@@ -987,18 +1133,23 @@ Website Lead From Acuity Pest Control`;
                       type="text"
                       value={locationSearch}
                       onChange={handleLocationChange}
-                      onFocus={() => setShowLocationSuggestions(true)}
+                      onFocus={() => {
+                        if (!isSubmitting) {
+                          setShowLocationSuggestions(true);
+                        }
+                      }}
                       onKeyDown={handleLocationKeyDown}
                       placeholder="Type area name or PIN code"
                       autoComplete="off"
-                      className={`w-full rounded-lg border bg-white px-4 py-3 pr-10 text-sm outline-none transition focus:ring-4 ${
+                      disabled={isSubmitting}
+                      className={`w-full rounded-lg border bg-white px-4 py-3 pr-10 text-sm outline-none transition focus:ring-4 disabled:cursor-not-allowed disabled:opacity-60 ${
                         errors.location
                           ? "border-[#B8442F] focus:ring-[#B8442F]/10"
                           : "border-[#12181A]/15 focus:border-[#0E3B39] focus:ring-[#0E3B39]/10"
                       }`}
                     />
 
-                    {locationSearch && (
+                    {locationSearch && !isSubmitting && (
                       <button
                         type="button"
                         onClick={clearLocation}
@@ -1010,7 +1161,7 @@ Website Lead From Acuity Pest Control`;
                     )}
                   </div>
 
-                  {showLocationSuggestions && (
+                  {showLocationSuggestions && !isSubmitting && (
                     <div className="acuity-location-list absolute left-0 right-0 top-full z-[10020] mt-1 max-h-60 overflow-y-auto rounded-lg border border-[#12181A]/15 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.22)]">
                       {filteredLocations.length > 0 ? (
                         <>
@@ -1104,8 +1255,7 @@ Website Lead From Acuity Pest Control`;
 
                   {formData.pincode ? (
                     <p className="mt-1.5 text-[11px] font-semibold text-[#0E3B39]">
-                      ✓ PIN code selected automatically:{" "}
-                      {formData.pincode}
+                      ✓ PIN code selected automatically: {formData.pincode}
                     </p>
                   ) : (
                     <p className="mt-1.5 text-[11px] leading-5 text-[#5B6462]">
@@ -1120,8 +1270,7 @@ Website Lead From Acuity Pest Control`;
                     </p>
                   )}
                 </div>
-
-                <div>
+                                <div>
                   <div className="mb-2 flex items-center justify-between gap-3">
                     <label className="font-mono text-[11px] font-bold uppercase tracking-wide text-[#12181A]/70">
                       Select Service(s) *
@@ -1130,7 +1279,8 @@ Website Lead From Acuity Pest Control`;
                     <button
                       type="button"
                       onClick={toggleSelectAll}
-                      className="flex-shrink-0 font-mono text-[10px] font-bold uppercase tracking-wide text-[#0E3B39] underline decoration-dotted underline-offset-2 hover:text-[#B8442F]"
+                      disabled={isSubmitting}
+                      className="flex-shrink-0 font-mono text-[10px] font-bold uppercase tracking-wide text-[#0E3B39] underline decoration-dotted underline-offset-2 hover:text-[#B8442F] disabled:cursor-not-allowed disabled:opacity-50"
                     >
                       {allSelected ? "Clear all" : "Select all"}
                     </button>
@@ -1140,9 +1290,8 @@ Website Lead From Acuity Pest Control`;
                     {serviceGroups.map((group) => {
                       const isOpen = openCategory === group.id;
 
-                      const selectedCount = group.services.filter(
-                        (service) =>
-                          selectedServices.includes(service.id)
+                      const selectedCount = group.services.filter((service) =>
+                        selectedServices.includes(service.id),
                       ).length;
 
                       return (
@@ -1156,15 +1305,14 @@ Website Lead From Acuity Pest Control`;
                         >
                           <button
                             type="button"
+                            disabled={isSubmitting}
                             onClick={() =>
                               setOpenCategory((previousCategory) =>
-                                previousCategory === group.id
-                                  ? ""
-                                  : group.id
+                                previousCategory === group.id ? "" : group.id,
                               )
                             }
                             aria-expanded={isOpen}
-                            className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left transition hover:bg-[#0E3B39]/5"
+                            className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left transition hover:bg-[#0E3B39]/5 disabled:cursor-not-allowed disabled:opacity-60"
                           >
                             <span className="flex items-center gap-3">
                               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0E3B39]/10 text-xl">
@@ -1205,11 +1353,10 @@ Website Lead From Acuity Pest Control`;
                                     <button
                                       type="button"
                                       key={service.id}
-                                      onClick={() =>
-                                        toggleService(service.id)
-                                      }
+                                      disabled={isSubmitting}
+                                      onClick={() => toggleService(service.id)}
                                       aria-pressed={active}
-                                      className={`flex items-center gap-2 rounded-lg border px-3 py-2.5 text-left text-xs font-semibold leading-5 transition ${
+                                      className={`flex items-center gap-2 rounded-lg border px-3 py-2.5 text-left text-xs font-semibold leading-5 transition disabled:cursor-not-allowed disabled:opacity-60 ${
                                         active
                                           ? "border-[#0E3B39] bg-[#0E3B39] text-white"
                                           : "border-[#12181A]/10 bg-white text-[#1C2321] hover:border-[#0E3B39]/50"
@@ -1234,8 +1381,9 @@ Website Lead From Acuity Pest Control`;
 
                               <button
                                 type="button"
+                                disabled={isSubmitting}
                                 onClick={() => setOpenCategory("")}
-                                className="mt-3 w-full rounded-lg border border-[#12181A]/15 bg-white px-4 py-2 text-xs font-bold uppercase text-[#5B6462] transition hover:border-[#B8442F] hover:text-[#B8442F]"
+                                className="mt-3 w-full rounded-lg border border-[#12181A]/15 bg-white px-4 py-2 text-xs font-bold uppercase text-[#5B6462] transition hover:border-[#B8442F] hover:text-[#B8442F] disabled:cursor-not-allowed disabled:opacity-60"
                               >
                                 Close Service Options ↑
                               </button>
@@ -1258,14 +1406,14 @@ Website Lead From Acuity Pest Control`;
                     <div className="mb-2 flex items-center justify-between">
                       <p className="text-[11px] font-bold uppercase text-[#12181A]/60">
                         {selectedServiceDetails.length} service
-                        {selectedServiceDetails.length > 1 ? "s" : ""}{" "}
-                        selected
+                        {selectedServiceDetails.length > 1 ? "s" : ""} selected
                       </p>
 
                       <button
                         type="button"
+                        disabled={isSubmitting}
                         onClick={() => setSelectedServices([])}
-                        className="text-[11px] font-bold text-[#B8442F] hover:underline"
+                        className="text-[11px] font-bold text-[#B8442F] hover:underline disabled:cursor-not-allowed disabled:opacity-50"
                       >
                         Clear
                       </button>
@@ -1286,9 +1434,10 @@ Website Lead From Acuity Pest Control`;
 
                           <button
                             type="button"
+                            disabled={isSubmitting}
                             onClick={() => toggleService(service.id)}
                             aria-label={`Remove ${service.label}`}
-                            className="font-bold text-[#B8442F]"
+                            className="font-bold text-[#B8442F] disabled:cursor-not-allowed disabled:opacity-50"
                           >
                             ×
                           </button>
@@ -1316,29 +1465,49 @@ Website Lead From Acuity Pest Control`;
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Describe the pest problem or preferred service date..."
-                    className="w-full resize-none rounded-lg border border-[#12181A]/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
+                    disabled={isSubmitting}
+                    className="w-full resize-none rounded-lg border border-[#12181A]/15 bg-white px-4 py-3 text-sm outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10 disabled:cursor-not-allowed disabled:opacity-60"
                   />
                 </div>
+
+                {submitStatus.type === "error" && submitStatus.message && (
+                  <div
+                    role="alert"
+                    className="rounded-lg border border-red-300 bg-red-50 px-4 py-3 text-center text-sm font-semibold text-red-800"
+                  >
+                    {submitStatus.message}
+                  </div>
+                )}
 
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     type="button"
                     onClick={closePopup}
-                    className="w-full rounded-lg border-2 border-[#12181A]/20 bg-white px-4 py-3.5 text-sm font-bold uppercase text-[#12181A] transition hover:border-[#B8442F] hover:bg-[#B8442F]/5 hover:text-[#B8442F]"
+                    disabled={isSubmitting}
+                    className="w-full rounded-lg border-2 border-[#12181A]/20 bg-white px-4 py-3.5 text-sm font-bold uppercase text-[#12181A] transition hover:border-[#B8442F] hover:bg-[#B8442F]/5 hover:text-[#B8442F] disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     Cancel
                   </button>
 
                   <button
                     type="submit"
-                    className="w-full rounded-lg bg-[#E3A23E] px-4 py-3.5 text-sm font-bold uppercase text-[#12181A] shadow-lg transition hover:-translate-y-0.5 hover:bg-[#f0b458]"
+                    disabled={isSubmitting}
+                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#E3A23E] px-4 py-3.5 text-sm font-bold uppercase text-[#12181A] shadow-lg transition hover:-translate-y-0.5 hover:bg-[#f0b458] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
                   >
-                    Submit
+                    {isSubmitting ? (
+                      <>
+                        <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#12181A]/30 border-t-[#12181A]" />
+                        Sending...
+                      </>
+                    ) : (
+                      "Submit"
+                    )}
                   </button>
                 </div>
 
-                <p className="text-center text-xs text-[#5B6462]">
-                  Your enquiry will open in WhatsApp after submitting.
+                <p className="text-center text-xs leading-5 text-[#5B6462]">
+                  Your enquiry will first be saved and sent to our team through
+                  Formspree. WhatsApp will open after successful submission.
                 </p>
 
                 <a
@@ -1357,7 +1526,7 @@ Website Lead From Acuity Pest Control`;
           )}
         </div>
       </div>
-    </>
+          </>
   );
 };
 
