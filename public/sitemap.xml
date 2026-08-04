@@ -1,40 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Main Pages -->
-  <url><loc>https://www.acuitypestcontrols.com/</loc><lastmod>2026-07-06</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/about</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/services</loc><lastmod>2026-07-06</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/contact</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-<url>
-  <loc>https://www.acuitypestcontrols.com/pest-identification</loc>
-  <lastmod>2026-07-14</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+  <!-- =====================================================
+       MAIN PAGES
+  ====================================================== -->
 
-  <!-- Service Pages -->
-  <url><loc>https://www.acuitypestcontrols.com/general-pest-control</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/anti-termite-treatment</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/pre-construction-termite-treatment</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/post-construction-termite-treatment</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/bed-bug-treatment</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/ant-control-treatment</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/mosquito-management-service</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/cockroach-management-service</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/rodent-management-service</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/wood-borer-treatment</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/pest-control-hotels-hospitals</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/office-pest-control</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/educational-institution-pest-control</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/common-area-treatment-residential-complex</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/disinfection-services</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/warehouse-pest-management</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url>
+    <loc>https://www.acuitypestcontrols.com/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-  <!-- Blog Main Page -->
-  <url><loc>https://www.acuitypestcontrols.com/blogs</loc><lastmod>2026-07-06</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url>
+    <loc>https://www.acuitypestcontrols.com/about</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-  <!-- Blog Pages -->
+  <url>
+    <loc>https://www.acuitypestcontrols.com/services</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/contact</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/pest-identification</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- =====================================================
+       RESIDENTIAL PEST CONTROL SERVICE PAGES
+  ====================================================== -->
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/general-pest-control</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/anti-termite-treatment</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/pre-construction-termite-treatment</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/post-construction-termite-treatment</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/bed-bug-treatment</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/ant-control-treatment</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/mosquito-management-service</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/cockroach-management-service</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/rodent-management-service</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/wood-borer-treatment</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- =====================================================
+       COMMERCIAL PEST CONTROL SERVICE PAGES
+  ====================================================== -->
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/pest-control-hotels-hospitals</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/office-pest-control</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/educational-institution-pest-control</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/common-area-treatment-residential-complex</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/disinfection-services</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/warehouse-pest-management</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- =====================================================
+       BLOG MAIN PAGE
+  ====================================================== -->
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/blogs</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- =====================================================
+       BLOG ARTICLES
+  ====================================================== -->
+
   <url>
     <loc>https://www.acuitypestcontrols.com/blogs/pest-control-bangalore-guide</loc>
     <lastmod>2026-07-10</lastmod>
@@ -147,8 +288,22 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Game Pages -->
-  <url><loc>https://www.acuitypestcontrols.com/pest-game</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.acuitypestcontrols.com/defend-home-game</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- =====================================================
+       GAME PAGES
+  ====================================================== -->
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/pest-game</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.acuitypestcontrols.com/defend-home-game</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
 </urlset>
