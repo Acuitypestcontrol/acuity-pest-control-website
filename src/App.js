@@ -23,6 +23,7 @@ import ScrollToTop from "./global/ScrollToTop";
    MAIN PAGES
 ========================================================= */
 
+import Home from "./components/Home";
 import AboutUS from "./components/AboutUS";
 import ServicesPage from "./components/Services";
 import Contact from "./components/ContactUs";
@@ -46,29 +47,17 @@ import BlogDetail from "./components/blogs/get-rid-of-cockroaches";
 ========================================================= */
 
 import SignsOfTermiteInfestation from "./components/blogs/signs-of-termite-infestation";
-
 import PestControlVsDIY from "./components/blogs/pest-control-vs-diy";
-
 import BedBugTreatmentGuide from "./components/blogs/bed-bug-treatment";
-
 import RatControlTipsForHomes from "./components/blogs/rat-control-tips-for-homes";
-
 import MosquitoPreventionRainySeason from "./components/blogs/mosquito-prevention-during-rainy-season";
-
 import Top10HouseholdPestsBangalore from "./components/blogs/top-10-household-pests-in-bangalore";
-
 import HowOftenShouldPestControlBeDone from "./components/blogs/how-often-should-pest-control-be-done";
-
 import GermanCockroachVsAmericanCockroach from "./components/blogs/german-cockroach-vs-american-cockroach";
-
 import TermiteTreatmentCostBangalore from "./components/blogs/termite-treatment-cost-bangalore";
-
 import HowToPreventAntInfestationAtHome from "./components/blogs/how-to-prevent-ant-infestation-at-home";
-
 import WhyRegularPestControlImportantBusinesses from "./components/blogs/why-regular-pest-control-is-important-for-businesses";
-
 import PestControlChecklistNewHomes from "./components/blogs/pest-control-checklist-for-new-homes";
-
 import WhyCockroachesEnterKitchen from "./components/blogs/why-cockroaches-enter-your-kitchen";
 
 /* =========================================================
@@ -76,23 +65,14 @@ import WhyCockroachesEnterKitchen from "./components/blogs/why-cockroaches-enter
 ========================================================= */
 
 import GeneralPestControl from "./components/servicepage/general-pest-control";
-
 import AntiTermiteTreatment from "./components/servicepage/anti-termite-treatment";
-
 import PostConstructionTermiteTreatment from "./components/servicepage/post-construction-termite";
-
 import BedBug from "./components/servicepage/bed-bug-treatment";
-
 import AntControlTreatment from "./components/servicepage/ant-control-treatment";
-
 import MosquitoManagementService from "./components/servicepage/mosquito-management-service";
-
 import CockroachManagementService from "./components/servicepage/cockroach-management-service";
-
 import RodentManagementService from "./components/servicepage/rodent-management-service";
-
 import WoodBorerTreatment from "./components/servicepage/wood-borer-treatment";
-
 import PreConstructionTermiteTreatment from "./components/servicepage/pre-construction-termite-treatment";
 
 /* =========================================================
@@ -100,15 +80,10 @@ import PreConstructionTermiteTreatment from "./components/servicepage/pre-constr
 ========================================================= */
 
 import PestControlHotelsHospitals from "./components/servicepage/pest-control-hotels-hospitals";
-
 import OfficePestControl from "./components/servicepage/office-pest-control";
-
 import EducationalInstitutionPestControl from "./components/servicepage/educational-institution-pest-control";
-
 import CommonAreaTreatmentResidential from "./components/servicepage/common-area-treatment-residential-complex";
-
 import DisinfectionServices from "./components/servicepage/disinfection-services";
-
 import WarehousePestManagement from "./components/servicepage/warehouse-pest-management";
 
 /* =========================================================
@@ -116,9 +91,7 @@ import WarehousePestManagement from "./components/servicepage/warehouse-pest-man
 ========================================================= */
 
 import PestGameFloatingButton from "./components/PestGameFloatingButton";
-
 import PestGamePage from "./components/pestgame/PestGamePage";
-
 import DefendHomeGame from "./components/pestgame/DefendHomeGame";
 
 /* =========================================================
@@ -143,13 +116,9 @@ const NotFound = () => {
         />
 
         <meta name="robots" content="noindex, nofollow" />
-
         <meta name="googlebot" content="noindex, nofollow" />
 
-        <link
-          rel="canonical"
-          href="https://www.acuitypestcontrols.com/404"
-        />
+        <link rel="canonical" href="https://www.acuitypestcontrols.com/404" />
       </Helmet>
 
       <section className="flex min-h-[70vh] items-center justify-center bg-gradient-to-br from-[#f4fbf8] to-white px-4 py-20 text-center">
@@ -167,8 +136,8 @@ const NotFound = () => {
           </h2>
 
           <p className="mx-auto mt-4 max-w-lg leading-7 text-gray-600">
-            The page you are looking for may have been removed, renamed or
-            moved to another location.
+            The page you are looking for may have been removed, renamed or moved
+            to another location.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
@@ -176,14 +145,14 @@ const NotFound = () => {
               to="/"
               className="rounded-full bg-green-600 px-7 py-3.5 font-bold text-white shadow-lg transition hover:-translate-y-1 hover:bg-green-700"
             >
-              Return Home
+              Return to Landing Page
             </Link>
 
             <Link
-              to="/services"
+              to="/home"
               className="rounded-full border-2 border-green-600 px-7 py-3.5 font-bold text-green-700 transition hover:-translate-y-1 hover:bg-green-50"
             >
-              View Pest Control Services
+              Open Home Page
             </Link>
           </div>
         </div>
@@ -198,13 +167,6 @@ const NotFound = () => {
 
 const AppContent = () => {
   const location = useLocation();
-
-  /*
-   * Hide the game floating button on:
-   * 1. Main homepage
-   * 2. Pest-control landing page
-   * 3. Game pages
-   */
 
   const hideGameButton =
     location.pathname === "/" ||
@@ -225,57 +187,46 @@ const AppContent = () => {
       <main className="pt-[89px] font-poppins md:pt-[175px]">
         <Routes>
           {/* =================================================
+              MAIN LANDING PAGE
+          ================================================== */}
+          <Route path="/" element={<PestControlLandingPage />} />
+
+          <Route path="/home" element={<Home />} />
+
+          <Route
+            path="/pest-control-bangalore"
+            element={<PestControlLandingPage />}
+          />
+          {/* =================================================
               MAIN CANONICAL PAGES
           ================================================== */}
 
+          <Route path="/about" element={<AboutUS />} />
+
+          <Route path="/services" element={<ServicesPage />} />
+
+          <Route path="/contact" element={<Contact />} />
+
+          <Route path="/pest-identification" element={<PestIdentification />} />
+
+          {/* =================================================
+              SEPARATE LANDING PAGE URL
+          ================================================== */}
+
           <Route
-            path="/"
+            path="/pest-control-bangalore"
             element={<PestControlLandingPage />}
-          />
-
-          <Route
-            path="/about"
-            element={<AboutUS />}
-          />
-
-          <Route
-            path="/services"
-            element={<ServicesPage />}
-          />
-
-          <Route
-            path="/contact"
-            element={<Contact />}
-          />
-
-          <Route
-            path="/pest-identification"
-            element={<PestIdentification />}
           />
 
           {/* =================================================
               OLD MAIN PAGE REDIRECTS
           ================================================== */}
 
-          <Route
-            path="/home"
-            element={<Navigate to="/" replace />}
-          />
+          <Route path="/home" element={<Navigate to="/home" replace />} />
 
-          <Route
-            path="/home/"
-            element={<Navigate to="/" replace />}
-          />
+          <Route path="/aboutus" element={<Navigate to="/about" replace />} />
 
-          <Route
-            path="/aboutus"
-            element={<Navigate to="/about" replace />}
-          />
-
-          <Route
-            path="/about-us"
-            element={<Navigate to="/about" replace />}
-          />
+          <Route path="/about-us" element={<Navigate to="/about" replace />} />
 
           <Route
             path="/Services"
@@ -287,34 +238,20 @@ const AppContent = () => {
             element={<Navigate to="/contact" replace />}
           />
 
-          <Route
-            path="/Contact"
-            element={<Navigate to="/contact" replace />}
-          />
+          <Route path="/Contact" element={<Navigate to="/contact" replace />} />
 
           <Route
             path="/pestidentification"
-            element={
-              <Navigate
-                to="/pest-identification"
-                replace
-              />
-            }
+            element={<Navigate to="/pest-identification" replace />}
           />
 
           {/* =================================================
               BLOG LISTING
           ================================================== */}
 
-          <Route
-            path="/blogs"
-            element={<Blog />}
-          />
+          <Route path="/blogs" element={<Blog />} />
 
-          <Route
-            path="/blog"
-            element={<Navigate to="/blogs" replace />}
-          />
+          <Route path="/blog" element={<Navigate to="/blogs" replace />} />
 
           <Route
             path="/blogsmainpage"
@@ -377,9 +314,7 @@ const AppContent = () => {
 
           <Route
             path="/blogs/why-regular-pest-control-is-important-for-businesses"
-            element={
-              <WhyRegularPestControlImportantBusinesses />
-            }
+            element={<WhyRegularPestControlImportantBusinesses />}
           />
 
           <Route
@@ -392,19 +327,7 @@ const AppContent = () => {
             element={<WhyCockroachesEnterKitchen />}
           />
 
-          {/*
-           * This route currently handles blog pages that use
-           * the shared BlogDetail component, including:
-           *
-           * /blogs/get-rid-of-cockroaches
-           * /blogs/pest-control-bangalore-guide
-           * /blogs/monsoon-pest-control
-           */}
-
-          <Route
-            path="/blogs/:slug"
-            element={<BlogDetail />}
-          />
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
 
           {/* =================================================
               RESIDENTIAL SERVICE PAGES
@@ -430,10 +353,7 @@ const AppContent = () => {
             element={<PostConstructionTermiteTreatment />}
           />
 
-          <Route
-            path="/bed-bug-treatment"
-            element={<BedBug />}
-          />
+          <Route path="/bed-bug-treatment" element={<BedBug />} />
 
           <Route
             path="/ant-control-treatment"
@@ -469,25 +389,12 @@ const AppContent = () => {
             element={<PestControlHotelsHospitals />}
           />
 
-          {/*
-           * Old duplicate route.
-           * Redirect it to the final canonical URL.
-           */}
-
           <Route
             path="/hotel-hospital-pest-control"
-            element={
-              <Navigate
-                to="/pest-control-hotels-hospitals"
-                replace
-              />
-            }
+            element={<Navigate to="/pest-control-hotels-hospitals" replace />}
           />
 
-          <Route
-            path="/office-pest-control"
-            element={<OfficePestControl />}
-          />
+          <Route path="/office-pest-control" element={<OfficePestControl />} />
 
           <Route
             path="/educational-institution-pest-control"
@@ -510,25 +417,13 @@ const AppContent = () => {
           />
 
           {/* =================================================
-              LANDING PAGE
-          ================================================== */}
-
-          <Route
-            path="/pest-control-bangalore"
-            element={<PestControlLandingPage />}
-          />
-
-          {/* =================================================
               OLD SERVICE URL REDIRECTS
           ================================================== */}
 
           <Route
             path="/post-construction-termite"
             element={
-              <Navigate
-                to="/post-construction-termite-treatment"
-                replace
-              />
+              <Navigate to="/post-construction-termite-treatment" replace />
             }
           />
 
@@ -544,67 +439,36 @@ const AppContent = () => {
 
           <Route
             path="/cockroach-control"
-            element={
-              <Navigate
-                to="/cockroach-management-service"
-                replace
-              />
-            }
+            element={<Navigate to="/cockroach-management-service" replace />}
           />
 
           <Route
             path="/cockroach-pest-control"
-            element={
-              <Navigate
-                to="/cockroach-management-service"
-                replace
-              />
-            }
+            element={<Navigate to="/cockroach-management-service" replace />}
           />
 
           <Route
             path="/rodent-control"
-            element={
-              <Navigate
-                to="/rodent-management-service"
-                replace
-              />
-            }
+            element={<Navigate to="/rodent-management-service" replace />}
           />
 
           <Route
             path="/termite-control-services"
-            element={
-              <Navigate
-                to="/anti-termite-treatment"
-                replace
-              />
-            }
+            element={<Navigate to="/anti-termite-treatment" replace />}
           />
 
           <Route
             path="/residential-pest-control"
-            element={
-              <Navigate
-                to="/general-pest-control"
-                replace
-              />
-            }
+            element={<Navigate to="/general-pest-control" replace />}
           />
 
           {/* =================================================
               GAME PAGES
           ================================================== */}
 
-          <Route
-            path="/pest-game"
-            element={<PestGamePage />}
-          />
+          <Route path="/pest-game" element={<PestGamePage />} />
 
-          <Route
-            path="/defend-home-game"
-            element={<DefendHomeGame />}
-          />
+          <Route path="/defend-home-game" element={<DefendHomeGame />} />
 
           {/* =================================================
               OLD GAME URL REDIRECTS
@@ -612,32 +476,19 @@ const AppContent = () => {
 
           <Route
             path="/PestGamePage"
-            element={
-              <Navigate
-                to="/pest-game"
-                replace
-              />
-            }
+            element={<Navigate to="/pest-game" replace />}
           />
 
           <Route
             path="/DefendHomeGame"
-            element={
-              <Navigate
-                to="/defend-home-game"
-                replace
-              />
-            }
+            element={<Navigate to="/defend-home-game" replace />}
           />
 
           {/* =================================================
               FINAL 404 ROUTE
           ================================================== */}
 
-          <Route
-            path="*"
-            element={<NotFound />}
-          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
 

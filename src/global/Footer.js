@@ -26,7 +26,7 @@ import logo from "../images/acuitylogo1.png";
 const quickLinks = [
   {
     name: "Home",
-    link: "/",
+    link: "/home",
   },
   {
     name: "About Us",

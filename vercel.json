@@ -536,17 +536,9 @@
       "source": "/bangalore-mosquito-control-how-acuity-pest-controls-protects-your-home-and-family/feed/",
       "destination": "/blogs/mosquito-prevention-during-rainy-season",
       "permanent": true
-    },
-    {
-      "source": "/home",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/home/",
-      "destination": "/",
-      "permanent": true
     }
+  
+   
   ],
   "rewrites": [
     {

@@ -95,10 +95,6 @@ const Navbar = () => {
 
   const [scrolled, setScrolled] = useState(false);
 
-  /* =======================================================
-     PAGE SCROLL DETECTION
-  ======================================================= */
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 45);
@@ -115,19 +111,11 @@ const Navbar = () => {
     };
   }, []);
 
-  /* =======================================================
-     CLOSE NAVIGATION AFTER ROUTE CHANGE
-  ======================================================= */
-
   useEffect(() => {
     setOpen(false);
     setServicesOpen(false);
     setDesktopServicesOpen(false);
   }, [location.pathname]);
-
-  /* =======================================================
-     PREVENT PAGE SCROLL WHEN MOBILE MENU IS OPEN
-  ======================================================= */
 
   useEffect(() => {
     if (open) {
@@ -140,10 +128,6 @@ const Navbar = () => {
       document.body.style.overflow = "";
     };
   }, [open]);
-
-  /* =======================================================
-     HOME SERVICES
-  ======================================================= */
 
   const homeServices = [
     {
@@ -183,10 +167,6 @@ const Navbar = () => {
       link: "/wood-borer-treatment",
     },
   ];
-
-  /* =======================================================
-     COMMERCIAL SERVICES
-  ======================================================= */
 
   const commercialServices = [
     {
@@ -239,10 +219,6 @@ const Navbar = () => {
   return (
     <>
       <header className="fixed left-0 top-0 z-[1000] w-full">
-        {/* =================================================
-            NAVBAR CSS ANIMATIONS
-        ================================================== */}
-
         <style>
           {`
             @keyframes navbarGlow {
@@ -312,9 +288,7 @@ const Navbar = () => {
           `}
         </style>
 
-        {/* =================================================
-            DESKTOP TOP INFORMATION BAR
-        ================================================== */}
+        {/* DESKTOP TOP INFORMATION BAR */}
 
         <motion.div
           animate={{
@@ -328,8 +302,6 @@ const Navbar = () => {
           className="hidden overflow-hidden bg-[#063b3f]/90 text-white backdrop-blur-xl md:block"
         >
           <div className="mx-auto flex max-w-[1450px] items-center justify-between gap-5 px-5 py-2 text-xs lg:px-8 lg:text-sm">
-            {/* LOCATION */}
-
             <a
               href="https://maps.app.goo.gl/N5GeNpCZJMbavHHe7"
               target="_blank"
@@ -345,27 +317,19 @@ const Navbar = () => {
               </span>
             </a>
 
-            {/* ISO BADGE */}
-
-            <Link
-              to=""
-              className="navbar-shine hidden shrink-0 items-center gap-2 rounded-full border border-green-400/30 bg-green-600 px-4 py-1.5 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-green-500 lg:flex"
-            >
+            <span className="navbar-shine hidden shrink-0 items-center gap-2 rounded-full border border-green-400/30 bg-green-600 px-4 py-1.5 font-bold text-white shadow-lg lg:flex">
               <span>🏅</span>
               ISO 9001:2015 – (305024122052Q)
-            </Link>
-
-            {/* EMAIL */}
+            </span>
 
             <a
-              href="mailto:info@acuitygroups.in"
+              href="mailto:info@acuitypestcontrols.in"
               className="group hidden shrink-0 items-center gap-2 transition hover:text-green-300 xl:flex"
             >
               <FaEnvelope className="transition group-hover:scale-110" />
-              info@acuitygroups.in
-            </a>
 
-            {/* PHONE AND WHATSAPP */}
+              info@acuitypestcontrols.in
+            </a>
 
             <div className="flex shrink-0 items-center gap-3">
               <a
@@ -384,15 +348,14 @@ const Navbar = () => {
                 className="navbar-whatsapp-pulse flex items-center gap-2 rounded-full bg-green-600 px-4 py-1.5 font-bold text-white transition hover:-translate-y-0.5 hover:bg-green-500"
               >
                 <FaWhatsapp size={17} />
+
                 WhatsApp
               </a>
             </div>
           </div>
         </motion.div>
 
-        {/* =================================================
-            MOBILE TOP BAR
-        ================================================== */}
+        {/* MOBILE TOP BAR */}
 
         <motion.div
           animate={{
@@ -410,14 +373,16 @@ const Navbar = () => {
               className="flex items-center justify-center gap-1.5"
             >
               <FaPhoneAlt />
+
               Call
             </a>
 
             <a
-              href="mailto:info@acuitygroups.in"
+              href="mailto:info@acuitypestcontrols.in"
               className="flex items-center justify-center gap-1.5"
             >
               <FaEnvelope />
+
               Email
             </a>
 
@@ -428,14 +393,13 @@ const Navbar = () => {
               className="flex items-center justify-center gap-1.5 text-green-300"
             >
               <FaWhatsapp size={14} />
+
               WhatsApp
             </a>
           </div>
         </motion.div>
 
-        {/* =================================================
-            MAIN NAVIGATION
-        ================================================== */}
+        {/* MAIN NAVIGATION */}
 
         <motion.div
           animate={{
@@ -447,12 +411,10 @@ const Navbar = () => {
           }}
           className={`relative w-full transition-all duration-500 ${
             scrolled
-              ? "border-b border-white/30 shadow-[0_12px_40px_rgba(6,59,63,0.12)] backdrop-blur-3xl bg-transparent"
+              ? "border-b border-white/30 bg-transparent shadow-[0_12px_40px_rgba(6,59,63,0.12)] backdrop-blur-3xl"
               : "border-b border-transparent bg-transparent shadow-none backdrop-blur-none"
           }`}
         >
-          {/* DECORATIVE BACKGROUND */}
-
           <div
             className={`navbar-glow pointer-events-none absolute -left-20 top-0 h-32 w-64 rounded-full bg-green-300/30 blur-[80px] transition-opacity duration-500 ${
               scrolled ? "opacity-30" : "opacity-20"
@@ -465,10 +427,6 @@ const Navbar = () => {
                 scrolled ? "min-h-[72px]" : "min-h-[84px] md:min-h-[105px]"
               }`}
             >
-              {/* =============================================
-                  LOGO
-              ============================================== */}
-
               <motion.div
                 animate={{
                   scale: scrolled ? 0.9 : 1,
@@ -481,7 +439,7 @@ const Navbar = () => {
                 <Link
                   to="/"
                   onClick={closeMobileMenu}
-                  aria-label="Go to Acuity Pest Controls landing page"
+                  aria-label="Go to Acuity Pest Controls homepage"
                   className="group flex items-center"
                 >
                   <img
@@ -496,20 +454,19 @@ const Navbar = () => {
                 </Link>
               </motion.div>
 
-              {/* =============================================
-                  DESKTOP NAVIGATION
-              ============================================== */}
+              {/* DESKTOP NAVIGATION */}
 
               <nav className="hidden items-center gap-1 xl:flex">
                 <DesktopNavLink
                   to="/home"
                   label="HOME"
-                  active={isActiveLink("/home")}
+                  active={isActiveLink("/")}
                 />
+
                 <DesktopNavLink
-                  to="/aboutus"
+                  to="/about"
                   label="ABOUT US"
-                  active={isActiveLink("/aboutus")}
+                  active={isActiveLink("/about")}
                 />
 
                 <div
@@ -527,11 +484,13 @@ const Navbar = () => {
                     }`}
                   >
                     SERVICES
+
                     <FaChevronDown
                       className={`text-[10px] transition-transform duration-300 ${
                         desktopServicesOpen ? "rotate-180" : ""
                       }`}
                     />
+
                     <span
                       className={`absolute bottom-1 left-1/2 h-[3px] -translate-x-1/2 rounded-full bg-green-600 transition-all duration-300 ${
                         servicesActive || desktopServicesOpen
@@ -650,6 +609,7 @@ const Navbar = () => {
                                 className="navbar-shine mt-4 inline-flex items-center gap-2 rounded-full bg-green-400 px-5 py-3 text-xs font-black text-[#063b3f] transition hover:-translate-y-1 hover:bg-green-300"
                               >
                                 Contact Our Team
+
                                 <FaArrowRight size={11} />
                               </Link>
                             </div>
@@ -661,24 +621,21 @@ const Navbar = () => {
                 </div>
 
                 <DesktopNavLink
-                  to="/pestidentification"
+                  to="/pest-identification"
                   label="PEST IDENTIFICATION"
-                  active={isActiveLink("/pestidentification")}
+                  active={isActiveLink("/pest-identification")}
                 />
 
                 <DesktopNavLink
-                  to="/blogsmainpage"
+                  to="/blogs"
                   label="BLOG"
-                  active={
-                    isActiveLink("/blogsmainpage") ||
-                    location.pathname.startsWith("/blogs")
-                  }
+                  active={location.pathname.startsWith("/blogs")}
                 />
 
                 <DesktopNavLink
-                  to="/contactus"
+                  to="/contact"
                   label="CONTACT"
-                  active={isActiveLink("/contactus")}
+                  active={isActiveLink("/contact")}
                 />
               </nav>
 
@@ -732,9 +689,7 @@ const Navbar = () => {
           </div>
         </motion.div>
 
-        {/* =================================================
-            MOBILE NAVIGATION MENU
-        ================================================== */}
+        {/* MOBILE NAVIGATION MENU */}
 
         <AnimatePresence>
           {open && (
@@ -793,16 +748,16 @@ const Navbar = () => {
 
                 <div className="space-y-1">
                   <MobileNavLink
-                    to="/home"
+                    to="/"
                     label="HOME"
-                    active={isActiveLink("/home")}
+                    active={isActiveLink("/")}
                     onClick={closeMobileMenu}
                   />
 
                   <MobileNavLink
-                    to="/aboutus"
+                    to="/about"
                     label="ABOUT US"
-                    active={isActiveLink("/aboutus")}
+                    active={isActiveLink("/about")}
                     onClick={closeMobileMenu}
                   />
 
@@ -823,6 +778,7 @@ const Navbar = () => {
                         <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-green-100 text-green-700">
                           <FaSprayCan size={13} />
                         </span>
+
                         SERVICES
                       </span>
 
@@ -861,6 +817,7 @@ const Navbar = () => {
                               className="mb-3 flex items-center justify-between rounded-xl bg-[#063b3f] px-4 py-3 text-xs font-black text-white"
                             >
                               View All Services
+
                               <FaArrowRight size={11} />
                             </Link>
 
@@ -916,26 +873,23 @@ const Navbar = () => {
                   </div>
 
                   <MobileNavLink
-                    to="/pestidentification"
+                    to="/pest-identification"
                     label="PEST IDENTIFICATION"
-                    active={isActiveLink("/pestidentification")}
+                    active={isActiveLink("/pest-identification")}
                     onClick={closeMobileMenu}
                   />
 
                   <MobileNavLink
-                    to="/blogsmainpage"
+                    to="/blogs"
                     label="BLOG"
-                    active={
-                      isActiveLink("/blogsmainpage") ||
-                      location.pathname.startsWith("/blogs")
-                    }
+                    active={location.pathname.startsWith("/blogs")}
                     onClick={closeMobileMenu}
                   />
 
                   <MobileNavLink
-                    to="/contactus"
+                    to="/contact"
                     label="CONTACT"
-                    active={isActiveLink("/contactus")}
+                    active={isActiveLink("/contact")}
                     onClick={closeMobileMenu}
                   />
                 </div>
@@ -946,6 +900,7 @@ const Navbar = () => {
                     className="flex items-center justify-center gap-2 rounded-2xl bg-[#063b3f] py-3.5 text-sm font-black text-white shadow-lg transition active:scale-95"
                   >
                     <FaPhoneAlt size={14} />
+
                     Call Now
                   </a>
 
@@ -956,16 +911,18 @@ const Navbar = () => {
                     className="navbar-whatsapp-pulse flex items-center justify-center gap-2 rounded-2xl bg-green-600 py-3.5 text-sm font-black text-white shadow-lg transition active:scale-95"
                   >
                     <FaWhatsapp size={17} />
+
                     WhatsApp
                   </a>
                 </div>
 
                 <a
-                  href="mailto:info@acuitygroups.in"
+                  href="mailto:info@acuitypestcontrols.in"
                   className="mt-3 flex items-center justify-center gap-2 rounded-2xl border border-green-100 bg-green-50 py-3 text-xs font-bold text-green-700"
                 >
                   <FaEnvelope />
-                  info@acuitygroups.in
+
+                  info@acuitypestcontrols.in
                 </a>
               </motion.div>
             </>
