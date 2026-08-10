@@ -3879,6 +3879,46 @@ Enquiry received from Acuity Pest Controls website.`;
                 View Home Pest Control
                 <ArrowRight size={16} />
               </Link>
+              <section className="home-seo-links">
+                <div className="container">
+                  <h2>Pest Control Services in Bangalore</h2>
+
+                  <p>
+                    Looking for reliable pest control services in Bangalore?
+                    Acuity Pest Controls provides professional pest management
+                    solutions for homes, offices, apartments, commercial
+                    properties and businesses across Bangalore.
+                  </p>
+
+                  <div className="seo-service-links">
+                    <Link to="/general-pest-control">
+                      General Pest Control in Bangalore
+                    </Link>
+
+                    <Link to="/cockroach-control-services">
+                      Cockroach Control Services
+                    </Link>
+
+                    <Link to="/termite-treatment-bangalore">
+                      Termite Treatment in Bangalore
+                    </Link>
+
+                    <Link to="/bed-bugs-treatment">
+                      Bed Bug Treatment in Bangalore
+                    </Link>
+
+                    <Link to="/ants-pest-control">Ant Pest Control</Link>
+
+                    <Link to="/wood-borer-treatment">Wood Borer Treatment</Link>
+
+                    <Link to="/office-pest-control">Office Pest Control</Link>
+
+                    <Link to="/commercial-pest-control">
+                      Commercial Pest Control
+                    </Link>
+                  </div>
+                </div>
+              </section>
             </div>
           </motion.article>
 
