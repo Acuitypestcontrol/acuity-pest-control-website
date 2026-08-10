@@ -248,6 +248,11 @@
       "permanent": true
     },
     {
+      "source": "/eco-friendly-pest-control-natural-pest-management-in-bangalore",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
       "source": "/wp-sitemap.xml",
       "destination": "/sitemap.xml",
       "permanent": true

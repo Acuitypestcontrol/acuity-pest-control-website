@@ -461,7 +461,10 @@ const AppContent = () => {
             path="/termite-control-services"
             element={<Navigate to="/anti-termite-treatment" replace />}
           />
-
+          <Route
+            path="/eco-friendly-pest-control-natural-pest-management-in-bangalore"
+            element={<Navigate to="/general-pest-control" replace />}
+          />
           <Route
             path="/residential-pest-control"
             element={<Navigate to="/general-pest-control" replace />}
