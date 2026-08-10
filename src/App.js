@@ -366,6 +366,11 @@ const AppContent = () => {
           />
 
           <Route
+            path="/mosquito-management"
+            element={<Navigate to="/mosquito-management-service" replace />}
+          />
+
+          <Route
             path="/cockroach-management-service"
             element={<CockroachManagementService />}
           />
@@ -459,6 +464,11 @@ const AppContent = () => {
 
           <Route
             path="/residential-pest-control"
+            element={<Navigate to="/general-pest-control" replace />}
+          />
+
+          <Route
+            path="/residential-pest-control-services-in-bangalore-by-acuity-pest-controls"
             element={<Navigate to="/general-pest-control" replace />}
           />
 

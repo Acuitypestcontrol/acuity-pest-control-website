@@ -218,6 +218,11 @@
       "permanent": true
     },
     {
+      "source": "/mosquito-management",
+      "destination": "/mosquito-management-service",
+      "permanent": true
+    },
+    {
       "source": "/pest-control-for-food-industries",
       "destination": "/warehouse-pest-management",
       "permanent": true
@@ -393,6 +398,11 @@
       "permanent": true
     },
     {
+      "source": "/residential-pest-control-services-in-bangalore-by-acuity-pest-controls",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
       "source": "/pest/house-rat-control",
       "destination": "/rodent-management-service",
       "permanent": true
@@ -537,8 +547,6 @@
       "destination": "/blogs/mosquito-prevention-during-rainy-season",
       "permanent": true
     }
-  
-   
   ],
   "rewrites": [
     {
