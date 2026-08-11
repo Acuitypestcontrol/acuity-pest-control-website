@@ -2023,7 +2023,7 @@ Please contact me with the service details and quotation.`;
         </footer>
 
         {/* DESKTOP WHATSAPP */}
-        <a
+        {/* <a
           href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
             "Hello Acuity Pest Control, I need pest control service in Bangalore.",
           )}`}
@@ -2033,7 +2033,7 @@ Please contact me with the service details and quotation.`;
           aria-label="Chat with Acuity Pest Control on WhatsApp"
         >
           💬
-        </a>
+        </a> */}
 
         {/* MOBILE CALL / WHATSAPP */}
         <div className="fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 border-t border-[#12181A]/10 bg-white p-2 shadow-2xl md:hidden">

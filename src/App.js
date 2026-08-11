@@ -114,9 +114,6 @@ const NotFound = () => {
           name="description"
           content="The requested page could not be found on the Acuity Pest Controls website."
         />
-
-
-
         <link rel="canonical" href="https://www.acuitypestcontrols.com/404" />
       </Helmet>
 

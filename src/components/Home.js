@@ -5033,7 +5033,7 @@ Enquiry received from Acuity Pest Controls website.`;
           MOBILE STICKY ACTION BAR (removed WhatsApp)
       ====================================================== */}
 
-      <div className="fixed bottom-0 left-0 right-0 z-[1100] border-t border-green-100 bg-white/95 p-2 shadow-[0_-10px_35px_rgba(6,59,63,0.12)] backdrop-blur-md md:hidden">
+      {/* <div className="fixed bottom-0 left-0 right-0 z-[1100] border-t border-green-100 bg-white/95 p-2 shadow-[0_-10px_35px_rgba(6,59,63,0.12)] backdrop-blur-md md:hidden">
         <div className="grid grid-cols-2 gap-2">
           <a
             href="tel:+919941229005"
@@ -5059,13 +5059,13 @@ Enquiry received from Acuity Pest Controls website.`;
             Chat with AI
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* =====================================================
           AI CHATBOT (only this remains for WhatsApp-like interaction)
       ====================================================== */}
 
-      <AcuityChatBot />
+      {/* <AcuityChatBot /> */}
     </div>
   );
 };
