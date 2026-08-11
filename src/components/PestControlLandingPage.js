@@ -24,8 +24,7 @@ const PestControlLandingPage = () => {
   const siteUrl = "https://www.acuitypestcontrols.com";
   const pageUrl = `${siteUrl}/`;
 
-  const pageTitle =
-    "Pest Control Services in Bangalore | Acuity Pest Control";
+  const pageTitle = "Pest Control Services in Bangalore | Acuity Pest Control";
 
   const pageDescription =
     "Professional pest control services in Bangalore for cockroaches, termites, bed bugs, rodents, mosquitoes and other pests. Book residential or commercial pest control with Acuity.";
@@ -39,11 +38,11 @@ const PestControlLandingPage = () => {
   const today = new Date();
 
   const caseFileNumber = `AC-${today.getFullYear()}-${String(
-    today.getMonth() + 1
+    today.getMonth() + 1,
   ).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}-${String(
-    today.getHours()
+    today.getHours(),
   ).padStart(2, "0")}${String(today.getMinutes()).padStart(2, "0")}${String(
-    today.getSeconds()
+    today.getSeconds(),
   ).padStart(2, "0")}`;
 
   const primaryServices = [
@@ -571,8 +570,7 @@ const PestControlLandingPage = () => {
     image: socialImage,
     address: {
       "@type": "PostalAddress",
-      streetAddress:
-        "JP Nagar 6th Phase, Yelachenahalli",
+      streetAddress: "JP Nagar 6th Phase, Yelachenahalli",
       addressLocality: "Bengaluru",
       addressRegion: "Karnataka",
       postalCode: "560078",
@@ -587,15 +585,9 @@ const PestControlLandingPage = () => {
       telephone: "+91 99412 29005",
       contactType: "customer service",
       areaServed: "IN",
-      availableLanguage: [
-        "English",
-        "Kannada",
-        "Hindi",
-      ],
+      availableLanguage: ["English", "Kannada", "Hindi"],
     },
-    serviceType: serviceCoverage.map(
-      (service) => service.label
-    ),
+    serviceType: serviceCoverage.map((service) => service.label),
   };
 
   const serviceSchema = {
@@ -682,15 +674,12 @@ Please contact me with the service details and quotation.`;
       return;
     }
 
-    const cleanPhone = formData.phone
-      .replace(/\D/g, "")
-      .slice(-10);
+    const cleanPhone = formData.phone.replace(/\D/g, "").slice(-10);
 
     if (!/^\d{10}$/.test(cleanPhone)) {
       setSubmitStatus({
         type: "error",
-        message:
-          "Please enter a valid 10-digit Indian phone number.",
+        message: "Please enter a valid 10-digit Indian phone number.",
       });
 
       return;
@@ -699,70 +688,53 @@ Please contact me with the service details and quotation.`;
     setIsSubmitting(true);
 
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      createWhatsAppMessage()
+      createWhatsAppMessage(),
     )}`;
 
     /*
      * Open WhatsApp window immediately.
      * This helps prevent popup blocking after the async request.
      */
-    const whatsappWindow = window.open(
-      "",
-      "_blank",
-      "noopener,noreferrer"
-    );
+    const whatsappWindow = window.open("", "_blank", "noopener,noreferrer");
 
     try {
-      const response = await fetch(
-        "https://formspree.io/f/mzeppdwo",
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.name.trim(),
-            phone: cleanPhone,
-            location: formData.location.trim(),
-            service: formData.service,
-            propertyType:
-              formData.propertyType || "Not selected",
-            message:
-              formData.message.trim() || "Not provided",
+      const response = await fetch("https://formspree.io/f/mzeppdwo", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          phone: cleanPhone,
+          location: formData.location.trim(),
+          service: formData.service,
+          propertyType: formData.propertyType || "Not selected",
+          message: formData.message.trim() || "Not provided",
 
-            enquiryNumber: caseFileNumber,
+          enquiryNumber: caseFileNumber,
 
-            leadSource:
-              "Acuity Pest Control Website",
+          leadSource: "Acuity Pest Control Website",
 
-            landingPage:
-              "Pest Control Services in Bangalore",
+          landingPage: "Pest Control Services in Bangalore",
 
-            website: pageUrl,
+          website: pageUrl,
 
-            submittedAt:
-              new Date().toLocaleString("en-IN", {
-                timeZone: "Asia/Kolkata",
-              }),
-
-            _subject:
-              `New Website Lead - ${formData.service} - ${caseFileNumber}`,
+          submittedAt: new Date().toLocaleString("en-IN", {
+            timeZone: "Asia/Kolkata",
           }),
-        }
-      );
+
+          _subject: `New Website Lead - ${formData.service} - ${caseFileNumber}`,
+        }),
+      });
 
       if (!response.ok) {
-        let errorMessage =
-          "Unable to submit your enquiry. Please try again.";
+        let errorMessage = "Unable to submit your enquiry. Please try again.";
 
         try {
           const errorData = await response.json();
 
-          if (
-            Array.isArray(errorData?.errors) &&
-            errorData.errors.length > 0
-          ) {
+          if (Array.isArray(errorData?.errors) && errorData.errors.length > 0) {
             errorMessage = errorData.errors
               .map((error) => error.message)
               .filter(Boolean)
@@ -813,12 +785,10 @@ Please contact me with the service details and quotation.`;
   };
 
   const scrollToForm = () => {
-    document
-      .getElementById("booking-form")
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    document.getElementById("booking-form")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   return (
@@ -826,10 +796,7 @@ Please contact me with the service details and quotation.`;
       <Helmet>
         <title>{pageTitle}</title>
 
-        <meta
-          name="description"
-          content={pageDescription}
-        />
+        <meta name="description" content={pageDescription} />
 
         <meta
           name="keywords"
@@ -841,65 +808,32 @@ Please contact me with the service details and quotation.`;
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
 
-        <link
-          rel="canonical"
-          href={pageUrl}
-        />
+        <link rel="canonical" href={pageUrl} />
 
-        <meta
-          property="og:type"
-          content="website"
-        />
+        <meta property="og:type" content="website" />
 
-        <meta
-          property="og:title"
-          content={pageTitle}
-        />
+        <meta property="og:title" content={pageTitle} />
 
-        <meta
-          property="og:description"
-          content={pageDescription}
-        />
+        <meta property="og:description" content={pageDescription} />
 
-        <meta
-          property="og:url"
-          content={pageUrl}
-        />
+        <meta property="og:url" content={pageUrl} />
 
-        <meta
-          property="og:image"
-          content={socialImage}
-        />
+        <meta property="og:image" content={socialImage} />
 
         <meta
           property="og:image:alt"
           content="Acuity Pest Control Services in Bangalore"
         />
 
-        <meta
-          property="og:site_name"
-          content="Acuity Pest Control Services"
-        />
+        <meta property="og:site_name" content="Acuity Pest Control Services" />
 
-        <meta
-          name="twitter:card"
-          content="summary_large_image"
-        />
+        <meta name="twitter:card" content="summary_large_image" />
 
-        <meta
-          name="twitter:title"
-          content={pageTitle}
-        />
+        <meta name="twitter:title" content={pageTitle} />
 
-        <meta
-          name="twitter:description"
-          content={pageDescription}
-        />
+        <meta name="twitter:description" content={pageDescription} />
 
-        <meta
-          name="twitter:image"
-          content={socialImage}
-        />
+        <meta name="twitter:image" content={socialImage} />
 
         <script type="application/ld+json">
           {JSON.stringify(localBusinessSchema)}
@@ -909,9 +843,7 @@ Please contact me with the service details and quotation.`;
           {JSON.stringify(serviceSchema)}
         </script>
 
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <style>{`
@@ -1096,8 +1028,8 @@ Please contact me with the service details and quotation.`;
               </h1>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
-                Looking for professional pest control near you in
-                Bangalore? Acuity provides{" "}
+                Looking for professional pest control near you in Bangalore?
+                Acuity provides{" "}
                 <a
                   href="/cockroach-management-service"
                   className="font-semibold text-[#E3A23E] underline decoration-dotted underline-offset-4 hover:text-white"
@@ -1132,8 +1064,7 @@ Please contact me with the service details and quotation.`;
                 >
                   mosquito control
                 </a>{" "}
-                for homes, apartments, offices and commercial
-                properties.
+                for homes, apartments, offices and commercial properties.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -1147,7 +1078,7 @@ Please contact me with the service details and quotation.`;
 
                 <a
                   href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-                    "Hello Acuity Pest Control, I need pest control service in Bangalore. Please share the service details and quotation."
+                    "Hello Acuity Pest Control, I need pest control service in Bangalore. Please share the service details and quotation.",
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -1181,10 +1112,7 @@ Please contact me with the service details and quotation.`;
             </div>
 
             {/* FORM */}
-            <div
-              id="booking-form"
-              className="relative scroll-mt-24"
-            >
+            <div id="booking-form" className="relative scroll-mt-24">
               <div className="ticket-edge rounded-2xl bg-[#F6F2E7] p-5 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.6)] sm:p-7">
                 <div className="mb-5 flex items-start justify-between border-b border-dashed border-[#12181A]/20 pb-4">
                   <div>
@@ -1203,15 +1131,12 @@ Please contact me with the service details and quotation.`;
                 </div>
 
                 <p className="mb-5 text-sm leading-6 text-[#5B6462]">
-                  Share your location, pest problem and property type.
-                  Your enquiry will be sent to our team and WhatsApp will
-                  open for quick confirmation.
+                  Share your location, pest problem and property type. Your
+                  enquiry will be sent to our team and WhatsApp will open for
+                  quick confirmation.
                 </p>
 
-                <form
-                  onSubmit={handleSubmit}
-                  className="space-y-4"
-                >
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label
@@ -1295,9 +1220,7 @@ Please contact me with the service details and quotation.`;
                         required
                         className="w-full rounded-xl border border-[#12181A]/20 bg-white px-4 py-3 outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
                       >
-                        <option value="">
-                          Choose service
-                        </option>
+                        <option value="">Choose service</option>
 
                         <option value="General Pest Control">
                           General Pest Control
@@ -1331,25 +1254,17 @@ Please contact me with the service details and quotation.`;
                           Mosquito Control and Fogging
                         </option>
 
-                        <option value="Lizard Control">
-                          Lizard Control
-                        </option>
+                        <option value="Lizard Control">Lizard Control</option>
 
-                        <option value="Ant Control">
-                          Ant Control
-                        </option>
+                        <option value="Ant Control">Ant Control</option>
 
-                        <option value="Spider Control">
-                          Spider Control
-                        </option>
+                        <option value="Spider Control">Spider Control</option>
 
                         <option value="Wood Borer Treatment">
                           Wood Borer Treatment
                         </option>
 
-                        <option value="Fly Control">
-                          Fly Control
-                        </option>
+                        <option value="Fly Control">Fly Control</option>
 
                         <option value="Tick and Flea Control">
                           Tick and Flea Control
@@ -1396,15 +1311,10 @@ Please contact me with the service details and quotation.`;
                         onChange={handleChange}
                         className="w-full rounded-xl border border-[#12181A]/20 bg-white px-4 py-3 outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
                       >
-                        <option value="">
-                          Choose property
-                        </option>
+                        <option value="">Choose property</option>
 
                         {propertyTypes.map((property) => (
-                          <option
-                            key={property}
-                            value={property}
-                          >
+                          <option key={property} value={property}>
                             {property}
                           </option>
                         ))}
@@ -1456,8 +1366,8 @@ Please contact me with the service details and quotation.`;
                   )}
 
                   <p className="text-center text-xs text-[#5B6462]">
-                    Your information is sent securely through Formspree
-                    and used only to respond to your enquiry.
+                    Your information is sent securely through Formspree and used
+                    only to respond to your enquiry.
                   </p>
                 </form>
               </div>
@@ -1478,9 +1388,7 @@ Please contact me with the service details and quotation.`;
                 key={text}
                 className="flex items-center justify-center gap-2 bg-[#12181A] px-3 py-5 text-center font-mono text-xs font-bold uppercase tracking-wide text-white sm:text-sm"
               >
-                <span className="text-[#E3A23E]">
-                  ✓
-                </span>
+                <span className="text-[#E3A23E]">✓</span>
 
                 <span>{text}</span>
               </div>
@@ -1504,8 +1412,8 @@ Please contact me with the service details and quotation.`;
               </h2>
 
               <p className="mt-4 leading-7 text-[#5B6462]">
-                Our technicians inspect the affected property, identify
-                pest activity and recommend a suitable treatment.
+                Our technicians inspect the affected property, identify pest
+                activity and recommend a suitable treatment.
               </p>
             </div>
 
@@ -1613,9 +1521,7 @@ Please contact me with the service details and quotation.`;
                         ✓
                       </span>
 
-                      <span className="text-sm font-semibold">
-                        {property}
-                      </span>
+                      <span className="text-sm font-semibold">{property}</span>
                     </div>
                   ))}
                 </div>
@@ -1661,18 +1567,15 @@ Please contact me with the service details and quotation.`;
                 </h2>
 
                 <p className="mt-5 leading-8 text-[#5B6462]">
-                  Correct pest identification is important because each
-                  pest requires a different treatment method.
+                  Correct pest identification is important because each pest
+                  requires a different treatment method.
                 </p>
 
                 <a
                   href="/pest-identification"
                   className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#12181A] px-6 py-4 font-bold text-white transition hover:bg-[#0E3B39]"
                 >
-                  View Pest Identification{" "}
-                  <span aria-hidden="true">
-                    →
-                  </span>
+                  View Pest Identification <span aria-hidden="true">→</span>
                 </a>
               </div>
 
@@ -1691,9 +1594,7 @@ Please contact me with the service details and quotation.`;
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <p className="mt-2 font-semibold">
-                      {pest}
-                    </p>
+                    <p className="mt-2 font-semibold">{pest}</p>
                   </div>
                 ))}
               </div>
@@ -1716,9 +1617,8 @@ Please contact me with the service details and quotation.`;
               </h2>
 
               <p className="mt-3 max-w-3xl leading-7 text-white/80">
-                Contact us for the earliest available appointment.
-                Availability depends on location, technician schedule
-                and treatment type.
+                Contact us for the earliest available appointment. Availability
+                depends on location, technician schedule and treatment type.
               </p>
             </div>
 
@@ -1732,7 +1632,7 @@ Please contact me with the service details and quotation.`;
 
               <a
                 href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-                  "Hello Acuity Pest Control, I need an urgent pest control appointment in Bangalore."
+                  "Hello Acuity Pest Control, I need an urgent pest control appointment in Bangalore.",
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -1793,17 +1693,14 @@ Please contact me with the service details and quotation.`;
                   className="acuity-card-lift relative rounded-2xl border border-[#12181A]/15 bg-[#F6F2E7] p-6"
                 >
                   <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#0E3B39]/40">
-                    Factor{" "}
-                    {String(index + 1).padStart(2, "0")}
+                    Factor {String(index + 1).padStart(2, "0")}
                   </span>
 
                   <p className="font-display mt-2 text-lg font-bold uppercase text-[#0E3B39]">
                     {factor}
                   </p>
 
-                  <p className="mt-2 leading-6 text-[#5B6462]">
-                    {description}
-                  </p>
+                  <p className="mt-2 leading-6 text-[#5B6462]">{description}</p>
                 </div>
               ))}
             </div>
@@ -1837,8 +1734,8 @@ Please contact me with the service details and quotation.`;
               </h2>
 
               <p className="relative mt-5 leading-8 text-white/70">
-                Our team reviews the pest problem, property type and
-                affected areas before recommending treatment.
+                Our team reviews the pest problem, property type and affected
+                areas before recommending treatment.
               </p>
 
               <a
@@ -1864,9 +1761,7 @@ Please contact me with the service details and quotation.`;
                       ✓
                     </span>
 
-                    <p className="text-sm font-semibold leading-6">
-                      {benefit}
-                    </p>
+                    <p className="text-sm font-semibold leading-6">{benefit}</p>
                   </div>
                 ))}
               </div>
@@ -1887,8 +1782,8 @@ Please contact me with the service details and quotation.`;
               </h2>
 
               <p className="mt-4 leading-7 text-white/65">
-                Explore residential treatments, commercial pest
-                management, pest identification and helpful resources.
+                Explore residential treatments, commercial pest management, pest
+                identification and helpful resources.
               </p>
             </div>
 
@@ -1965,8 +1860,8 @@ Please contact me with the service details and quotation.`;
             </div>
 
             <p className="mx-auto mt-8 max-w-4xl text-center text-sm leading-7 text-[#5B6462]">
-              Your area is not listed? Contact us with your complete
-              location and PIN code.
+              Your area is not listed? Contact us with your complete location
+              and PIN code.
             </p>
           </div>
         </section>
@@ -1999,9 +1894,7 @@ Please contact me with the service details and quotation.`;
                         Q{String(index + 1).padStart(2, "0")}
                       </span>
 
-                      <span className="font-bold text-[#12181A]">
-                        {faq.q}
-                      </span>
+                      <span className="font-bold text-[#12181A]">{faq.q}</span>
                     </span>
 
                     <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#0E3B39]/10 text-base text-[#0E3B39] transition group-open:rotate-45">
@@ -2093,8 +1986,8 @@ Please contact me with the service details and quotation.`;
             </p>
 
             <p className="mx-auto mt-2 max-w-2xl text-sm leading-6">
-              Professional residential and commercial pest control
-              services in Bangalore.
+              Professional residential and commercial pest control services in
+              Bangalore.
             </p>
 
             <div className="mt-5 flex flex-wrap justify-center gap-5 font-mono text-sm font-semibold">
@@ -2105,38 +1998,26 @@ Please contact me with the service details and quotation.`;
                 {displayPhone}
               </a>
 
-              <a
-                href="/"
-                className="transition hover:text-[#E3A23E]"
-              >
+              <a href="/" className="transition hover:text-[#E3A23E]">
                 Home
               </a>
 
-              <a
-                href="/services"
-                className="transition hover:text-[#E3A23E]"
-              >
+              <a href="/services" className="transition hover:text-[#E3A23E]">
                 Services
               </a>
 
-              <a
-                href="/blogs"
-                className="transition hover:text-[#E3A23E]"
-              >
+              <a href="/blogs" className="transition hover:text-[#E3A23E]">
                 Blogs
               </a>
 
-              <a
-                href="/contact"
-                className="transition hover:text-[#E3A23E]"
-              >
+              <a href="/contact" className="transition hover:text-[#E3A23E]">
                 Contact
               </a>
             </div>
 
             <p className="mt-7 border-t border-white/10 pt-7 text-xs">
-              © {today.getFullYear()} Acuity Pest Control Services. All
-              rights reserved.
+              © {today.getFullYear()} Acuity Pest Control Services. All rights
+              reserved.
             </p>
           </div>
         </footer>
@@ -2144,7 +2025,7 @@ Please contact me with the service details and quotation.`;
         {/* DESKTOP WHATSAPP */}
         <a
           href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-            "Hello Acuity Pest Control, I need pest control service in Bangalore."
+            "Hello Acuity Pest Control, I need pest control service in Bangalore.",
           )}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -2165,7 +2046,7 @@ Please contact me with the service details and quotation.`;
 
           <a
             href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-              "Hello Acuity Pest Control, I need pest control service in Bangalore."
+              "Hello Acuity Pest Control, I need pest control service in Bangalore.",
             )}`}
             target="_blank"
             rel="noopener noreferrer"

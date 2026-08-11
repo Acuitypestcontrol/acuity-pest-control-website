@@ -115,8 +115,7 @@ const NotFound = () => {
           content="The requested page could not be found on the Acuity Pest Controls website."
         />
 
-        <meta name="robots" content="noindex, nofollow" />
-        <meta name="googlebot" content="noindex, nofollow" />
+
 
         <link rel="canonical" href="https://www.acuitypestcontrols.com/404" />
       </Helmet>
