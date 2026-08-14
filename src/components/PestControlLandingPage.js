@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import Ping from "../../src/images/ping.jpg";
 
 const PestControlLandingPage = () => {
   const [formData, setFormData] = useState({
@@ -991,11 +992,11 @@ Please contact me with the service details and quotation.`;
       `}</style>
 
       <main
-        className="font-body min-h-screen bg-[#F6F2E7] text-[#1C2321]"
+        className="font-body min-h-screen bg-[#F6F2E7] text-[#023e2d]"
         id="top"
       >
         {/* HERO */}
-        <section className="relative overflow-hidden bg-[#12181A]">
+        <section className="relative overflow-hidden bg-[#1a0252]">
           <div className="hazard-stripes hazard-stripes-anim h-2 w-full opacity-90" />
 
           <div className="dot-grid absolute inset-0" />
@@ -1112,265 +1113,13 @@ Please contact me with the service details and quotation.`;
             </div>
 
             {/* FORM */}
-            <div id="booking-form" className="relative scroll-mt-24">
-              <div className="ticket-edge rounded-2xl bg-[#F6F2E7] p-5 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.6)] sm:p-7">
-                <div className="mb-5 flex items-start justify-between border-b border-dashed border-[#12181A]/20 pb-4">
-                  <div>
-                    <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0E3B39]">
-                      Enquiry · No. {caseFileNumber}
-                    </p>
-
-                    <h2 className="font-display mt-1 text-2xl font-bold uppercase text-[#12181A] sm:text-3xl">
-                      Request a Free Pest Control Quote
-                    </h2>
-                  </div>
-
-                  <span className="acuity-corner-tag hidden shrink-0 bg-[#B8442F] px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-widest text-white sm:block">
-                    Open
-                  </span>
-                </div>
-
-                <p className="mb-5 text-sm leading-6 text-[#5B6462]">
-                  Share your location, pest problem and property type. Your
-                  enquiry will be sent to our team and WhatsApp will open for
-                  quick confirmation.
-                </p>
-
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="mb-1.5 block font-mono text-xs font-bold uppercase tracking-wide text-[#12181A]/70"
-                      >
-                        Name *
-                      </label>
-
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Your name"
-                        autoComplete="name"
-                        required
-                        className="w-full rounded-xl border border-[#12181A]/20 bg-white px-4 py-3 outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="mb-1.5 block font-mono text-xs font-bold uppercase tracking-wide text-[#12181A]/70"
-                      >
-                        Phone Number *
-                      </label>
-
-                      <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        inputMode="numeric"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="10-digit number"
-                        autoComplete="tel"
-                        maxLength={15}
-                        required
-                        className="w-full rounded-xl border border-[#12181A]/20 bg-white px-4 py-3 outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="location"
-                      className="mb-1.5 block font-mono text-xs font-bold uppercase tracking-wide text-[#12181A]/70"
-                    >
-                      Location in Bangalore *
-                    </label>
-
-                    <input
-                      id="location"
-                      name="location"
-                      type="text"
-                      value={formData.location}
-                      onChange={handleChange}
-                      placeholder="Example: JP Nagar, Whitefield or 560078"
-                      required
-                      className="w-full rounded-xl border border-[#12181A]/20 bg-white px-4 py-3 outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
-                    />
-                  </div>
-
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="service"
-                        className="mb-1.5 block font-mono text-xs font-bold uppercase tracking-wide text-[#12181A]/70"
-                      >
-                        Select Service *
-                      </label>
-
-                      <select
-                        id="service"
-                        name="service"
-                        value={formData.service}
-                        onChange={handleChange}
-                        required
-                        className="w-full rounded-xl border border-[#12181A]/20 bg-white px-4 py-3 outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
-                      >
-                        <option value="">Choose service</option>
-
-                        <option value="General Pest Control">
-                          General Pest Control
-                        </option>
-
-                        <option value="Cockroach Control">
-                          Cockroach Control
-                        </option>
-
-                        <option value="Bed Bug Treatment">
-                          Bed Bug Treatment
-                        </option>
-
-                        <option value="Anti-Termite Treatment">
-                          Anti-Termite Treatment
-                        </option>
-
-                        <option value="Pre Construction Termite Treatment">
-                          Pre Construction Termite Treatment
-                        </option>
-
-                        <option value="Post Construction Termite Treatment">
-                          Post Construction Termite Treatment
-                        </option>
-
-                        <option value="Rodent and Rat Control">
-                          Rodent and Rat Control
-                        </option>
-
-                        <option value="Mosquito Control and Fogging">
-                          Mosquito Control and Fogging
-                        </option>
-
-                        <option value="Lizard Control">Lizard Control</option>
-
-                        <option value="Ant Control">Ant Control</option>
-
-                        <option value="Spider Control">Spider Control</option>
-
-                        <option value="Wood Borer Treatment">
-                          Wood Borer Treatment
-                        </option>
-
-                        <option value="Fly Control">Fly Control</option>
-
-                        <option value="Tick and Flea Control">
-                          Tick and Flea Control
-                        </option>
-
-                        <option value="Warehouse Pest Management">
-                          Warehouse Pest Management
-                        </option>
-
-                        <option value="Office Pest Control">
-                          Office Pest Control
-                        </option>
-
-                        <option value="Hotel and Hospital Pest Control">
-                          Hotel and Hospital Pest Control
-                        </option>
-
-                        <option value="Educational Institution Pest Control">
-                          Educational Institution Pest Control
-                        </option>
-
-                        <option value="Residential Common Area Treatment">
-                          Residential Common Area Treatment
-                        </option>
-
-                        <option value="Disinfection Services">
-                          Disinfection Services
-                        </option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="propertyType"
-                        className="mb-1.5 block font-mono text-xs font-bold uppercase tracking-wide text-[#12181A]/70"
-                      >
-                        Property Type
-                      </label>
-
-                      <select
-                        id="propertyType"
-                        name="propertyType"
-                        value={formData.propertyType}
-                        onChange={handleChange}
-                        className="w-full rounded-xl border border-[#12181A]/20 bg-white px-4 py-3 outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
-                      >
-                        <option value="">Choose property</option>
-
-                        {propertyTypes.map((property) => (
-                          <option key={property} value={property}>
-                            {property}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="mb-1.5 block font-mono text-xs font-bold uppercase tracking-wide text-[#12181A]/70"
-                    >
-                      Additional Details
-                    </label>
-
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={3}
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Describe the pest problem or preferred appointment time"
-                      className="w-full resize-none rounded-xl border border-[#12181A]/20 bg-white px-4 py-3 outline-none transition focus:border-[#0E3B39] focus:ring-4 focus:ring-[#0E3B39]/10"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full rounded-xl bg-[#0E3B39] px-6 py-4 text-base font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0a2b29] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
-                  >
-                    {isSubmitting
-                      ? "Sending Enquiry..."
-                      : "Send Enquiry to Our Team"}
-                  </button>
-
-                  {submitStatus.message && (
-                    <div
-                      role="status"
-                      aria-live="polite"
-                      className={`rounded-xl border px-4 py-3 text-sm font-semibold ${
-                        submitStatus.type === "success"
-                          ? "border-green-200 bg-green-50 text-green-800"
-                          : "border-red-200 bg-red-50 text-red-800"
-                      }`}
-                    >
-                      {submitStatus.message}
-                    </div>
-                  )}
-
-                  <p className="text-center text-xs text-[#5B6462]">
-                    Your information is sent securely through Formspree and used
-                    only to respond to your enquiry.
-                  </p>
-                </form>
-              </div>
+            <div className="h-full w-full">
+              <img
+                src={Ping}
+                alt="Acuity Pest Control technician providing professional pest control service in Bangalore"
+                className="h-full w-full rounded-lg"
+                loading="eager"
+              />
             </div>
           </div>
         </section>

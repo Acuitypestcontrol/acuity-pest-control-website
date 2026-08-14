@@ -509,7 +509,7 @@ const Navbar = () => {
                         exit="exit"
                         className="absolute right-[-320px] top-full z-[1200] pt-4"
                       >
-                        <div className="relative grid w-[980px] max-w-[92vw] grid-cols-[1fr_1fr_0.8fr] gap-7 overflow-hidden rounded-[28px] border border-white/60 bg-white/95 p-7 shadow-[0_30px_90px_rgba(6,59,63,0.22)] backdrop-blur-2xl">
+                        <div className="relative grid w-[820px] max-w-[92vw] grid-cols-[1fr_1fr_0.8fr] gap-7 overflow-hidden rounded-[28px] border border-white/60 bg-white/95 p-7 shadow-[0_30px_90px_rgba(6,59,63,0.22)] backdrop-blur-2xl">
                           <div className="pointer-events-none absolute -right-24 -top-24 h-60 w-60 rounded-full bg-green-200/50 blur-[80px]" />
 
                           <div className="pointer-events-none absolute -bottom-24 left-1/3 h-48 w-48 rounded-full bg-emerald-100/60 blur-[70px]" />
