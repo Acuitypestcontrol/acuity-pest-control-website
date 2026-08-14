@@ -1727,49 +1727,7 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* FOOTER */}
-        <footer className="bg-[#12181A] px-4 py-10 text-center text-white/50 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <p className="font-display text-lg font-bold uppercase text-white">
-              Acuity Pest Control Services
-            </p>
-
-            <p className="mx-auto mt-2 max-w-2xl text-sm leading-6">
-              Professional residential and commercial pest control services in
-              Bangalore.
-            </p>
-
-            <div className="mt-5 flex flex-wrap justify-center gap-5 font-mono text-sm font-semibold">
-              <a
-                href={`tel:+${phoneNumber}`}
-                className="transition hover:text-[#E3A23E]"
-              >
-                {displayPhone}
-              </a>
-
-              <a href="/" className="transition hover:text-[#E3A23E]">
-                Home
-              </a>
-
-              <a href="/services" className="transition hover:text-[#E3A23E]">
-                Services
-              </a>
-
-              <a href="/blogs" className="transition hover:text-[#E3A23E]">
-                Blogs
-              </a>
-
-              <a href="/contact" className="transition hover:text-[#E3A23E]">
-                Contact
-              </a>
-            </div>
-
-            <p className="mt-7 border-t border-white/10 pt-7 text-xs">
-              © {today.getFullYear()} Acuity Pest Control Services. All rights
-              reserved.
-            </p>
-          </div>
-        </footer>
+    
 
         {/* DESKTOP WHATSAPP */}
         {/* <a
