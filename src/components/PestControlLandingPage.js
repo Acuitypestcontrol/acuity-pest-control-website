@@ -996,7 +996,7 @@ Please contact me with the service details and quotation.`;
         id="top"
       >
         {/* HERO */}
-        <section className="relative overflow-hidden bg-[#1a0252]">
+        <section className="relative overflow-hidden bg-[#023e2d]">
           <div className="hazard-stripes hazard-stripes-anim h-2 w-full opacity-90" />
 
           <div className="dot-grid absolute inset-0" />
