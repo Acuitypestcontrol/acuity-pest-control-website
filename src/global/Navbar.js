@@ -327,7 +327,6 @@ const Navbar = () => {
               className="group hidden shrink-0 items-center gap-2 transition hover:text-green-300 xl:flex"
             >
               <FaEnvelope className="transition group-hover:scale-110" />
-
               info@acuitypestcontrols.in
             </a>
 
@@ -348,7 +347,6 @@ const Navbar = () => {
                 className="navbar-whatsapp-pulse flex items-center gap-2 rounded-full bg-green-600 px-4 py-1.5 font-bold text-white transition hover:-translate-y-0.5 hover:bg-green-500"
               >
                 <FaWhatsapp size={17} />
-
                 WhatsApp
               </a>
             </div>
@@ -373,7 +371,6 @@ const Navbar = () => {
               className="flex items-center justify-center gap-1.5"
             >
               <FaPhoneAlt />
-
               Call
             </a>
 
@@ -382,7 +379,6 @@ const Navbar = () => {
               className="flex items-center justify-center gap-1.5"
             >
               <FaEnvelope />
-
               Email
             </a>
 
@@ -393,7 +389,6 @@ const Navbar = () => {
               className="flex items-center justify-center gap-1.5 text-green-300"
             >
               <FaWhatsapp size={14} />
-
               WhatsApp
             </a>
           </div>
@@ -484,13 +479,11 @@ const Navbar = () => {
                     }`}
                   >
                     SERVICES
-
                     <FaChevronDown
                       className={`text-[10px] transition-transform duration-300 ${
                         desktopServicesOpen ? "rotate-180" : ""
                       }`}
                     />
-
                     <span
                       className={`absolute bottom-1 left-1/2 h-[3px] -translate-x-1/2 rounded-full bg-green-600 transition-all duration-300 ${
                         servicesActive || desktopServicesOpen
@@ -609,7 +602,6 @@ const Navbar = () => {
                                 className="navbar-shine mt-4 inline-flex items-center gap-2 rounded-full bg-green-400 px-5 py-3 text-xs font-black text-[#063b3f] transition hover:-translate-y-1 hover:bg-green-300"
                               >
                                 Contact Our Team
-
                                 <FaArrowRight size={11} />
                               </Link>
                             </div>
@@ -632,6 +624,11 @@ const Navbar = () => {
                   active={location.pathname.startsWith("/blogs")}
                 />
 
+                <DesktopNavLink
+                  to="/career/pest-control"
+                  label="CAREER"
+                  active={location.pathname.startsWith("/career")}
+                />
                 <DesktopNavLink
                   to="/contact"
                   label="CONTACT"
@@ -778,7 +775,6 @@ const Navbar = () => {
                         <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-green-100 text-green-700">
                           <FaSprayCan size={13} />
                         </span>
-
                         SERVICES
                       </span>
 
@@ -817,7 +813,6 @@ const Navbar = () => {
                               className="mb-3 flex items-center justify-between rounded-xl bg-[#063b3f] px-4 py-3 text-xs font-black text-white"
                             >
                               View All Services
-
                               <FaArrowRight size={11} />
                             </Link>
 
@@ -887,6 +882,13 @@ const Navbar = () => {
                   />
 
                   <MobileNavLink
+                    to="/career/pest-control"
+                    label="CAREER"
+                    active={location.pathname.startsWith("/career")}
+                    onClick={closeMobileMenu}
+                  />
+
+                  <MobileNavLink
                     to="/contact"
                     label="CONTACT"
                     active={isActiveLink("/contact")}
@@ -900,7 +902,6 @@ const Navbar = () => {
                     className="flex items-center justify-center gap-2 rounded-2xl bg-[#063b3f] py-3.5 text-sm font-black text-white shadow-lg transition active:scale-95"
                   >
                     <FaPhoneAlt size={14} />
-
                     Call Now
                   </a>
 
@@ -911,7 +912,6 @@ const Navbar = () => {
                     className="navbar-whatsapp-pulse flex items-center justify-center gap-2 rounded-2xl bg-green-600 py-3.5 text-sm font-black text-white shadow-lg transition active:scale-95"
                   >
                     <FaWhatsapp size={17} />
-
                     WhatsApp
                   </a>
                 </div>
@@ -921,7 +921,6 @@ const Navbar = () => {
                   className="mt-3 flex items-center justify-center gap-2 rounded-2xl border border-green-100 bg-green-50 py-3 text-xs font-bold text-green-700"
                 >
                   <FaEnvelope />
-
                   info@acuitypestcontrols.in
                 </a>
               </motion.div>

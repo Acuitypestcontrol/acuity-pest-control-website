@@ -11,6 +11,8 @@ import {
 
 import { Helmet } from "react-helmet-async";
 
+import PestControlCareerPage from "./components/PestControlCareerPage";
+
 import "@fontsource/poppins";
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/700.css";
@@ -114,6 +116,7 @@ const NotFound = () => {
           name="description"
           content="The requested page could not be found on the Acuity Pest Controls website."
         />
+
         <link rel="canonical" href="https://www.acuitypestcontrols.com/404" />
       </Helmet>
 
@@ -183,16 +186,32 @@ const AppContent = () => {
       <main className="pt-[89px] font-poppins md:pt-[175px]">
         <Routes>
           {/* =================================================
-              MAIN LANDING PAGE
+              LANDING PAGE
+              
+              IMPORTANT:
+              "/" ALWAYS SHOWS LANDING PAGE
           ================================================== */}
+
           <Route path="/" element={<PestControlLandingPage />} />
 
+          {/* =================================================
+              NORMAL HOME PAGE
+              
+              IMPORTANT:
+              "/home" SHOWS THE NORMAL HOME PAGE
+          ================================================== */}
+
           <Route path="/home" element={<Home />} />
+
+          {/* =================================================
+              LANDING PAGE ALTERNATE URL
+          ================================================== */}
 
           <Route
             path="/pest-control-bangalore"
             element={<PestControlLandingPage />}
           />
+
           {/* =================================================
               MAIN CANONICAL PAGES
           ================================================== */}
@@ -206,19 +225,17 @@ const AppContent = () => {
           <Route path="/pest-identification" element={<PestIdentification />} />
 
           {/* =================================================
-              SEPARATE LANDING PAGE URL
+              CAREER PAGE
           ================================================== */}
 
           <Route
-            path="/pest-control-bangalore"
-            element={<PestControlLandingPage />}
+            path="/career/pest-control"
+            element={<PestControlCareerPage />}
           />
 
           {/* =================================================
               OLD MAIN PAGE REDIRECTS
           ================================================== */}
-
-          <Route path="/home" element={<Navigate to="/home" replace />} />
 
           <Route path="/aboutus" element={<Navigate to="/about" replace />} />
 
@@ -457,10 +474,12 @@ const AppContent = () => {
             path="/termite-control-services"
             element={<Navigate to="/anti-termite-treatment" replace />}
           />
+
           <Route
             path="/eco-friendly-pest-control-natural-pest-management-in-bangalore"
             element={<Navigate to="/general-pest-control" replace />}
           />
+
           <Route
             path="/residential-pest-control"
             element={<Navigate to="/general-pest-control" replace />}
@@ -494,7 +513,7 @@ const AppContent = () => {
           />
 
           {/* =================================================
-              FINAL 404 ROUTE
+              FINAL 404
           ================================================== */}
 
           <Route path="*" element={<NotFound />} />
