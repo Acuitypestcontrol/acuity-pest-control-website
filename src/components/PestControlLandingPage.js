@@ -996,7 +996,7 @@ Please contact me with the service details and quotation.`;
         id="top"
       >
         {/* HERO */}
-        <section className="relative overflow-hidden bg-[#023e2d]">
+        <section className="relative overflow-hidden ">
           <div className="hazard-stripes hazard-stripes-anim h-2 w-full opacity-90" />
 
           <div className="dot-grid absolute inset-0" />
@@ -1016,9 +1016,20 @@ Please contact me with the service details and quotation.`;
                 "radial-gradient(circle, #0E3B39 0%, transparent 70%)",
             }}
           />
+          <div className="relative mx-auto max-w-7xl overflow-hidden px-4 py-14 sm:px-6 md:py-20 lg:px-8 lg:py-24">
+            {/* BACKGROUND IMAGE */}
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url(${Ping})`,
+              }}
+            />
 
-          <div className="relative mx-auto grid max-w-7xl items-start gap-12 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
-            <div>
+            {/* DARK OVERLAY - keeps text readable */}
+            <div className="absolute inset-0 bg-[#0E3B39]/75" />
+
+            {/* CONTENT ABOVE IMAGE */}
+            <div className="relative z-10 max-w-4xl">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#E3A23E]/50 bg-[#E3A23E]/10 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[#E3A23E]">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#E3A23E]" />
                 Bangalore residential and commercial pest control
@@ -1028,7 +1039,7 @@ Please contact me with the service details and quotation.`;
                 Professional Pest Control Services in Bangalore
               </h1>
 
-              <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
+              <p className="mt-6 max-w-2xl text-base leading-8 text-white/80 sm:text-lg">
                 Looking for professional pest control near you in Bangalore?
                 Acuity provides{" "}
                 <a
@@ -1083,7 +1094,7 @@ Please contact me with the service details and quotation.`;
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-white/25 bg-white/5 px-7 py-4 text-center font-bold text-white backdrop-blur transition hover:bg-white/10"
+                  className="rounded-full border border-white/30 bg-white/10 px-7 py-4 text-center font-bold text-white backdrop-blur transition hover:bg-white/20"
                 >
                   Message on WhatsApp
                 </a>
@@ -1098,28 +1109,18 @@ Please contact me with the service details and quotation.`;
                 ].map(([number, label]) => (
                   <div
                     key={label}
-                    className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur transition hover:border-[#E3A23E]/40 hover:bg-white/10"
+                    className="rounded-xl border border-white/15 bg-black/20 p-4 backdrop-blur-md transition hover:border-[#E3A23E]/50 hover:bg-black/30"
                   >
                     <p className="font-display text-2xl font-bold text-[#E3A23E]">
                       {number}
                     </p>
 
-                    <p className="mt-1 text-xs leading-snug text-white/60">
+                    <p className="mt-1 text-xs leading-snug text-white/70">
                       {label}
                     </p>
                   </div>
                 ))}
               </div>
-            </div>
-
-            {/* FORM */}
-            <div className="h-full w-full">
-              <img
-                src={Ping}
-                alt="Acuity Pest Control technician providing professional pest control service in Bangalore"
-                className="h-full w-full rounded-lg"
-                loading="eager"
-              />
             </div>
           </div>
         </section>
@@ -1726,21 +1727,6 @@ Please contact me with the service details and quotation.`;
             </div>
           </div>
         </section>
-
-    
-
-        {/* DESKTOP WHATSAPP */}
-        {/* <a
-          href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-            "Hello Acuity Pest Control, I need pest control service in Bangalore.",
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="acuity-fab-pulse fixed bottom-6 right-6 z-50 hidden h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-2xl text-white shadow-2xl transition hover:scale-105 md:flex"
-          aria-label="Chat with Acuity Pest Control on WhatsApp"
-        >
-          💬
-        </a> */}
 
         {/* MOBILE CALL / WHATSAPP */}
         <div className="fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 border-t border-[#12181A]/10 bg-white p-2 shadow-2xl md:hidden">
