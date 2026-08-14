@@ -28,7 +28,7 @@ const PestControlLandingPage = () => {
   const pageTitle = "Pest Control Services in Bangalore | Acuity Pest Control";
 
   const pageDescription =
-    "Professional pest control services in Bangalore for cockroaches, termites, bed bugs, rodents, mosquitoes and other pests. Book residential or commercial pest control with Acuity.";
+    "Acuity Pest Control provides professional pest control services in Bangalore for homes, apartments, offices and commercial properties. Get expert cockroach, termite, bed bug, rodent and mosquito control.";
 
   const socialImage = `${siteUrl}/logo192.png`;
 
@@ -52,7 +52,7 @@ const PestControlLandingPage = () => {
       icon: "🪳",
       title: "Cockroach Control in Bangalore",
       description:
-        "Professional cockroach gel baiting and residual spray treatment for kitchens, bathrooms, apartments, villas, offices and commercial properties.",
+        "Professional cockroach control using gel baiting and residual treatment for kitchens, bathrooms, apartments, villas, offices and commercial properties.",
       zone: "Kitchen · Bathroom",
       href: "/cockroach-management-service",
     },
@@ -61,25 +61,25 @@ const PestControlLandingPage = () => {
       icon: "🛏️",
       title: "Bed Bug Treatment in Bangalore",
       description:
-        "Targeted bed bug treatment for mattresses, beds, furniture, bedrooms, hostels, hotels and residential properties.",
+        "Effective bed bug treatment for mattresses, beds, furniture, bedrooms, hostels, hotels and residential properties with targeted professional treatment.",
       zone: "Bedroom · Furniture",
       href: "/bed-bug-treatment",
     },
     {
       code: "03",
       icon: "🏠",
-      title: "Anti-Termite Treatment in Bangalore",
+      title: "Termite Treatment in Bangalore",
       description:
-        "Pre-construction and post-construction termite treatment for homes, apartments, villas, offices and commercial buildings.",
+        "Professional pre-construction and post-construction termite treatment for homes, apartments, villas, offices and commercial buildings.",
       zone: "Walls · Flooring",
       href: "/anti-termite-treatment",
     },
     {
       code: "04",
       icon: "🐀",
-      title: "Rodent and Rat Control in Bangalore",
+      title: "Rat and Rodent Control in Bangalore",
       description:
-        "Professional rat and rodent management using baiting, trapping and entry-point control for homes, offices and warehouses.",
+        "Professional rat and rodent control using baiting, trapping and entry-point management for homes, offices, apartments and warehouses.",
       zone: "Indoor · Perimeter",
       href: "/rodent-management-service",
     },
@@ -88,7 +88,7 @@ const PestControlLandingPage = () => {
       icon: "🦟",
       title: "Mosquito Control in Bangalore",
       description:
-        "Mosquito fogging and breeding-source control for apartments, villas, offices, schools, hotels and outdoor common areas.",
+        "Professional mosquito control with fogging and breeding-source management for apartments, villas, offices, schools, hotels and outdoor areas.",
       zone: "Indoor · Outdoor",
       href: "/mosquito-management-service",
     },
@@ -97,7 +97,7 @@ const PestControlLandingPage = () => {
       icon: "🧴",
       title: "General Pest Control in Bangalore",
       description:
-        "Complete pest control for cockroaches, ants, spiders and other common pests using professional-grade treatment.",
+        "Comprehensive pest control for cockroaches, ants, spiders and other common household and commercial pests using professional treatment methods.",
       zone: "Complete Property",
       href: "/general-pest-control",
     },
@@ -166,37 +166,18 @@ const PestControlLandingPage = () => {
     "Jayanagar",
     "HSR Layout",
     "Whitefield",
-    "Electronic City",
     "Koramangala",
     "Indiranagar",
-    "BTM Layout",
+    "Electronic City",
     "Bannerghatta Road",
-    "Banashankari",
-    "RR Nagar",
-    "Hebbal",
-    "Marathahalli",
-    "Sarjapur Road",
     "Bellandur",
-    "KR Puram",
-    "Yelahanka",
-    "Kengeri",
-    "Rajajinagar",
-    "Malleshwaram",
-    "Basavanagudi",
+    "Marathahalli",
+    "Hebbal",
     "Peenya",
-    "Mahadevapura",
-    "Brookefield",
-    "Kadugodi",
-    "Varthur",
-    "Panathur",
-    "Bommanahalli",
-    "Hulimavu",
-    "Uttarahalli",
-    "Kanakapura Road",
-    "Attibele",
-    "Nelamangala",
+    "BEML",
     "Doddaballapur",
-    "Devanahalli",
+    "Attibele",
+    "Kumbalgodu",
   ];
 
   const pestsCovered = [
@@ -334,52 +315,40 @@ const PestControlLandingPage = () => {
 
   const internalLinks = [
     {
-      category: "Residential Pest Control",
+      category: "Main Pest Control Services",
       links: [
         {
-          label: "General Pest Control",
-          href: "/general-pest-control",
-        },
-        {
-          label: "Cockroach Control Service",
+          label: "Cockroach Control in Bangalore",
           href: "/cockroach-management-service",
         },
         {
-          label: "Bed Bug Treatment",
-          href: "/bed-bug-treatment",
-        },
-        {
-          label: "Anti-Termite Treatment",
+          label: "Termite Treatment in Bangalore",
           href: "/anti-termite-treatment",
         },
         {
-          label: "Post Construction Termite Treatment",
-          href: "/post-construction-termite-treatment",
+          label: "Bed Bug Treatment in Bangalore",
+          href: "/bed-bug-treatment",
         },
         {
-          label: "Mosquito Control Service",
-          href: "/mosquito-management-service",
-        },
-        {
-          label: "Rodent and Rat Control",
+          label: "Rat & Rodent Control in Bangalore",
           href: "/rodent-management-service",
         },
         {
-          label: "Ant Control Treatment",
-          href: "/ant-control-treatment",
+          label: "Mosquito Control in Bangalore",
+          href: "/mosquito-management-service",
         },
         {
-          label: "Wood Borer Treatment",
-          href: "/wood-borer-treatment",
+          label: "General Pest Control in Bangalore",
+          href: "/general-pest-control",
         },
       ],
     },
     {
-      category: "Commercial Pest Control",
+      category: "Property Pest Control",
       links: [
         {
-          label: "Pre Construction Termite Treatment",
-          href: "/pre-construction-termite-treatment",
+          label: "Residential Pest Control",
+          href: "/general-pest-control",
         },
         {
           label: "Office Pest Control",
@@ -389,42 +358,22 @@ const PestControlLandingPage = () => {
           label: "Warehouse Pest Management",
           href: "/warehouse-pest-management",
         },
-        {
-          label: "Hotels and Hospitals Pest Control",
-          href: "/pest-control-hotels-hospitals",
-        },
-        {
-          label: "Educational Institution Pest Control",
-          href: "/educational-institution-pest-control",
-        },
-        {
-          label: "Apartment Common Area Treatment",
-          href: "/common-area-treatment-residential-complex",
-        },
-        {
-          label: "Disinfection Services",
-          href: "/disinfection-services",
-        },
       ],
     },
     {
-      category: "Explore Acuity",
+      category: "Pest Resources",
       links: [
         {
-          label: "View All Pest Control Services",
-          href: "/services",
+          label: "Pest Identification",
+          href: "/pest-identification",
         },
         {
-          label: "Pest Identification Guide",
-          href: "/pest-identification",
+          label: "Pest Control Services",
+          href: "/services",
         },
         {
           label: "Pest Control Blogs",
           href: "/blogs",
-        },
-        {
-          label: "About Acuity Pest Control",
-          href: "/about",
         },
         {
           label: "Contact Acuity Pest Control",
@@ -499,60 +448,36 @@ const PestControlLandingPage = () => {
 
   const faqs = [
     {
+      q: "What is the best pest control service in Bangalore?",
+      a: "A suitable pest control treatment depends on the pest, infestation level, property type and affected areas. Acuity Pest Control provides professional treatment for cockroaches, termites, bed bugs, rodents, mosquitoes and other common pests across Bangalore.",
+    },
+    {
       q: "How much does pest control cost in Bangalore?",
-      a: "The cost depends on pest type, infestation level, property size and treatment required. General pest control usually costs less than termite or bed bug treatment. Submit your details for an exact quotation.",
+      a: "Pest control pricing in Bangalore depends on the property size, pest type, infestation level, treatment method, number of visits and warranty required. Contact Acuity Pest Control for a property-specific quotation.",
     },
     {
-      q: "Do you provide pest control services near me in Bangalore?",
-      a: "Yes. Acuity provides pest control across JP Nagar, Jayanagar, HSR Layout, Whitefield, Electronic City, Koramangala, BTM Layout, Hebbal, Marathahalli, Bellandur and other Bangalore areas.",
+      q: "Do you provide pest control near me in Bangalore?",
+      a: "Yes. Acuity Pest Control provides residential and commercial pest control services across Bangalore, subject to location and technician availability. Share your complete location and PIN code to check service availability.",
     },
     {
-      q: "Do you provide same-day pest control in Bangalore?",
-      a: "Same-day and next-day appointments may be available depending on technician availability, location and service type.",
+      q: "Do you provide residential pest control in Bangalore?",
+      a: "Yes. We provide residential pest control for apartments, villas, independent houses and other residential properties in Bangalore. Common treatments include cockroach control, termite treatment, bed bug treatment, rat control and mosquito control.",
     },
     {
-      q: "Is pest control safe for children and pets?",
-      a: "Our technicians explain the required safety precautions. Depending on the treatment, children and pets may need to stay away from the treated area for a specified time.",
+      q: "Do you provide commercial pest control in Bangalore?",
+      a: "Yes. Acuity Pest Control provides commercial pest management for offices, warehouses, hotels, restaurants, schools and other commercial properties in Bangalore.",
     },
     {
-      q: "How often should pest control be done?",
-      a: "Preventive pest control is commonly scheduled every three to six months. Commercial properties may require monthly pest-management visits.",
+      q: "How long does a pest control treatment take?",
+      a: "Treatment time depends on the pest, property size, infestation level and treatment method. During the inspection, our technician can explain the expected treatment duration and any preparation required.",
     },
     {
-      q: "Which treatment works best for cockroaches?",
-      a: "Cockroach gel baiting combined with targeted residual treatment in cracks, crevices and activity areas is commonly used.",
+      q: "Is pest control safe for homes and families?",
+      a: "Our technicians select treatment methods according to the pest and property conditions and provide appropriate preparation and safety instructions before and after treatment.",
     },
     {
-      q: "How long does termite treatment last?",
-      a: "The protection period depends on the treatment method, building condition, chemical and warranty plan.",
-    },
-    {
-      q: "Can bed bugs be removed completely?",
-      a: "Bed bug control requires detailed treatment of mattresses, beds, furniture and hiding areas. Heavy infestations may need follow-up treatment.",
-    },
-    {
-      q: "Do you provide mosquito fogging in Bangalore?",
-      a: "Yes. We provide mosquito fogging and breeding-source control for homes, apartments, offices, schools and commercial properties.",
-    },
-    {
-      q: "Do you provide rat control for homes and offices?",
-      a: "Yes. Rodent management includes inspection, baiting, trapping and recommendations for closing entry points.",
-    },
-    {
-      q: "Do you provide pest control for apartments?",
-      a: "Yes. We serve 1 RK, 1 BHK, 2 BHK, 3 BHK and 4 BHK apartments, villas, independent houses and common areas.",
-    },
-    {
-      q: "Do you provide commercial pest control?",
-      a: "Yes. We serve offices, IT campuses, hotels, hospitals, restaurants, schools, warehouses and factories.",
-    },
-    {
-      q: "Do you provide annual pest-control contracts?",
-      a: "Annual and scheduled pest-management plans may be arranged for businesses, commercial properties and apartment communities.",
-    },
-    {
-      q: "How can I book pest control with Acuity?",
-      a: "Fill in the quotation form, contact us on WhatsApp or call +91 99412 29005.",
+      q: "How can I book pest control in Bangalore?",
+      a: "You can contact Acuity Pest Control by phone or WhatsApp and share your location, property type and pest problem. Our team can then help you with service availability and a quotation.",
     },
   ];
 
@@ -564,11 +489,12 @@ const PestControlLandingPage = () => {
     "@type": "LocalBusiness",
     "@id": `${siteUrl}/#business`,
     name: "Acuity Pest Control Services",
-    url: pageUrl,
+    url: siteUrl,
     telephone: "+91 99412 29005",
     description: pageDescription,
     priceRange: "₹₹",
     image: socialImage,
+
     address: {
       "@type": "PostalAddress",
       streetAddress: "JP Nagar 6th Phase, Yelachenahalli",
@@ -577,10 +503,12 @@ const PestControlLandingPage = () => {
       postalCode: "560078",
       addressCountry: "IN",
     },
+
     areaServed: {
       "@type": "City",
       name: "Bengaluru",
     },
+
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91 99412 29005",
@@ -588,6 +516,7 @@ const PestControlLandingPage = () => {
       areaServed: "IN",
       availableLanguage: ["English", "Kannada", "Hindi"],
     },
+
     serviceType: serviceCoverage.map((service) => service.label),
   };
 
@@ -599,12 +528,15 @@ const PestControlLandingPage = () => {
     serviceType: "Residential and Commercial Pest Control",
     description: pageDescription,
     url: pageUrl,
+
     provider: {
       "@type": "LocalBusiness",
+      "@id": `${siteUrl}/#business`,
       name: "Acuity Pest Control Services",
       telephone: "+91 99412 29005",
-      url: pageUrl,
+      url: siteUrl,
     },
+
     areaServed: {
       "@type": "City",
       name: "Bengaluru",
@@ -795,13 +727,11 @@ Please contact me with the service details and quotation.`;
   return (
     <>
       <Helmet>
-        <title>{pageTitle}</title>
-
-        <meta name="description" content={pageDescription} />
+        <title>Pest Control Services in Bangalore | Acuity Pest Control</title>
 
         <meta
-          name="keywords"
-          content="pest control Bangalore, pest control services Bangalore, pest control near me Bangalore, cockroach control Bangalore, termite treatment Bangalore, bed bug treatment Bangalore, rat control Bangalore, mosquito control Bangalore, residential pest control Bangalore, commercial pest control Bangalore"
+          name="description"
+          content="Acuity Pest Control provides professional pest control services in Bangalore for homes, apartments, offices and commercial properties. Get expert cockroach, termite, bed bug, rodent and mosquito control."
         />
 
         <meta
@@ -809,15 +739,22 @@ Please contact me with the service details and quotation.`;
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
 
-        <link rel="canonical" href={pageUrl} />
+        <link rel="canonical" href="https://www.acuitypestcontrols.com/" />
 
+        {/* Open Graph */}
         <meta property="og:type" content="website" />
 
-        <meta property="og:title" content={pageTitle} />
+        <meta
+          property="og:title"
+          content="Pest Control Services in Bangalore | Acuity Pest Control"
+        />
 
-        <meta property="og:description" content={pageDescription} />
+        <meta
+          property="og:description"
+          content="Professional pest control services in Bangalore for residential and commercial properties. Cockroach, termite, bed bug, rodent and mosquito control."
+        />
 
-        <meta property="og:url" content={pageUrl} />
+        <meta property="og:url" content="https://www.acuitypestcontrols.com/" />
 
         <meta property="og:image" content={socialImage} />
 
@@ -828,22 +765,32 @@ Please contact me with the service details and quotation.`;
 
         <meta property="og:site_name" content="Acuity Pest Control Services" />
 
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
 
-        <meta name="twitter:title" content={pageTitle} />
+        <meta
+          name="twitter:title"
+          content="Pest Control Services in Bangalore | Acuity Pest Control"
+        />
 
-        <meta name="twitter:description" content={pageDescription} />
+        <meta
+          name="twitter:description"
+          content="Professional pest control services in Bangalore for homes, apartments, offices and commercial properties."
+        />
 
         <meta name="twitter:image" content={socialImage} />
 
+        {/* Local Business Schema */}
         <script type="application/ld+json">
           {JSON.stringify(localBusinessSchema)}
         </script>
 
+        {/* Service Schema */}
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
 
+        {/* FAQ Schema */}
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
@@ -1039,9 +986,10 @@ Please contact me with the service details and quotation.`;
                 Professional Pest Control Services in Bangalore
               </h1>
 
-              <p className="mt-6 max-w-2xl text-base leading-8 text-white/80 sm:text-lg">
-                Looking for professional pest control near you in Bangalore?
-                Acuity provides{" "}
+              <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
+                Acuity Pest Control provides professional pest control services
+                in Bangalore for homes, apartments, offices and commercial
+                properties. Our services include{" "}
                 <a
                   href="/cockroach-management-service"
                   className="font-semibold text-[#E3A23E] underline decoration-dotted underline-offset-4 hover:text-white"
@@ -1067,16 +1015,23 @@ Please contact me with the service details and quotation.`;
                   href="/rodent-management-service"
                   className="font-semibold text-[#E3A23E] underline decoration-dotted underline-offset-4 hover:text-white"
                 >
-                  rodent control
-                </a>{" "}
-                and{" "}
+                  rat and rodent control
+                </a>
+                , and{" "}
                 <a
                   href="/mosquito-management-service"
                   className="font-semibold text-[#E3A23E] underline decoration-dotted underline-offset-4 hover:text-white"
                 >
                   mosquito control
                 </a>{" "}
-                for homes, apartments, offices and commercial properties.
+                across Bangalore.
+              </p>
+
+              <p className="mt-6 max-w-3xl text-sm leading-7 text-white/55">
+                We serve customers across JP Nagar, Jayanagar, HSR Layout,
+                Whitefield, Koramangala, Indiranagar, Electronic City,
+                Bannerghatta Road, Bellandur, Marathahalli, Hebbal, Peenya and
+                other areas of Bangalore.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -1158,7 +1113,7 @@ Please contact me with the service details and quotation.`;
               </p>
 
               <h2 className="font-display mt-3 text-3xl font-bold uppercase text-[#12181A] sm:text-4xl">
-                Popular Pest Control Services in Bangalore
+                Pest Control Services in Bangalore
               </h2>
 
               <p className="mt-4 leading-7 text-[#5B6462]">
@@ -1589,29 +1544,39 @@ Please contact me with the service details and quotation.`;
 
             <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
               {serviceAreas.map((area, index) => (
-                <div
+                <a
                   key={area}
-                  className={`acuity-card-lift rounded-xl border px-4 py-4 ${
+                  href={`/pest-control-${area
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")
+                    .replace(/road/g, "")
+                    .replace(/-+/g, "-")
+                    .replace(/^-|-$/g, "")}`}
+                  className={`acuity-card-lift rounded-xl border px-4 py-4 transition hover:-translate-y-1 hover:border-[#0E3B39] hover:shadow-md ${
                     index === 0
                       ? "border-[#0E3B39] bg-[#0E3B39] text-white"
                       : "border-[#12181A]/15 bg-[#F6F2E7]"
                   }`}
                 >
                   <span className="font-mono text-[9px] font-bold opacity-50">
-                    BLR-
-                    {String(index + 1).padStart(2, "0")}
+                    BLR-{String(index + 1).padStart(2, "0")}
                   </span>
 
                   <p className="mt-1 text-sm font-bold">
                     Pest Control in {area}
                   </p>
-                </div>
+                </a>
               ))}
             </div>
 
-            <p className="mx-auto mt-8 max-w-4xl text-center text-sm leading-7 text-[#5B6462]">
-              Your area is not listed? Contact us with your complete location
-              and PIN code.
+            <p className="mx-auto mt-8 max-w-4xl text-center leading-7 text-[#5B6462]">
+              Acuity Pest Control provides residential and commercial pest
+              control services across Bangalore, including JP Nagar, Jayanagar,
+              HSR Layout, Whitefield, Koramangala, Indiranagar, Electronic City,
+              Bannerghatta Road, Bellandur, Marathahalli, Hebbal, Peenya,
+              Doddaballapur, Attibele and Kumbalgodu. If your location is not
+              listed, contact us with your complete address and PIN code to
+              check service availability.
             </p>
           </div>
         </section>
