@@ -4,11 +4,12 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
-    <!-- Preconnect to Google Fonts (ONLY ONCE) -->
+    <!-- =========================================================
+         GOOGLE FONTS - Async Loading (Non-Blocking)
+    ========================================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Load fonts asynchronously (non-blocking) -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -22,6 +23,9 @@
       />
     </noscript>
 
+    <!-- =========================================================
+         META TAGS - Primary SEO
+    ========================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
     <meta http-equiv="Cache-control" content="public" />
@@ -45,9 +49,21 @@
     />
 
     <meta name="author" content="Acuity Pest Controls" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
 
-    <!-- Open Graph -->
+    <!-- =========================================================
+         CANONICAL & HREFLANG (SEO)
+    ========================================================== -->
+    <link rel="canonical" href="https://www.acuitypestcontrols.com/" />
+    <link
+      rel="alternate"
+      href="https://www.acuitypestcontrols.com/"
+      hreflang="en-in"
+    />
+
+    <!-- =========================================================
+         OPEN GRAPH (Facebook, LinkedIn, WhatsApp Sharing)
+    ========================================================== -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.acuitypestcontrols.com/" />
     <meta
@@ -59,48 +75,54 @@
       content="Trusted pest control company in Bangalore. Safe, effective and affordable termite, cockroach, rodent and mosquito control services."
     />
     <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Acuity Pest Controls" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
+    <!-- =========================================================
+         TWITTER CARD (Twitter/X Sharing)
+    ========================================================== -->
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
-      property="twitter:url"
+      name="twitter:url"
       content="https://www.acuitypestcontrols.com/"
     />
     <meta
-      property="twitter:title"
+      name="twitter:title"
       content="Acuity Pest Controls | Pest Control Service in Bangalore"
     />
     <meta
-      property="twitter:description"
+      name="twitter:description"
       content="Professional pest control services for homes, apartments, offices, restaurants and industries across Bangalore."
     />
-    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
 
-    <!-- Apple -->
+    <!-- =========================================================
+         APPLE & PWA
+    ========================================================== -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-
-    <!-- Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <link rel="canonical" href="https://www.acuitypestcontrols.com/" />
-    <link
-      rel="alternate"
-      href="https://www.acuitypestcontrols.com/"
-      hreflang="en-in"
-    />
-
-    <!-- Local Business Schema -->
+    <!-- =========================================================
+         SCHEMA MARKUP (JSON-LD) - Most Important for SEO
+    ========================================================== -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "PestControl",
         "name": "Acuity Pest Control",
+        "alternateName": "Acuity Pest Controls",
         "url": "https://www.acuitypestcontrols.com/",
+        "logo": "https://www.acuitypestcontrols.com/logo.png",
+        "image": "https://www.acuitypestcontrols.com/logo.png",
+        "description": "Acuity Pest Control provides professional pest control services in Bangalore for homes, offices, apartments and commercial spaces.",
         "telephone": "+91 9941229005",
         "email": "acuitypestcontrol@gmail.com",
         "openingHours": "Mo-Su 09:00-18:00",
         "priceRange": "₹₹",
+        "currenciesAccepted": "INR",
+        "paymentAccepted": "Cash, UPI, Bank Transfer",
+        "hasMap": "https://www.google.com/maps?q=JP+Nagar+6th+Phase,+Yelachenahalli,+Bengaluru",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "JP Nagar 6th Phase, Yelachenahalli",
@@ -121,11 +143,30 @@
         "sameAs": [
           "https://in.linkedin.com/company/acuity-pest-controls",
           "https://in.pinterest.com/acuitypestcontrolservices/"
+        ],
+        "knowsAbout": [
+          "Pest Control Services in Bangalore",
+          "Cockroach Control Bangalore",
+          "Termite Treatment Bangalore",
+          "Bed Bug Treatment Bangalore",
+          "Rodent Control Bangalore",
+          "Mosquito Control Bangalore",
+          "Ant Control Bangalore",
+          "Wood Borer Treatment Bangalore",
+          "Commercial Pest Control Bangalore",
+          "Residential Pest Control Bangalore",
+          "Office Pest Control Bangalore",
+          "Warehouse Pest Management Bangalore",
+          "Hotel Pest Control Bangalore",
+          "Hospital Pest Control Bangalore",
+          "School Pest Control Bangalore"
         ]
       }
     </script>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- =========================================================
+         GOOGLE ANALYTICS (gtag.js)
+    ========================================================== -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=AW-941361002"
@@ -142,7 +183,9 @@
       gtag("config", "AW-941361002");
     </script>
 
-    <!-- Preload hero image -->
+    <!-- =========================================================
+         PRELOAD HERO IMAGE (Performance Optimization)
+    ========================================================== -->
     <link
       rel="preload"
       href="%PUBLIC_URL%/images/ping.webp"
@@ -156,45 +199,9 @@
 
     <div id="root"></div>
 
-    <!-- 🚀 FIX: Load CSS asynchronously -->
-    <script>
-      (function () {
-        function loadCSS(href) {
-          var link = document.createElement("link");
-          link.rel = "stylesheet";
-          link.href = href;
-          link.media = "print";
-          link.onload = function () {
-            link.media = "all";
-          };
-          document.head.appendChild(link);
-        }
-
-        var observer = new MutationObserver(function () {
-          var cssLink = document.querySelector('link[href*="/static/css/"]');
-          if (cssLink && cssLink.parentNode === document.head) {
-            var href = cssLink.href;
-            cssLink.parentNode.removeChild(cssLink);
-            loadCSS(href);
-            observer.disconnect();
-          }
-        });
-
-        observer.observe(document.head, { childList: true, subtree: true });
-
-        setTimeout(function () {
-          var cssLink = document.querySelector('link[href*="/static/css/"]');
-          if (cssLink && cssLink.parentNode === document.head) {
-            var href = cssLink.href;
-            cssLink.parentNode.removeChild(cssLink);
-            loadCSS(href);
-          }
-          observer.disconnect();
-        }, 3000);
-      })();
-    </script>
-
-    <!-- Tidio Chat -->
+    <!-- =========================================================
+         TIDIO CHAT (Customer Support)
+    ========================================================== -->
     <script
       src="//code.tidio.co/lsdinwgr9g1qjktzvxk9xmsfouen6jxc.js"
       async
