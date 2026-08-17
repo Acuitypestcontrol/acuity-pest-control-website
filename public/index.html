@@ -5,9 +5,15 @@
 
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
+    <!-- Preconnect to Google Fonts (speeds up font loading) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload the main font (optional but helps) -->
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
+      as="style"
     />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -77,40 +83,40 @@
       href="https://www.acuitypestcontrols.com/"
       hreflang="en-in"
     />
-   
+
     <!-- Local Business Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "PestControl",
-      "name": "Acuity Pest Control",
-      "url": "https://www.acuitypestcontrols.com/",
-      "telephone": "+91 9941229005",
-      "email": "acuitypestcontrol@gmail.com",
-      "openingHours": "Mo-Su 09:00-18:00",
-      "priceRange": "₹₹",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "JP Nagar 6th Phase, Yelachenahalli",
-        "addressLocality": "Bengaluru",
-        "addressRegion": "Karnataka",
-        "postalCode": "560062",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 12.8891,
-        "longitude": 77.5823
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Bangalore"
-      },
-      "sameAs": [
-        "https://in.linkedin.com/company/acuity-pest-controls",
-        "https://in.pinterest.com/acuitypestcontrolservices/"
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "PestControl",
+        "name": "Acuity Pest Control",
+        "url": "https://www.acuitypestcontrols.com/",
+        "telephone": "+91 9941229005",
+        "email": "acuitypestcontrol@gmail.com",
+        "openingHours": "Mo-Su 09:00-18:00",
+        "priceRange": "₹₹",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "JP Nagar 6th Phase, Yelachenahalli",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "postalCode": "560062",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 12.8891,
+          "longitude": 77.5823
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Bangalore"
+        },
+        "sameAs": [
+          "https://in.linkedin.com/company/acuity-pest-controls",
+          "https://in.pinterest.com/acuitypestcontrolservices/"
+        ]
+      }
     </script>
 
     <!-- Google tag (gtag.js) -->
@@ -135,6 +141,29 @@
     <noscript> You need to enable JavaScript to run this app. </noscript>
 
     <div id="root"></div>
+
+    <!-- Load CSS after page renders to avoid render-blocking -->
+    <script>
+      (function () {
+        var observer = new MutationObserver(function (mutations) {
+          var cssLink = document.querySelector('link[href*="/static/css/"]');
+          if (cssLink && cssLink.parentNode === document.head) {
+            document.body.appendChild(cssLink);
+            observer.disconnect();
+          }
+        });
+
+        observer.observe(document.head, { childList: true, subtree: true });
+
+        setTimeout(function () {
+          var cssLink = document.querySelector('link[href*="/static/css/"]');
+          if (cssLink && cssLink.parentNode === document.head) {
+            document.body.appendChild(cssLink);
+          }
+          observer.disconnect();
+        }, 1000);
+      })();
+    </script>
 
     <!-- Tidio Chat -->
     <script
