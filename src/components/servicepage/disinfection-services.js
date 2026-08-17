@@ -109,7 +109,7 @@ const DisinfectionServices = () => {
           src={bannerImage}
           alt="Professional disinfection and sanitization services in Bangalore"
           className="h-[40vh] w-full    md:h-[85vh]"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
         />

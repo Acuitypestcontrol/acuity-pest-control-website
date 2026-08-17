@@ -110,6 +110,7 @@ const PostConstructionTermiteTreatment = () => {
           src={bannerImage}
           alt="Post construction termite treatment in Bangalore by Acuity Pest Control"
           className="w-full h-[40vh] md:h-[110vh] "
+          loading="lazy"
         />
       </section>
 

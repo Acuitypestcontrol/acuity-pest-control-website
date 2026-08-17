@@ -288,7 +288,7 @@ Website Contact Page Lead`;
           src={bannerImage}
           alt="Contact Acuity Pest Controls for professional pest control services in Bangalore"
           className="absolute inset-0 h-full w-full  "
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
         />

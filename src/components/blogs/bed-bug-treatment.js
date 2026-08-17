@@ -182,7 +182,7 @@ Acuity Pest Control Bangalore"
         <img
           src={bannerImage}
           alt="Bed bug treatment and identification guide in Bangalore"
-          loading="eager"
+        loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "

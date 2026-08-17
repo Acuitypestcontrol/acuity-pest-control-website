@@ -384,7 +384,7 @@ const MosquitoPreventionRainySeason = () => {
         <img
           src={bannerImage}
           alt="Mosquito prevention during rainy season in Bangalore"
-          loading="eager"
+         loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "

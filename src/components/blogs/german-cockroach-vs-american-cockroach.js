@@ -281,7 +281,7 @@ const GermanCockroachVsAmericanCockroach = () => {
         <img
           src={bannerImage}
           alt="German cockroach and American cockroach identification comparison"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "

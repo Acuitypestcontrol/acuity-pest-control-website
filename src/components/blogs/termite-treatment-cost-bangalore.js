@@ -374,7 +374,7 @@ const TermiteTreatmentCostBangalore = () => {
         <img
           src={bannerImage}
           alt="Termite treatment cost and inspection guide in Bangalore"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "

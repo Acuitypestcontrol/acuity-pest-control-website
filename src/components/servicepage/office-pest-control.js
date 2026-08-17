@@ -109,7 +109,7 @@ const OfficePestControl = () => {
           src={bannerImage}
           alt="Professional office pest control services in Bangalore for corporate offices and IT campuses"
           className="h-[40vh] w-full    md:h-[85vh]"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
         />

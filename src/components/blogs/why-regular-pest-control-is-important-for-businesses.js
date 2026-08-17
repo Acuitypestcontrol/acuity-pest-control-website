@@ -489,7 +489,7 @@ const WhyRegularPestControlImportantBusinesses = () => {
         <img
           src={bannerImage}
           alt="Regular commercial pest control service for businesses in Bangalore"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "

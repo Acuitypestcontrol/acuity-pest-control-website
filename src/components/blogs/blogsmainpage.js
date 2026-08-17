@@ -639,7 +639,7 @@ const PestBlogs = () => {
                   <img
                     src={featuredBlog.image}
                     alt={`${featuredBlog.title} | Acuity Pest Controls`}
-                    loading="eager"
+                    loading="lazy"
                     fetchPriority="high"
                     decoding="async"
                     className="h-full w-full   transition duration-700 group-hover:scale-110"

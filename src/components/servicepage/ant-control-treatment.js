@@ -109,7 +109,7 @@ const AntControlTreatment = () => {
           src={bannerImage}
           alt="Ant Control Treatment in Bangalore by Acuity Pest Control"
           className="w-full h-auto"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
         />

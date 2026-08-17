@@ -445,6 +445,7 @@ const Navbar = () => {
                         ? "h-14 md:h-[90px]"
                         : "h-14 sm:h-16 md:h-[120px]"
                     }`}
+                    loading="lazy"
                   />
                 </Link>
               </motion.div>
@@ -720,6 +721,7 @@ const Navbar = () => {
                       src={logo}
                       alt="Acuity Pest Controls"
                       className="h-11 w-auto object-contain"
+                      loading="lazy"
                     />
 
                     <div>

@@ -381,7 +381,7 @@ const SignsOfTermiteInfestation = () => {
         <img
           src={bannerImage}
           alt="Signs of termite infestation in wooden furniture and home"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "

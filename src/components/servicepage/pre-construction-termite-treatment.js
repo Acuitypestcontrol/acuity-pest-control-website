@@ -110,7 +110,7 @@ const PreConstructionTermiteTreatment = () => {
           src={bannerImage}
           alt="Pre Construction Termite Treatment in Bangalore by Acuity Pest Control"
           className="w-full h-auto"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
         />

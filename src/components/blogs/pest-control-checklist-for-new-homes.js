@@ -360,7 +360,7 @@ const PestControlChecklistNewHomes = () => {
         <img
           src={bannerImage}
           alt="Pest control checklist for new homes before moving in"
-          loading="eager"
+        loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "

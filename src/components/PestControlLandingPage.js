@@ -956,7 +956,7 @@ Please contact me with the service details and quotation.`;
               src={Ping}
               alt="Professional pest control services in Bangalore"
               className="absolute inset-0 h-full w-full object-cover"
-              loading="eager"
+              loading="lazy"
               fetchpriority="high"
               decoding="async"
               width="1200"

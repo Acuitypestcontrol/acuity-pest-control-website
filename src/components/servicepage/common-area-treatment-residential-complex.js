@@ -110,7 +110,7 @@ const CommonAreaTreatmentResidential = () => {
           src={bannerImage}
           alt="Common area pest control for apartments and residential complexes in Bangalore"
           className="h-[40vh] w-full    md:h-[85vh]"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
         />

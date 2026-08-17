@@ -399,6 +399,7 @@ const Footer = () => {
                   src={logo}
                   alt="Acuity Pest Controls"
                   className="h-28 w-auto object-contain brightness-0 invert sm:h-32"
+                  loading="lazy"
                 />
               </Link>
 

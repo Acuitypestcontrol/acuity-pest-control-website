@@ -387,7 +387,7 @@ const WhyCockroachesEnterKitchen = () => {
         <img
           src={bannerImage}
           alt="Cockroach entering a kitchen and hiding near appliances"
-          loading="eager"
+         loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "

@@ -450,7 +450,7 @@ const RatControlTipsForHomes = () => {
         <img
           src={bannerImage}
           alt="Rat control tips for homes and rodent prevention guide"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "

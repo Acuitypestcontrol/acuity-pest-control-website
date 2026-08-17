@@ -339,7 +339,7 @@ const PestControlVsDIY = () => {
         <img
           src={bannerImage}
           alt="Professional pest control versus DIY pest treatment"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "

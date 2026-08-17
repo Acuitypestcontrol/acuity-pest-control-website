@@ -110,7 +110,7 @@ const CockroachManagementService = () => {
           src={bannerImage}
           alt="Cockroach Control Service in Bangalore by Acuity Pest Control"
           className="w-full h-auto"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
         />

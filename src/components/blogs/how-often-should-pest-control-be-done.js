@@ -307,7 +307,7 @@ const HowOftenShouldPestControlBeDone = () => {
         <img
           src={bannerImage}
           alt="Recommended pest control frequency and schedule in Bangalore"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "

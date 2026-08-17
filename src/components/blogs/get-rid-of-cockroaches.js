@@ -363,6 +363,7 @@ const BlogDetail = () => {
           src={blog.image}
           alt={`${blog.title} - Acuity Pest Control Bangalore`}
           className="absolute inset-0 w-full h-full "
+          loading="lazy"
         />
 
         <div className="absolute inset-0 bg-black/20"></div>
@@ -557,6 +558,7 @@ const BlogDetail = () => {
                         src={post.image}
                         alt={`${post.title} - Acuity Pest Control Blog`}
                         className="w-full h-full  group-hover:scale-105 transition duration-500"
+                        loading="lazy"
                       />
                     </div>
 

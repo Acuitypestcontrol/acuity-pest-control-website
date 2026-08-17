@@ -330,7 +330,7 @@ const HowToPreventAntInfestationAtHome = () => {
         <img
           src={bannerImage}
           alt="How to prevent ant infestation at home in Bangalore"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "

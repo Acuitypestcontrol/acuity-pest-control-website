@@ -447,7 +447,7 @@ const Top10HouseholdPestsBangalore = () => {
         <img
           src={bannerImage}
           alt="Common household pests found in Bangalore homes"
-          loading="eager"
+         loading="lazy"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full  "
