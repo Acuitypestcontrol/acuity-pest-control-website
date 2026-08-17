@@ -2,14 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
-    <!-- Preconnect to Google Fonts (speeds up font loading) -->
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Preload the main font (optional but helps) -->
+    <!-- Preload Google Fonts -->
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -138,30 +137,46 @@
   </head>
 
   <body>
-    <noscript> You need to enable JavaScript to run this app. </noscript>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
 
     <div id="root"></div>
 
-    <!-- Load CSS after page renders to avoid render-blocking -->
+    <!-- 🚀 FIX: Move CSS to body to avoid render-blocking -->
     <script>
       (function () {
-        var observer = new MutationObserver(function (mutations) {
-          var cssLink = document.querySelector('link[href*="/static/css/"]');
-          if (cssLink && cssLink.parentNode === document.head) {
-            document.body.appendChild(cssLink);
-            observer.disconnect();
+        var cssLinks = document.querySelectorAll('link[href*="/static/css/"]');
+
+        cssLinks.forEach(function (link) {
+          if (link.parentNode === document.head) {
+            var clone = link.cloneNode(true);
+            document.body.appendChild(clone);
+            link.parentNode.removeChild(link);
           }
+        });
+
+        var observer = new MutationObserver(function (mutations) {
+          mutations.forEach(function (mutation) {
+            mutation.addedNodes.forEach(function (node) {
+              if (
+                node.tagName === "LINK" &&
+                node.href &&
+                node.href.includes("/static/css/")
+              ) {
+                if (node.parentNode === document.head) {
+                  var clone = node.cloneNode(true);
+                  document.body.appendChild(clone);
+                  node.parentNode.removeChild(node);
+                }
+              }
+            });
+          });
         });
 
         observer.observe(document.head, { childList: true, subtree: true });
 
         setTimeout(function () {
-          var cssLink = document.querySelector('link[href*="/static/css/"]');
-          if (cssLink && cssLink.parentNode === document.head) {
-            document.body.appendChild(cssLink);
-          }
           observer.disconnect();
-        }, 1000);
+        }, 5000);
       })();
     </script>
 
