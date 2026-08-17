@@ -817,20 +817,6 @@ Please contact me with the service details and quotation.`;
           background-size: 51px 51px;
         }
 
-        .hazard-stripes-anim {
-          animation: acuitySlide 6s linear infinite;
-        }
-
-        @keyframes acuitySlide {
-          from {
-            background-position: 0 0;
-          }
-
-          to {
-            background-position: 51px 0;
-          }
-        }
-
         .ticket-edge {
           -webkit-mask-image:
             radial-gradient(
@@ -944,7 +930,8 @@ Please contact me with the service details and quotation.`;
       >
         {/* HERO */}
         <section className="relative overflow-hidden ">
-          <div className="hazard-stripes hazard-stripes-anim h-2 w-full opacity-90" />
+          {/* REMOVED: hazard-stripes-anim - was causing performance issues */}
+          <div className="hazard-stripes h-2 w-full opacity-90" />
 
           <div className="dot-grid absolute inset-0" />
 
@@ -964,12 +951,16 @@ Please contact me with the service details and quotation.`;
             }}
           />
           <div className="relative mx-auto max-w-7xl overflow-hidden px-4 py-14 sm:px-6 md:py-20 lg:px-8 lg:py-24">
-            {/* BACKGROUND IMAGE */}
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: `url(${Ping})`,
-              }}
+            {/* BACKGROUND IMAGE - Now using img tag instead of CSS background for better LCP */}
+            <img
+              src={Ping}
+              alt="Professional pest control services in Bangalore"
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="630"
             />
 
             {/* DARK OVERLAY - keeps text readable */}
