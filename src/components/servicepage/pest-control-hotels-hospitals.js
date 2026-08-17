@@ -43,10 +43,10 @@ const hotelsHospitalsSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "@id":
-      "https://www.acuitypestcontrols.com/hotel-hospital-pest-control#service",
+      "https://www.acuitypestcontrols.com/pest-control-hotels-hospitals#service",
     name: "Pest Control for Hotels and Hospitals in Bangalore",
     serviceType: "Hospitality and Healthcare Pest Control",
-    url: "https://www.acuitypestcontrols.com/hotel-hospital-pest-control",
+    url: "https://www.acuitypestcontrols.com/pest-control-hotels-hospitals",
     description:
       "Professional pest control services for hotels, hospitals, resorts, clinics and healthcare facilities in Bangalore.",
     provider: {
@@ -74,7 +74,7 @@ const hotelsHospitalsSchema = [
       "@type": "Offer",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      url: "https://www.acuitypestcontrols.com/hotel-hospital-pest-control",
+      url: "https://www.acuitypestcontrols.com/pest-control-hotels-hospitals",
     },
   },
   {
@@ -98,7 +98,7 @@ const PestControlHotelsHospitals = () => {
         title="Hotel & Hospital Pest Control Bangalore | Acuity"
         description="Professional pest control for hotels and hospitals in Bangalore. Control cockroaches, rodents, flies, mosquitoes and other pests with Acuity Pest Control."
         keywords="hotel pest control Bangalore, hospital pest control Bangalore, healthcare pest control Bangalore, resort pest control Bangalore, clinic pest control Bangalore, commercial pest control AMC"
-        canonical="https://www.acuitypestcontrols.com/hotel-hospital-pest-control"
+        canonical="https://www.acuitypestcontrols.com/pest-control-hotels-hospitals"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={hotelsHospitalsSchema}
       />
