@@ -24,32 +24,13 @@ import logo from "../images/acuitylogo1.png";
 ========================================================= */
 
 const quickLinks = [
-  {
-    name: "Home",
-    link: "/home",
-  },
-  {
-    name: "About Us",
-    link: "/aboutus",
-  },
-  {
-    name: "All Services",
-    link: "/services",
-  },
-  {
-    name: "Pest Identification",
-    link: "/pestidentification",
-  },
-  {
-    name: "Blogs",
-    link: "/blogsmainpage",
-  },
-  {
-    name: "Contact Us",
-    link: "/contactus",
-  },
+  { name: "Home", link: "/home" },
+  { name: "About Us", link: "/about" },
+  { name: "All Services", link: "/services" },
+  { name: "Pest Identification", link: "/pest-identification" },
+  { name: "Blogs", link: "/blogs" },
+  { name: "Contact Us", link: "/contact" },
 ];
-
 const residentialServices = [
   {
     name: "General Pest Control",
@@ -380,7 +361,7 @@ const Footer = () => {
             MAIN FOOTER CONTENT
         ================================================== */}
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 min-h-[300px]">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.25fr_0.8fr_1fr_1fr]">
             {/* COMPANY DETAILS */}
 
@@ -496,10 +477,9 @@ const Footer = () => {
             <ContactCard
               icon={FaEnvelope}
               label="Email Address"
-              value="info@acuitygroups.in
-"
-              href="mailto:info@acuitygroups.in
-"
+              value="info@acuitygroups.in"
+            
+
             />
 
             <ContactCard
