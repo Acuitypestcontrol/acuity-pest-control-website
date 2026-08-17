@@ -801,7 +801,7 @@ Please contact me with the service details and quotation.`;
         }
 
         .font-body {
-          font-family: "Inter", system-ui, sans-serif;
+          font-family: "Poppins", sans-serif;
         }
 
         .font-mono {

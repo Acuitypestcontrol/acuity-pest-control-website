@@ -5,25 +5,6 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
     <!-- =========================================================
-         GOOGLE FONTS - Async Loading (Non-Blocking)
-    ========================================================== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-      media="print"
-      onload="this.media = 'all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-      />
-    </noscript>
-
-    <!-- =========================================================
          META TAGS - Primary SEO
     ========================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -83,10 +64,7 @@
          TWITTER CARD (Twitter/X Sharing)
     ========================================================== -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:url"
-      content="https://www.acuitypestcontrols.com/"
-    />
+    <meta name="twitter:url" content="https://www.acuitypestcontrols.com/" />
     <meta
       name="twitter:title"
       content="Acuity Pest Controls | Pest Control Service in Bangalore"
@@ -167,21 +145,42 @@
     <!-- =========================================================
          GOOGLE ANALYTICS (gtag.js)
     ========================================================== -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=AW-941361002"
-    ></script>
 
-    <script>
+<script>
+  (function () {
+    var googleAdsLoaded = false;
+
+    function loadGoogleAds() {
+      if (googleAdsLoaded) return;
+      googleAdsLoaded = true;
+
       window.dataLayer = window.dataLayer || [];
 
       function gtag() {
-        dataLayer.push(arguments);
+        window.dataLayer.push(arguments);
       }
+
+      window.gtag = gtag;
 
       gtag("js", new Date());
       gtag("config", "AW-941361002");
-    </script>
+
+      var script = document.createElement("script");
+      script.src =
+        "https://www.googletagmanager.com/gtag/js?id=AW-941361002";
+      script.async = true;
+      document.head.appendChild(script);
+    }
+
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(loadGoogleAds, { timeout: 5000 });
+    } else {
+      window.addEventListener("load", function () {
+        setTimeout(loadGoogleAds, 3000);
+      });
+    }
+  })();
+</script>
 
     <!-- =========================================================
          PRELOAD HERO IMAGE (Performance Optimization)
@@ -202,9 +201,33 @@
     <!-- =========================================================
          TIDIO CHAT (Customer Support)
     ========================================================== -->
-    <script
-      src="//code.tidio.co/lsdinwgr9g1qjktzvxk9xmsfouen6jxc.js"
-      async
-    ></script>
+    <!-- =========================================================
+     TIDIO CHAT (Customer Support)
+     Delayed to improve initial page performance
+========================================================== -->
+    <script>
+      (function () {
+        var tidioLoaded = false;
+
+        function loadTidio() {
+          if (tidioLoaded) return;
+          tidioLoaded = true;
+
+          var script = document.createElement("script");
+          script.src =
+            "https://code.tidio.co/lsdinwgr9g1qjktzvxk9xmsfouen6jxc.js";
+          script.async = true;
+          document.body.appendChild(script);
+        }
+
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(loadTidio, { timeout: 5000 });
+        } else {
+          window.addEventListener("load", function () {
+            setTimeout(loadTidio, 3000);
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
