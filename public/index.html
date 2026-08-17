@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
-    <!-- Preconnect to Google Fonts (ONLY ONCE) -->
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -155,45 +155,6 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
     <div id="root"></div>
-
-    <!-- 🚀 FIX: Move CSS to body to avoid render-blocking -->
-    <script>
-      (function () {
-        var cssLinks = document.querySelectorAll('link[href*="/static/css/"]');
-
-        cssLinks.forEach(function (link) {
-          if (link.parentNode === document.head) {
-            var clone = link.cloneNode(true);
-            document.body.appendChild(clone);
-            link.parentNode.removeChild(link);
-          }
-        });
-
-        var observer = new MutationObserver(function (mutations) {
-          mutations.forEach(function (mutation) {
-            mutation.addedNodes.forEach(function (node) {
-              if (
-                node.tagName === "LINK" &&
-                node.href &&
-                node.href.includes("/static/css/")
-              ) {
-                if (node.parentNode === document.head) {
-                  var clone = node.cloneNode(true);
-                  document.body.appendChild(clone);
-                  node.parentNode.removeChild(node);
-                }
-              }
-            });
-          });
-        });
-
-        observer.observe(document.head, { childList: true, subtree: true });
-
-        setTimeout(function () {
-          observer.disconnect();
-        }, 5000);
-      })();
-    </script>
 
     <!-- Tidio Chat -->
     <script
