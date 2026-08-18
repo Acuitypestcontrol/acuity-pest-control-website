@@ -7,200 +7,644 @@
     {
       "source": "/static/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/_next/static/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/:path*.css",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/:path*.js",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/:path*.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/:path*.jpg",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/:path*.jpeg",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/:path*.webp",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/:path*.woff",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/:path*.woff2",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/:path*.svg",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/:path*.ico",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*).html",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
       ]
     },
     {
       "source": "/(.*).json",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
       ]
     }
   ],
 
   "redirects": [
+   
     { "source": "/aboutus", "destination": "/about", "permanent": true },
     { "source": "/about-us", "destination": "/about", "permanent": true },
     { "source": "/Contact", "destination": "/contact", "permanent": true },
     { "source": "/get-in-touch", "destination": "/contact", "permanent": true },
     { "source": "/blogsmainpage", "destination": "/blogs", "permanent": true },
-    { "source": "/pestidentification", "destination": "/pest-identification", "permanent": true },
+    {
+      "source": "/pestidentification",
+      "destination": "/pest-identification",
+      "permanent": true
+    },
     { "source": "/Services", "destination": "/services", "permanent": true },
-    { "source": "/post-construction-termite", "destination": "/post-construction-termite-treatment", "permanent": true },
-    { "source": "/common-area-treatment", "destination": "/common-area-treatment-residential-complex", "permanent": true },
-    { "source": "/PestGamePage", "destination": "/pest-game", "permanent": true },
-    { "source": "/DefendHomeGame", "destination": "/defend-home-game", "permanent": true },
-    { "source": "/wood-borer-services", "destination": "/wood-borer-treatment", "permanent": true },
-    { "source": "/corporate-company", "destination": "/office-pest-control", "permanent": true },
-    { "source": "/commercial-pest-control", "destination": "/services", "permanent": true },
-    { "source": "/ants-pest-control", "destination": "/ant-control-treatment", "permanent": true },
-    { "source": "/2020/06/15/corona-disinfection-sanitization-service-in-bangalore", "destination": "/disinfection-services", "permanent": true },
-    { "source": "/corona-disinfection-sanitization-service-in-bangalore", "destination": "/disinfection-services", "permanent": true },
-    { "source": "/solution-to-bed-bug-problems", "destination": "/bed-bug-treatment", "permanent": true },
-    { "source": "/banishing-bed-bugs-in-bengaluru-how-advanced-bed-bug-heat-treatment-safeguards-your-home", "destination": "/bed-bug-treatment", "permanent": true },
-    { "source": "/anti-termite-pipe-treatment", "destination": "/anti-termite-treatment", "permanent": true },
-    { "source": "/how-to-get-rid-of-termites-a-comprehensive-guide-to-termite-control", "destination": "/anti-termite-treatment", "permanent": true },
-    { "source": "/how-to-control-ants", "destination": "/blogs/how-to-prevent-ant-infestation-at-home", "permanent": true },
-    { "source": "/a-comprehensive-guide-to-mosquitoes-types-hazards-identification-and-prevention", "destination": "/blogs/mosquito-prevention-during-rainy-season", "permanent": true },
-    { "source": "/author/acuitydigitalmarketinggmail-com", "destination": "/blogs", "permanent": true },
-    { "source": "/category/residential-pest-control", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/category/termites", "destination": "/anti-termite-treatment", "permanent": true },
-    { "source": "/category/uncategorized", "destination": "/blogs", "permanent": true },
-    { "source": "/dont-let-pests-turn-your-bangalore-dream-home-into-a-nightmare-the-importance-of-residential-pest-control", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/everything-you-need-to-know-about-termites-a-complete-guide-to-termite-control-services", "destination": "/anti-termite-treatment", "permanent": true },
-    { "source": "/pest-control-for-hospitals-and-labs", "destination": "/pest-control-hotels-hospitals", "permanent": true },
-    { "source": "/top-rat-control-services-in-bangalore-for-a-pest-free-home", "destination": "/rodent-management-service", "permanent": true },
-    { "source": "/the-growing-need-for-rodent-control-in-bangalore-protecting-your-home-and-health", "destination": "/blogs/rat-control-tips-for-homes", "permanent": true },
-    { "source": "/why-pest-control-is-essential-for-hospitals-safeguarding-health-with-acuity-pest-control", "destination": "/pest-control-hotels-hospitals", "permanent": true },
-    { "source": "/how-pre-construction-termite-treatments-work-prevention-before-building-begins", "destination": "/pre-construction-termite-treatment", "permanent": true },
-    { "source": "/which-type-of-pest-control-is-best-a-guide-to-finding-the-best-pest-control-in-bangalore", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/termite-treatment-bangalore", "destination": "/anti-termite-treatment", "permanent": true },
-    { "source": "/residential-pest-control-in-bangalore-a-comprehensive-guide", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/industrieswarehouselogistics-pest-control", "destination": "/warehouse-pest-management", "permanent": true },
-    { "source": "/pest-control-services-for-schools-and-collages", "destination": "/educational-institution-pest-control", "permanent": true },
-    { "source": "/residential-pest-control-services", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/the-hidden-dangers-how-termite-related-health-issues-impact-your-well-being", "destination": "/blogs/signs-of-termite-infestation", "permanent": true },
-    { "source": "/understanding-preventing-common-household-pests-in-bangalore", "destination": "/blogs/top-10-household-pests-in-bangalore", "permanent": true },
-    { "source": "/mosquito-control-services", "destination": "/mosquito-management-service", "permanent": true },
-    { "source": "/mosquito-management", "destination": "/mosquito-management-service", "permanent": true },
-    { "source": "/pest-control-for-food-industries", "destination": "/warehouse-pest-management", "permanent": true },
-    { "source": "/cockroach-control-services-bangalore", "destination": "/cockroach-management-service", "permanent": true },
-    { "source": "/the-best-pest-control-services-in-bangalore-for-cockroaches", "destination": "/blogs/get-rid-of-cockroaches", "permanent": true },
+    {
+      "source": "/post-construction-termite",
+      "destination": "/post-construction-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/common-area-treatment",
+      "destination": "/common-area-treatment-residential-complex",
+      "permanent": true
+    },
+    {
+      "source": "/PestGamePage",
+      "destination": "/pest-game",
+      "permanent": true
+    },
+    {
+      "source": "/DefendHomeGame",
+      "destination": "/defend-home-game",
+      "permanent": true
+    },
+    {
+      "source": "/wood-borer-services",
+      "destination": "/wood-borer-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/corporate-company",
+      "destination": "/office-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-pest-control",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/ants-pest-control",
+      "destination": "/ant-control-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/2020/06/15/corona-disinfection-sanitization-service-in-bangalore",
+      "destination": "/disinfection-services",
+      "permanent": true
+    },
+    {
+      "source": "/corona-disinfection-sanitization-service-in-bangalore",
+      "destination": "/disinfection-services",
+      "permanent": true
+    },
+    {
+      "source": "/solution-to-bed-bug-problems",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/banishing-bed-bugs-in-bengaluru-how-advanced-bed-bug-heat-treatment-safeguards-your-home",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/anti-termite-pipe-treatment",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-get-rid-of-termites-a-comprehensive-guide-to-termite-control",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-control-ants",
+      "destination": "/blogs/how-to-prevent-ant-infestation-at-home",
+      "permanent": true
+    },
+    {
+      "source": "/a-comprehensive-guide-to-mosquitoes-types-hazards-identification-and-prevention",
+      "destination": "/blogs/mosquito-prevention-during-rainy-season",
+      "permanent": true
+    },
+    {
+      "source": "/author/acuitydigitalmarketinggmail-com",
+      "destination": "/blogs",
+      "permanent": true
+    },
+    {
+      "source": "/category/residential-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/category/termites",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized",
+      "destination": "/blogs",
+      "permanent": true
+    },
+    {
+      "source": "/dont-let-pests-turn-your-bangalore-dream-home-into-a-nightmare-the-importance-of-residential-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/everything-you-need-to-know-about-termites-a-complete-guide-to-termite-control-services",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-for-hospitals-and-labs",
+      "destination": "/pest-control-hotels-hospitals",
+      "permanent": true
+    },
+    {
+      "source": "/top-rat-control-services-in-bangalore-for-a-pest-free-home",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/the-growing-need-for-rodent-control-in-bangalore-protecting-your-home-and-health",
+      "destination": "/blogs/rat-control-tips-for-homes",
+      "permanent": true
+    },
+    {
+      "source": "/why-pest-control-is-essential-for-hospitals-safeguarding-health-with-acuity-pest-control",
+      "destination": "/pest-control-hotels-hospitals",
+      "permanent": true
+    },
+    {
+      "source": "/how-pre-construction-termite-treatments-work-prevention-before-building-begins",
+      "destination": "/pre-construction-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/which-type-of-pest-control-is-best-a-guide-to-finding-the-best-pest-control-in-bangalore",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/termite-treatment-bangalore",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/residential-pest-control-in-bangalore-a-comprehensive-guide",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/industrieswarehouselogistics-pest-control",
+      "destination": "/warehouse-pest-management",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-services-for-schools-and-collages",
+      "destination": "/educational-institution-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/residential-pest-control-services",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/the-hidden-dangers-how-termite-related-health-issues-impact-your-well-being",
+      "destination": "/blogs/signs-of-termite-infestation",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-preventing-common-household-pests-in-bangalore",
+      "destination": "/blogs/top-10-household-pests-in-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/mosquito-control-services",
+      "destination": "/mosquito-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/mosquito-management",
+      "destination": "/mosquito-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-for-food-industries",
+      "destination": "/warehouse-pest-management",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-control-services-bangalore",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/the-best-pest-control-services-in-bangalore-for-cockroaches",
+      "destination": "/blogs/get-rid-of-cockroaches",
+      "permanent": true
+    },
     { "source": "/blog", "destination": "/blogs", "permanent": true },
-    { "source": "/sitemap_index.xml", "destination": "/sitemap.xml", "permanent": true },
-    { "source": "/eco-friendly-pest-control-natural-pest-management-in-bangalore", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/wp-sitemap.xml", "destination": "/sitemap.xml", "permanent": true },
-    { "source": "/pets-control-services-in-bangalore", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/pest-control-services-in-bangalore-ensuring-a-safer-cleaner-space-with-acuity-pest-control", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/why-bangalore-home-pest-solutions-are-essential-for-healthy-living", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/bangalore-termite-treatment-experts-why-acuity-pest-control-is-your-best-bet", "destination": "/anti-termite-treatment", "permanent": true },
-    { "source": "/pest-control-cockroach-solutions-your-homes-defense-against-unwanted-guests", "destination": "/cockroach-management-service", "permanent": true },
-    { "source": "/effective-bed-bug-control-in-bangalore-homes-with-acuity-pest-control", "destination": "/bed-bug-treatment", "permanent": true },
-    { "source": "/do-pest-control-companies-effectively-address-rat-infestationsdo-pest-control-companies-really-work-for-rat-infestation-problems", "destination": "/rodent-management-service", "permanent": true },
-    { "source": "/effective-rodent-prevention-in-bangalore-safeguard-your-home-and-health", "destination": "/rodent-management-service", "permanent": true },
-    { "source": "/the-hidden-health-hazards-of-cockroach-infestations-in-bangalore", "destination": "/blogs/why-cockroaches-enter-your-kitchen", "permanent": true },
-    { "source": "/breathe-easy-and-live-pest-free-with-professional-pest-control-services-in-bangalore", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/pest-control-for-cockroach-a-complete-guide-to-protecting-your-home", "destination": "/cockroach-management-service", "permanent": true },
-    { "source": "/effective-commercial-pest-control-services-for-a-pest-free-business", "destination": "/services", "permanent": true },
-    { "source": "/pest-control-for-hotels-why-acuity-pest-controls-is-your-best-choice", "destination": "/pest-control-hotels-hospitals", "permanent": true },
-    { "source": "/expert-pest-control-services-in-bangalore-protecting-your-home-with-acuity-pest-control", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/battling-mosquito-menace-in-bangalore-why-acuity-pest-controls-is-your-best-defense", "destination": "/mosquito-management-service", "permanent": true },
-    { "source": "/rodent-pest-control", "destination": "/rodent-management-service", "permanent": true },
-    { "source": "/wood-borer-treatment-in-bangalore", "destination": "/wood-borer-treatment", "permanent": true },
-    { "source": "/commercial-pest-control-bangalore-why-your-business-needs-it", "destination": "/services", "permanent": true },
-    { "source": "/termite-control-services", "destination": "/anti-termite-treatment", "permanent": true },
-    { "source": "/cockroach-pest-control", "destination": "/cockroach-management-service", "permanent": true },
-    { "source": "/bed-bugs-treat", "destination": "/bed-bug-treatment", "permanent": true },
-    { "source": "/pest/wood-borer-treatment", "destination": "/wood-borer-treatment", "permanent": true },
-    { "source": "/wood-borer-", "destination": "/wood-borer-treatment", "permanent": true },
-    { "source": "/cockroach-pest-control-in-bangalore", "destination": "/cockroach-management-service", "permanent": true },
-    { "source": "/how-do-i-permanently-control-termites-in-my-home-permanent-termite-solutions-in-bangalore", "destination": "/anti-termite-treatment", "permanent": true },
-    { "source": "/cockroach-control", "destination": "/cockroach-management-service", "permanent": true },
-    { "source": "/pest/bed-bugs", "destination": "/bed-bug-treatment", "permanent": true },
-    { "source": "/rodent-control", "destination": "/rodent-management-service", "permanent": true },
-    { "source": "/residential-pest-control", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/residential-pest-control-services-in-bangalore-by-acuity-pest-controls", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/pest/house-rat-control", "destination": "/rodent-management-service", "permanent": true },
-    { "source": "/pest-control-services-bangalore", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/top-termite-myths-you-should-stop-believing-right-now", "destination": "/blogs/signs-of-termite-infestation", "permanent": true },
-    { "source": "/why-pest-management-in-schools-and-colleges-is-essential-for-a-safe-learning-environment", "destination": "/educational-institution-pest-control", "permanent": true },
-    { "source": "/pest-control-in-mg-road", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/pest-control-in-old-madras-road", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/pest-control-in-munnekolala", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/pest-control-in-hoodi", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/pest-control-in-sarjapur-road", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/pest-control-in-varthur", "destination": "/general-pest-control", "permanent": true },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/eco-friendly-pest-control-natural-pest-management-in-bangalore",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/wp-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/pets-control-services-in-bangalore",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-services-in-bangalore-ensuring-a-safer-cleaner-space-with-acuity-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/why-bangalore-home-pest-solutions-are-essential-for-healthy-living",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-termite-treatment-experts-why-acuity-pest-control-is-your-best-bet",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-cockroach-solutions-your-homes-defense-against-unwanted-guests",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/effective-bed-bug-control-in-bangalore-homes-with-acuity-pest-control",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/do-pest-control-companies-effectively-address-rat-infestationsdo-pest-control-companies-really-work-for-rat-infestation-problems",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/effective-rodent-prevention-in-bangalore-safeguard-your-home-and-health",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/the-hidden-health-hazards-of-cockroach-infestations-in-bangalore",
+      "destination": "/blogs/why-cockroaches-enter-your-kitchen",
+      "permanent": true
+    },
+    {
+      "source": "/breathe-easy-and-live-pest-free-with-professional-pest-control-services-in-bangalore",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-for-cockroach-a-complete-guide-to-protecting-your-home",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/effective-commercial-pest-control-services-for-a-pest-free-business",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-for-hotels-why-acuity-pest-controls-is-your-best-choice",
+      "destination": "/pest-control-hotels-hospitals",
+      "permanent": true
+    },
+    {
+      "source": "/expert-pest-control-services-in-bangalore-protecting-your-home-with-acuity-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/battling-mosquito-menace-in-bangalore-why-acuity-pest-controls-is-your-best-defense",
+      "destination": "/mosquito-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/rodent-pest-control",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/wood-borer-treatment-in-bangalore",
+      "destination": "/wood-borer-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-pest-control-bangalore-why-your-business-needs-it",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/termite-control-services",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-pest-control",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/bed-bugs-treat",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/pest/wood-borer-treatment",
+      "destination": "/wood-borer-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/wood-borer-",
+      "destination": "/wood-borer-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-pest-control-in-bangalore",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/how-do-i-permanently-control-termites-in-my-home-permanent-termite-solutions-in-bangalore",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-control",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/pest/bed-bugs",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/rodent-control",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/residential-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/residential-pest-control-services-in-bangalore-by-acuity-pest-controls",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest/house-rat-control",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-services-bangalore",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/top-termite-myths-you-should-stop-believing-right-now",
+      "destination": "/blogs/signs-of-termite-infestation",
+      "permanent": true
+    },
+    {
+      "source": "/why-pest-management-in-schools-and-colleges-is-essential-for-a-safe-learning-environment",
+      "destination": "/educational-institution-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-in-mg-road",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-in-old-madras-road",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-in-munnekolala",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-in-hoodi",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-in-sarjapur-road",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-in-varthur",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
     { "source": "/team", "destination": "/about", "permanent": true },
     { "source": "/team/", "destination": "/about", "permanent": true },
     { "source": "/faq", "destination": "/contact", "permanent": true },
     { "source": "/faq/", "destination": "/contact", "permanent": true },
-    { "source": "/lizard-pest-control", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/lizard-pest-control/", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/cockroach-control-services", "destination": "/cockroach-management-service", "permanent": true },
-    { "source": "/cockroach-control-services/", "destination": "/cockroach-management-service", "permanent": true },
-    { "source": "/bed-bugs-treatment", "destination": "/bed-bug-treatment", "permanent": true },
-    { "source": "/bed-bugs-treatment/", "destination": "/bed-bug-treatment", "permanent": true },
-    { "source": "/the-hidden-dangers-how-termite-related-health-issues-impact-your-well-being/", "destination": "/blogs/signs-of-termite-infestation", "permanent": true },
-    { "source": "/which-type-of-pest-control-is-best-a-guide-to-finding-the-best-pest-control-in-bangalore/", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/understanding-preventing-common-household-pests-in-bangalore/", "destination": "/blogs/top-10-household-pests-in-bangalore", "permanent": true },
-    { "source": "/rodent-control/page-5297765", "destination": "/rodent-management-service", "permanent": true },
-    { "source": "/residential-pe", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/commercial-services/", "destination": "/services", "permanent": true },
-    { "source": "/pets-control-services-in-bangalore/", "destination": "/general-pest-control", "permanent": true },
-    { "source": "/bangalore-mosquito-control-how-acuity-pest-controls-protects-your-home-and-family/feed", "destination": "/blogs/mosquito-prevention-during-rainy-season", "permanent": true },
-    { "source": "/bangalore-mosquito-control-how-acuity-pest-controls-protects-your-home-and-family/feed/", "destination": "/blogs/mosquito-prevention-during-rainy-season", "permanent": true }
+    {
+      "source": "/lizard-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/lizard-pest-control/",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-control-services",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/cockroach-control-services/",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/bed-bugs-treatment",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/bed-bugs-treatment/",
+      "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/the-hidden-dangers-how-termite-related-health-issues-impact-your-well-being/",
+      "destination": "/blogs/signs-of-termite-infestation",
+      "permanent": true
+    },
+    {
+      "source": "/which-type-of-pest-control-is-best-a-guide-to-finding-the-best-pest-control-in-bangalore/",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-preventing-common-household-pests-in-bangalore/",
+      "destination": "/blogs/top-10-household-pests-in-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/rodent-control/page-5297765",
+      "destination": "/rodent-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/residential-pe",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-services/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/pets-control-services-in-bangalore/",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-mosquito-control-how-acuity-pest-controls-protects-your-home-and-family/feed",
+      "destination": "/blogs/mosquito-prevention-during-rainy-season",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-mosquito-control-how-acuity-pest-controls-protects-your-home-and-family/feed/",
+      "destination": "/blogs/mosquito-prevention-during-rainy-season",
+      "permanent": true
+    },
+     {
+      "source": "/industrial-pest-control",
+      "destination": "/general-pest-control",
+      "permanent": true
+    }
   ],
 
   "rewrites": [
