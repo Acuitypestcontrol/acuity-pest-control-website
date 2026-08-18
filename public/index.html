@@ -33,16 +33,6 @@
     <meta name="robots" content="index, follow, max-image-preview:large" />
 
     <!-- =========================================================
-         CANONICAL & HREFLANG (SEO)
-    ========================================================== -->
-    <link rel="canonical" href="https://www.acuitypestcontrols.com/" />
-    <link
-      rel="alternate"
-      href="https://www.acuitypestcontrols.com/"
-      hreflang="en-in"
-    />
-
-    <!-- =========================================================
          OPEN GRAPH (Facebook, LinkedIn, WhatsApp Sharing)
     ========================================================== -->
     <meta property="og:type" content="website" />
@@ -148,45 +138,45 @@
     <!-- =========================================================
      GOOGLE ANALYTICS (gtag.js)
 ========================================================== -->
-   <!-- =========================================================
+    <!-- =========================================================
      GOOGLE ADS / GTAG
      Delayed to improve initial page performance
 ========================================================== -->
-<script>
-  (function () {
-    var googleAdsLoaded = false;
+    <script>
+      (function () {
+        var googleAdsLoaded = false;
 
-    function loadGoogleAds() {
-      if (googleAdsLoaded) return;
-      googleAdsLoaded = true;
+        function loadGoogleAds() {
+          if (googleAdsLoaded) return;
+          googleAdsLoaded = true;
 
-      window.dataLayer = window.dataLayer || [];
+          window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
+          function gtag() {
+            window.dataLayer.push(arguments);
+          }
 
-      window.gtag = gtag;
+          window.gtag = gtag;
 
-      gtag("js", new Date());
-      gtag("config", "AW-941361002");
+          gtag("js", new Date());
+          gtag("config", "AW-941361002");
 
-      var script = document.createElement("script");
-      script.src =
-        "https://www.googletagmanager.com/gtag/js?id=AW-941361002";
-      script.async = true;
-      document.head.appendChild(script);
-    }
+          var script = document.createElement("script");
+          script.src =
+            "https://www.googletagmanager.com/gtag/js?id=AW-941361002";
+          script.async = true;
+          document.head.appendChild(script);
+        }
 
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(loadGoogleAds, { timeout: 5000 });
-    } else {
-      window.addEventListener("load", function () {
-        setTimeout(loadGoogleAds, 3000);
-      });
-    }
-  })();
-</script>
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(loadGoogleAds, { timeout: 5000 });
+        } else {
+          window.addEventListener("load", function () {
+            setTimeout(loadGoogleAds, 3000);
+          });
+        }
+      })();
+    </script>
 
     <!-- =========================================================
          PRELOAD HERO IMAGE (Performance Optimization)
