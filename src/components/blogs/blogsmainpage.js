@@ -136,6 +136,48 @@ const PestBlogs = () => {
   ];
 
   const blogs = [
+    // =========================================================
+    // NEW BLOG 1 - How to Get Rid of Cockroaches in Bangalore Kitchens
+    // =========================================================
+
+    {
+      title: "Monsoon Pest Control Tips for Bangalore Homes",
+      slug: "/blogs/monsoon-pest-control",
+      category: "General Tips",
+      date: "August 20, 2026",
+      isoDate: "2026-08-20",
+      readTime: "6 min read",
+      desc: "Learn how to protect your home from mosquitoes, cockroaches, termites and rodents during Bangalore's rainy season.",
+      image: blogImg7,
+    },
+    {
+      title: "How to Get Rid of Cockroaches in Bangalore Kitchens",
+      slug: "/blogs/getridofcockrochinkitchen",
+      category: "Cockroaches",
+      date: "August 19, 2026",
+      isoDate: "2026-08-19",
+      readTime: "6 min read",
+      desc: "Learn how to get rid of cockroaches in Bangalore kitchens. Read signs, hiding places, prevention tips and treatment options from Acuity Pest Control.",
+      image: blogImg1,
+      featured: false,
+    },
+    // =========================================================
+    // NEW BLOG 2 - Rat Control Tips for Homes: How to Keep Rats Away
+    // =========================================================
+    {
+      title: "Rat Control Tips for Homes: How to Keep Rats Away",
+      slug: "/blogs/rat-control-tips-forhomes",
+      category: "Rodents",
+      date: "August 19, 2026",
+      isoDate: "2026-08-19",
+      readTime: "7 min read",
+      desc: "Learn how to identify rat infestation, prevent rodent entry and protect your home with professional rat control tips from Acuity Pest Control.",
+      image: blogImg6,
+      featured: false,
+    },
+    // =========================================================
+    // EXISTING BLOGS
+    // =========================================================
     {
       title: "Ultimate Pest Control Guide for Bangalore Homes (2026)",
       slug: "/blogs/pest-control-bangalore-guide",

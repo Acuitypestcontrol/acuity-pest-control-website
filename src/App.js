@@ -18,7 +18,7 @@ import Footer from "./global/Footer";
 import ScrollToTop from "./global/ScrollToTop";
 
 /* =========================================================
-   LOADING SPINNER COMPONENT (Add this file)
+   LOADING SPINNER COMPONENT
 ========================================================= */
 
 const LoadingSpinner = () => (
@@ -32,11 +32,10 @@ const LoadingSpinner = () => (
 
 /* =========================================================
    LAZY LOADED COMPONENTS
-   - Each component is loaded only when needed
 ========================================================= */
 
-const PestControlCareerPage = lazy(() =>
-  import("./components/PestControlCareerPage"),
+const PestControlCareerPage = lazy(
+  () => import("./components/PestControlCareerPage"),
 );
 
 /* =========================================================
@@ -47,11 +46,11 @@ const Home = lazy(() => import("./components/Home"));
 const AboutUS = lazy(() => import("./components/AboutUS"));
 const ServicesPage = lazy(() => import("./components/Services"));
 const Contact = lazy(() => import("./components/ContactUs"));
-const PestIdentification = lazy(() =>
-  import("./components/pestidentification"),
+const PestIdentification = lazy(
+  () => import("./components/pestidentification"),
 );
-const PestControlLandingPage = lazy(() =>
-  import("./components/PestControlLandingPage"),
+const PestControlLandingPage = lazy(
+  () => import("./components/PestControlLandingPage"),
 );
 
 /* =========================================================
@@ -64,131 +63,145 @@ const Blog = lazy(() => import("./components/blogs/blogsmainpage"));
    DYNAMIC BLOG DETAIL - LAZY LOADED
 ========================================================= */
 
-const BlogDetail = lazy(() => import("./components/blogs/get-rid-of-cockroaches"));
+const BlogDetail = lazy(
+  () => import("./components/blogs/get-rid-of-cockroaches"),
+);
 
 /* =========================================================
    INDIVIDUAL BLOG PAGES - LAZY LOADED
 ========================================================= */
 
-const SignsOfTermiteInfestation = lazy(() =>
-  import("./components/blogs/signs-of-termite-infestation"),
+const SignsOfTermiteInfestation = lazy(
+  () => import("./components/blogs/signs-of-termite-infestation"),
 );
-const PestControlVsDIY = lazy(() =>
-  import("./components/blogs/pest-control-vs-diy"),
+const PestControlVsDIY = lazy(
+  () => import("./components/blogs/pest-control-vs-diy"),
 );
-const BedBugTreatmentGuide = lazy(() =>
-  import("./components/blogs/bed-bug-treatment"),
+const BedBugTreatmentGuide = lazy(
+  () => import("./components/blogs/bed-bug-treatment"),
 );
-const RatControlTipsForHomes = lazy(() =>
-  import("./components/blogs/rat-control-tips-for-homes"),
+const RatControlTipsForHomes = lazy(
+  () => import("./components/blogs/rat-control-tips-for-homes"),
 );
-const MosquitoPreventionRainySeason = lazy(() =>
-  import("./components/blogs/mosquito-prevention-during-rainy-season"),
+const MosquitoPreventionRainySeason = lazy(
+  () => import("./components/blogs/mosquito-prevention-during-rainy-season"),
 );
-const Top10HouseholdPestsBangalore = lazy(() =>
-  import("./components/blogs/top-10-household-pests-in-bangalore"),
+const Top10HouseholdPestsBangalore = lazy(
+  () => import("./components/blogs/top-10-household-pests-in-bangalore"),
 );
-const HowOftenShouldPestControlBeDone = lazy(() =>
-  import("./components/blogs/how-often-should-pest-control-be-done"),
+const HowOftenShouldPestControlBeDone = lazy(
+  () => import("./components/blogs/how-often-should-pest-control-be-done"),
 );
-const GermanCockroachVsAmericanCockroach = lazy(() =>
-  import("./components/blogs/german-cockroach-vs-american-cockroach"),
+const GermanCockroachVsAmericanCockroach = lazy(
+  () => import("./components/blogs/german-cockroach-vs-american-cockroach"),
 );
-const TermiteTreatmentCostBangalore = lazy(() =>
-  import("./components/blogs/termite-treatment-cost-bangalore"),
+const TermiteTreatmentCostBangalore = lazy(
+  () => import("./components/blogs/termite-treatment-cost-bangalore"),
 );
-const HowToPreventAntInfestationAtHome = lazy(() =>
-  import("./components/blogs/how-to-prevent-ant-infestation-at-home"),
+const HowToPreventAntInfestationAtHome = lazy(
+  () => import("./components/blogs/how-to-prevent-ant-infestation-at-home"),
 );
-const WhyRegularPestControlImportantBusinesses = lazy(() =>
-  import("./components/blogs/why-regular-pest-control-is-important-for-businesses"),
+const WhyRegularPestControlImportantBusinesses = lazy(
+  () =>
+    import("./components/blogs/why-regular-pest-control-is-important-for-businesses"),
 );
-const PestControlChecklistNewHomes = lazy(() =>
-  import("./components/blogs/pest-control-checklist-for-new-homes"),
+const PestControlChecklistNewHomes = lazy(
+  () => import("./components/blogs/pest-control-checklist-for-new-homes"),
 );
-const WhyCockroachesEnterKitchen = lazy(() =>
-  import("./components/blogs/why-cockroaches-enter-your-kitchen"),
+const WhyCockroachesEnterKitchen = lazy(
+  () => import("./components/blogs/why-cockroaches-enter-your-kitchen"),
+);
+
+const MonsoonPestControl = lazy(
+  () => import("./components/blogs/monsoon-pest-control"),
+);
+
+/* =========================================================
+   NEW BLOG PAGES - LAZY LOADED
+========================================================= */
+
+const Howtogetridofcockroch = lazy(
+  () => import("./components/blogs/getridofcockrochinkitchen"), // ✅ Matches file name
+);
+
+const Getridfromrats = lazy(
+  () => import("./components/blogs/rat-control-tips-forhomes"), // ✅ Matches file name
 );
 
 /* =========================================================
    RESIDENTIAL SERVICE PAGES - LAZY LOADED
 ========================================================= */
 
-const GeneralPestControl = lazy(() =>
-  import("./components/servicepage/general-pest-control"),
+const GeneralPestControl = lazy(
+  () => import("./components/servicepage/general-pest-control"),
 );
-const AntiTermiteTreatment = lazy(() =>
-  import("./components/servicepage/anti-termite-treatment"),
+const AntiTermiteTreatment = lazy(
+  () => import("./components/servicepage/anti-termite-treatment"),
 );
-const PostConstructionTermiteTreatment = lazy(() =>
-  import("./components/servicepage/post-construction-termite"),
+const PostConstructionTermiteTreatment = lazy(
+  () => import("./components/servicepage/post-construction-termite"),
 );
-const BedBug = lazy(() =>
-  import("./components/servicepage/bed-bug-treatment"),
+const BedBug = lazy(() => import("./components/servicepage/bed-bug-treatment"));
+const AntControlTreatment = lazy(
+  () => import("./components/servicepage/ant-control-treatment"),
 );
-const AntControlTreatment = lazy(() =>
-  import("./components/servicepage/ant-control-treatment"),
+const MosquitoManagementService = lazy(
+  () => import("./components/servicepage/mosquito-management-service"),
 );
-const MosquitoManagementService = lazy(() =>
-  import("./components/servicepage/mosquito-management-service"),
+const CockroachManagementService = lazy(
+  () => import("./components/servicepage/cockroach-management-service"),
 );
-const CockroachManagementService = lazy(() =>
-  import("./components/servicepage/cockroach-management-service"),
+const RodentManagementService = lazy(
+  () => import("./components/servicepage/rodent-management-service"),
 );
-const RodentManagementService = lazy(() =>
-  import("./components/servicepage/rodent-management-service"),
+const WoodBorerTreatment = lazy(
+  () => import("./components/servicepage/wood-borer-treatment"),
 );
-const WoodBorerTreatment = lazy(() =>
-  import("./components/servicepage/wood-borer-treatment"),
-);
-const PreConstructionTermiteTreatment = lazy(() =>
-  import("./components/servicepage/pre-construction-termite-treatment"),
+const PreConstructionTermiteTreatment = lazy(
+  () => import("./components/servicepage/pre-construction-termite-treatment"),
 );
 
 /* =========================================================
    COMMERCIAL SERVICE PAGES - LAZY LOADED
 ========================================================= */
 
-const PestControlHotelsHospitals = lazy(() =>
-  import("./components/servicepage/pest-control-hotels-hospitals"),
+const PestControlHotelsHospitals = lazy(
+  () => import("./components/servicepage/pest-control-hotels-hospitals"),
 );
-const OfficePestControl = lazy(() =>
-  import("./components/servicepage/office-pest-control"),
+const OfficePestControl = lazy(
+  () => import("./components/servicepage/office-pest-control"),
 );
-const EducationalInstitutionPestControl = lazy(() =>
-  import("./components/servicepage/educational-institution-pest-control"),
+const EducationalInstitutionPestControl = lazy(
+  () => import("./components/servicepage/educational-institution-pest-control"),
 );
-const CommonAreaTreatmentResidential = lazy(() =>
-  import("./components/servicepage/common-area-treatment-residential-complex"),
+const CommonAreaTreatmentResidential = lazy(
+  () =>
+    import("./components/servicepage/common-area-treatment-residential-complex"),
 );
-const DisinfectionServices = lazy(() =>
-  import("./components/servicepage/disinfection-services"),
+const DisinfectionServices = lazy(
+  () => import("./components/servicepage/disinfection-services"),
 );
-const WarehousePestManagement = lazy(() =>
-  import("./components/servicepage/warehouse-pest-management"),
+const WarehousePestManagement = lazy(
+  () => import("./components/servicepage/warehouse-pest-management"),
 );
 
 /* =========================================================
    GAME COMPONENTS - LAZY LOADED
 ========================================================= */
 
-const PestGameFloatingButton = lazy(() =>
-  import("./components/PestGameFloatingButton"),
+const PestGameFloatingButton = lazy(
+  () => import("./components/PestGameFloatingButton"),
 );
-const PestGamePage = lazy(() =>
-  import("./components/pestgame/PestGamePage"),
-);
-const DefendHomeGame = lazy(() =>
-  import("./components/pestgame/DefendHomeGame"),
+const PestGamePage = lazy(() => import("./components/pestgame/PestGamePage"));
+const DefendHomeGame = lazy(
+  () => import("./components/pestgame/DefendHomeGame"),
 );
 
 /* =========================================================
    GLOBAL ENQUIRY FORM - LAZY LOADED
 ========================================================= */
 
-const PestEnquiryForm = lazy(() =>
-  import("./components/PestEnquiryForm"),
-);
+const PestEnquiryForm = lazy(() => import("./components/PestEnquiryForm"));
 
 /* =========================================================
    404 PAGE (STATIC - ALREADY SMALL)
@@ -303,23 +316,41 @@ const AppContent = () => {
             <Route path="/about" element={<AboutUS />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/pest-identification" element={<PestIdentification />} />
+            <Route
+              path="/pest-identification"
+              element={<PestIdentification />}
+            />
 
             {/* =================================================
                 CAREER PAGE
             ================================================== */}
 
-            <Route path="/career/pest-control" element={<PestControlCareerPage />} />
+            <Route
+              path="/career/pest-control"
+              element={<PestControlCareerPage />}
+            />
 
             {/* =================================================
                 OLD MAIN PAGE REDIRECTS
             ================================================== */}
 
             <Route path="/aboutus" element={<Navigate to="/about" replace />} />
-            <Route path="/about-us" element={<Navigate to="/about" replace />} />
-            <Route path="/Services" element={<Navigate to="/services" replace />} />
-            <Route path="/contactus" element={<Navigate to="/contact" replace />} />
-            <Route path="/Contact" element={<Navigate to="/contact" replace />} />
+            <Route
+              path="/about-us"
+              element={<Navigate to="/about" replace />}
+            />
+            <Route
+              path="/Services"
+              element={<Navigate to="/services" replace />}
+            />
+            <Route
+              path="/contactus"
+              element={<Navigate to="/contact" replace />}
+            />
+            <Route
+              path="/Contact"
+              element={<Navigate to="/contact" replace />}
+            />
             <Route
               path="/pestidentification"
               element={<Navigate to="/pest-identification" replace />}
@@ -392,14 +423,37 @@ const AppContent = () => {
               path="/blogs/why-cockroaches-enter-your-kitchen"
               element={<WhyCockroachesEnterKitchen />}
             />
+            <Route
+              path="/blogs/rat-control-tips-forhomes"
+              element={<Getridfromrats />}
+            />
+            {/* =================================================
+                NEW BLOG ROUTES
+            ================================================== */}
+
+            <Route
+              path="/blogs/getridofcockrochinkitchen"
+              element={<Howtogetridofcockroch />}
+            />
+            <Route
+              path="/blogs/monsoon-pest-control"
+              element={<MonsoonPestControl />}
+            />
+
             <Route path="/blogs/:slug" element={<BlogDetail />} />
 
             {/* =================================================
                 RESIDENTIAL SERVICE PAGES
             ================================================== */}
 
-            <Route path="/general-pest-control" element={<GeneralPestControl />} />
-            <Route path="/anti-termite-treatment" element={<AntiTermiteTreatment />} />
+            <Route
+              path="/general-pest-control"
+              element={<GeneralPestControl />}
+            />
+            <Route
+              path="/anti-termite-treatment"
+              element={<AntiTermiteTreatment />}
+            />
             <Route
               path="/pre-construction-termite-treatment"
               element={<PreConstructionTermiteTreatment />}
@@ -409,7 +463,10 @@ const AppContent = () => {
               element={<PostConstructionTermiteTreatment />}
             />
             <Route path="/bed-bug-treatment" element={<BedBug />} />
-            <Route path="/ant-control-treatment" element={<AntControlTreatment />} />
+            <Route
+              path="/ant-control-treatment"
+              element={<AntControlTreatment />}
+            />
             <Route
               path="/mosquito-management-service"
               element={<MosquitoManagementService />}
@@ -426,7 +483,10 @@ const AppContent = () => {
               path="/rodent-management-service"
               element={<RodentManagementService />}
             />
-            <Route path="/wood-borer-treatment" element={<WoodBorerTreatment />} />
+            <Route
+              path="/wood-borer-treatment"
+              element={<WoodBorerTreatment />}
+            />
 
             {/* =================================================
                 COMMERCIAL SERVICE PAGES
@@ -440,7 +500,10 @@ const AppContent = () => {
               path="/hotel-hospital-pest-control"
               element={<Navigate to="/pest-control-hotels-hospitals" replace />}
             />
-            <Route path="/office-pest-control" element={<OfficePestControl />} />
+            <Route
+              path="/office-pest-control"
+              element={<OfficePestControl />}
+            />
             <Route
               path="/educational-institution-pest-control"
               element={<EducationalInstitutionPestControl />}
@@ -449,8 +512,14 @@ const AppContent = () => {
               path="/common-area-treatment-residential-complex"
               element={<CommonAreaTreatmentResidential />}
             />
-            <Route path="/disinfection-services" element={<DisinfectionServices />} />
-            <Route path="/warehouse-pest-management" element={<WarehousePestManagement />} />
+            <Route
+              path="/disinfection-services"
+              element={<DisinfectionServices />}
+            />
+            <Route
+              path="/warehouse-pest-management"
+              element={<WarehousePestManagement />}
+            />
 
             {/* =================================================
                 OLD SERVICE URL REDIRECTS
@@ -458,11 +527,18 @@ const AppContent = () => {
 
             <Route
               path="/post-construction-termite"
-              element={<Navigate to="/post-construction-termite-treatment" replace />}
+              element={
+                <Navigate to="/post-construction-termite-treatment" replace />
+              }
             />
             <Route
               path="/common-area-treatment"
-              element={<Navigate to="/common-area-treatment-residential-complex" replace />}
+              element={
+                <Navigate
+                  to="/common-area-treatment-residential-complex"
+                  replace
+                />
+              }
             />
             <Route
               path="/cockroach-control"
