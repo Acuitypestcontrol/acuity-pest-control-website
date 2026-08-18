@@ -644,7 +644,12 @@
       "source": "/industrial-pest-control",
       "destination": "/general-pest-control",
       "permanent": true
-    }
+    },
+    {
+  "source": "/bed-bugs-treatment-in-bangalore",
+  "destination": "/bed-bug-treatment",
+  "permanent": true
+}
   ],
 
   "rewrites": [
