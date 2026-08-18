@@ -650,8 +650,12 @@
       "source": "/bed-bugs-treatment-in-bangalore",
       "destination": "/bed-bug-treatment",
       "permanent": true
+    },
+    {
+      "source": "/hotel-hospital-pest-control",
+      "destination": "/pest-control-hotels-hospitals",
+      "permanent": true
     }
-   
   ],
 
   "rewrites": [
