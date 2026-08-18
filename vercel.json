@@ -4,7 +4,6 @@
   "cleanUrls": true,
 
   "headers": [
-    
     {
       "source": "/static/(.*)",
       "headers": [
@@ -611,7 +610,7 @@
       "destination": "/blogs/top-10-household-pests-in-bangalore",
       "permanent": true
     },
-    
+
     {
       "source": "/rodent-control/page-5297765",
       "destination": "/rodent-management-service",
@@ -650,6 +649,11 @@
     {
       "source": "/bed-bugs-treatment-in-bangalore",
       "destination": "/bed-bug-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/pest-control-hotels-hospitals",
+      "destination": "/hotel-hospital-pest-control",
       "permanent": true
     }
   ],
