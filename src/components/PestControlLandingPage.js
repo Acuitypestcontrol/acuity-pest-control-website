@@ -739,8 +739,6 @@ Please contact me with the service details and quotation.`;
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
 
-        <link rel="canonical" href="https://www.acuitypestcontrols.com/" />
-
         {/* Open Graph */}
         <meta property="og:type" content="website" />
 
