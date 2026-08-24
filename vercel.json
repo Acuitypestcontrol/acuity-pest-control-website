@@ -215,7 +215,17 @@
       "destination": "/anti-termite-treatment",
       "permanent": true
     },
-        {
+    {
+      "source": "/blog/page/2",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/page/2/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
       "source": "/prevention-tips-for-cockroaches",
       "destination": "/cockroach-management-service",
       "permanent": true
