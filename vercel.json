@@ -22,6 +22,12 @@
         }
       ]
     },
+
+    {
+      "source": "/termite-control-services-in-bangalore",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
     {
       "source": "/:path*.css",
       "headers": [
