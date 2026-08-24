@@ -215,6 +215,16 @@
       "destination": "/anti-termite-treatment",
       "permanent": true
     },
+        {
+      "source": "/prevention-tips-for-cockroaches",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
+    {
+      "source": "/prevention-tips-for-cockroaches/",
+      "destination": "/cockroach-management-service",
+      "permanent": true
+    },
     {
       "source": "/how-to-get-rid-of-termites-a-comprehensive-guide-to-termite-control",
       "destination": "/anti-termite-treatment",
