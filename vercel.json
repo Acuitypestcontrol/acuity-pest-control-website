@@ -22,7 +22,6 @@
         }
       ]
     },
-
     {
       "source": "/:path*.css",
       "headers": [
@@ -134,17 +133,41 @@
   ],
 
   "redirects": [
-    { "source": "/aboutus", "destination": "/about", "permanent": true },
-    { "source": "/about-us", "destination": "/about", "permanent": true },
-    { "source": "/Contact", "destination": "/contact", "permanent": true },
-    { "source": "/get-in-touch", "destination": "/contact", "permanent": true },
-    { "source": "/blogsmainpage", "destination": "/blogs", "permanent": true },
+    {
+      "source": "/aboutus",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/Contact",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/get-in-touch",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/blogsmainpage",
+      "destination": "/blogs",
+      "permanent": true
+    },
     {
       "source": "/pestidentification",
       "destination": "/pest-identification",
       "permanent": true
     },
-    { "source": "/Services", "destination": "/services", "permanent": true },
+    {
+      "source": "/Services",
+      "destination": "/services",
+      "permanent": true
+    },
     {
       "source": "/post-construction-termite",
       "destination": "/post-construction-termite-treatment",
@@ -190,11 +213,58 @@
       "destination": "/disinfection-services",
       "permanent": true
     },
+
     {
-      "source": "/termite-control-services-in-bangalore",
-      "destination": "/anti-termite-treatment",
+      "source": "/anti-termite-treatment",
+      "destination": "/termite-control-services-in-bangalore",
       "permanent": true
     },
+    {
+      "source": "/termite-treatment-bangalore",
+      "destination": "/termite-control-services-in-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/termite-control-services",
+      "destination": "/termite-control-services-in-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-get-rid-of-termites-a-comprehensive-guide-to-termite-control",
+      "destination": "/termite-control-services-in-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/everything-you-need-to-know-about-termites-a-complete-guide-to-termite-control-services",
+      "destination": "/termite-control-services-in-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore-termite-treatment-experts-why-acuity-pest-control-is-your-best-bet",
+      "destination": "/termite-control-services-in-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/how-do-i-permanently-control-termites-in-my-home-permanent-termite-solutions-in-bangalore",
+      "destination": "/termite-control-services-in-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/top-termite-myths-you-should-stop-believing-right-now",
+      "destination": "/blogs/signs-of-termite-infestation",
+      "permanent": true
+    },
+    {
+      "source": "/category/termites",
+      "destination": "/termite-control-services-in-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/anti-termite-pipe-treatment",
+      "destination": "/termite-control-services-in-bangalore",
+      "permanent": true
+    },
+
     {
       "source": "/corona-disinfection-sanitization-service-in-bangalore",
       "destination": "/disinfection-services",
@@ -208,11 +278,6 @@
     {
       "source": "/banishing-bed-bugs-in-bengaluru-how-advanced-bed-bug-heat-treatment-safeguards-your-home",
       "destination": "/bed-bug-treatment",
-      "permanent": true
-    },
-    {
-      "source": "/anti-termite-pipe-treatment",
-      "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
@@ -236,19 +301,8 @@
       "permanent": true
     },
     {
-      "source": "/how-to-get-rid-of-termites-a-comprehensive-guide-to-termite-control",
-      "destination": "/anti-termite-treatment",
-      "permanent": true
-    },
-
-    {
       "source": "/how-to-control-ants",
       "destination": "/blogs/how-to-prevent-ant-infestation-at-home",
-      "permanent": true
-    },
-    {
-      "source": "/industrial-pest-control",
-      "destination": "/general-pest-control",
       "permanent": true
     },
     {
@@ -267,11 +321,6 @@
       "permanent": true
     },
     {
-      "source": "/category/termites",
-      "destination": "/anti-termite-treatment",
-      "permanent": true
-    },
-    {
       "source": "/category/uncategorized",
       "destination": "/blogs",
       "permanent": true
@@ -279,11 +328,6 @@
     {
       "source": "/dont-let-pests-turn-your-bangalore-dream-home-into-a-nightmare-the-importance-of-residential-pest-control",
       "destination": "/general-pest-control",
-      "permanent": true
-    },
-    {
-      "source": "/everything-you-need-to-know-about-termites-a-complete-guide-to-termite-control-services",
-      "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
@@ -317,11 +361,6 @@
       "permanent": true
     },
     {
-      "source": "/termite-treatment-bangalore",
-      "destination": "/anti-termite-treatment",
-      "permanent": true
-    },
-    {
       "source": "/residential-pest-control-in-bangalore-a-comprehensive-guide",
       "destination": "/general-pest-control",
       "permanent": true
@@ -347,7 +386,17 @@
       "permanent": true
     },
     {
+      "source": "/the-hidden-dangers-how-termite-related-health-issues-impact-your-well-being/",
+      "destination": "/blogs/signs-of-termite-infestation",
+      "permanent": true
+    },
+    {
       "source": "/understanding-preventing-common-household-pests-in-bangalore",
+      "destination": "/blogs/top-10-household-pests-in-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/understanding-preventing-common-household-pests-in-bangalore/",
       "destination": "/blogs/top-10-household-pests-in-bangalore",
       "permanent": true
     },
@@ -376,7 +425,11 @@
       "destination": "/blogs/get-rid-of-cockroaches",
       "permanent": true
     },
-    { "source": "/blog", "destination": "/blogs", "permanent": true },
+    {
+      "source": "/blog",
+      "destination": "/blogs",
+      "permanent": true
+    },
     {
       "source": "/sitemap_index.xml",
       "destination": "/sitemap.xml",
@@ -398,6 +451,11 @@
       "permanent": true
     },
     {
+      "source": "/pets-control-services-in-bangalore/",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+    {
       "source": "/pest-control-services-in-bangalore-ensuring-a-safer-cleaner-space-with-acuity-pest-control",
       "destination": "/general-pest-control",
       "permanent": true
@@ -405,11 +463,6 @@
     {
       "source": "/why-bangalore-home-pest-solutions-are-essential-for-healthy-living",
       "destination": "/general-pest-control",
-      "permanent": true
-    },
-    {
-      "source": "/bangalore-termite-treatment-experts-why-acuity-pest-control-is-your-best-bet",
-      "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
@@ -483,11 +536,6 @@
       "permanent": true
     },
     {
-      "source": "/termite-control-services",
-      "destination": "/anti-termite-treatment",
-      "permanent": true
-    },
-    {
       "source": "/cockroach-pest-control",
       "destination": "/cockroach-management-service",
       "permanent": true
@@ -510,11 +558,6 @@
     {
       "source": "/cockroach-pest-control-in-bangalore",
       "destination": "/cockroach-management-service",
-      "permanent": true
-    },
-    {
-      "source": "/how-do-i-permanently-control-termites-in-my-home-permanent-termite-solutions-in-bangalore",
-      "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
@@ -553,16 +596,10 @@
       "permanent": true
     },
     {
-      "source": "/top-termite-myths-you-should-stop-believing-right-now",
-      "destination": "/blogs/signs-of-termite-infestation",
-      "permanent": true
-    },
-    {
       "source": "/why-pest-management-in-schools-and-colleges-is-essential-for-a-safe-learning-environment",
       "destination": "/educational-institution-pest-control",
       "permanent": true
     },
-
     {
       "source": "/pest-control-in-mg-road",
       "destination": "/general-pest-control",
@@ -593,10 +630,26 @@
       "destination": "/general-pest-control",
       "permanent": true
     },
-    { "source": "/team", "destination": "/about", "permanent": true },
-    { "source": "/team/", "destination": "/about", "permanent": true },
-    { "source": "/faq", "destination": "/contact", "permanent": true },
-    { "source": "/faq/", "destination": "/contact", "permanent": true },
+    {
+      "source": "/team",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/team/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/faq/",
+      "destination": "/contact",
+      "permanent": true
+    },
     {
       "source": "/lizard-pest-control",
       "destination": "/general-pest-control",
@@ -628,22 +681,6 @@
       "permanent": true
     },
     {
-      "source": "/the-hidden-dangers-how-termite-related-health-issues-impact-your-well-being/",
-      "destination": "/blogs/signs-of-termite-infestation",
-      "permanent": true
-    },
-    {
-      "source": "/which-type-of-pest-control-is-best-a-guide-to-finding-the-best-pest-control-in-bangalore/",
-      "destination": "/general-pest-control",
-      "permanent": true
-    },
-    {
-      "source": "/understanding-preventing-common-household-pests-in-bangalore/",
-      "destination": "/blogs/top-10-household-pests-in-bangalore",
-      "permanent": true
-    },
-
-    {
       "source": "/rodent-control/page-5297765",
       "destination": "/rodent-management-service",
       "permanent": true
@@ -656,11 +693,6 @@
     {
       "source": "/commercial-services/",
       "destination": "/services",
-      "permanent": true
-    },
-    {
-      "source": "/pets-control-services-in-bangalore/",
-      "destination": "/general-pest-control",
       "permanent": true
     },
     {
@@ -687,6 +719,13 @@
       "source": "/hotel-hospital-pest-control",
       "destination": "/pest-control-hotels-hospitals",
       "permanent": true
+    }
+  ],
+
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index"
     }
   ]
 }
