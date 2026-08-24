@@ -24,11 +24,6 @@
     },
 
     {
-      "source": "/termite-control-services-in-bangalore",
-      "destination": "/anti-termite-treatment",
-      "permanent": true
-    },
-    {
       "source": "/:path*.css",
       "headers": [
         {
@@ -193,6 +188,11 @@
     {
       "source": "/2020/06/15/corona-disinfection-sanitization-service-in-bangalore",
       "destination": "/disinfection-services",
+      "permanent": true
+    },
+    {
+      "source": "/termite-control-services-in-bangalore",
+      "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
