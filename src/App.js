@@ -216,7 +216,7 @@ const NotFound = () => {
           name="description"
           content="The requested page could not be found on the Acuity Pest Controls website."
         />
-        <link rel="canonical" href="https://www.acuitypestcontrols.com/" />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
       <section className="flex min-h-[70vh] items-center justify-center bg-gradient-to-br from-[#f4fbf8] to-white px-4 py-20 text-center">
