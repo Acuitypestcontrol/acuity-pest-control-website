@@ -451,7 +451,7 @@ const AppContent = () => {
               element={<GeneralPestControl />}
             />
             <Route
-              path="/termite-control-services-in-bangalore"
+              path="/anti-termite-treatment"
               element={<AntiTermiteTreatment />}
             />
             <Route

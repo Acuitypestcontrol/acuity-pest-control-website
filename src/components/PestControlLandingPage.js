@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
+
 import Ping from "../../src/images/ping.jpg";
 
 import Cockroch1 from "../images/cockrochv.png";
@@ -32,16 +33,16 @@ const PestControlLandingPage = () => {
   const siteUrl = "https://www.acuitypestcontrols.com";
   const pageUrl = `${siteUrl}/`;
 
-  const pageTitle = "Pest Control Services in Bangalore | Acuity Pest Control";
+  const pageTitle =
+    "Pest Control Services in Bangalore | Acuity Pest Control";
 
   const pageDescription =
-    "Acuity Pest Control provides professional pest control services in Bangalore for homes, apartments, offices and commercial properties. Get expert cockroach, termite, bed bug, rodent and mosquito control.";
+    "Looking for pest control in Bangalore? Acuity Pest Control provides residential and commercial pest control services including cockroach control, termite treatment, bed bug treatment, mosquito control and rat control.";
 
   const socialImage = `${siteUrl}/logo192.png`;
 
   /*
-   * Generate the enquiry number once for this page load.
-   * It is used both on the form and in the submitted lead.
+   * Generate enquiry number once for this page load.
    */
   const today = new Date();
 
@@ -53,6 +54,9 @@ const PestControlLandingPage = () => {
     today.getSeconds(),
   ).padStart(2, "0")}`;
 
+  /*
+   * PRIMARY SERVICES
+   */
   const primaryServices = [
     {
       code: "01",
@@ -63,7 +67,6 @@ const PestControlLandingPage = () => {
       zone: "Kitchen · Bathroom",
       href: "/cockroach-management-service",
     },
-
     {
       code: "02",
       image: Bedbug1,
@@ -73,7 +76,6 @@ const PestControlLandingPage = () => {
       zone: "Bedroom · Furniture",
       href: "/bed-bug-treatment",
     },
-
     {
       code: "03",
       image: Termite1,
@@ -83,7 +85,6 @@ const PestControlLandingPage = () => {
       zone: "Walls · Flooring",
       href: "/anti-termite-treatment",
     },
-
     {
       code: "04",
       image: Rodent1,
@@ -93,7 +94,6 @@ const PestControlLandingPage = () => {
       zone: "Indoor · Perimeter",
       href: "/rodent-management-service",
     },
-
     {
       code: "05",
       image: Mosquito1,
@@ -103,7 +103,6 @@ const PestControlLandingPage = () => {
       zone: "Indoor · Outdoor",
       href: "/mosquito-management-service",
     },
-
     {
       code: "06",
       image: GeneralPest1,
@@ -114,6 +113,10 @@ const PestControlLandingPage = () => {
       href: "/general-pest-control",
     },
   ];
+
+  /*
+   * PROPERTY TYPES
+   */
   const propertyTypes = [
     "1 RK",
     "1 BHK",
@@ -135,6 +138,9 @@ const PestControlLandingPage = () => {
     "Industrial Property",
   ];
 
+  /*
+   * BENEFITS
+   */
   const benefits = [
     "Trained and background-verified technicians",
     "Residential and commercial pest control",
@@ -146,6 +152,9 @@ const PestControlLandingPage = () => {
     "Treatment guidance and after-service support",
   ];
 
+  /*
+   * RESIDENTIAL PROPERTIES
+   */
   const residentialProperties = [
     "1 RK homes",
     "1 BHK apartments",
@@ -159,6 +168,9 @@ const PestControlLandingPage = () => {
     "Rental properties",
   ];
 
+  /*
+   * COMMERCIAL PROPERTIES
+   */
   const commercialProperties = [
     "Corporate offices",
     "IT companies and campuses",
@@ -172,25 +184,78 @@ const PestControlLandingPage = () => {
     "Construction sites",
   ];
 
+  /*
+   * SERVICE AREAS
+   *
+   * IMPORTANT:
+   * Only keep an area here if the corresponding URL actually exists.
+   */
   const serviceAreas = [
-    "JP Nagar",
-    "Jayanagar",
-    "HSR Layout",
-    "Whitefield",
-    "Koramangala",
-    "Indiranagar",
-    "Electronic City",
-    "Bannerghatta Road",
-    "Bellandur",
-    "Marathahalli",
-    "Hebbal",
-    "Peenya",
-    "BEML",
-    "Doddaballapur",
-    "Attibele",
-    "Kumbalgodu",
+    {
+      name: "JP Nagar",
+      href: "/pest-control-jp-nagar",
+    },
+    {
+      name: "Jayanagar",
+      href: "/pest-control-jayanagar",
+    },
+    {
+      name: "HSR Layout",
+      href: "/pest-control-hsr-layout",
+    },
+    {
+      name: "Whitefield",
+      href: "/pest-control-whitefield",
+    },
+    {
+      name: "Koramangala",
+      href: "/pest-control-koramangala",
+    },
+    {
+      name: "Indiranagar",
+      href: "/pest-control-indiranagar",
+    },
+    {
+      name: "Electronic City",
+      href: "/pest-control-electronic-city",
+    },
+    {
+      name: "Bannerghatta Road",
+      href: "/pest-control-bannerghatta",
+    },
+    {
+      name: "Bellandur",
+      href: "/pest-control-bellandur",
+    },
+    {
+      name: "Marathahalli",
+      href: "/pest-control-marathahalli",
+    },
+    {
+      name: "Hebbal",
+      href: "/pest-control-hebbal",
+    },
+    {
+      name: "Peenya",
+      href: "/pest-control-peenya",
+    },
+    {
+      name: "Doddaballapur",
+      href: "/pest-control-doddaballapur",
+    },
+    {
+      name: "Attibele",
+      href: "/pest-control-attibele",
+    },
+    {
+      name: "Kumbalgodu",
+      href: "/pest-control-kumbalgodu",
+    },
   ];
 
+  /*
+   * PESTS COVERED
+   */
   const pestsCovered = [
     "Cockroaches",
     "Termites",
@@ -209,6 +274,9 @@ const PestControlLandingPage = () => {
     "Reptiles",
   ];
 
+  /*
+   * SERVICE COVERAGE
+   */
   const serviceCoverage = [
     {
       code: "SRV-01",
@@ -324,6 +392,9 @@ const PestControlLandingPage = () => {
     },
   ];
 
+  /*
+   * INTERNAL LINKS
+   */
   const internalLinks = [
     {
       category: "Main Pest Control Services",
@@ -394,6 +465,9 @@ const PestControlLandingPage = () => {
     },
   ];
 
+  /*
+   * RELATED BLOG LINKS
+   */
   const relatedLinks = [
     {
       label: "How to Get Rid of Cockroaches",
@@ -457,6 +531,9 @@ const PestControlLandingPage = () => {
     },
   ];
 
+  /*
+   * FAQ
+   */
   const faqs = [
     {
       q: "What is the best pest control service in Bangalore?",
@@ -493,7 +570,7 @@ const PestControlLandingPage = () => {
   ];
 
   /*
-   * SEO / Structured Data
+   * LOCAL BUSINESS SCHEMA
    */
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -531,13 +608,27 @@ const PestControlLandingPage = () => {
     serviceType: serviceCoverage.map((service) => service.label),
   };
 
+  /*
+   * SERVICE SCHEMA
+   */
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${pageUrl}#service`,
+    "@id": `${pageUrl}#pest-control-service`,
     name: "Pest Control Services in Bangalore",
-    serviceType: "Residential and Commercial Pest Control",
-    description: pageDescription,
+
+    serviceType: [
+      "Pest Control",
+      "Cockroach Control",
+      "Termite Treatment",
+      "Bed Bug Treatment",
+      "Rodent Control",
+      "Mosquito Control",
+    ],
+
+    description:
+      "Professional residential and commercial pest control services in Bangalore for cockroaches, termites, bed bugs, rodents, mosquitoes and other common pests.",
+
     url: pageUrl,
 
     provider: {
@@ -554,6 +645,9 @@ const PestControlLandingPage = () => {
     },
   };
 
+  /*
+   * FAQ SCHEMA
+   */
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -568,7 +662,7 @@ const PestControlLandingPage = () => {
   };
 
   /*
-   * Form handlers
+   * FORM HANDLERS
    */
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -635,57 +729,67 @@ Please contact me with the service details and quotation.`;
       createWhatsAppMessage(),
     )}`;
 
-    /*
-     * Open WhatsApp window immediately.
-     * This helps prevent popup blocking after the async request.
-     */
-    const whatsappWindow = window.open("", "_blank", "noopener,noreferrer");
+    const whatsappWindow = window.open(
+      "",
+      "_blank",
+      "noopener,noreferrer",
+    );
 
     try {
-      const response = await fetch("https://formspree.io/f/mzeppdwo", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name.trim(),
-          phone: cleanPhone,
-          location: formData.location.trim(),
-          service: formData.service,
-          propertyType: formData.propertyType || "Not selected",
-          message: formData.message.trim() || "Not provided",
+      const response = await fetch(
+        "https://formspree.io/f/mzeppdwo",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name.trim(),
+            phone: cleanPhone,
+            location: formData.location.trim(),
+            service: formData.service,
+            propertyType:
+              formData.propertyType || "Not selected",
+            message:
+              formData.message.trim() || "Not provided",
 
-          enquiryNumber: caseFileNumber,
+            enquiryNumber: caseFileNumber,
 
-          leadSource: "Acuity Pest Control Website",
+            leadSource: "Acuity Pest Control Website",
 
-          landingPage: "Pest Control Services in Bangalore",
+            landingPage:
+              "Pest Control Services in Bangalore",
 
-          website: pageUrl,
+            website: pageUrl,
 
-          submittedAt: new Date().toLocaleString("en-IN", {
-            timeZone: "Asia/Kolkata",
+            submittedAt: new Date().toLocaleString("en-IN", {
+              timeZone: "Asia/Kolkata",
+            }),
+
+            _subject: `New Website Lead - ${formData.service} - ${caseFileNumber}`,
           }),
-
-          _subject: `New Website Lead - ${formData.service} - ${caseFileNumber}`,
-        }),
-      });
+        },
+      );
 
       if (!response.ok) {
-        let errorMessage = "Unable to submit your enquiry. Please try again.";
+        let errorMessage =
+          "Unable to submit your enquiry. Please try again.";
 
         try {
           const errorData = await response.json();
 
-          if (Array.isArray(errorData?.errors) && errorData.errors.length > 0) {
+          if (
+            Array.isArray(errorData?.errors) &&
+            errorData.errors.length > 0
+          ) {
             errorMessage = errorData.errors
               .map((error) => error.message)
               .filter(Boolean)
               .join(" ");
           }
         } catch {
-          // Keep default message.
+          // Keep default error.
         }
 
         throw new Error(errorMessage);
@@ -737,12 +841,16 @@ Please contact me with the service details and quotation.`;
 
   return (
     <>
+      {/* =========================================================
+          SEO
+      ========================================================= */}
+
       <Helmet>
-        <title>Pest Control Services in Bangalore | Acuity Pest Control</title>
+        <title>{pageTitle}</title>
 
         <meta
           name="description"
-          content="Acuity Pest Control provides professional pest control services in Bangalore for homes, apartments, offices and commercial properties. Get expert cockroach, termite, bed bug, rodent and mosquito control."
+          content={pageDescription}
         />
 
         <meta
@@ -750,36 +858,58 @@ Please contact me with the service details and quotation.`;
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
 
+        <link
+          rel="canonical"
+          href={pageUrl}
+        />
+
         {/* Open Graph */}
-        <meta property="og:type" content="website" />
+
+        <meta
+          property="og:type"
+          content="website"
+        />
 
         <meta
           property="og:title"
-          content="Pest Control Services in Bangalore | Acuity Pest Control"
+          content={pageTitle}
         />
 
         <meta
           property="og:description"
-          content="Professional pest control services in Bangalore for residential and commercial properties. Cockroach, termite, bed bug, rodent and mosquito control."
+          content="Professional residential and commercial pest control services in Bangalore. Cockroach, termite, bed bug, mosquito and rat control."
         />
 
-        <meta property="og:url" content="https://www.acuitypestcontrols.com/" />
+        <meta
+          property="og:url"
+          content={pageUrl}
+        />
 
-        <meta property="og:image" content={socialImage} />
+        <meta
+          property="og:image"
+          content={socialImage}
+        />
 
         <meta
           property="og:image:alt"
           content="Acuity Pest Control Services in Bangalore"
         />
 
-        <meta property="og:site_name" content="Acuity Pest Control Services" />
+        <meta
+          property="og:site_name"
+          content="Acuity Pest Control Services"
+        />
 
         {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
+
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
 
         <meta
           name="twitter:title"
-          content="Pest Control Services in Bangalore | Acuity Pest Control"
+          content={pageTitle}
         />
 
         <meta
@@ -787,21 +917,29 @@ Please contact me with the service details and quotation.`;
           content="Professional pest control services in Bangalore for homes, apartments, offices and commercial properties."
         />
 
-        <meta name="twitter:image" content={socialImage} />
+        <meta
+          name="twitter:image"
+          content={socialImage}
+        />
 
-        {/* Local Business Schema */}
+        {/* Structured Data */}
+
         <script type="application/ld+json">
           {JSON.stringify(localBusinessSchema)}
         </script>
 
-        {/* Service Schema */}
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
         </script>
 
-        {/* FAQ Schema */}
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
+
+      {/* =========================================================
+          PAGE STYLES
+      ========================================================= */}
 
       <style>{`
         .font-display {
@@ -933,13 +1071,19 @@ Please contact me with the service details and quotation.`;
         }
       `}</style>
 
+      {/* =========================================================
+          MAIN
+      ========================================================= */}
+
       <main
         className="font-body min-h-screen bg-[#F6F2E7] text-[#023e2d]"
         id="top"
       >
-        {/* HERO */}
-        <section className="relative overflow-hidden ">
-          {/* REMOVED: hazard-stripes-anim - was causing performance issues */}
+        {/* =======================================================
+            HERO
+        ======================================================= */}
+
+        <section className="relative overflow-hidden">
           <div className="hazard-stripes h-2 w-full opacity-90" />
 
           <div className="dot-grid absolute inset-0" />
@@ -959,79 +1103,43 @@ Please contact me with the service details and quotation.`;
                 "radial-gradient(circle, #0E3B39 0%, transparent 70%)",
             }}
           />
+
           <div className="relative mx-auto max-w-7xl overflow-hidden px-4 py-14 sm:px-6 md:py-20 lg:px-8 lg:py-24">
-            {/* BACKGROUND IMAGE - Now using img tag instead of CSS background for better LCP */}
             <img
               src={Ping}
               alt="Professional pest control services in Bangalore"
               className="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-              fetchpriority="high"
+              loading="eager"
+              fetchPriority="high"
               decoding="async"
               width="1200"
               height="630"
             />
 
-            {/* DARK OVERLAY - keeps text readable */}
             <div className="absolute inset-0 bg-[#0E3B39]/75" />
 
-            {/* CONTENT ABOVE IMAGE */}
             <div className="relative z-10 max-w-4xl">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#E3A23E]/50 bg-[#E3A23E]/10 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[#E3A23E]">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#E3A23E]" />
-                Bangalore residential and commercial pest control
+
+                Pest control in Bangalore
               </div>
 
               <h1 className="font-display max-w-3xl text-4xl font-bold uppercase leading-[1.05] text-white sm:text-5xl lg:text-6xl">
-                Professional Pest Control Services in Bangalore
+                Pest Control Services in Bangalore
               </h1>
 
-              <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
-                Acuity Pest Control provides professional pest control services
-                in Bangalore for homes, apartments, offices and commercial
-                properties. Our services include{" "}
-                <a
-                  href="/cockroach-management-service"
-                  className="font-semibold text-[#E3A23E] underline decoration-dotted underline-offset-4 hover:text-white"
-                >
-                  cockroach control
-                </a>
-                ,{" "}
-                <a
-                  href="/anti-termite-treatment"
-                  className="font-semibold text-[#E3A23E] underline decoration-dotted underline-offset-4 hover:text-white"
-                >
-                  termite treatment
-                </a>
-                ,{" "}
-                <a
-                  href="/bed-bug-treatment"
-                  className="font-semibold text-[#E3A23E] underline decoration-dotted underline-offset-4 hover:text-white"
-                >
-                  bed bug treatment
-                </a>
-                ,{" "}
-                <a
-                  href="/rodent-management-service"
-                  className="font-semibold text-[#E3A23E] underline decoration-dotted underline-offset-4 hover:text-white"
-                >
-                  rat and rodent control
-                </a>
-                , and{" "}
-                <a
-                  href="/mosquito-management-service"
-                  className="font-semibold text-[#E3A23E] underline decoration-dotted underline-offset-4 hover:text-white"
-                >
-                  mosquito control
-                </a>{" "}
-                across Bangalore.
+              <p className="mt-6 max-w-2xl text-base leading-8 text-white/80 sm:text-lg">
+                Professional pest control in Bangalore for homes,
+                apartments, offices, shops, restaurants and commercial
+                properties. We provide cockroach control, termite treatment,
+                bed bug treatment, mosquito control and rat & rodent control.
               </p>
 
-              <p className="mt-6 max-w-3xl text-sm leading-7 text-white/55">
-                We serve customers across JP Nagar, Jayanagar, HSR Layout,
-                Whitefield, Koramangala, Indiranagar, Electronic City,
-                Bannerghatta Road, Bellandur, Marathahalli, Hebbal, Peenya and
-                other areas of Bangalore.
+              <p className="mt-5 max-w-3xl text-sm leading-7 text-white/60">
+                Acuity Pest Control provides residential and commercial
+                pest management across Bangalore with professional treatment
+                based on the pest, infestation level and property type.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -1057,13 +1165,13 @@ Please contact me with the service details and quotation.`;
 
               <div className="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
                 {[
-                  ["19+", "Years in the field"],
-                  ["15K+", "Treatments completed"],
-                  ["24/7", "Enquiry support"],
-                  ["BLR", "Bangalore-wide service"],
+                  ["Professional", "Treatment"],
+                  ["Quick", "Response"],
+                  ["Trained", "Technicians"],
+                  ["Bangalore", "Service Area"],
                 ].map(([number, label]) => (
                   <div
-                    key={label}
+                    key={`${number}-${label}`}
                     className="rounded-xl border border-white/15 bg-black/20 p-4 backdrop-blur-md transition hover:border-[#E3A23E]/50 hover:bg-black/30"
                   >
                     <p className="font-display text-2xl font-bold text-[#E3A23E]">
@@ -1080,7 +1188,10 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* TRUST STRIP */}
+        {/* =======================================================
+            TRUST STRIP
+        ======================================================= */}
+
         <section className="hazard-stripes border-b border-[#12181A]">
           <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-[#12181A] px-4 sm:grid-cols-4 sm:px-6 lg:px-8">
             {[
@@ -1101,7 +1212,10 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* SERVICES */}
+        {/* =======================================================
+            SERVICES
+        ======================================================= */}
+
         <section
           id="services"
           className="scroll-mt-20 bg-[#F6F2E7] px-4 py-16 sm:px-6 md:py-20 lg:px-8"
@@ -1117,8 +1231,10 @@ Please contact me with the service details and quotation.`;
               </h2>
 
               <p className="mt-4 leading-7 text-[#5B6462]">
-                Our technicians inspect the affected property, identify pest
-                activity and recommend a suitable treatment.
+                Acuity Pest Control provides residential and commercial pest
+                control in Bangalore. Our professional treatments cover
+                cockroaches, termites, bed bugs, mosquitoes, rats, rodents,
+                ants and other common pests.
               </p>
             </div>
 
@@ -1130,16 +1246,18 @@ Please contact me with the service details and quotation.`;
                 >
                   <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[#0E3B39]/5 transition group-hover:scale-125" />
 
-                  <div className="relative flex items-start justify-between">
-                    <div className="h-80 w-full overflow-hidden rounded-xl bg-[#F3F4F2]">
+                  <div className="relative">
+                    <div className="h-72 w-full overflow-hidden rounded-xl bg-[#F3F4F2]">
                       <img
                         src={service.image}
-                        alt={service.title}
-                        className="h-full w-full  transition duration-500 group-hover:scale-105"
+                        alt={`${service.title} - Acuity Pest Control`}
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
 
-                    <span className="absolute right-3 top-3 rounded-full bg-white/90 px-3 py-1 font-mono text-xs font-bold text-[#12181A]/50 backdrop-blur-sm">
+                    <span className="absolute right-3 top-3 rounded-full bg-white/90 px-3 py-1 font-mono text-xs font-bold text-[#12181A]/60 backdrop-blur-sm">
                       NO.{service.code}
                     </span>
                   </div>
@@ -1176,7 +1294,10 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* PROPERTY COVERAGE */}
+        {/* =======================================================
+            PROPERTY COVERAGE
+        ======================================================= */}
+
         <section className="bg-white px-4 py-16 sm:px-6 md:py-20 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-3xl text-center">
@@ -1230,7 +1351,9 @@ Please contact me with the service details and quotation.`;
                         ✓
                       </span>
 
-                      <span className="text-sm font-semibold">{property}</span>
+                      <span className="text-sm font-semibold">
+                        {property}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -1262,7 +1385,10 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* PESTS */}
+        {/* =======================================================
+            PESTS
+        ======================================================= */}
+
         <section className="bg-[#F6F2E7] px-4 py-16 sm:px-6 md:py-20 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
@@ -1284,7 +1410,8 @@ Please contact me with the service details and quotation.`;
                   href="/pest-identification"
                   className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#12181A] px-6 py-4 font-bold text-white transition hover:bg-[#0E3B39]"
                 >
-                  View Pest Identification <span aria-hidden="true">→</span>
+                  View Pest Identification{" "}
+                  <span aria-hidden="true">→</span>
                 </a>
               </div>
 
@@ -1303,7 +1430,9 @@ Please contact me with the service details and quotation.`;
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <p className="mt-2 font-semibold">{pest}</p>
+                    <p className="mt-2 font-semibold">
+                      {pest}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -1311,23 +1440,27 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* EMERGENCY CTA */}
+        {/* =======================================================
+            CTA
+        ======================================================= */}
+
         <section className="relative overflow-hidden bg-[#B8442F] px-4 py-12 text-white sm:px-6 lg:px-8">
           <div className="dot-grid absolute inset-0 opacity-40" />
 
           <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left">
             <div>
               <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white/70">
-                Urgent pest problem?
+                Need pest control?
               </p>
 
               <h2 className="font-display mt-2 text-3xl font-bold uppercase sm:text-4xl">
-                Same-Day Pest Control in Bangalore
+                Book Pest Control in Bangalore
               </h2>
 
               <p className="mt-3 max-w-3xl leading-7 text-white/80">
-                Contact us for the earliest available appointment. Availability
-                depends on location, technician schedule and treatment type.
+                Contact us for the earliest available appointment.
+                Availability depends on location, technician schedule and
+                treatment type.
               </p>
             </div>
 
@@ -1341,7 +1474,7 @@ Please contact me with the service details and quotation.`;
 
               <a
                 href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-                  "Hello Acuity Pest Control, I need an urgent pest control appointment in Bangalore.",
+                  "Hello Acuity Pest Control, I need a pest control appointment in Bangalore.",
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -1353,7 +1486,10 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* PRICING */}
+        {/* =======================================================
+            PRICING
+        ======================================================= */}
+
         <section
           id="pricing"
           className="scroll-mt-20 bg-white px-4 py-16 sm:px-6 md:py-20 lg:px-8"
@@ -1409,7 +1545,9 @@ Please contact me with the service details and quotation.`;
                     {factor}
                   </p>
 
-                  <p className="mt-2 leading-6 text-[#5B6462]">{description}</p>
+                  <p className="mt-2 leading-6 text-[#5B6462]">
+                    {description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -1426,7 +1564,10 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* WHY ACUITY */}
+        {/* =======================================================
+            WHY ACUITY
+        ======================================================= */}
+
         <section className="px-4 py-16 sm:px-6 md:py-20 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
             <div className="relative overflow-hidden rounded-2xl bg-[#12181A] p-7 text-white sm:p-10">
@@ -1470,7 +1611,9 @@ Please contact me with the service details and quotation.`;
                       ✓
                     </span>
 
-                    <p className="text-sm font-semibold leading-6">{benefit}</p>
+                    <p className="text-sm font-semibold leading-6">
+                      {benefit}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -1478,7 +1621,10 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* INTERNAL LINKS */}
+        {/* =======================================================
+            INTERNAL LINKS
+        ======================================================= */}
+
         <section className="bg-[#12181A] px-4 py-16 text-white sm:px-6 md:py-20 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-3xl text-center">
@@ -1491,8 +1637,8 @@ Please contact me with the service details and quotation.`;
               </h2>
 
               <p className="mt-4 leading-7 text-white/65">
-                Explore residential treatments, commercial pest management, pest
-                identification and helpful resources.
+                Explore residential treatments, commercial pest management,
+                pest identification and helpful resources.
               </p>
             </div>
 
@@ -1530,7 +1676,10 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* AREAS */}
+        {/* =======================================================
+            AREAS
+        ======================================================= */}
+
         <section
           id="areas"
           className="scroll-mt-20 bg-white px-4 py-16 sm:px-6 md:py-20 lg:px-8"
@@ -1544,18 +1693,19 @@ Please contact me with the service details and quotation.`;
               <h2 className="font-display mt-3 text-3xl font-bold uppercase text-[#12181A] sm:text-4xl">
                 Pest Control Services Across Bangalore
               </h2>
+
+              <p className="mt-4 leading-7 text-[#5B6462]">
+                Looking for pest control near you? We provide residential and
+                commercial pest control services across multiple Bangalore
+                areas, subject to service availability.
+              </p>
             </div>
 
             <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
               {serviceAreas.map((area, index) => (
                 <a
-                  key={area}
-                  href={`/pest-control-${area
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")
-                    .replace(/road/g, "")
-                    .replace(/-+/g, "-")
-                    .replace(/^-|-$/g, "")}`}
+                  key={area.name}
+                  href={area.href}
                   className={`acuity-card-lift rounded-xl border px-4 py-4 transition hover:-translate-y-1 hover:border-[#0E3B39] hover:shadow-md ${
                     index === 0
                       ? "border-[#0E3B39] bg-[#0E3B39] text-white"
@@ -1567,7 +1717,7 @@ Please contact me with the service details and quotation.`;
                   </span>
 
                   <p className="mt-1 text-sm font-bold">
-                    Pest Control in {area}
+                    Pest Control in {area.name}
                   </p>
                 </a>
               ))}
@@ -1575,17 +1725,20 @@ Please contact me with the service details and quotation.`;
 
             <p className="mx-auto mt-8 max-w-4xl text-center leading-7 text-[#5B6462]">
               Acuity Pest Control provides residential and commercial pest
-              control services across Bangalore, including JP Nagar, Jayanagar,
-              HSR Layout, Whitefield, Koramangala, Indiranagar, Electronic City,
-              Bannerghatta Road, Bellandur, Marathahalli, Hebbal, Peenya,
-              Doddaballapur, Attibele and Kumbalgodu. If your location is not
-              listed, contact us with your complete address and PIN code to
-              check service availability.
+              control services across Bangalore, including JP Nagar,
+              Jayanagar, HSR Layout, Whitefield, Koramangala, Indiranagar,
+              Electronic City, Bannerghatta Road, Bellandur, Marathahalli,
+              Hebbal, Peenya, Doddaballapur, Attibele and Kumbalgodu. If your
+              location is not listed, contact us with your complete address
+              and PIN code to check service availability.
             </p>
           </div>
         </section>
 
-        {/* FAQ */}
+        {/* =======================================================
+            FAQ
+        ======================================================= */}
+
         <section
           id="faq"
           className="scroll-mt-20 bg-[#F6F2E7] px-4 py-16 sm:px-6 md:py-20 lg:px-8"
@@ -1613,7 +1766,9 @@ Please contact me with the service details and quotation.`;
                         Q{String(index + 1).padStart(2, "0")}
                       </span>
 
-                      <span className="font-bold text-[#12181A]">{faq.q}</span>
+                      <span className="font-bold text-[#12181A]">
+                        {faq.q}
+                      </span>
                     </span>
 
                     <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#0E3B39]/10 text-base text-[#0E3B39] transition group-open:rotate-45">
@@ -1630,7 +1785,10 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* BLOG LINKS */}
+        {/* =======================================================
+            BLOG LINKS
+        ======================================================= */}
+
         <section className="bg-white px-4 py-16 sm:px-6 md:py-20 lg:px-8">
           <div className="mx-auto max-w-5xl">
             <p className="text-center font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#0E3B39]">
@@ -1662,7 +1820,266 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* FINAL CTA */}
+        {/* =======================================================
+            BOOKING FORM
+        ======================================================= */}
+
+        <section
+          id="booking-form"
+          className="scroll-mt-20 bg-[#F6F2E7] px-4 py-16 sm:px-6 md:py-20 lg:px-8"
+        >
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-10 lg:grid-cols-2">
+              <div>
+                <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#0E3B39]">
+                  Get a quotation
+                </p>
+
+                <h2 className="font-display mt-3 text-3xl font-bold uppercase text-[#12181A] sm:text-4xl">
+                  Book Pest Control in Bangalore
+                </h2>
+
+                <p className="mt-5 leading-8 text-[#5B6462]">
+                  Tell us about your pest problem, property type and location.
+                  Our team can help you identify the appropriate pest control
+                  service and provide a quotation.
+                </p>
+
+                <div className="mt-8 space-y-3">
+                  {[
+                    "Residential pest control",
+                    "Commercial pest control",
+                    "Cockroach treatment",
+                    "Termite treatment",
+                    "Bed bug treatment",
+                    "Rodent control",
+                    "Mosquito control",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-3"
+                    >
+                      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#0E3B39]/10 text-xs font-bold text-[#0E3B39]">
+                        ✓
+                      </span>
+
+                      <span className="font-semibold text-[#12181A]">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <a
+                  href={`tel:+${phoneNumber}`}
+                  className="mt-8 inline-flex rounded-full bg-[#12181A] px-6 py-4 font-bold text-white transition hover:bg-[#0E3B39]"
+                >
+                  Call {displayPhone}
+                </a>
+              </div>
+
+              <div className="rounded-2xl border border-[#12181A]/15 bg-white p-6 shadow-xl sm:p-8">
+                <h3 className="font-display text-2xl font-bold uppercase text-[#12181A]">
+                  Request a Free Quote
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-[#5B6462]">
+                  Fill in your details and our team will contact you.
+                </p>
+
+                <form
+                  onSubmit={handleSubmit}
+                  className="mt-7 space-y-4"
+                >
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="mb-2 block text-sm font-semibold text-[#12181A]"
+                    >
+                      Name *
+                    </label>
+
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your name"
+                      autoComplete="name"
+                      required
+                      className="w-full rounded-xl border border-[#12181A]/15 bg-[#F6F2E7] px-4 py-3 outline-none transition focus:border-[#0E3B39]"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="mb-2 block text-sm font-semibold text-[#12181A]"
+                    >
+                      Phone Number *
+                    </label>
+
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="10-digit mobile number"
+                      autoComplete="tel"
+                      inputMode="numeric"
+                      maxLength={10}
+                      required
+                      className="w-full rounded-xl border border-[#12181A]/15 bg-[#F6F2E7] px-4 py-3 outline-none transition focus:border-[#0E3B39]"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="location"
+                      className="mb-2 block text-sm font-semibold text-[#12181A]"
+                    >
+                      Location *
+                    </label>
+
+                    <input
+                      id="location"
+                      name="location"
+                      type="text"
+                      value={formData.location}
+                      onChange={handleChange}
+                      placeholder="Area / locality in Bangalore"
+                      autoComplete="address-level2"
+                      required
+                      className="w-full rounded-xl border border-[#12181A]/15 bg-[#F6F2E7] px-4 py-3 outline-none transition focus:border-[#0E3B39]"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="service"
+                      className="mb-2 block text-sm font-semibold text-[#12181A]"
+                    >
+                      Service Required *
+                    </label>
+
+                    <select
+                      id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      required
+                      className="w-full rounded-xl border border-[#12181A]/15 bg-[#F6F2E7] px-4 py-3 outline-none transition focus:border-[#0E3B39]"
+                    >
+                      <option value="">
+                        Select a service
+                      </option>
+
+                      {primaryServices.map((service) => (
+                        <option
+                          key={service.title}
+                          value={service.title}
+                        >
+                          {service.title}
+                        </option>
+                      ))}
+
+                      <option value="Ant Control">
+                        Ant Control
+                      </option>
+
+                      <option value="Wood Borer Treatment">
+                        Wood Borer Treatment
+                      </option>
+
+                      <option value="Other Pest Control">
+                        Other Pest Control
+                      </option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="propertyType"
+                      className="mb-2 block text-sm font-semibold text-[#12181A]"
+                    >
+                      Property Type
+                    </label>
+
+                    <select
+                      id="propertyType"
+                      name="propertyType"
+                      value={formData.propertyType}
+                      onChange={handleChange}
+                      className="w-full rounded-xl border border-[#12181A]/15 bg-[#F6F2E7] px-4 py-3 outline-none transition focus:border-[#0E3B39]"
+                    >
+                      <option value="">
+                        Select property type
+                      </option>
+
+                      {propertyTypes.map((property) => (
+                        <option
+                          key={property}
+                          value={property}
+                        >
+                          {property}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="mb-2 block text-sm font-semibold text-[#12181A]"
+                    >
+                      Additional Details
+                    </label>
+
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Tell us about the pest problem..."
+                      rows={4}
+                      className="w-full resize-none rounded-xl border border-[#12181A]/15 bg-[#F6F2E7] px-4 py-3 outline-none transition focus:border-[#0E3B39]"
+                    />
+                  </div>
+
+                  {submitStatus.message && (
+                    <div
+                      role="alert"
+                      className={`rounded-xl border p-4 text-sm font-semibold ${
+                        submitStatus.type === "success"
+                          ? "border-green-300 bg-green-50 text-green-800"
+                          : "border-red-300 bg-red-50 text-red-800"
+                      }`}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full rounded-full bg-[#E3A23E] px-6 py-4 font-bold text-[#12181A] shadow-lg transition hover:bg-[#f0b458] disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {isSubmitting
+                      ? "Sending Enquiry..."
+                      : "Get Free Quote"}
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =======================================================
+            FINAL CTA
+        ======================================================= */}
+
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[#0E3B39] px-6 py-14 text-center text-white sm:px-10">
             <div className="hazard-stripes absolute inset-x-0 top-0 h-1.5" />
@@ -1697,7 +2114,10 @@ Please contact me with the service details and quotation.`;
           </div>
         </section>
 
-        {/* MOBILE CALL / WHATSAPP */}
+        {/* =======================================================
+            MOBILE CALL / WHATSAPP
+        ======================================================= */}
+
         <div className="fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 border-t border-[#12181A]/10 bg-white p-2 shadow-2xl md:hidden">
           <a
             href={`tel:+${phoneNumber}`}
