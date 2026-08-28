@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Ping from "../../src/images/ping.jpg";
 
+import Cockroch1 from "../images/cockrochv.png";
+import Bedbug1 from "../images/bedbugv.png";
+import Termite1 from "../images/termitev.png";
+import Rodent1 from "../images/rodentv.jpg";
+import Mosquito1 from "../images/mosquitov.jpg";
+import GeneralPest1 from "../images/generalpestv.jpg";
+
 const PestControlLandingPage = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -49,52 +56,57 @@ const PestControlLandingPage = () => {
   const primaryServices = [
     {
       code: "01",
-      icon: "🪳",
+      image: Cockroch1,
       title: "Cockroach Control in Bangalore",
       description:
         "Professional cockroach control using gel baiting and residual treatment for kitchens, bathrooms, apartments, villas, offices and commercial properties.",
       zone: "Kitchen · Bathroom",
       href: "/cockroach-management-service",
     },
+
     {
       code: "02",
-      icon: "🛏️",
+      image: Bedbug1,
       title: "Bed Bug Treatment in Bangalore",
       description:
         "Effective bed bug treatment for mattresses, beds, furniture, bedrooms, hostels, hotels and residential properties with targeted professional treatment.",
       zone: "Bedroom · Furniture",
       href: "/bed-bug-treatment",
     },
+
     {
       code: "03",
-      icon: "🏠",
+      image: Termite1,
       title: "Termite Treatment in Bangalore",
       description:
         "Professional pre-construction and post-construction termite treatment for homes, apartments, villas, offices and commercial buildings.",
       zone: "Walls · Flooring",
       href: "/anti-termite-treatment",
     },
+
     {
       code: "04",
-      icon: "🐀",
+      image: Rodent1,
       title: "Rat and Rodent Control in Bangalore",
       description:
         "Professional rat and rodent control using baiting, trapping and entry-point management for homes, offices, apartments and warehouses.",
       zone: "Indoor · Perimeter",
       href: "/rodent-management-service",
     },
+
     {
       code: "05",
-      icon: "🦟",
+      image: Mosquito1,
       title: "Mosquito Control in Bangalore",
       description:
         "Professional mosquito control with fogging and breeding-source management for apartments, villas, offices, schools, hotels and outdoor areas.",
       zone: "Indoor · Outdoor",
       href: "/mosquito-management-service",
     },
+
     {
       code: "06",
-      icon: "🧴",
+      image: GeneralPest1,
       title: "General Pest Control in Bangalore",
       description:
         "Comprehensive pest control for cockroaches, ants, spiders and other common household and commercial pests using professional treatment methods.",
@@ -102,7 +114,6 @@ const PestControlLandingPage = () => {
       href: "/general-pest-control",
     },
   ];
-
   const propertyTypes = [
     "1 RK",
     "1 BHK",
@@ -1120,11 +1131,15 @@ Please contact me with the service details and quotation.`;
                   <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[#0E3B39]/5 transition group-hover:scale-125" />
 
                   <div className="relative flex items-start justify-between">
-                    <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#0E3B39]/8 text-3xl">
-                      {service.icon}
-                    </span>
+                    <div className="h-80 w-full overflow-hidden rounded-xl bg-[#F3F4F2]">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="h-full w-full  transition duration-500 group-hover:scale-105"
+                      />
+                    </div>
 
-                    <span className="font-mono text-xs font-bold text-[#12181A]/30">
+                    <span className="absolute right-3 top-3 rounded-full bg-white/90 px-3 py-1 font-mono text-xs font-bold text-[#12181A]/50 backdrop-blur-sm">
                       NO.{service.code}
                     </span>
                   </div>
