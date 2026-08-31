@@ -95,8 +95,8 @@ const WoodBorerTreatment = () => {
   return (
     <div className="w-full bg-white text-gray-800">
       <SEO
-        title="Wood Borer Treatment in Bangalore | Acuity Pest Control"
-        description="Professional wood borer treatment in Bangalore for furniture, doors, windows, wardrobes and wooden interiors. Safe treatment by Acuity Pest Control."
+        title="Wood Borer Treatment in Bangalore | Acuity Pest Control Services"
+        description="Professional wood borer treatment in Bangalore for furniture, doors, windows, wardrobes and wooden interiors. Book an inspection with Acuity Pest Control."
         keywords="wood borer treatment bangalore, wood borer control bangalore, wood pest control bangalore, furniture wood borer treatment, wooden furniture pest control, wood borer removal bangalore, wood beetle treatment"
         canonical="https://www.acuitypestcontrols.com/wood-borer-treatment"
         image="https://www.acuitypestcontrols.com/logo.png"
@@ -305,6 +305,61 @@ const WoodBorerTreatment = () => {
                 </h3>
 
                 <p className="text-gray-600">{borer.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WOOD BORER TREATMENT FOR WOODEN ITEMS */}
+      <section className="py-10 md:py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-green-900 mb-4">
+            Wood Borer Treatment for Furniture & Wooden Interiors
+          </h2>
+
+          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+            Wood borer infestations can affect different types of wooden
+            furniture and interior structures. Our technicians inspect the
+            affected areas and recommend a suitable treatment based on the wood
+            condition and level of infestation.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Wooden Furniture",
+                desc: "Treatment for wardrobes, tables, chairs, cabinets and other wooden furniture affected by wood borer activity.",
+              },
+              {
+                title: "Doors & Window Frames",
+                desc: "Inspection and treatment for wooden doors, frames and window structures showing holes, frass or other signs of infestation.",
+              },
+              {
+                title: "Wardrobes & Cabinets",
+                desc: "Professional treatment for wooden wardrobes, storage cabinets and built-in furniture.",
+              },
+              {
+                title: "Wooden Flooring",
+                desc: "Inspection of wooden flooring and affected areas where wood borer activity may be present.",
+              },
+              {
+                title: "Office & Commercial Interiors",
+                desc: "Wood borer treatment for offices, hotels, restaurants, showrooms and other commercial properties.",
+              },
+              {
+                title: "Wooden Fixtures",
+                desc: "Treatment guidance for wooden fittings and interior structures based on infestation level and wood condition.",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm"
+              >
+                <h3 className="font-bold text-xl text-green-900 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 leading-7">{item.desc}</p>
               </div>
             ))}
           </div>
