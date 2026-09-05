@@ -273,11 +273,11 @@ const AppContent = () => {
       <Navbar />
 
       {/* Lazy loaded game button - only loaded when needed */}
-      {!hideGameButton && (
+      {/* {!hideGameButton && (
         <Suspense fallback={null}>
           <PestGameFloatingButton />
         </Suspense>
-      )}
+      )} */}
 
       {/* Lazy loaded enquiry form */}
       <Suspense fallback={null}>
