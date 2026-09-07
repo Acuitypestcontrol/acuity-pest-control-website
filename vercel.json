@@ -244,10 +244,22 @@
       "permanent": true
     },
     {
-      "source": "/anti-termite-pipe-treatment",
-      "destination": "/termite-control-services-in-bangalore",
+      "source": "/termite-control-services-in-bangalore",
+      "destination": "/anti-termite-treatment",
       "permanent": true
     },
+
+    {
+      "source": "/termite-control-services-in-bangalore",
+      "destination": "/anti-termite-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/residential-pest-control-services-why-choose-bangalore-pest-control-experts",
+      "destination": "/general-pest-control",
+      "permanent": true
+    },
+
     {
       "source": "/corona-disinfection-sanitization-service-in-bangalore",
       "destination": "/disinfection-services",
