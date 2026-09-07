@@ -179,16 +179,6 @@
       "permanent": true
     },
     {
-      "source": "/PestGamePage",
-      "destination": "/pest-game",
-      "permanent": true
-    },
-    {
-      "source": "/DefendHomeGame",
-      "destination": "/defend-home-game",
-      "permanent": true
-    },
-    {
       "source": "/wood-borer-services",
       "destination": "/wood-borer-treatment",
       "permanent": true
@@ -211,11 +201,6 @@
     {
       "source": "/2020/06/15/corona-disinfection-sanitization-service-in-bangalore",
       "destination": "/disinfection-services",
-      "permanent": true
-    },
-    {
-      "source": "/anti-termite-treatment",
-      "destination": "/termite-control-services-in-bangalore",
       "permanent": true
     },
     {
@@ -263,7 +248,6 @@
       "destination": "/termite-control-services-in-bangalore",
       "permanent": true
     },
-
     {
       "source": "/corona-disinfection-sanitization-service-in-bangalore",
       "destination": "/disinfection-services",
@@ -285,17 +269,7 @@
       "permanent": true
     },
     {
-      "source": "/blog/page/2/",
-      "destination": "/blog",
-      "permanent": true
-    },
-    {
       "source": "/prevention-tips-for-cockroaches",
-      "destination": "/cockroach-management-service",
-      "permanent": true
-    },
-    {
-      "source": "/prevention-tips-for-cockroaches/",
       "destination": "/cockroach-management-service",
       "permanent": true
     },
@@ -385,17 +359,7 @@
       "permanent": true
     },
     {
-      "source": "/the-hidden-dangers-how-termite-related-health-issues-impact-your-well-being/",
-      "destination": "/blogs/signs-of-termite-infestation",
-      "permanent": true
-    },
-    {
       "source": "/understanding-preventing-common-household-pests-in-bangalore",
-      "destination": "/blogs/top-10-household-pests-in-bangalore",
-      "permanent": true
-    },
-    {
-      "source": "/understanding-preventing-common-household-pests-in-bangalore/",
       "destination": "/blogs/top-10-household-pests-in-bangalore",
       "permanent": true
     },
@@ -446,11 +410,6 @@
     },
     {
       "source": "/pets-control-services-in-bangalore",
-      "destination": "/general-pest-control",
-      "permanent": true
-    },
-    {
-      "source": "/pets-control-services-in-bangalore/",
       "destination": "/general-pest-control",
       "permanent": true
     },
@@ -635,17 +594,7 @@
       "permanent": true
     },
     {
-      "source": "/team/",
-      "destination": "/about",
-      "permanent": true
-    },
-    {
       "source": "/faq",
-      "destination": "/contact",
-      "permanent": true
-    },
-    {
-      "source": "/faq/",
       "destination": "/contact",
       "permanent": true
     },
@@ -655,27 +604,12 @@
       "permanent": true
     },
     {
-      "source": "/lizard-pest-control/",
-      "destination": "/general-pest-control",
-      "permanent": true
-    },
-    {
       "source": "/cockroach-control-services",
       "destination": "/cockroach-management-service",
       "permanent": true
     },
     {
-      "source": "/cockroach-control-services/",
-      "destination": "/cockroach-management-service",
-      "permanent": true
-    },
-    {
       "source": "/bed-bugs-treatment",
-      "destination": "/bed-bug-treatment",
-      "permanent": true
-    },
-    {
-      "source": "/bed-bugs-treatment/",
       "destination": "/bed-bug-treatment",
       "permanent": true
     },
@@ -690,17 +624,12 @@
       "permanent": true
     },
     {
-      "source": "/commercial-services/",
+      "source": "/commercial-services",
       "destination": "/services",
       "permanent": true
     },
     {
       "source": "/bangalore-mosquito-control-how-acuity-pest-controls-protects-your-home-and-family/feed",
-      "destination": "/blogs/mosquito-prevention-during-rainy-season",
-      "permanent": true
-    },
-    {
-      "source": "/bangalore-mosquito-control-how-acuity-pest-controls-protects-your-home-and-family/feed/",
       "destination": "/blogs/mosquito-prevention-during-rainy-season",
       "permanent": true
     },
