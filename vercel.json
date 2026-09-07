@@ -283,7 +283,7 @@
     },
     {
       "source": "/blog/page/2",
-      "destination": "/blog",
+      "destination": "/blogs",
       "permanent": true
     },
     {
