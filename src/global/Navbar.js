@@ -323,11 +323,11 @@ const Navbar = () => {
             </span>
 
             <a
-              href="mailto:info@acuitypestcontrols.in"
+              href="mailto:acuitypestcontrol@gmail.com"
               className="group hidden shrink-0 items-center gap-2 transition hover:text-green-300 xl:flex"
             >
               <FaEnvelope className="transition group-hover:scale-110" />
-              info@acuitypestcontrols.in
+           acuitypestcontrol@gmail.com
             </a>
 
             <div className="flex shrink-0 items-center gap-3">
@@ -375,7 +375,7 @@ const Navbar = () => {
             </a>
 
             <a
-              href="mailto:info@acuitypestcontrols.in"
+              href="mailto:acuitypestcontrol@gmail.com"
               className="flex items-center justify-center gap-1.5"
             >
               <FaEnvelope />
@@ -919,11 +919,11 @@ const Navbar = () => {
                 </div>
 
                 <a
-                  href="mailto:info@acuitypestcontrols.in"
+                  href="mailto:acuitypestcontrol@gmail.com"
                   className="mt-3 flex items-center justify-center gap-2 rounded-2xl border border-green-100 bg-green-50 py-3 text-xs font-bold text-green-700"
                 >
                   <FaEnvelope />
-                  info@acuitypestcontrols.in
+       acuitypestcontrol@gmail.com
                 </a>
               </motion.div>
             </>

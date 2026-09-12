@@ -479,7 +479,7 @@ const homeSchema = [
 
     telephone: "+919941229005",
 
-    email: "info@acuitypestcontrols.in",
+    email: "acuitypestcontrol@gmail.com",
 
     priceRange: "₹₹",
 
