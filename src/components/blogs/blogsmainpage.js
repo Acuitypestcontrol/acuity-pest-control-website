@@ -377,14 +377,14 @@ const PestBlogs = () => {
           "@type": "ListItem",
           position: 2,
           name: "Blogs",
-          item: "https://www.acuitypestcontrols.com/blogs",
+          item: "https://www.acuitypestcontrols.com/blogsmainpage",
         },
       ],
     },
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "@id": "https://www.acuitypestcontrols.com/blogs#itemlist",
+      "@id": "https://www.acuitypestcontrols.com/blogsmainpage#itemlist",
       name: "Pest Control Blog Articles",
       itemListElement: blogs.map((blog, index) => ({
         "@type": "ListItem",
@@ -406,7 +406,7 @@ const PestBlogs = () => {
         title="Pest Control Blogs in Bangalore | Expert Pest Control Tips"
         description="Read expert pest control blogs from Acuity Pest Control Bangalore. Learn about termites, cockroaches, rodents, mosquitoes, bed bugs, ants and pest prevention tips."
         keywords="pest control blogs Bangalore, pest control tips Bangalore, cockroach control tips, termite treatment guide, rodent control guide, bed bug treatment blog, mosquito control tips, Acuity Pest Control"
-        canonical="https://www.acuitypestcontrols.com/blogs"
+        canonical="https://www.acuitypestcontrols.com/blogsmainpage"
         image="https://www.acuitypestcontrols.com/logo.png"
         schema={blogSchema}
       />

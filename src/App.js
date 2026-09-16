@@ -5,7 +5,7 @@ import {
   Route,
   Navigate,
   Link,
-  useLocation,
+  // useLocation,
 } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
@@ -113,9 +113,7 @@ const HowToPreventAntInfestationAtHome = lazy(
 
 const WhyRegularPestControlImportantBusinesses = lazy(
   () =>
-    import(
-      "./components/blogs/why-regular-pest-control-is-important-for-businesses"
-    ),
+    import("./components/blogs/why-regular-pest-control-is-important-for-businesses"),
 );
 
 const PestControlChecklistNewHomes = lazy(
@@ -158,9 +156,7 @@ const PostConstructionTermiteTreatment = lazy(
   () => import("./components/servicepage/post-construction-termite"),
 );
 
-const BedBug = lazy(
-  () => import("./components/servicepage/bed-bug-treatment"),
-);
+const BedBug = lazy(() => import("./components/servicepage/bed-bug-treatment"));
 
 const AntControlTreatment = lazy(
   () => import("./components/servicepage/ant-control-treatment"),
@@ -219,13 +215,11 @@ const WarehousePestManagement = lazy(
    GAME COMPONENTS - LAZY LOADED
 ========================================================= */
 
-const PestGameFloatingButton = lazy(
-  () => import("./components/PestGameFloatingButton"),
-);
+// const PestGameFloatingButton = lazy(
+//   () => import("./components/PestGameFloatingButton"),
+// );
 
-const PestGamePage = lazy(
-  () => import("./components/pestgame/PestGamePage"),
-);
+const PestGamePage = lazy(() => import("./components/pestgame/PestGamePage"));
 
 const DefendHomeGame = lazy(
   () => import("./components/pestgame/DefendHomeGame"),
@@ -235,9 +229,7 @@ const DefendHomeGame = lazy(
    GLOBAL ENQUIRY FORM - LAZY LOADED
 ========================================================= */
 
-const PestEnquiryForm = lazy(
-  () => import("./components/PestEnquiryForm"),
-);
+const PestEnquiryForm = lazy(() => import("./components/PestEnquiryForm"));
 
 /* =========================================================
    404 PAGE (STATIC - ALREADY SMALL)
@@ -300,13 +292,13 @@ const NotFound = () => {
 ========================================================= */
 
 const AppContent = () => {
-  const location = useLocation();
+  // const location = useLocation();
 
-  const hideGameButton =
-    location.pathname === "/" ||
-    location.pathname === "/pest-control-bangalore" ||
-    location.pathname === "/pest-game" ||
-    location.pathname === "/defend-home-game";
+  // const hideGameButton =
+  //   location.pathname === "/" ||
+  //   location.pathname === "/pest-control-bangalore" ||
+  //   location.pathname === "/pest-game" ||
+  //   location.pathname === "/defend-home-game";
 
   return (
     <>
@@ -334,19 +326,13 @@ const AppContent = () => {
                 LANDING PAGE
             ================================================== */}
 
-            <Route
-              path="/"
-              element={<PestControlLandingPage />}
-            />
+            <Route path="/" element={<PestControlLandingPage />} />
 
             {/* =================================================
                 NORMAL HOME PAGE
             ================================================== */}
 
-            <Route
-              path="/home"
-              element={<Home />}
-            />
+            <Route path="/home" element={<Home />} />
 
             {/* =================================================
                 LANDING PAGE ALTERNATE URL
@@ -361,20 +347,11 @@ const AppContent = () => {
                 MAIN CANONICAL PAGES
             ================================================== */}
 
-            <Route
-              path="/about"
-              element={<AboutUS />}
-            />
+            <Route path="/about" element={<AboutUS />} />
 
-            <Route
-              path="/services"
-              element={<ServicesPage />}
-            />
+            <Route path="/services" element={<ServicesPage />} />
 
-            <Route
-              path="/contact"
-              element={<Contact />}
-            />
+            <Route path="/contact" element={<Contact />} />
 
             <Route
               path="/pest-identification"
@@ -394,10 +371,7 @@ const AppContent = () => {
                 OLD MAIN PAGE REDIRECTS
             ================================================== */}
 
-            <Route
-              path="/aboutus"
-              element={<Navigate to="/about" replace />}
-            />
+            <Route path="/aboutus" element={<Navigate to="/about" replace />} />
 
             <Route
               path="/about-us"
@@ -421,31 +395,23 @@ const AppContent = () => {
 
             <Route
               path="/pestidentification"
-              element={
-                <Navigate
-                  to="/pest-identification"
-                  replace
-                />
-              }
+              element={<Navigate to="/pest-identification" replace />}
             />
 
             {/* =================================================
                 BLOG LISTING
             ================================================== */}
 
+            <Route path="/blogsmainpage" element={<Blog />} />
+
             <Route
               path="/blogs"
-              element={<Blog />}
+              element={<Navigate to="/blogsmainpage" replace />}
             />
 
             <Route
               path="/blog"
-              element={<Navigate to="/blogs" replace />}
-            />
-
-            <Route
-              path="/blogsmainpage"
-              element={<Navigate to="/blogs" replace />}
+              element={<Navigate to="/blogsmainpage" replace />}
             />
 
             {/* =================================================
@@ -536,10 +502,7 @@ const AppContent = () => {
               element={<MonsoonPestControl />}
             />
 
-            <Route
-              path="/blogs/:slug"
-              element={<BlogDetail />}
-            />
+            <Route path="/blogs/:slug" element={<BlogDetail />} />
 
             {/* =================================================
                 RESIDENTIAL SERVICE PAGES
@@ -565,10 +528,7 @@ const AppContent = () => {
               element={<PostConstructionTermiteTreatment />}
             />
 
-            <Route
-              path="/bed-bug-treatment"
-              element={<BedBug />}
-            />
+            <Route path="/bed-bug-treatment" element={<BedBug />} />
 
             <Route
               path="/ant-control-treatment"
@@ -582,12 +542,7 @@ const AppContent = () => {
 
             <Route
               path="/mosquito-management"
-              element={
-                <Navigate
-                  to="/mosquito-management-service"
-                  replace
-                />
-              }
+              element={<Navigate to="/mosquito-management-service" replace />}
             />
 
             <Route
@@ -616,12 +571,7 @@ const AppContent = () => {
 
             <Route
               path="/hotel-hospital-pest-control"
-              element={
-                <Navigate
-                  to="/pest-control-hotels-hospitals"
-                  replace
-                />
-              }
+              element={<Navigate to="/pest-control-hotels-hospitals" replace />}
             />
 
             <Route
@@ -656,10 +606,7 @@ const AppContent = () => {
             <Route
               path="/post-construction-termite"
               element={
-                <Navigate
-                  to="/post-construction-termite-treatment"
-                  replace
-                />
+                <Navigate to="/post-construction-termite-treatment" replace />
               }
             />
 
@@ -675,87 +622,46 @@ const AppContent = () => {
 
             <Route
               path="/cockroach-control"
-              element={
-                <Navigate
-                  to="/cockroach-management-service"
-                  replace
-                />
-              }
+              element={<Navigate to="/cockroach-management-service" replace />}
             />
 
             <Route
               path="/cockroach-pest-control"
-              element={
-                <Navigate
-                  to="/cockroach-management-service"
-                  replace
-                />
-              }
+              element={<Navigate to="/cockroach-management-service" replace />}
             />
 
             <Route
               path="/rodent-control"
-              element={
-                <Navigate
-                  to="/rodent-management-service"
-                  replace
-                />
-              }
+              element={<Navigate to="/rodent-management-service" replace />}
             />
 
             <Route
               path="/termite-control-services"
-              element={
-                <Navigate
-                  to="/anti-termite-treatment"
-                  replace
-                />
-              }
+              element={<Navigate to="/anti-termite-treatment" replace />}
             />
 
             <Route
               path="/eco-friendly-pest-control-natural-pest-management-in-bangalore"
-              element={
-                <Navigate
-                  to="/general-pest-control"
-                  replace
-                />
-              }
+              element={<Navigate to="/general-pest-control" replace />}
             />
 
             <Route
               path="/residential-pest-control"
-              element={
-                <Navigate
-                  to="/general-pest-control"
-                  replace
-                />
-              }
+              element={<Navigate to="/general-pest-control" replace />}
             />
 
             <Route
               path="/residential-pest-control-services-in-bangalore-by-acuity-pest-controls"
-              element={
-                <Navigate
-                  to="/general-pest-control"
-                  replace
-                />
-              }
+              element={<Navigate to="/general-pest-control" replace />}
             />
 
             {/* =================================================
                 GAME PAGES
             ================================================== */}
 
-            <Route
-              path="/pest-game"
-              element={<PestGamePage />}
-            />
+            <Route path="/pest-game" element={<PestGamePage />} />
 
-            <Route
-              path="/defend-home-game"
-              element={<DefendHomeGame />}
-            />
+            <Route path="/defend-home-game" element={<DefendHomeGame />} />
 
             {/* =================================================
                 OLD GAME URL REDIRECTS
@@ -763,32 +669,19 @@ const AppContent = () => {
 
             <Route
               path="/PestGamePage"
-              element={
-                <Navigate
-                  to="/pest-game"
-                  replace
-                />
-              }
+              element={<Navigate to="/pest-game" replace />}
             />
 
             <Route
               path="/DefendHomeGame"
-              element={
-                <Navigate
-                  to="/defend-home-game"
-                  replace
-                />
-              }
+              element={<Navigate to="/defend-home-game" replace />}
             />
 
             {/* =================================================
                 FINAL 404
             ================================================== */}
 
-            <Route
-              path="*"
-              element={<NotFound />}
-            />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
