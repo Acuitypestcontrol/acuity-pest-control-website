@@ -204,11 +204,6 @@
       "permanent": true
     },
     {
-      "source": "/anti-termite-treatment",
-      "destination": "/anti-termite-treatment",
-      "permanent": true
-    },
-    {
       "source": "/termite-control-services",
       "destination": "/anti-termite-treatment",
       "permanent": true
@@ -234,13 +229,8 @@
       "permanent": true
     },
     {
-      "source": "/top-termite-myths-you-should-stop-believing-right-now",
-      "destination": "/blogs/signs-of-termite-infestation",
-      "permanent": true
-    },
-    {
       "source": "/category/termites",
-      "destination": "/termite-control-services-in-bangalore",
+      "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
@@ -396,11 +386,7 @@
       "destination": "/warehouse-pest-management",
       "permanent": true
     },
-    {
-      "source": "/cockroach-management-service",
-      "destination": "/cockroach-management-service",
-      "permanent": true
-    },
+
     {
       "source": "/the-best-pest-control-services-in-bangalore-for-cockroaches",
       "destination": "/blogs/get-rid-of-cockroaches",
@@ -506,11 +492,7 @@
       "destination": "/wood-borer-treatment",
       "permanent": true
     },
-    {
-      "source": "/services",
-      "destination": "/services",
-      "permanent": true
-    },
+
     {
       "source": "/cockroach-pest-control",
       "destination": "/cockroach-management-service",
@@ -551,16 +533,7 @@
       "destination": "/rodent-management-service",
       "permanent": true
     },
-    {
-      "source": "/general-pest-control",
-      "destination": "/general-pest-control",
-      "permanent": true
-    },
-    {
-      "source": "/general-pest-control",
-      "destination": "/general-pest-control",
-      "permanent": true
-    },
+
     {
       "source": "/pest/house-rat-control",
       "destination": "/rodent-management-service",
