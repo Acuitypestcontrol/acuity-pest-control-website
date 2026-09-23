@@ -188,11 +188,7 @@
       "destination": "/office-pest-control",
       "permanent": true
     },
-    {
-      "source": "/services",
-      "destination": "/services",
-      "permanent": true
-    },
+
     {
       "source": "/ants-pest-control",
       "destination": "/ant-control-treatment",
@@ -624,11 +620,7 @@
       "destination": "/blogs/mosquito-prevention-during-rainy-season",
       "permanent": true
     },
-    {
-      "source": "/general-pest-control",
-      "destination": "/general-pest-control",
-      "permanent": true
-    },
+
     {
       "source": "/bed-bugs-treatment-in-bangalore",
       "destination": "/bed-bug-treatment",
@@ -642,6 +634,10 @@
   ],
 
   "rewrites": [
+    {
+      "source": "/kms-activator-for-microsoft-office",
+      "destination": "/api/not-found"
+    },
     {
       "source": "/(.*)",
       "destination": "/index"
