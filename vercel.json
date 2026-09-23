@@ -189,7 +189,7 @@
       "permanent": true
     },
     {
-      "source": "/commercial-pest-control",
+      "source": "/services",
       "destination": "/services",
       "permanent": true
     },
@@ -204,33 +204,33 @@
       "permanent": true
     },
     {
-      "source": "/termite-treatment-bangalore",
-      "destination": "/termite-control-services-in-bangalore",
+      "source": "/anti-termite-treatment",
+      "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
       "source": "/termite-control-services",
-      "destination": "/termite-control-services-in-bangalore",
+      "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
       "source": "/how-to-get-rid-of-termites-a-comprehensive-guide-to-termite-control",
-      "destination": "/termite-control-services-in-bangalore",
+      "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
       "source": "/everything-you-need-to-know-about-termites-a-complete-guide-to-termite-control-services",
-      "destination": "/termite-control-services-in-bangalore",
+      "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
       "source": "/bangalore-termite-treatment-experts-why-acuity-pest-control-is-your-best-bet",
-      "destination": "/termite-control-services-in-bangalore",
+      "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
       "source": "/how-do-i-permanently-control-termites-in-my-home-permanent-termite-solutions-in-bangalore",
-      "destination": "/termite-control-services-in-bangalore",
+      "destination": "/anti-termite-treatment",
       "permanent": true
     },
     {
@@ -397,7 +397,7 @@
       "permanent": true
     },
     {
-      "source": "/cockroach-control-services-bangalore",
+      "source": "/cockroach-management-service",
       "destination": "/cockroach-management-service",
       "permanent": true
     },
@@ -507,7 +507,7 @@
       "permanent": true
     },
     {
-      "source": "/commercial-pest-control-bangalore-why-your-business-needs-it",
+      "source": "/services",
       "destination": "/services",
       "permanent": true
     },
@@ -552,12 +552,12 @@
       "permanent": true
     },
     {
-      "source": "/residential-pest-control",
+      "source": "/general-pest-control",
       "destination": "/general-pest-control",
       "permanent": true
     },
     {
-      "source": "/residential-pest-control-services-in-bangalore-by-acuity-pest-controls",
+      "source": "/general-pest-control",
       "destination": "/general-pest-control",
       "permanent": true
     },
@@ -652,7 +652,7 @@
       "permanent": true
     },
     {
-      "source": "/industrial-pest-control",
+      "source": "/general-pest-control",
       "destination": "/general-pest-control",
       "permanent": true
     },
