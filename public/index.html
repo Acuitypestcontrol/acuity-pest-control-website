@@ -2,22 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
     <!-- =========================================================
-         META TAGS - Primary SEO
+         BASIC SEO
     ========================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta http-equiv="Cache-control" content="public" />
-
-    <!-- Primary Meta Tags -->
-    <title>Pest Control Services in Bangalore | Acuity Pest Control</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
 
     <meta
-      name="title"
-      content="Acuity Pest Controls | Best Pest Control Services in Bangalore"
+      name="theme-color"
+      content="#ffffff"
     />
+
+    <meta
+      http-equiv="Cache-control"
+      content="public"
+    />
+
+    <title>
+      Pest Control Services in Bangalore | Acuity Pest Control
+    </title>
 
     <meta
       name="description"
@@ -25,54 +33,25 @@
     />
 
     <meta
-      name="keywords"
-      content="pest control services bangalore, termite control bangalore, cockroach control bangalore, rodent control bangalore, mosquito control bangalore, bed bug treatment bangalore, pest management company bangalore, residential pest control bangalore, commercial pest control bangalore"
+      name="robots"
+      content="index, follow, max-image-preview:large"
     />
-
-    <meta name="author" content="Acuity Pest Controls" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-
-    <!-- =========================================================
-         OPEN GRAPH (Facebook, LinkedIn, WhatsApp Sharing)
-    ========================================================== -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.acuitypestcontrols.com/" />
-    <meta
-      property="og:title"
-      content="Acuity Pest Controls | Professional Pest Control Services"
-    />
-    <meta
-      property="og:description"
-      content="Trusted pest control company in Bangalore. Safe, effective and affordable termite, cockroach, rodent and mosquito control services."
-    />
-    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Acuity Pest Controls" />
-
-    <!-- =========================================================
-         TWITTER CARD (Twitter/X Sharing)
-    ========================================================== -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://www.acuitypestcontrols.com/" />
-    <meta
-      name="twitter:title"
-      content="Acuity Pest Controls | Pest Control Service in Bangalore"
-    />
-    <meta
-      name="twitter:description"
-      content="Professional pest control services for homes, apartments, offices, restaurants and industries across Bangalore."
-    />
-    <meta name="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
 
     <!-- =========================================================
          APPLE & PWA
     ========================================================== -->
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link
+      rel="apple-touch-icon"
+      href="%PUBLIC_URL%/logo192.png"
+    />
+
+    <link
+      rel="manifest"
+      href="%PUBLIC_URL%/manifest.json"
+    />
 
     <!-- =========================================================
-         SCHEMA MARKUP (JSON-LD) - Most Important for SEO
+         SCHEMA MARKUP
     ========================================================== -->
     <script type="application/ld+json">
       {
@@ -96,7 +75,7 @@
           "streetAddress": "JP Nagar 6th Phase, Yelachenahalli",
           "addressLocality": "Bengaluru",
           "addressRegion": "Karnataka",
-          "postalCode": "560062",
+          "postalCode": "560078",
           "addressCountry": "IN"
         },
         "geo": {
@@ -133,15 +112,9 @@
     </script>
 
     <!-- =========================================================
-         GOOGLE ANALYTICS (gtag.js)
+         GOOGLE ADS / GTAG
+         Delayed to improve initial page performance
     ========================================================== -->
-    <!-- =========================================================
-     GOOGLE ANALYTICS (gtag.js)
-========================================================== -->
-    <!-- =========================================================
-     GOOGLE ADS / GTAG
-     Delayed to improve initial page performance
-========================================================== -->
     <script>
       (function () {
         var googleAdsLoaded = false;
@@ -162,14 +135,19 @@
           gtag("config", "AW-941361002");
 
           var script = document.createElement("script");
+
           script.src =
             "https://www.googletagmanager.com/gtag/js?id=AW-941361002";
+
           script.async = true;
+
           document.head.appendChild(script);
         }
 
         if ("requestIdleCallback" in window) {
-          requestIdleCallback(loadGoogleAds, { timeout: 5000 });
+          requestIdleCallback(loadGoogleAds, {
+            timeout: 5000
+          });
         } else {
           window.addEventListener("load", function () {
             setTimeout(loadGoogleAds, 3000);
@@ -178,10 +156,8 @@
       })();
     </script>
 
-    
-
     <!-- =========================================================
-         PRELOAD HERO IMAGE (Performance Optimization)
+         PRELOAD HERO IMAGE
     ========================================================== -->
     <link
       rel="preload"
@@ -192,34 +168,39 @@
   </head>
 
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
 
     <div id="root"></div>
 
     <!-- =========================================================
-         TIDIO CHAT (Customer Support)
+         TIDIO CHAT
+         Delayed to improve initial page performance
     ========================================================== -->
-    <!-- =========================================================
-     TIDIO CHAT (Customer Support)
-     Delayed to improve initial page performance
-========================================================== -->
     <script>
       (function () {
         var tidioLoaded = false;
 
         function loadTidio() {
           if (tidioLoaded) return;
+
           tidioLoaded = true;
 
           var script = document.createElement("script");
+
           script.src =
             "https://code.tidio.co/lsdinwgr9g1qjktzvxk9xmsfouen6jxc.js";
+
           script.async = true;
+
           document.body.appendChild(script);
         }
 
         if ("requestIdleCallback" in window) {
-          requestIdleCallback(loadTidio, { timeout: 5000 });
+          requestIdleCallback(loadTidio, {
+            timeout: 5000
+          });
         } else {
           window.addEventListener("load", function () {
             setTimeout(loadTidio, 3000);
