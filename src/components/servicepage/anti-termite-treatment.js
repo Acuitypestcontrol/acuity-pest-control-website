@@ -96,7 +96,7 @@ const AntiTermiteTreatment = () => {
     <div className="w-full bg-white text-gray-800">
       <SEO
         title="Anti-Termite Treatment in Bangalore | Acuity Pest Control"
-        description="Looking for anti-termite treatment in Bangalore? Acuity Pest Control provides professional pre-construction and post-construction termite treatment for homes, apartments, villas, offices, and commercial properties. Call today for a free inspection."
+        description="Looking for anti-termite treatment in Bangalore? Acuity Pest Control provides professional pre-construction and post-construction termite treatment for homes, apartments, villas, offices, and commercial properties. Contact us today for professional termite treatment."
         keywords="anti termite treatment bangalore, termite treatment bangalore, termite control bangalore, best termite treatment bangalore, pre construction termite treatment bangalore, post construction termite treatment bangalore, residential termite treatment, commercial termite treatment, termite pest control, termite removal bangalore"
         canonical="https://www.acuitypestcontrols.com/anti-termite-treatment"
         image="https://www.acuitypestcontrols.com/logo.png"
@@ -192,6 +192,68 @@ const AntiTermiteTreatment = () => {
         </div>
       </section>
 
+      {/* TERMITE TREATMENT IN BANGALORE */}
+      <section className="py-10 md:py-20 px-6 bg-green-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+              Professional Termite Treatment in Bangalore
+            </h2>
+
+            <p className="text-md text-gray-700 leading-8 mb-5">
+              Termite infestation can affect homes, apartments, villas, offices
+              and commercial properties across Bangalore. Professional termite
+              treatment helps identify active termite areas and address the
+              problem before damage becomes more extensive.
+            </p>
+
+            <p className="text-md text-gray-700 leading-8 mb-5">
+              Acuity Pest Control provides termite control solutions for both
+              residential and commercial properties. Depending on the property
+              and termite activity, treatment may be planned for wooden
+              furniture, doors, cupboards, flooring, walls, foundations and
+              other vulnerable areas.
+            </p>
+
+            <p className="text-md text-gray-700 leading-8">
+              For new buildings, pre-construction termite treatment can help
+              protect the foundation and soil before construction is completed.
+              For existing properties, post-construction termite treatment can
+              be used to address active termite activity and reduce the risk of
+              further damage.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            {[
+              {
+                title: "Residential Termite Treatment",
+                desc: "Termite control for houses, apartments, villas, furniture, doors, cupboards and other wooden areas.",
+              },
+              {
+                title: "Commercial Termite Treatment",
+                desc: "Professional termite management for offices, shops and other commercial properties affected by termite activity.",
+              },
+              {
+                title: "Pre & Post-Construction Treatment",
+                desc: "Termite protection options for new construction as well as existing buildings with termite problems.",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-7 shadow-sm border border-green-100"
+              >
+                <h3 className="font-bold text-xl text-green-900 mb-3">
+                  {item.title}
+                </h3>
+
+                <p className="text-gray-600 leading-7">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SIGNS OF TERMITE INFESTATION */}
       <section className="bg-gray-50 py-20 px-6">
         <div className="max-w-7xl mx-auto">
@@ -201,7 +263,8 @@ const AntiTermiteTreatment = () => {
 
           <p className="md:text-md text-gray-600 text-center max-w-3xl mx-auto mb-12">
             Early detection is important to prevent severe termite damage. Look
-            for these signs and contact us for a termite inspection.
+            for these signs and contact us to discuss professional termite
+            treatment.
           </p>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -608,8 +671,7 @@ const AntiTermiteTreatment = () => {
           </div>
 
           <p className="text-sm text-white/70 mt-6">
-            ⏱ Same-day service available • Free inspection • Professional
-            termite control support
+            ⏱ Same-day service available • Professional termite control support
           </p>
         </div>
       </section>
