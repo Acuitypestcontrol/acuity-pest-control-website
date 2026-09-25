@@ -49,7 +49,7 @@ const cockroachSchema = [
     serviceType: "Cockroach Control",
     url: "https://www.acuitypestcontrols.com/cockroach-management-service",
     description:
-      "Professional cockroach management service in Bangalore for homes, apartments, kitchens, restaurants, offices and commercial properties.",
+      "Professional cockroach pest control service in Bangalore for homes, apartments, kitchens, restaurants, offices and commercial properties.",
     provider: {
       "@type": "HomeAndConstructionBusiness",
       "@id": "https://www.acuitypestcontrols.com/#business",
@@ -135,15 +135,13 @@ const CockroachManagementService = () => {
                 They hide inside kitchen cabinets, bathrooms, drains,
                 appliances, cracks and dark corners.
               </p>
-
               <p className="text-lg text-gray-700 leading-8 mb-5">
                 At <strong>Acuity Pest Control</strong>, we provide professional
-                cockroach management service in Bangalore using safe and
+                cockroach pest control service in Bangalore using safe and
                 effective treatment methods. Our trained technicians inspect
                 hiding areas and apply suitable treatment to reduce cockroach
                 activity.
               </p>
-
               <p className="text-lg text-gray-700 leading-8">
                 We serve homes, apartments, restaurants, hotels, offices and
                 commercial properties across Bangalore. Our cockroach control
