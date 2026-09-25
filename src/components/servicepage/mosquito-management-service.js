@@ -595,7 +595,7 @@ const MosquitoManagementService = () => {
           </div>
 
           <p className="text-sm text-white/70 mt-6">
-            ⏱ Same-day service available • Free inspection • Professional
+            ⏱ Same-day service available • Professional
             mosquito control support
           </p>
         </div>
