@@ -263,6 +263,129 @@ const CockroachManagementService = () => {
         </div>
       </section>
 
+      {/* PROFESSIONAL COCKROACH PEST CONTROL */}
+      <section className="py-10 md:py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold">
+              Professional Pest Control
+            </span>
+
+            <h2 className="text-4xl font-bold text-green-900 mt-6 mb-5">
+              Cockroach Pest Control in Bangalore
+            </h2>
+
+            <p className="text-lg text-gray-600 leading-8">
+              Cockroach infestations can develop quickly in kitchens,
+              apartments, restaurants, offices and other properties where food,
+              moisture and hiding spaces are available. Professional treatment
+              helps target cockroaches in the areas where they live and move.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div className="bg-gray-50 rounded-3xl p-8 shadow-sm border border-gray-100">
+              <h3 className="text-2xl font-bold text-green-900 mb-5">
+                Cockroach Treatment for Homes & Apartments
+              </h3>
+
+              <p className="text-gray-700 leading-8 mb-5">
+                Kitchens, bathrooms, cupboards, sinks, drains and appliances can
+                provide suitable hiding places for cockroaches. Our technicians
+                identify active areas and apply suitable treatment based on the
+                infestation and property condition.
+              </p>
+
+              <p className="text-gray-700 leading-8">
+                Our cockroach control service is suitable for apartments,
+                villas, independent homes and other residential properties
+                across Bangalore. We also provide guidance on reducing food
+                sources, moisture and possible entry points after treatment.
+              </p>
+            </div>
+
+            <div className="bg-green-50 rounded-3xl p-8 shadow-sm border border-green-100">
+              <h3 className="text-2xl font-bold text-green-900 mb-5">
+                Cockroach Control for Restaurants & Commercial Spaces
+              </h3>
+
+              <p className="text-gray-700 leading-8 mb-5">
+                Restaurants, hotels, commercial kitchens and food-handling areas
+                require careful cockroach management because food particles,
+                drains and moisture can attract pest activity.
+              </p>
+
+              <p className="text-gray-700 leading-8">
+                We provide professional cockroach pest control for restaurants,
+                hotels, offices and commercial properties in Bangalore.
+                Treatment areas and methods are selected according to the
+                property, infestation level and site conditions.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <h3 className="text-3xl font-bold text-green-900 text-center mb-8">
+              Cockroach Treatment Methods
+            </h3>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Cockroach Gel Treatment",
+                  desc: "Gel bait can be applied in suitable cracks, corners and hiding areas to target cockroaches where they are active.",
+                },
+                {
+                  title: "Targeted Spray Treatment",
+                  desc: "Professional spray treatment may be used in selected areas based on the infestation, property condition and treatment requirements.",
+                },
+                {
+                  title: "Kitchen Cockroach Control",
+                  desc: "Special attention is given to kitchen cabinets, sinks, appliances, drains and other common cockroach hiding areas.",
+                },
+                {
+                  title: "German Cockroach Treatment",
+                  desc: "German cockroaches can multiply quickly and hide in small spaces. Treatment focuses on active areas and potential harbourages.",
+                },
+                {
+                  title: "Preventive Cockroach Management",
+                  desc: "Reducing food waste, moisture, clutter and entry points can help lower the chance of recurring cockroach activity.",
+                },
+                {
+                  title: "Commercial Cockroach Control",
+                  desc: "Treatment plans can be adapted for offices, restaurants, hotels, commercial kitchens and other business properties.",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition"
+                >
+                  <h4 className="font-bold text-xl text-green-800 mb-3">
+                    {item.title}
+                  </h4>
+
+                  <p className="text-gray-600 leading-7">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 bg-gray-50 rounded-3xl p-8 text-center border border-gray-100">
+            <h3 className="text-2xl font-bold text-green-900 mb-4">
+              Why Early Cockroach Treatment Matters
+            </h3>
+
+            <p className="text-gray-700 leading-8 max-w-4xl mx-auto">
+              Seeing cockroaches regularly, finding droppings or noticing
+              activity around kitchen and bathroom areas can indicate an
+              infestation. Early professional treatment can help identify hiding
+              areas and reduce ongoing activity before the problem becomes more
+              difficult to manage.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* TYPES OF COCKROACHES */}
       <section className="py-10 md:py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -603,8 +726,8 @@ const CockroachManagementService = () => {
           </div>
 
           <p className="text-sm text-white/70 mt-6">
-            ⏱ Same-day service available • Free inspection • Professional
-            cockroach control support
+            ⏱ Same-day service available • Professional cockroach control
+            support cockroach control support
           </p>
         </div>
       </section>
