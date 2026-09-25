@@ -612,7 +612,7 @@ const GeneralPestControl = () => {
           </div>
 
           <p className="text-sm text-white/70 mt-6">
-            ⏱ Same-day service available • Free inspection • Professional pest
+            ⏱ Same-day service available • Professional pest
             control support
           </p>
         </div>
