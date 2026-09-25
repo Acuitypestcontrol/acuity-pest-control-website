@@ -272,7 +272,7 @@ const CockroachManagementService = () => {
             </span>
 
             <h2 className="text-4xl font-bold text-green-900 mt-6 mb-5">
-              Cockroach Pest Control in Bangalore
+              Professional Cockroach Pest Control in Bangalore
             </h2>
 
             <p className="text-lg text-gray-600 leading-8">
@@ -727,7 +727,7 @@ const CockroachManagementService = () => {
 
           <p className="text-sm text-white/70 mt-6">
             ⏱ Same-day service available • Professional cockroach control
-            support cockroach control support
+            support
           </p>
         </div>
       </section>
