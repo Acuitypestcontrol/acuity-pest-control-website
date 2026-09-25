@@ -604,7 +604,7 @@ const WarehousePestManagement = () => {
               to="/contact"
               className="bg-green-700 hover:bg-green-600 text-white border-2 border-white/50 px-8 py-4 rounded-full font-bold text-lg transition shadow-lg"
             >
-              Request a Free Audit
+              Request a Free Quote
             </Link>
           </div>
 
