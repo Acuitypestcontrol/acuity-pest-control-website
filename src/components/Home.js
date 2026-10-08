@@ -1493,6 +1493,7 @@ const getChatbotReply = (message) => {
    AI CHATBOT COMPONENT (MODIFIED – WhatsApp removed)
 ========================================================= */
 
+// eslint-disable-next-line no-unused-vars
 const AcuityChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
 
