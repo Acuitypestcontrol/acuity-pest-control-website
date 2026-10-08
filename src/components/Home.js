@@ -18,9 +18,6 @@ import {
   Headphones,
   HomeIcon,
   Hospital,
-  Instagram,
-  Facebook,
-  Linkedin,
   Hotel,
   LoaderCircle,
   MapPin,
@@ -38,6 +35,7 @@ import {
 } from "lucide-react";
 
 import SEO from "../components/seo/seo";
+import SocialMediaWidget from "./SocialMediaWidget";
 
 import bannerImage from "../images/tshirt.png";
 
@@ -1774,52 +1772,7 @@ Enquiry received from Acuity Pest Controls website.`;
   // Return the JSX for the chatbot (same as before, but with the modified submit handler)
   return (
     <>
-      {/* Home page social links */}
-      <nav
-        aria-label="Social media links"
-        className="fixed right-0 top-1/2 z-[1100] flex -translate-y-1/2 flex-col items-center gap-3 rounded-l-[28px] border border-r-0 border-slate-300/80 bg-slate-100/95 px-3 py-5 shadow-[0_12px_35px_rgba(15,23,42,0.18)] backdrop-blur-md sm:px-4 sm:py-6"
-      >
-        <span className="mb-1 text-[9px] font-semibold uppercase tracking-[0.35em] text-slate-500 [writing-mode:horizontal-tb]">
-          Follow us
-        </span>
-        <span className="h-px w-8 bg-slate-400" aria-hidden="true" />
-        <a
-          href="https://instagram.com/acuity_pest_control"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Follow Acuity Pest Control on Instagram"
-          className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#E4405F] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-        >
-          <Instagram size={19} />
-        </a>
-        <a
-          href="https://facebook.com/profile.php?id=61567989834040"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Visit Acuity Pest Control on Facebook"
-          className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#1877F2] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-        >
-          <Facebook size={19} />
-        </a>
-        <a
-          href="https://linkedin.com/in/acuity-pest-control-apcs"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Visit Acuity Pest Control on LinkedIn"
-          className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#0A66C2] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-        >
-          <Linkedin size={19} />
-        </a>
-        <a
-          href="https://wa.me/919941229005"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Chat with Acuity Pest Control on WhatsApp"
-          className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#25D366] shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-        >
-          <MessageCircle size={19} />
-        </a>
-      </nav>
+      <SocialMediaWidget />
 
       {/* Floating button to open chat */}
       {!isOpen && (
