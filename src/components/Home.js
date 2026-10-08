@@ -1805,6 +1805,15 @@ Enquiry received from Acuity Pest Controls website.`;
         >
           <Linkedin size={19} />
         </a>
+        <a
+          href="https://wa.me/919941229005"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Chat with Acuity Pest Control on WhatsApp"
+          className="flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:bg-[#25D366] hover:text-white"
+        >
+          <MessageCircle size={19} />
+        </a>
       </nav>
 
       {/* Floating button to open chat */}
