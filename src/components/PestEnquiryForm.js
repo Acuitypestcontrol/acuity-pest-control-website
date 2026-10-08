@@ -40,7 +40,7 @@ const PestEnquiryForm = () => {
   const phoneNumber = "919941229005";
   const displayPhone = "+91 99412 29005";
 
-  const bangaloreLocations = [
+  const bangaloreLocations = useMemo(() => [
     { area: "JP Nagar", pincode: "560078" },
     { area: "JP Nagar 1st Phase", pincode: "560078" },
     { area: "JP Nagar 2nd Phase", pincode: "560078" },
@@ -242,8 +242,8 @@ const PestEnquiryForm = () => {
       area: "Kempegowda International Airport",
       pincode: "560300",
     },
-  ];
-  const serviceGroups = [
+  ], []);
+  const serviceGroups = useMemo(() => [
     {
       id: "residential",
       title: "Residential Services",
@@ -335,14 +335,14 @@ const PestEnquiryForm = () => {
         },
       ],
     },
-  ];
+  ], []);
 
   const allServices = useMemo(
     () =>
       serviceGroups.flatMap((group) =>
         group.services.map((service) => service.id),
       ),
-    [],
+    [serviceGroups],
   );
 
   const selectedServiceDetails = useMemo(
@@ -356,7 +356,7 @@ const PestEnquiryForm = () => {
             category: group.title,
           })),
       ),
-    [selectedServices],
+    [selectedServices, serviceGroups],
   );
 
   const filteredLocations = useMemo(() => {
@@ -373,7 +373,7 @@ const PestEnquiryForm = () => {
           location.pincode.includes(searchValue),
       )
       .slice(0, 10);
-  }, [locationSearch]);
+  }, [locationSearch, bangaloreLocations]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
