@@ -18,6 +18,9 @@ import {
   Headphones,
   HomeIcon,
   Hospital,
+  Instagram,
+  Facebook,
+  Linkedin,
   Hotel,
   LoaderCircle,
   MapPin,
@@ -1770,6 +1773,40 @@ Enquiry received from Acuity Pest Controls website.`;
   // Return the JSX for the chatbot (same as before, but with the modified submit handler)
   return (
     <>
+      {/* Home page social links */}
+      <nav
+        aria-label="Social media links"
+        className="fixed right-3 top-1/2 z-[1100] flex -translate-y-1/2 flex-col gap-2 rounded-full border border-white/20 bg-[#063b3f]/90 p-2 shadow-[0_16px_40px_rgba(6,59,63,0.3)] backdrop-blur-md md:right-5"
+      >
+        <a
+          href="https://instagram.com/acuity_pest_control"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Follow Acuity Pest Control on Instagram"
+          className="flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:bg-[#E4405F] hover:text-white"
+        >
+          <Instagram size={19} />
+        </a>
+        <a
+          href="https://facebook.com/profile.php?id=61567989834040"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Visit Acuity Pest Control on Facebook"
+          className="flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:bg-[#1877F2] hover:text-white"
+        >
+          <Facebook size={19} />
+        </a>
+        <a
+          href="https://linkedin.com/in/acuity-pest-control-apcs"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Visit Acuity Pest Control on LinkedIn"
+          className="flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:bg-[#0A66C2] hover:text-white"
+        >
+          <Linkedin size={19} />
+        </a>
+      </nav>
+
       {/* Floating button to open chat */}
       {!isOpen && (
         <motion.button
