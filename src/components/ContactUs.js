@@ -240,10 +240,10 @@ Website Contact Page Lead`;
     {
       icon: <FaPhoneAlt aria-hidden="true" />,
       title: "Call Us",
-      text: "+91 99412 29005",
+      text: ["+91 99412 29005", "+91 98456 40219"],
       link: "tel:+919941229005",
       external: false,
-      ariaLabel: "Call Acuity Pest Controls",
+      ariaLabel: "Call Acuity Pest Controls at +91 99412 29005 or +91 98456 40219",
     },
     {
       icon: <FaWhatsapp aria-hidden="true" />,
@@ -317,7 +317,14 @@ Website Contact Page Lead`;
               </h2>
 
               <p className="break-words font-semibold text-gray-600">
-                {item.text}
+                {Array.isArray(item.text)
+                  ? item.text.map((phoneNumber) => (
+                      <React.Fragment key={phoneNumber}>
+                        <span>{phoneNumber}</span>
+                        <br />
+                      </React.Fragment>
+                    ))
+                  : item.text}
               </p>
             </a>
           ))}
